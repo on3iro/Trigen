@@ -41,7 +41,7 @@ module.exports = {
 
     // Not 100% what this does, but its use is highly recommended by the
     // official webpack docs, so I obey ;)
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
 
     // Refreshes app inside the browser on file save
     new webpack.HotModuleReplacementPlugin(),
