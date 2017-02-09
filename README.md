@@ -1,13 +1,13 @@
 # passCreator-Frontend
 
 ## Install dependencies
-npm install
+`npm install`
 
 ## Start dev server
-npm start
+`npm start`
 
 ## Build static files
-npm run build
+`npm run build`
 
 ## Run ESlint
-npm run eslint
+`npm run eslint`
