@@ -13,3 +13,9 @@
 
 ## Run ESlint
 `npm run eslint`
+
+## Run tests with coverage
+`npm run test`
+
+## Run test watcher
+`npm run test_watch`
