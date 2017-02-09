@@ -1,5 +1,7 @@
 # passCreator-Frontend
 
+[![Build Status](https://travis-ci.com/on3iro/passCreator-Frontend.svg?token=tEoAwHFnMPoxDCT97vVz&branch=master)](https://travis-ci.com/on3iro/passCreator-Frontend)
+
 ## Install dependencies
 `npm install`
 
