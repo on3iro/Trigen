@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors"
+    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "eslint": "eslint ./"
   },
   "repository": {
     "type": "git",
