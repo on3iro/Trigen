@@ -24,11 +24,6 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
-  resolve: {
-    root: [
-      path.resolve('./src')
-    ]
-  },
   plugins: [
     // Generate html5 file, which includes all webpack bundles in the body
     // using script tags
@@ -47,7 +42,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
 
     // Prevents webpack CLI from stopping if errors occur
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
 
     // Helps passing variables between webpack and js-files
     // Gives us the ability to e.g. switch between dev and production environment
@@ -56,13 +51,6 @@ module.exports = {
     })
   ],
 
-  // ESlint options
-  eslint: {
-    configFile: '.eslintrc',
-    failOnWarning: false,
-    failOnError: false,
-  },
-
   externals: {
     'cheerio': 'window',
     'react/lib/ExecutionEnvironment': true,
@@ -70,19 +58,27 @@ module.exports = {
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],
-    loaders: [
+        use: [
+          {
+            loader: 'eslint-loader',
+            options: {
+              configFile: '.eslintrc',
+              failOnWarning: false,
+              failOnError: false,
+            }
+          }
+        ]
+      },
       {
         // Transpile ES6
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.json?$/,

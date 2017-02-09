@@ -20,11 +20,6 @@ module.exports = {
     filename: '[name]-[hash].min.js',
     publicPath: './'
   },
-  resolve: {
-    root: [
-      path.resolve('./src')
-    ]
-  },
   plugins: [
     // Generate html5 file, which includes all webpack bundles in the body
     // using script tags
@@ -37,7 +32,7 @@ module.exports = {
 
     // Not 100% what this does, but its use is highly recommended by the
     // official webpack docs, so I obey ;)
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
 
     // Extracts the css from the js files and puts them on a separate .css file.
     // This is done for performance reasons and is used in prod environments only.
@@ -60,13 +55,6 @@ module.exports = {
     })
   ],
 
-  // ESlint options
-  eslint: {
-    configFile: '.eslintrc',
-    failOnWarning: false,
-    failOnError: true,
-  },
-
   externals: {
     'cheerio': 'window',
     'react/lib/ExecutionEnvironment': true,
@@ -74,19 +62,27 @@ module.exports = {
   },
 
   module: {
-    preLoaders: [
+    rules: [
       {
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'eslint'
-      }
-    ],
-    loaders: [
+        use: [
+          {
+            loader: 'eslint-loader',
+            options: {
+              configFile: '.eslintrc',
+              failOnWarning: false,
+              failOnError: true,
+            }
+          }
+        ]
+      },
       {
         // Transpile ES6
         test: /\.js?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.json?$/,
@@ -102,7 +98,4 @@ module.exports = {
       }
     ]
   },
-  postcss: [
-    require('autoprefixer')
-  ]
 };
