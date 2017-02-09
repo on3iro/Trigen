@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/on3iro/passCreator-Frontend.svg?branch=master)](https://travis-ci.org/on3iro/passCreator-Frontend)
 
+[![Coverage Status](https://coveralls.io/repos/github/on3iro/passCreator-Frontend/badge.svg?branch=dev)](https://coveralls.io/github/on3iro/passCreator-Frontend?branch=dev)
 
 ## Install dependencies
 `npm install`
