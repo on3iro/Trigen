@@ -1,14 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 
-export const Home = props => {
+export const Home = () => {
   return (
     <h1>This is Home!</h1>
   );
-}
-
-Home.propTypes = {
-  // TODO
 };
+
 
 export default Home;

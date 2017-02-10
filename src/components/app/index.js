@@ -15,10 +15,10 @@ export default class App extends Component {
         <Navigation />
         {this.props.children}
       </div>
-    )
+    );
   }
 }
 
 App.propTypes = {
-  // TODO
+  children: PropTypes.element,
 };

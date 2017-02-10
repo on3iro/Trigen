@@ -11,10 +11,11 @@ export const NavEntry = props => {
         </Link>
      </li>
   );
-}
+};
 
 NavEntry.propTypes = {
-  // TODO
+  url: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired
 };
 
 export default NavEntry;

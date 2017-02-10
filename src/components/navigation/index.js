@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import NavEntry from './navEntry';
 
 
 // Named export for separate access (e.g. for unit tests)
-export const Navigation = props => {
+export const Navigation = () => {
   return (
     <div>
       <nav>
@@ -15,10 +15,7 @@ export const Navigation = props => {
       </nav>
     </div>
   );
-}
-
-Navigation.propTypes = {
-  // TODO
 };
+
 
 export default Navigation;
