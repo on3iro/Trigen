@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Navigation from '../navigation';
+
 
 export default class App extends Component {
   /**
@@ -10,9 +12,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        Hello World
+        <Navigation />
         {this.props.children}
       </div>
     )
   }
 }
+
+App.propTypes = {
+  // TODO
+};
