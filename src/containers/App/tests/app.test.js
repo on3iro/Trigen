@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import App from '../';
-import Navigation from '../../navigation';
+import Navigation from '../../Navigation';
 
 
 describe('App', () => {

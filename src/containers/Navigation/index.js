@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavEntry from './navEntry';
+import Entry from './Entry';
 
 
 // Named export for separate access (e.g. for unit tests)
@@ -16,8 +16,8 @@ export const Navigation = () => {
     <div>
       <nav>
         <ul>
-          <NavEntry url="/">Home</NavEntry>
-          <NavEntry url="/impressum">Impressum</NavEntry>
+          <Entry url="/">Home</Entry>
+          <Entry url="/impressum">Impressum</Entry>
         </ul>
       </nav>
     </div>
