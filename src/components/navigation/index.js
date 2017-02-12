@@ -5,6 +5,13 @@ import NavEntry from './navEntry';
 
 // Named export for separate access (e.g. for unit tests)
 export const Navigation = () => {
+/**
+  * The main Navigation of the app. Renders multiple navigation entries.
+  *
+  * @function Navigation
+  * @returns Component
+  */
+
   return (
     <div>
       <nav>
