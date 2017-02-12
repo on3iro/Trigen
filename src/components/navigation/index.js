@@ -9,7 +9,7 @@ export const Navigation = () => {
   * The main Navigation of the app. Renders multiple navigation entries.
   *
   * @function Navigation
-  * @returns Component
+  * @returns {Node} Component
   */
 
   return (

@@ -8,8 +8,8 @@ export default class App extends Component {
    * Main App component
    * Wraps children
    *
-   * @param props {Object} Component props:
-   *  @param children {Node}
+   * @param {Object} props - React props
+   * @param {Object} props.children - Child Components
     */
 
   render() {

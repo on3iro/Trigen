@@ -6,7 +6,7 @@ export const Impressum = () => {
   * 'Impressum'-page Component of the app
   *
     * @function Impressum
-    * @returns Component
+    * @returns {Node} Component
   */
 
   return (

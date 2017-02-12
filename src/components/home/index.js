@@ -6,7 +6,7 @@ export const Home = () => {
   * The 'Home'-page Component of the app.
   *
   * @function Home
-  * @returns Components
+  * @returns {Node} Components
   */
 
   return (
