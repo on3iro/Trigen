@@ -2,6 +2,13 @@ import React from 'react';
 
 
 export const Home = () => {
+/**
+  * The 'Home'-page Component of the app.
+  *
+  * @function Home
+  * @returns {Node} Components
+  */
+
   return (
     <h1>This is Home!</h1>
   );

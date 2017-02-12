@@ -7,6 +7,9 @@ export default class App extends Component {
   /**
    * Main App component
    * Wraps children
+   *
+   * @param {Object} props - React props
+   * @param {Object} props.children - Child Components
     */
 
   render() {
