@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import Navigation from '../Navigation';
+import Navigation from 'components/Navigation';
 
 
 export default class App extends Component {

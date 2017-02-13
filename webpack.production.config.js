@@ -20,6 +20,12 @@ module.exports = {
     filename: '[name]-[hash].min.js',
     publicPath: './'
   },
+  resolve: {
+    modules: [
+      path.resolve('src'),
+      'node_modules'
+    ]
+  },
   plugins: [
     // Generate html5 file, which includes all webpack bundles in the body
     // using script tags
@@ -83,6 +89,14 @@ module.exports = {
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
+      },
+      {
+        // Style loader
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
       },
       {
         test: /\.json?$/,

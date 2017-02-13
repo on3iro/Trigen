@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Impressum from '../';
+import Impressum from '../index';
 
 describe('Impressum', () => {
   it('Should render self and subcomponents', () => {

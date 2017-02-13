@@ -8,7 +8,7 @@
 *Disclaimer*: This is a university project and not ment for production use!
 
 ## ToC
-* [Backend](#Backend)
+* [Backend](#backend)
 * [Installation](#install-dependencies)
 * [Start dev server](#start-dev-server)
 * [Production Build](#build-static-files)

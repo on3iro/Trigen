@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, hashHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
+import 'sanitize.css/sanitize.css';
 
 import reducers from './root_reducer';
 import routes from './routes';
