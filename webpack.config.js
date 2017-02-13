@@ -24,6 +24,12 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/'
   },
+  resolve: {
+    modules: [
+      path.resolve('src'),
+      'node_modules'
+    ]
+  },
   plugins: [
     // Generate html5 file, which includes all webpack bundles in the body
     // using script tags
