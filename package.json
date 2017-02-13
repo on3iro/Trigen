@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "test_watch": "jest --coverage --watch",
+    "test:watch": "jest --coverage --watch",
     "start": "node server",
     "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
     "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
@@ -30,6 +30,11 @@
     "url": "https://github.com/on3iro/passCreator-Frontend/issues"
   },
   "jest": {
+    "moduleFileExtensions": ["js", "jsx"],
+    "modulePaths": [
+      "src"
+    ],
+    "moduleDirectories": ["node_modules"],
     "coverageReporters": [
       "json",
       "lcov",
