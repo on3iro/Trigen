@@ -5,6 +5,8 @@
 [![Code Climate](https://codeclimate.com/github/on3iro/passCreator-Frontend/badges/gpa.svg)](https://codeclimate.com/github/on3iro/passCreator-Frontend)
 [![API Doc](https://doclets.io/on3iro/passCreator-Frontend/dev.svg)](https://doclets.io/on3iro/passCreator-Frontend/dev)
 
+*Disclaimer*: This is a university project and not ment for production use!
+
 ## ToC
 * [Backend](#Backend)
 * [Installation](#install-dependencies)
