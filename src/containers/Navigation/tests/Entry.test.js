@@ -2,12 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Link } from 'react-router';
 
-import NavEntry from '../../../src/components/navigation/navEntry';
+import Entry from '../Entry';
 
 
-describe('NavEntry', () => {
+describe('Entry', () => {
   it('Should render self and subcomponents', () => {
-    const wrapper = shallow(<NavEntry url="/home">Home</NavEntry>);
+    const wrapper = shallow(<Entry url="/home">Home</Entry>);
     expect(wrapper.find('li').exists()).toEqual(true);
     expect(wrapper.find(Link).exists()).toEqual(true);
   });

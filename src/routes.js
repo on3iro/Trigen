@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import App from './components/app';
-import Home from './components/home';
-import Impressum from './components/impressum';
+import App from './containers/App';
+import Home from './containers/HomePage';
+import Impressum from './containers/ImpressumPage';
 
 
 export default (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Home from '../../../src/components/home';
+import Home from '../';
 
 describe('Home', () => {
   it('Should render self and subcomponents', () => {
