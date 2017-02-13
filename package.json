@@ -29,8 +29,12 @@
   "bugs": {
     "url": "https://github.com/on3iro/passCreator-Frontend/issues"
   },
-  "jest":{
-    "coverageReporters": ["json", "lcov", "text"]
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ]
   },
   "homepage": "https://github.com/on3iro/passCreator-Frontend#readme",
   "devDependencies": {
@@ -47,6 +51,7 @@
     "babel-register": "^6.22.0",
     "coveralls": "^2.11.16",
     "cross-env": "^3.1.4",
+    "css-loader": "^0.26.1",
     "enzyme": "^2.7.1",
     "eslint": "^3.15.0",
     "eslint-loader": "^1.6.1",
@@ -61,6 +66,7 @@
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
   },
@@ -76,6 +82,7 @@
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
-    "reselect": "^2.5.4"
+    "reselect": "^2.5.4",
+    "sanitize.css": "^4.1.0"
   }
 }

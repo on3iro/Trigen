@@ -85,6 +85,14 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
+        // Style loader
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
+      },
+      {
         test: /\.json?$/,
         loader: 'json',
       },

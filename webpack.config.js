@@ -75,6 +75,14 @@ module.exports = {
         ]
       },
       {
+        // Style loader
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
+      },
+      {
         // Transpile ES6
         test: /\.js?$/,
         exclude: /node_modules/,
