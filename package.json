@@ -18,6 +18,9 @@
     "type": "git",
     "url": "git+https://github.com/on3iro/passCreator-Frontend.git"
   },
+  "babel": {
+    "presets": ["react", "es2015", "stage-0"]
+  },
   "keywords": [
     "frontend",
     "passCreator",
