@@ -11,7 +11,7 @@
     "test:watch": "jest --coverage --watch",
     "start": "node server",
     "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
-    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "eslint": "eslint ./"
   },
   "repository": {
