@@ -10,15 +10,15 @@ module.exports = {
   entry: [
     'babel-polyfill',
     // Entrypoint
-    path.join(__dirname, '/src/index.js')
+    path.join(__dirname, '../src/index.js')
   ],
   output: {
     // Put outputted files into dist folder
-    path: path.join(__dirname, '/dist/'),
+    path: path.join(__dirname, "..", '/dist/'),
 
     // Calc output file name dynamically,
     filename: '[name]-[hash].min.js',
-    publicPath: './'
+    publicPath: '/'
   },
   resolve: {
     modules: [
@@ -68,48 +68,6 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: '.eslintrc',
-              failOnWarning: false,
-              failOnError: true,
-            }
-          }
-        ]
-      },
-      {
-        // Transpile ES6
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        // Style loader
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" },
-        ]
-      },
-      {
-        test: /\.json?$/,
-        loader: 'json',
-      },
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limi=10000&mimetype=application/font-woff"
-      },
-      {
-        test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
-      }
-    ]
+    rules: require('./webpack.loaders.js')
   },
 };

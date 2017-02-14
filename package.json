@@ -11,12 +11,15 @@
     "test:watch": "jest --coverage --watch",
     "start": "node server",
     "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
-    "build": "rimraf dist && webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "build": "rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "eslint": "eslint ./"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/on3iro/passCreator-Frontend.git"
+  },
+  "babel": {
+    "presets": ["react", "es2015", "stage-0"]
   },
   "keywords": [
     "frontend",
@@ -30,11 +33,16 @@
     "url": "https://github.com/on3iro/passCreator-Frontend/issues"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
     "modulePaths": [
       "src"
     ],
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "coverageReporters": [
       "json",
       "lcov",
@@ -88,6 +96,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "reselect": "^2.5.4",
-    "sanitize.css": "^4.1.0"
+    "sanitize.css": "^4.1.0",
+    "styled-components": "^1.4.3"
   }
 }
