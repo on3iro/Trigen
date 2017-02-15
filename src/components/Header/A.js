@@ -4,7 +4,9 @@ import NormalA from 'components/A';
 
 
 const A = styled(NormalA)`
-  padding: 2em 0;
+  float: left;
+  display: inline-block;
+  margin-left: 10px;
 `;
 
 export default A;

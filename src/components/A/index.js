@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 const A = styled.a`
   display: inline;
-  color: blue;
+  color: #fff;
+  text-decoration: none;
 `;
 
 export default A;

@@ -5,8 +5,8 @@ import NavBar from '../NavBar';
 
 
 describe('<NavBar', () => {
-  it('Should render div', () => {
+  it('Should render ul', () => {
     const wrapper = shallow(<NavBar />);
-    expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find('ul').length).toEqual(1);
   });
 });
