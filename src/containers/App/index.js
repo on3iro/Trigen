@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
 import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Wrapper from './Wrapper';
+import Content from './Content';
 
 
 export default class App extends Component {
@@ -14,10 +17,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <Header />
-        {this.props.children}
-      </div>
+        <Content>
+          {this.props.children}
+        </Content>
+        <Footer />
+      </Wrapper>
     );
   }
 }
