@@ -7,12 +7,14 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
     "start": "node server",
     "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
     "build": "rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint ./"
+    "lint": "eslint ./",
+    "pretest": "npm run test:clean && npm run lint",
+    "test:clean": "rimraf ./coverage",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch"
   },
   "repository": {
     "type": "git",
