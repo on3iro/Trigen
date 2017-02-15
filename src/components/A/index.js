@@ -1,10 +1,10 @@
+import styled from 'styled-components';
+
 /**
   * A link to a certain page, represented by an anchor tag.
   *
-  * @module A
+  * @name A
   */
-
-import styled from 'styled-components';
 
 const A = styled.a`
   display: inline;
