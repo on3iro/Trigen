@@ -1,3 +1,9 @@
+/**
+ * Creates button specific styles which can be applied to different elements/components
+ *
+ * @module buttonStyles
+  */
+
 import { css } from 'styled-components';
 
 

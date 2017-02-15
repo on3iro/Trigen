@@ -1,3 +1,9 @@
+/**
+  * Styled Wrapper for the whole application
+  *
+  * @module Wrapper
+  */
+
 import styled from 'styled-components';
 
 

@@ -1,3 +1,9 @@
+/**
+  * Renders a styled <img />
+  *
+  * @module Img
+  */
+
 import styled from 'styled-components';
 
 import NormalImg from 'components/Img';

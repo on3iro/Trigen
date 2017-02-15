@@ -1,3 +1,9 @@
+/**
+  * Renders a container <NavBar /> for the <Navigation />
+  *
+  * @module NavBar
+  */
+
 import styled from 'styled-components';
 
 

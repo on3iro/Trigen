@@ -1,3 +1,10 @@
+/**
+  * Renders a single <NavLink /> item containing an <li> and a preformatted react-router
+  *   Link
+  *
+  * @module NavLink
+  */
+
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styled from 'styled-components';

@@ -1,3 +1,9 @@
+/**
+ * Footer that renders some content
+ *
+ * @module Footer
+  */
+
 import React from 'react';
 
 import { Link } from 'react-router';

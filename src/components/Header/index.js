@@ -1,3 +1,9 @@
+/**
+  * Renders a <Header /> with a Logo and a navigation
+  *
+  * @module Header
+  */
+
 import  React from 'react';
 
 import Navigation from 'components/Navigation';

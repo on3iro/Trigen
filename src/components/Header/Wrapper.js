@@ -1,3 +1,9 @@
+/**
+  * Styled container for <Header />
+  *
+  * @module Wrapper
+  */
+
 import styled from 'styled-components';
 
 

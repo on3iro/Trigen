@@ -1,3 +1,9 @@
+/**
+  * Styled Wrapper for site content
+  *
+  * @module Content
+  */
+
 import styled from 'styled-components';
 
 

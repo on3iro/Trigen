@@ -1,3 +1,9 @@
+/**
+ * Styled container for <Button />
+ *
+ * @module Wrapper
+  */
+
 import styled from 'styled-components';
 
 

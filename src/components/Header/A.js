@@ -1,3 +1,9 @@
+/**
+  * Renders a reformatted anchor
+  *
+  * @module A
+  */
+
 import styled from 'styled-components';
 
 import NormalA from 'components/A';
