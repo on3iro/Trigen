@@ -5,14 +5,14 @@ var webpack = require('webpack');
 
 module.exports = [
   {
-    enforce: 'pre',
     test: /\.js$/,
+    enforce: 'pre',
     exclude: /node_modules/,
     use: [
       {
         loader: 'eslint-loader',
         options: {
-          configFile: '.eslintrc',
+          configFile: '.eslintrc.js',
           failOnWarning: false,
           failOnError: true,
         }

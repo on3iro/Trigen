@@ -1,28 +1,19 @@
 import React from 'react';
 
-import Entry from './Entry';
+import NavBar from './NavBar';
+import NavLink from './NavLink';
 
-
-// Named export for separate access (e.g. for unit tests)
-export const Navigation = () => {
-/**
-  * The main Navigation of the app. Renders multiple navigation entries.
-  *
-  * @function Navigation
-  * @returns {Node} Component
-  */
-
+const Navigation = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <Entry url="/">Home</Entry>
-          <Entry url="/impressum">Impressum</Entry>
-        </ul>
-      </nav>
-    </div>
+    <NavBar>
+      <NavLink to="/">
+        Home
+      </NavLink>
+      <NavLink to="/impressum">
+        Impressum
+      </NavLink>
+    </NavBar>
   );
 };
-
 
 export default Navigation;

@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-import Navigation from 'components/Navigation';
+import Header from 'components/Header';
 
 
 export default class App extends Component {
@@ -15,7 +15,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navigation />
+        <Header />
         {this.props.children}
       </div>
     );
