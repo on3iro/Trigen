@@ -1,3 +1,10 @@
+/**
+  * Styled Wrapper for site content
+  *
+  * @namespace Content
+  * @memberOf module:App
+  */
+
 import styled from 'styled-components';
 
 

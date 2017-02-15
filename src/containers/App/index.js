@@ -1,3 +1,9 @@
+/**
+  * Main Application component.
+  *
+  * @module App
+  */
+
 import React, { Component, PropTypes } from 'react';
 
 import Header from 'components/Header';

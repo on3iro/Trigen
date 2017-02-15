@@ -1,3 +1,10 @@
+/**
+  * Styled container for Header
+  *
+  * @namespace Wrapper
+  * @memberOf module:Header
+  */
+
 import styled from 'styled-components';
 
 

@@ -1,3 +1,10 @@
+/**
+  * Renders a styled img
+  *
+  * @namespace Img
+  * @memberOf module:Header
+  */
+
 import styled from 'styled-components';
 
 import NormalImg from 'components/Img';

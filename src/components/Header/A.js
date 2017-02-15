@@ -1,3 +1,10 @@
+/**
+  * Renders a reformatted anchor
+  *
+  * @namespace A
+  * @memberOf module:Header
+  */
+
 import styled from 'styled-components';
 
 import NormalA from 'components/A';

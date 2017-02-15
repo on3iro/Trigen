@@ -1,3 +1,9 @@
+/**
+  * Renders a Navigation with react-router Links
+  *
+  * @module Navigation
+  */
+
 import React from 'react';
 
 import NavBar from './NavBar';

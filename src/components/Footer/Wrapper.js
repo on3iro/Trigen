@@ -1,3 +1,10 @@
+/**
+ * Styled container for Footer
+ *
+ * @namespace Wrapper
+ * @memberOf module:Footer
+  */
+
 import styled from 'styled-components';
 
 

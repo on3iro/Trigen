@@ -1,14 +1,13 @@
+/**
+  * 'Impressum'-page Component of the app
+  *
+    * @module Impressum
+  */
+
 import React from 'react';
 
 
 export const Impressum = () => {
-/**
-  * 'Impressum'-page Component of the app
-  *
-    * @function Impressum
-    * @returns {Node} Component
-  */
-
   return (
     <h1>This is Impressum!</h1>
   );

@@ -1,3 +1,9 @@
+/**
+  * Renders a styled h2
+  *
+  * @module H2
+  */
+
 import styled from 'styled-components';
 
 

@@ -1,3 +1,10 @@
+/**
+  * Renders a container NavBar for the Navigation
+  *
+  * @namespace NavBar
+  * @memberOf module:Navigation
+  */
+
 import styled from 'styled-components';
 
 
