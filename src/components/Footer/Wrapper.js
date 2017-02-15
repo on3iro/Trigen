@@ -1,7 +1,8 @@
 /**
  * Styled container for <Footer />
  *
- * @module Wrapper
+ * @namespace Wrapper
+ * @memberOf module:Footer
   */
 
 import styled from 'styled-components';

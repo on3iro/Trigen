@@ -1,7 +1,8 @@
 /**
   * Renders a styled <img />
   *
-  * @module Img
+  * @namespace Img
+  * @memberOf module:Header
   */
 
 import styled from 'styled-components';

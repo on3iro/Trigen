@@ -1,7 +1,8 @@
 /**
   * Styled container for <Header />
   *
-  * @module Wrapper
+  * @namespace Wrapper
+  * @memberOf module:Header
   */
 
 import styled from 'styled-components';
