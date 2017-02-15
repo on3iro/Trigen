@@ -1,6 +1,6 @@
-dist
-coverage
-node_modules
-test
+**/dist/*
+**/coverage/*
+**/tests/*
+**/node_modules/*
 webpack.*.js
 *server.js

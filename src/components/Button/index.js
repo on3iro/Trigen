@@ -32,7 +32,7 @@ const Button = props => {
       {button}
     </Wrapper>
   );
-}
+};
 
 Button.propTypes = {
   handleRoute: PropTypes.func,
