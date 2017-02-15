@@ -1,7 +1,8 @@
 /**
  * Creates button specific styles which can be applied to different elements/components
  *
- * @module buttonStyles
+ * @namespace buttonStyles
+ * @memberOf module:Button
   */
 
 import { css } from 'styled-components';

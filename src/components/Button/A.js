@@ -1,7 +1,8 @@
 /**
   * Renders an Anchor with button styles
   *
-  * @module A
+  * @namespace A
+  * @memberOf module:Button
   */
 
 import styled from 'styled-components';
