@@ -34,8 +34,8 @@ const Button = props => {
   );
 }
 
-button.propTypes = {
-  handleRoute: Proptypes.func,
+Button.propTypes = {
+  handleRoute: PropTypes.func,
   href: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
