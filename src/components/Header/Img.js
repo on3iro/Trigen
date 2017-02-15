@@ -1,5 +1,5 @@
 /**
-  * Renders a styled <img />
+  * Renders a styled img
   *
   * @namespace Img
   * @memberOf module:Header

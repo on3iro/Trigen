@@ -1,5 +1,5 @@
 /**
- * Styled container for <Footer />
+ * Styled container for Footer
  *
  * @namespace Wrapper
  * @memberOf module:Footer

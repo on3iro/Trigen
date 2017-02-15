@@ -1,5 +1,5 @@
 /**
-  * Renders a <Header /> with a Logo and a navigation
+  * Renders a Header with a Logo and a navigation
   *
   * @module Header
   */

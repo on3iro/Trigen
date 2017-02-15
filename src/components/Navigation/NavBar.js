@@ -1,5 +1,5 @@
 /**
-  * Renders a container <NavBar /> for the <Navigation />
+  * Renders a container NavBar for the Navigation
   *
   * @namespace NavBar
   * @memberOf module:Navigation

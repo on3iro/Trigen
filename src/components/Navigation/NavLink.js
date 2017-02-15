@@ -1,6 +1,5 @@
 /**
-  * Renders a single <NavLink /> item containing an <li> and a preformatted react-router
-  *   Link
+  * Renders a single NavLink item containing an li and a preformatted react-router Link
   *
   * @namespace NavLink
   * @memberOf module:Navigation

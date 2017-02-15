@@ -1,5 +1,5 @@
 /**
-  * Styled container for <Header />
+  * Styled container for Header
   *
   * @namespace Wrapper
   * @memberOf module:Header

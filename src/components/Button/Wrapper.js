@@ -1,5 +1,5 @@
 /**
- * Styled container for <Button />
+ * Styled container for Button
  *
  * @namespace Wrapper
  * @memberOf module:Button
