@@ -8,13 +8,13 @@
   },
   "scripts": {
     "start": "node server",
-    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
     "build": "rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch"
+    "test:watch": "jest --coverage --watch",
+    "coveralls": "jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -39,15 +39,8 @@
     "url": "https://github.com/on3iro/passCreator-Frontend/issues"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
     "modulePaths": [
       "src"
-    ],
-    "moduleDirectories": [
-      "node_modules"
     ],
     "coverageReporters": [
       "json",
@@ -73,7 +66,6 @@
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.1",
     "eslint": "^3.15.0",
-    "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.9.0",
@@ -93,7 +85,6 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "babel-polyfill": "^6.22.0",
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
     "react": "^15.4.2",

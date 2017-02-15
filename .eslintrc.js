@@ -1,12 +1,5 @@
 module.exports = {
   "parser": "babel-eslint", // https://github.com/babel/babel-eslint
-  "settings": {
-    "import/resolver": {
-      "webpack": {
-        "config": 'webpack/webpack.dev.config.js'
-      }
-    }
-  },
   "env": {
     "browser": true,
     "node": true,

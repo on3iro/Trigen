@@ -5,7 +5,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, hashHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
+
+// Styles
 import 'sanitize.css/sanitize.css';
+import './global-styles';
 
 import reducers from './root_reducer';
 import routes from './routes';
