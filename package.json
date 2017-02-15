@@ -8,13 +8,13 @@
   },
   "scripts": {
     "start": "node server",
-    "coveralls": "npm run test && cat ./coverage/lcov.info | coveralls",
     "build": "rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
     "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch"
+    "test:watch": "jest --coverage --watch",
+    "coveralls": "npm run test --runInBand && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
