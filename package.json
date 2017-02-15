@@ -14,7 +14,7 @@
     "test:clean": "rimraf ./coverage",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
-    "coveralls": "npm run test --runInBand && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
