@@ -1,3 +1,11 @@
+/**
+  * A basic LoginForm component
+  *
+  * @module LoginForm
+  * @memberOf module:HomePage
+  * @namespace LoginForm
+  */
+
 import React, { Component, PropTypes } from 'react';
 
 import H1 from 'components/H1';
@@ -10,10 +18,16 @@ class LoginForm extends Component {
     * Class component LoginForm
     *
     * @class LoginForm
-    * @memberOf module:HomePage
+    * @memberOf LoginForm
     */
 
   constructor(props) {
+    /**
+      * Constructor of the LoginForm
+      *
+      * @constructs
+      */
+
     super(props);
 
     this.state = {
@@ -30,7 +44,8 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @inner
+      * @memberOf LoginForm
+      * @namespace LoginForm.handleInputChange
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
