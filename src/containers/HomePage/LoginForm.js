@@ -13,13 +13,6 @@ import Input from 'components/Input';
 
 
 class LoginForm extends Component {
-  /**
-    * LoginForm class component
-    *
-    * @class LoginForm
-    * @memberOf namespace:LoginForm
-    */
-
   constructor(props) {
     super(props);
 
@@ -37,7 +30,7 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @memberOf class:LoginForm
+      * @memberOf namespace:LoginForm
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
