@@ -1,10 +1,3 @@
-/**
-  * A simple login form
-  *
-  * @namespace LoginForm
-  * @memberOf module:HomePage
-  */
-
 import React, { Component, PropTypes } from 'react';
 
 import H1 from 'components/H1';
@@ -17,7 +10,7 @@ class LoginForm extends Component {
     * Class component LoginForm
     *
     * @class LoginForm
-    * @memberOf LoginForm
+    * @memberOf module:HomePage
     */
 
   constructor(props) {
