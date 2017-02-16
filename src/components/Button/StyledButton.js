@@ -1,8 +1,8 @@
 /**
   * Creates a button with styles applied
   *
-  * @namespace StyledButton
-  * @memberOf module:Button
+  * @namespace Button.StyledButton
+  * @memberOf Button
   */
 
 import styled from 'styled-components';

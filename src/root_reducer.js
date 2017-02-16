@@ -1,3 +1,9 @@
+/**
+  * Root reducer
+  *
+  * @namespace Reducer
+  */
+
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({

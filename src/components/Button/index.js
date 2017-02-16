@@ -2,7 +2,7 @@
  * A common button, if you pass it a prop "route" it'll render a link to a react-router route.
  * Otherwise it'll render a link with an onclick.
  *
- * @module Button
+ * @namespace Button
   */
 
 import React, { PropTypes, Children } from 'react';

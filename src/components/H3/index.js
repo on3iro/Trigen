@@ -1,7 +1,7 @@
 /**
   * Renders a styled h3
   *
-  * @module H3
+  * @namespace H3
   */
 
 import  React from 'react';

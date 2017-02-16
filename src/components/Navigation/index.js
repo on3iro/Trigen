@@ -1,7 +1,7 @@
 /**
   * Renders a Navigation with react-router Links
   *
-  * @module Navigation
+  * @namespace Navigation
   */
 
 import React from 'react';

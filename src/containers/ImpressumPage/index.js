@@ -1,7 +1,7 @@
 /**
   * 'Impressum'-page Component of the app
   *
-    * @module Impressum
+    * @namespace Impressum
   */
 
 import React from 'react';

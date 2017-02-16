@@ -1,8 +1,8 @@
 /**
   * Styled Wrapper for the whole application
   *
-  * @namespace Wrapper
-  * @memberOf module:App
+  * @namespace App.Wrapper
+  * @memberOf App
   */
 
 import styled from 'styled-components';

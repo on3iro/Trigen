@@ -1,8 +1,8 @@
 /**
  * Styled container for Button
  *
- * @namespace Wrapper
- * @memberOf module:Button
+ * @namespace Button.Wrapper
+ * @memberOf Button
   */
 
 import styled from 'styled-components';

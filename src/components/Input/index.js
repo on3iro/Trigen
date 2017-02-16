@@ -1,7 +1,7 @@
 /**
   * A simple styled controlled input element
   *
-  * @module Input
+  * @namespace Input
   */
 
 import React, { PropTypes } from 'react';

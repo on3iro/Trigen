@@ -1,8 +1,8 @@
 /**
   * Renders a reformatted anchor
   *
-  * @namespace A
-  * @memberOf module:Header
+  * @namespace Header.A
+  * @memberOf Header
   */
 
 import styled from 'styled-components';

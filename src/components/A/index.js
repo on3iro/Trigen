@@ -1,7 +1,7 @@
 /**
   * A link to a certain page, represented by an anchor tag.
   *
-  * @module A
+  * @namespace A
   */
 
 import styled from 'styled-components';

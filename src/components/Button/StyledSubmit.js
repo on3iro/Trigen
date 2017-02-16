@@ -1,8 +1,8 @@
 /**
   * Renders a submit input with button styles
   *
-  * @namespace StyledSubmit
-  * @memberOf module:Button
+  * @namespace Button.StyledSubmit
+  * @memberOf Button
   */
 
 import React, { PropTypes } from 'react';

@@ -1,8 +1,8 @@
 /**
   * Renders a styled img
   *
-  * @namespace Img
-  * @memberOf module:Header
+  * @namespace Header.Img
+  * @memberOf Header
   */
 
 import styled from 'styled-components';

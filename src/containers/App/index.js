@@ -1,7 +1,7 @@
 /**
   * Main Application component.
   *
-  * @module App
+  * @namespace App
   */
 
 import React, { Component, PropTypes } from 'react';
@@ -16,7 +16,9 @@ export default class App extends Component {
   /**
    * Main App component
    * Wraps children
-   *
+   * @class App
+   * @namespace App
+   * @memberOf App
    * @param {Object} props - React props
    * @param {Object} props.children - Child Components
     */

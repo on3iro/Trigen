@@ -1,7 +1,7 @@
 /**
   * Renders an image enforcing the usage of an alt tag
   *
-  * @module Img
+  * @namespace Img
   */
 
 import React, { PropTypes } from 'react';

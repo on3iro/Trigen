@@ -1,5 +1,5 @@
 /**
-  * A basic LoginForm component
+  * Renders a basic LoginForm
   *
   * @namespace HomePage.LoginForm
   * @memberOf HomePage
@@ -26,6 +26,7 @@ class LoginForm extends Component {
       * Constructor of the LoginForm
       *
       * @constructs
+      * @memberOf HomePage.LoginForm.LoginForm
       */
 
     super(props);

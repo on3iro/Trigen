@@ -1,7 +1,7 @@
 /**
  * Footer that renders some content
  *
- * @module Footer
+ * @namespace Footer
   */
 
 import React from 'react';

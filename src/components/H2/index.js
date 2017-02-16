@@ -1,7 +1,7 @@
 /**
   * Renders a styled h2
   *
-  * @module H2
+  * @namespace H2
   */
 
 import styled from 'styled-components';

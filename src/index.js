@@ -1,7 +1,7 @@
 /**
   * Global entry point to the app
   *
-  * @global App
+  * @namespace AppEntryPoint
   */
 
 import React from 'react';
