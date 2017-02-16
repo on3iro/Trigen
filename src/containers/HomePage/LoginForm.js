@@ -1,9 +1,7 @@
 /**
   * A basic LoginForm component
   *
-  * @module LoginForm
-  * @memberOf module:HomePage
-  * @namespace LoginForm
+  * @module containers/HomePage/LoginForm
   */
 
 import React, { Component, PropTypes } from 'react';
@@ -18,8 +16,6 @@ class LoginForm extends Component {
     * Class component LoginForm
     *
     * @class LoginForm
-    * @memberOf LoginForm
-    * @namespace LoginForm.LoginForm
     */
 
   constructor(props) {
@@ -45,8 +41,6 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @memberOf LoginForm
-      * @namespace LoginForm.LoginForm.handleInputChange
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
