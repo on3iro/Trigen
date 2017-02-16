@@ -5,7 +5,7 @@
   * @memberOf HomePage
   */
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 import H1 from 'components/H1';
 import Button from 'components/Button';

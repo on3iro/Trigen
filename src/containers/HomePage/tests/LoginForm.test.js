@@ -41,4 +41,26 @@ describe('<LoginForm />', () => {
     const wrapper = renderComponent();
     expect(wrapper.find('input').findWhere(n => n.props().type === 'submit').length).toEqual(1);
   });
+
+  it('should have initial state', () => {
+    const wrapper = renderComponent();
+    expect(wrapper.state('email')).toEqual('');
+    expect(wrapper.state('password')).toEqual('');
+  });
+
+  it('should handleInputChange', () => {
+    const wrapper = renderComponent();
+    const instance = wrapper.instance();
+    const event = {
+      target: {
+        name: 'email',
+        value: 'theo.tester@example.com',
+        type: 'input',
+      }
+    };
+
+    // Call
+    instance.handleInputChange(event);
+    expect(wrapper.state('email')).toEqual('theo.tester@example.com');
+  });
 });
