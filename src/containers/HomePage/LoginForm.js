@@ -30,7 +30,7 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @memberOf LoginForm
+      * @inner
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
