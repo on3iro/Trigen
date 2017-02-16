@@ -1,13 +1,14 @@
 /**
-  * A simple styled input element
+  * A simple styled controlled input element
   *
   * @module Input
   */
 
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 
-const Input = styled.input`
+const StyledInput = styled.input`
   display: block;
   margin: 0 0 10px 0;
   padding: 5px 10px;
@@ -16,5 +17,11 @@ const Input = styled.input`
   color: #333;
   outline: 0;
 `;
+
+const Input = props => {
+  return (
+    <StyledInput {...props} />
+  );
+};
 
 export default Input;
