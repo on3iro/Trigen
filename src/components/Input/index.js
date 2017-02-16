@@ -13,6 +13,8 @@ const Input = styled.input`
   padding: 5px 10px;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
+  color: #333;
+  outline: 0;
 `;
 
 export default Input;
