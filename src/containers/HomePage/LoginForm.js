@@ -17,7 +17,6 @@ class LoginForm extends Component {
     * Class component LoginForm
     *
     * @class LoginForm
-    * @memberOf LoginForm
     * @inner
     */
 
@@ -38,7 +37,7 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @inner
+      * @memberOf LoginForm
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
