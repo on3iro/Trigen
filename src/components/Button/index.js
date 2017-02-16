@@ -2,13 +2,14 @@
  * A common button, if you pass it a prop "route" it'll render a link to a react-router route.
  * Otherwise it'll render a link with an onclick.
  *
- * @module Button
+ * @namespace Button
   */
 
 import React, { PropTypes, Children } from 'react';
 
 import A from './A';
 import StyledButton from './StyledButton';
+import StyledSubmit from './StyledSubmit';
 import Wrapper from './Wrapper';
 
 
@@ -29,6 +30,13 @@ const Button = props => {
     );
   }
 
+  // If the button has submit prop render input
+  if(props.submit) {
+    button = (
+      <StyledSubmit {...props} />
+    );
+  }
+
   return (
     <Wrapper>
       {button}
@@ -41,6 +49,7 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
+  submit: PropTypes.bool,
 };
 
 export default Button;

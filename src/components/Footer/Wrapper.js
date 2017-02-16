@@ -1,8 +1,8 @@
 /**
  * Styled container for Footer
  *
- * @namespace Wrapper
- * @memberOf module:Footer
+ * @namespace Footer.Wrapper
+ * @memberOf Footer
   */
 
 import styled from 'styled-components';

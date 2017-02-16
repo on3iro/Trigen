@@ -1,7 +1,7 @@
 /**
   * Renders a Header with a Logo and a navigation
   *
-  * @module Header
+  * @namespace Header
   */
 
 import  React from 'react';

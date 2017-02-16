@@ -23,7 +23,10 @@ module.exports = [
     // Transpile ES6
     test: /\.js?$/,
     exclude: /node_modules/,
-    loader: 'babel-loader'
+    use: [
+      { loader: 'react-hot-loader' },
+      { loader: 'babel-loader' }
+    ]
   },
   {
     // Style loader
