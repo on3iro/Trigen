@@ -17,7 +17,7 @@ class LoginForm extends Component {
     * Class component LoginForm
     *
     * @class LoginForm
-    * @memberOf namespace:LoginForm
+    * @memberOf LoginForm
     */
 
   constructor(props) {
