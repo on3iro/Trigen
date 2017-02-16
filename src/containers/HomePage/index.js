@@ -1,7 +1,7 @@
 /**
   * The 'Home'-page Component of the app.
   *
-  * @module HomePage
+  * @module containers/HomePage
   */
 
 import React from 'react';
