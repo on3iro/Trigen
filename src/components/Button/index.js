@@ -49,6 +49,7 @@ Button.propTypes = {
   href: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
+  submit: PropTypes.bool,
 };
 
 export default Button;

@@ -14,7 +14,7 @@ import Input from 'components/Input';
 
 const LoginForm = () => {
   return (
-    <form onSubmit={() => {console.log('submitting')}}>
+    <form onSubmit={() => {}}>
       <H1>Login</H1>
       <Input type="text" placeholder="Email" />
       <Input type="password" placeholder="Password" />

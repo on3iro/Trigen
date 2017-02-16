@@ -5,7 +5,7 @@
   * @memberOf module:Button
   */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 import buttonStyles from './buttonStyles';
@@ -19,6 +19,10 @@ const StyledSubmit = props => {
   return (
     <StyledInput type="submit" value={props.children} />
   );
+};
+
+StyledSubmit.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default StyledSubmit;

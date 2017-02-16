@@ -6,7 +6,7 @@ import StyledSubmit from '../StyledSubmit'
 
 describe('<StyledSubmit />', () => {
   it('Should render input', () => {
-    const wrapper = mount(<StyledSubmit />);
+    const wrapper = mount(<StyledSubmit>Home</StyledSubmit>);
     expect(wrapper.find('input').length).toEqual(1);
   });
 });
