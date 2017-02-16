@@ -9,6 +9,7 @@ import React, { PropTypes, Children } from 'react';
 
 import A from './A';
 import StyledButton from './StyledButton';
+import StyledSubmit from './StyledSubmit';
 import Wrapper from './Wrapper';
 
 
@@ -26,6 +27,13 @@ const Button = props => {
       <StyledButton onClick={props.handleRoute}>
         {Children.toArray(props.children)}
       </StyledButton>
+    );
+  }
+
+  // If the button has submit prop render input
+  if(props.submit) {
+    button = (
+      <StyledSubmit {...props} />
     );
   }
 

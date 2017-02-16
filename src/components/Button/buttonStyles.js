@@ -10,11 +10,17 @@ import { css } from 'styled-components';
 
 const buttonStyles = css`
   display: inline-block;
-  box-sizing: border-box;
   text-decoration: none;
+  padding: 5px 10px;
+  background-color: #27a70b;
+  color: #fff;
   outline: 0;
   border-radius: 4px;
   font-weight: bold;
+
+  &:hover {
+   background-color: #49ab33;
+  }
 `;
 
 export default buttonStyles;

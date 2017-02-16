@@ -6,10 +6,15 @@
 
 import React from 'react';
 
+import LoginForm from './LoginForm';
+import Wrapper from './Wrapper';
+
 
 export const Home = () => {
   return (
-    <h1>This is Home!</h1>
+    <Wrapper>
+      <LoginForm />
+    </Wrapper>
   );
 };
 

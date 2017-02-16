@@ -1,14 +1,9 @@
-/**
- * Styled container for Button
- *
- * @namespace Wrapper
- * @memberOf module:Button
-  */
-
 import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
 `;
 
 export default Wrapper;
