@@ -19,6 +19,7 @@ class LoginForm extends Component {
     *
     * @class LoginForm
     * @memberOf LoginForm
+    * @namespace LoginForm.LoginForm
     */
 
   constructor(props) {
@@ -45,7 +46,7 @@ class LoginForm extends Component {
       *
       * @method handleInputChange
       * @memberOf LoginForm
-      * @namespace LoginForm.handleInputChange
+      * @namespace LoginForm.LoginForm.handleInputChange
       * @param {Object} event - Triggered event
       * @returns {undefined}
       */
