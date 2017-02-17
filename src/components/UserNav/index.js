@@ -12,11 +12,14 @@ import NavLink from './NavLink';
 const UserNav = () => {
   return (
     <NavBar>
-      <NavLink to="/login" >
+      <NavLink to="/" >
         Login
       </NavLink>
       <NavLink to="/register" >
         Register
+      </NavLink>
+      <NavLink to="/profile" >
+        Profile
       </NavLink>
     </NavBar>
   );
