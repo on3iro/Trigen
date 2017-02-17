@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 
 export default styled.ul`
-  float: left;
+  float: right;
   display: inline-block;
   padding: 0;
   margin: 0 0 0 40px;
