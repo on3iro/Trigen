@@ -6,10 +6,15 @@
 
 import React from 'react';
 
+import Wrapper from './Wrapper';
+import RegisterForm from './RegisterForm';
+
 
 const Register = () => {
   return (
-    <h1>Register user</h1>
+    <Wrapper>
+      <RegisterForm />
+    </Wrapper>
   );
 };
 

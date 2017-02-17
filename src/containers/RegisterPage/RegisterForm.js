@@ -1,8 +1,8 @@
 /**
-  * Renders a basic LoginForm
+  * The user registration form
   *
-  * @namespace HomePage.LoginForm
-  * @memberOf HomePage
+  * @namespace RegisterPage.RegisterForm
+  * @memberOf Register
   */
 
 import React, { Component } from 'react';
@@ -12,28 +12,22 @@ import Button from 'components/Button';
 import Input from 'components/Input';
 
 
-class LoginForm extends Component {
+class RegisterForm extends Component {
   /**
-    * Class component LoginForm
+    * Class component RegisterForm
     *
-    * @class LoginForm
-    * @namespace LoginForm
-    * @memberOf HomePage.LoginForm
+    * @class RegisterForm
+    * @namespace RegisterForm
+    * @memberOf RegisterPage.RegisterForm
     */
 
   constructor(props) {
-    /**
-      * Constructor of the LoginForm
-      *
-      * @constructs
-      * @memberOf HomePage.LoginForm.LoginForm
-      */
-
     super(props);
 
     this.state = {
       email: '',
       password: '',
+      confirm: '',
     };
   }
 
@@ -43,7 +37,7 @@ class LoginForm extends Component {
       * Sets the value of the respective input.
       *
       * @method handleInputChange
-      * @memberOf HomePage.LoginForm.LoginForm
+      * @memberOf RegisterPage.RegisterForm.RegisterForm
       * @namespace handleInputChange
       * @param {Object} event - Triggered event
       * @returns {undefined}
@@ -63,7 +57,7 @@ class LoginForm extends Component {
   render() {
     return (
       <form onSubmit={() => {}}>
-        <H1>Login</H1>
+        <H1>Register</H1>
         <Input
           name="email"
           type="text"
@@ -78,10 +72,17 @@ class LoginForm extends Component {
           value={this.state.password}
           onChange={this.handleInputChange}
         />
-        <Button submit>Login</Button>
+        <Input
+          name="confirm"
+          type="password"
+          placeholder="Confirm Password"
+          value={this.state.confirm}
+          onChange={this.handleInputChange}
+        />
+        <Button submit>Register Now</Button>
       </form>
     );
   }
 }
 
-export default LoginForm;
+export default RegisterForm;
