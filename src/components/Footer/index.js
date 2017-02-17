@@ -14,6 +14,7 @@ const Footer = () => {
   return (
     <Wrapper>
       <Link to="/impressum">Impressum</Link>
+      <Link to="/agb">AGB</Link>
     </Wrapper>
   );
 };

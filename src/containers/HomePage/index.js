@@ -1,5 +1,5 @@
 /**
-  * The 'Home'-page Component of the app.
+  * HomePage of the App
   *
   * @namespace HomePage
   */
@@ -10,7 +10,7 @@ import LoginForm from './LoginForm';
 import Wrapper from './Wrapper';
 
 
-export const Home = () => {
+const Home = () => {
   return (
     <Wrapper>
       <LoginForm />
