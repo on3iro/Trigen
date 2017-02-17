@@ -42,6 +42,9 @@
     "modulePaths": [
       "src"
     ],
+    "collectCoverageFrom": [
+      "**/src/**/*.{js,jsx}"
+    ],
     "coverageReporters": [
       "json",
       "lcov",
