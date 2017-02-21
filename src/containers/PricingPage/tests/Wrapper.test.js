@@ -7,6 +7,6 @@ import Wrapper from '../Wrapper';
 describe('<Wrapper />', () => {
   it('should render div', () => {
     const wrapper = shallow(<Wrapper />);
-    expect(wrapper.find('div').length).toEqual(0);
+    expect(wrapper.find('div').exists()).toEqual(true);
   });
 });
