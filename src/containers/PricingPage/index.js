@@ -6,10 +6,14 @@
 
 import React from 'react';
 
+import Wrapper from './Wrapper';
+
 
 const Pricing = () => {
   return (
-    <h1>The pricing page</h1>
+    <Wrapper>
+      <h1>The pricing page</h1>
+    </Wrapper>
   );
 };
 

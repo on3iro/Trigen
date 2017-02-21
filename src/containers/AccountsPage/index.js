@@ -6,10 +6,14 @@
 
 import React from 'react';
 
+import Wrapper from './Wrapper';
+
 
 const Accounts = () => {
   return (
-    <h1>Your accounts</h1>
+    <Wrapper>
+      <h1>Your accounts</h1>
+    </Wrapper>
   );
 };
 

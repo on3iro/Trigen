@@ -6,10 +6,14 @@
 
 import React from 'react';
 
+import Wrapper from './Wrapper';
+
 
 const UserProfile = () => {
   return (
-    <h1>User profile page</h1>
+    <Wrapper>
+      <h1>User profile page</h1>
+    </Wrapper>
   );
 };
 
