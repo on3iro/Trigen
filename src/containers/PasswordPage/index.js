@@ -6,10 +6,14 @@
 
 import React from 'react';
 
+import Wrapper from './Wrapper';
+
 
 const PasswordPage = () => {
   return (
-    <h1>The password generator</h1>
+    <Wrapper>
+      <h1>The password generator</h1>
+    </Wrapper>
   );
 };
 
