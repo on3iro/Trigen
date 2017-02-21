@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 
@@ -17,16 +17,24 @@ const Answer = styled.div`
   padding: 10px;
 `;
 
-const Entry = props => {
+
+const Entry = ({ handleExpand, expanded = false, question, answer }) => {
   return (
     <Wrapper>
-      <Question onClick={props.handleExpand}>{props.question}</Question>
+      <Question onClick={handleExpand}>{question}</Question>
       {
-        props.show &&
-        <Answer>{props.answer}</Answer>
+        expanded &&
+        <Answer>{answer}</Answer>
       }
     </Wrapper>
   );
+};
+
+Entry.propTypes = {
+  handleExpand: PropTypes.func.isRequired,
+  question: PropTypes.string.isRequired,
+  answer: PropTypes.string.isRequired,
+  expanded: PropTypes.bool
 };
 
 export default Entry;

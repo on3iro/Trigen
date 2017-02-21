@@ -5,6 +5,10 @@ import Wrapper from './Wrapper';
 
 
 class Accordion extends Component {
+  propTypes = {
+    entries: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }
+
   constructor(props) {
     super(props);
 
@@ -15,7 +19,7 @@ class Accordion extends Component {
           question: entry.question,
           answer: entry.answer,
           active: false,
-        }
+        };
       }),
     };
   }
@@ -36,10 +40,10 @@ class Accordion extends Component {
         <Entry
           question={entry.question}
           answer={entry.answer}
-          show={entry.active}
+          expanded={entry.active}
           key={i}
           id={entry.id}
-          handleExpand={() => {this.toggleEntry(entry.id)}}
+          handleExpand={() => this.toggleEntry(entry.id)}
         />
       );
     });
