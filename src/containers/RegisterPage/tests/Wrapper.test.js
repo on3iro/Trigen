@@ -15,4 +15,3 @@ describe('<Wrapper />', () => {
     expect(wrapper.prop('className')).toBeDefined();
   });
 });
-
