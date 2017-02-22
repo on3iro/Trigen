@@ -14,6 +14,6 @@ describe('<Navigation />', () => {
 
   it('Should render NavLinks', () => {
     const wrapper = shallow(<Navigation />);
-    expect(wrapper.find(NavLink).length).toEqual(2);
+    expect(wrapper.find(NavLink).length).toEqual(5);
   });
 });

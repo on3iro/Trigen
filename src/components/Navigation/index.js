@@ -15,8 +15,17 @@ const Navigation = () => {
       <NavLink to="/">
         Home
       </NavLink>
-      <NavLink to="/impressum">
-        Impressum
+      <NavLink to="/pricing">
+        Pricing
+      </NavLink>
+      <NavLink to="/password">
+        GenPW
+      </NavLink>
+      <NavLink to="/accounts">
+        My Accounts
+      </NavLink>
+      <NavLink to="/faq">
+        FAQ
       </NavLink>
     </NavBar>
   );

@@ -139,3 +139,4 @@ jspm_packages
 
 #===== Build ======#
 /dist/
+/docs/

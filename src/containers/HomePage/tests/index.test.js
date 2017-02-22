@@ -12,7 +12,7 @@ describe('<HomePage />', () => {
     expect(wrapper.find(Wrapper).length).toEqual(1);
   });
 
-  it('should render', () => {
+  it('should render <LoginForm/>', () => {
     const wrapper = shallow(<Home />);
     expect(wrapper.find(LoginForm).length).toEqual(1);
   });
