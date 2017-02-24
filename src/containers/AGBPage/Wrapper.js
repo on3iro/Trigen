@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
-  width: 50%;
+export default styled.div`
   margin: 0 auto;
+  width: 50%;
 `;
-
-export default Wrapper;
