@@ -12,14 +12,14 @@ const buttonStyles = css`
   display: inline-block;
   text-decoration: none;
   padding: 5px 10px;
-  background-color: #27a70b;
+  background-color: ${props => props.warning ? 'red' : '#27a70b'};
   color: #fff;
   outline: 0;
   border-radius: 4px;
   font-weight: bold;
 
   &:hover {
-   background-color: #49ab33;
+    background-color: ${props => props.warning ? 'tomato' : '#49ab33'};
   }
 `;
 
