@@ -10,7 +10,7 @@ import { Link } from 'react-router';
 import styled from 'styled-components';
 
 
-const Li = styled.li`
+export const Li = styled.li`
   float: left;
   display: inline;
 
@@ -19,7 +19,7 @@ const Li = styled.li`
   }
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   display: inline-block;
   margin: 5px;
   width: 100px;
