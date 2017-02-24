@@ -49,17 +49,5 @@ describe('<Button />', () => {
     const renderedComponent = renderComponent();
     expect(renderedComponent.find('a').prop('className')).toBeDefined();
   });
-
-  it('should not adopt a type attribute when rendering an <a> tag', () => {
-    const type = 'text/html';
-    const renderedComponent = renderComponent({ href, type });
-    expect(renderedComponent.find('a').prop('type')).toBeUndefined();
-  });
-
-  it('should not adopt a type attribute when rendering a button', () => {
-    const type = 'submit';
-    const renderedComponent = renderComponent({ handleRoute, type });
-    expect(renderedComponent.find('button').prop('type')).toBeUndefined();
-  });
 });
 
