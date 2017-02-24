@@ -42,6 +42,10 @@
     "modulePaths": [
       "src"
     ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
     "collectCoverageFrom": [
       "**/src/**/*.{js,jsx}",
       "!**/src/global-styles.js",

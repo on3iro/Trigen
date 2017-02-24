@@ -8,6 +8,6 @@ import Wrapper from '../Wrapper';
 describe('<FAQPage />', () => {
   it('should render <Wrapper />', () => {
     const wrapper = shallow(<FAQPage />);
-    expect(wrapper.find(Wrapper).length).toEqual(1);
+    expect(wrapper.find(Wrapper).length).toBe(1);
   });
 });
