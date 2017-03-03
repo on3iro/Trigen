@@ -16,7 +16,7 @@ import promise from 'redux-promise';
 import 'sanitize.css/sanitize.css';
 import './global-styles';
 
-import reducers from './root_reducer';
+import store from './store';
 import routes from './routes';
 
 
@@ -25,9 +25,9 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store;
 
 if(process.env.NODE_ENV === 'production') {
-  store = createStore(reducers, applyMiddleware(promise, thunk));
+  store = createStore(store, applyMiddleware(promise, thunk));
 }else {
-  store = createStore(reducers, composeEnhancers(applyMiddleware(promise, thunk)));
+  store = createStore(store, composeEnhancers(applyMiddleware(promise, thunk)));
 }
 
 ReactDom.render(
