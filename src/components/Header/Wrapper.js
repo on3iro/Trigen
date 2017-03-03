@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   margin-bottom: 10px;
   height: 40px;
   width: 100%;
+  flex: none;
   background-color: #333;
   color: #fff;
 `;

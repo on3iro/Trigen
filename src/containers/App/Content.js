@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const Content = styled.div`
   padding: 20px;
-  flex: 1;
+  flex: 1 0 auto;
 `;
 
 export default Content;
