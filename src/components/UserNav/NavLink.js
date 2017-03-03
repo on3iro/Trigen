@@ -6,8 +6,9 @@
   */
 
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
 import styled from 'styled-components';
+
+import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
@@ -17,16 +18,6 @@ export const Li = styled.li`
   &:hover {
     background-color: #666;
   }
-`;
-
-export const StyledLink = styled(Link)`
-  display: inline-block;
-  margin: 5px;
-  width: 100px;
-  text-decoration: none;
-  color: #fff;
-  cursor: pointer;
-  outline: 0;
 `;
 
 const NavLink = props => {
