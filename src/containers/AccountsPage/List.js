@@ -1,18 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import ListItem from './ListItem';
+import Ul from 'components/Ul';
+import EditListItem from './EditListItem';
+import ShowListItem from './ShowListItem';
 
-
-export const StyledUl = styled.ul`
-  list-style: none;
-`;
 
 const List = () => {
   return (
-    <StyledUl>
-      <ListItem />
-    </StyledUl>
+    <Ul>
+      <EditListItem />
+      <ShowListItem />
+    </Ul>
   );
 };
 
