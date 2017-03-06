@@ -23,6 +23,8 @@ const INITIAL_STATE = [];
 //Reducer
 export function AccountListReducer(state = INITIAL_STATE, action) {
   switch(action.type) {
+    case actionTypes.GET_ACCOUNTS:
+      return Array.concat([], state, DUMMY_ACCOUNTS);
     case actionTypes.ADD_ACCOUNT:
       return Array.concat([], state, [{ ...action.payload, edit: true }]);
     default:

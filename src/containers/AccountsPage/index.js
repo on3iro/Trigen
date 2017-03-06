@@ -8,7 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { addAccount } from './ducks/actions';
+import { addAccount, fetchAccounts } from './ducks/actions';
 import { getAccounts } from './ducks/selectors';
 import Button from './Button';
 import Wrapper from './Wrapper';
@@ -18,6 +18,10 @@ import List from './List';
 export class AccountsPage extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchAccounts();
   }
 
   addItem = () => {
@@ -49,7 +53,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ addAccount }, dispatch);
+  return bindActionCreators({ addAccount, fetchAccounts }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountsPage);

@@ -10,3 +10,9 @@ export function addAccount() {
     }
   };
 }
+
+export function fetchAccounts() {
+  return {
+    type: actionTypes.GET_ACCOUNTS,
+  };
+}
