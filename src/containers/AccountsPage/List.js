@@ -14,7 +14,7 @@ const renderItems = (props) => {
       />
     );
   });
-}
+};
 
 const List = props => {
   return (
@@ -22,10 +22,10 @@ const List = props => {
       {renderItems(props)}
     </Ul>
   );
-}
+};
 
 List.propTypes = {
-  // TODO
+  accounts: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default List;

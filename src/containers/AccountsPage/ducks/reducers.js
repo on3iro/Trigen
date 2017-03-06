@@ -3,20 +3,20 @@ import * as actionTypes from './actionTypes';
 
 
 const DUMMY_ACCOUNTS =   [
-    {
-      id: 0,
-      username: 'tTester',
-      domain: 'example.com'
-    },
-    {
-      id: 1,
-      username: 'LSP',
-      domain: 'Ooo.com'
-    }
+  {
+    id: 0,
+    username: 'tTester',
+    domain: 'example.com'
+  },
+  {
+    id: 1,
+    username: 'LSP',
+    domain: 'Ooo.com'
+  }
 ];
 
 
-//Reducer
+// Reducer
 export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.GET_ACCOUNTS: {
@@ -71,6 +71,15 @@ export function EditAccountListReducer(state = {}, action) {
       delete state[index];
 
       return { ...state };
+    }
+    case actionTypes.CHANGE_ACCOUNT: {
+      const { index, target } = action.payload;
+
+      return Object.assign({}, state, {
+        [index]: Object.assign({}, state[index], {
+          [target.name]: target.value,
+        }),
+      });
     }
     default:
       return state;

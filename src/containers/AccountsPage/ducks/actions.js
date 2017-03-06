@@ -27,3 +27,10 @@ export function cancelEdit(index) {
     payload: { index }
   };
 }
+
+export function handleAccountChange(index, target) {
+  return {
+    type: actionTypes.CHANGE_ACCOUNT,
+    payload: { index, target }
+  };
+}

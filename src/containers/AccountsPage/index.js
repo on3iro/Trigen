@@ -43,14 +43,16 @@ export class AccountsPage extends Component {
 }
 
 AccountsPage.propTypes = {
-  // TODO
+  fetchAccounts: PropTypes.func,
+  addAccount: PropTypes.func,
+  accounts: PropTypes.arrayOf(PropTypes.object),
 };
 
 const mapStateToProps = (state) => {
   return {
     accounts: getAccounts(state),
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ addAccount, fetchAccounts }, dispatch);

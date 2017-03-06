@@ -6,7 +6,12 @@ import styled from 'styled-components';
 import Li from 'components/Li';
 import Input from './Input';
 import Button from './Button';
-import { editAccount, cancelEdit } from './ducks/actions';
+import {
+  editAccount,
+  cancelEdit,
+  handleAccountChange,
+} from './ducks/actions';
+import { makeGetEditedAccount } from './ducks/selectors';
 
 
 const DomainSpan = styled.span`
@@ -27,35 +32,55 @@ export class ListItem extends Component {
     this.props.cancelEdit(this.props.index);
   }
 
+  deleteItem = () => {
+    // TODO
+    console.log('Delete Item');
+  }
+
+  saveItem = () => {
+    // TODO
+    console.log('Save Item');
+  }
+
+  handleChange = (e) => {
+    this.props.handleAccountChange(this.props.index, e.target);
+  }
+
   render() {
+    let account = this.props.account;
+
+    if(account.edit) {
+      account = this.props.EditedAccount ? this.props.EditedAccount : account;
+    }
+
     return (
       <Li>
         <Input type="checkbox" name="checkbox" />
         {
-          this.props.account.edit
+          account.edit
             ? (
               <span>
                 <Input
                   type="text"
                   name="domain"
-                  value={this.props.account.domain}
-                  onChange={console.log('change')}
+                  value={account.domain}
+                  onChange={this.handleChange}
                 />
                 <Input
                   type="text"
                   name="username"
-                  value={this.props.account.username}
-                  onChange={console.log('change')}
+                  value={account.username}
+                  onChange={this.handleChange}
                 />
-                <Button onClick={console.log('change')}>Save</Button>
+                <Button onClick={this.saveItem}>Save</Button>
                 <Button warning onClick={this.cancelEdit}>Cancel</Button>
                 </span>
             ) : (
                 <span>
-                <DomainSpan>{this.props.account.domain}</DomainSpan>
-                <UserNameSpan>{this.props.account.username}</UserNameSpan>
+                <DomainSpan>{account.domain}</DomainSpan>
+                <UserNameSpan>{account.username}</UserNameSpan>
                 <Button onClick={this.editItem}>Edit</Button>
-                <Button warning onClick={console.log('change')}>Delete</Button>
+                <Button warning onClick={this.deleteItem}>Delete</Button>
               </span>
             )
         }
@@ -65,11 +90,31 @@ export class ListItem extends Component {
 }
 
 ListItem.propTypes = {
-  // TODO
+  EditedAccount: PropTypes.object,
+  account: PropTypes.object,
+  cancelEdit: PropTypes.func,
+  editAccount: PropTypes.func,
+  handleAccountChange: PropTypes.func,
+  index: PropTypes.number,
+};
+
+const makeMapStateToProps = () => {
+  const mapStateToProps = (state, ownProps) => {
+    const getEditedAccount = makeGetEditedAccount();
+    return {
+      EditedAccount: getEditedAccount(state, ownProps),
+    };
+  };
+
+  return mapStateToProps;
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ editAccount, cancelEdit }, dispatch);
+  return bindActionCreators({
+    editAccount,
+    cancelEdit,
+    handleAccountChange,
+  }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(ListItem);
+export default connect(makeMapStateToProps, mapDispatchToProps)(ListItem);
