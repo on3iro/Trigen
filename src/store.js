@@ -9,13 +9,13 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import { routerReducer } from 'react-router-redux';
 
-import AccountListReducer from 'containers/AccountsPage/ducks/reducers';
+import AccountReducer from 'containers/AccountsPage/ducks/reducers';
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const reducers = combineReducers({
   routing: routerReducer,
-  accounts: AccountListReducer,
+  accounts: AccountReducer,
 });
 let store;
 

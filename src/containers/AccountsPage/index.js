@@ -4,23 +4,42 @@
   * @namespace AccountsPage
   */
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { addAccount } from './ducks/actions';
 import { getAccounts } from './ducks/selectors';
+import Button from './Button';
 import Wrapper from './Wrapper';
 import List from './List';
 
 
-const AccountsPage = props => {
-  console.log(props.accounts);
-  return (
-    <Wrapper>
-      <List
-        accounts={props.accounts}
-      />
-    </Wrapper>
-  );
+export class AccountsPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  addItem = () => {
+    this.props.addAccount();
+
+    return undefined;
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <Button onClick={this.addItem}>Add Account</Button>
+        <List
+          accounts={this.props.accounts}
+        />
+      </Wrapper>
+    );
+  }
+}
+
+AccountsPage.propTypes = {
+  // TODO
 };
 
 const mapStateToProps = (state) => {
@@ -29,4 +48,8 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, null)(AccountsPage);
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ addAccount }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AccountsPage);

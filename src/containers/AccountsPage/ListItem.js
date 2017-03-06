@@ -16,7 +16,7 @@ const ListItem = props => {
     <Li>
       <Input type="checkbox" name="checkbox" />
       {
-        props.edit
+        props.account.edit
           ? (
             <span>
               <Input type="text" name="domain" value={props.account.domain} />
