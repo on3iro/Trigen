@@ -4,7 +4,12 @@ import * as actionTypes from './actionTypes';
 export function addAccount(index) {
   return {
     type: actionTypes.ADD_ACCOUNT,
-    payload: { index, data: { username: '', domain: '', } }
+    payload: { index, data: {
+      username: '',
+      domain: '',
+      new: true,
+      edit: true,
+    } }
   };
 }
 
@@ -17,7 +22,9 @@ export function fetchAccounts() {
 export function editAccount(index, data) {
   return {
     type: actionTypes.EDIT_ACCOUNT,
-    payload: { index, data },
+    payload: { index, data: {
+      ...data, edit: true
+    } },
   };
 }
 

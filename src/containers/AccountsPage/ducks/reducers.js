@@ -23,14 +23,12 @@ export function AccountListReducer(state = [], action) {
       return Array.concat([], state, DUMMY_ACCOUNTS);
     }
     case actionTypes.ADD_ACCOUNT: {
-      return Array.concat([], state, [{
-        ...action.payload.data, edit: true, new: true
-      }]);
+      return Array.concat([], state, [{ ...action.payload.data }]);
     }
     case actionTypes.EDIT_ACCOUNT: {
-      const { index } = action.payload;
+      const { index, data } = action.payload;
       const newArr = state.slice(0);
-      newArr[index] = { ...newArr[index], edit: true };
+      newArr[index] = data;
 
       return newArr;
     }
