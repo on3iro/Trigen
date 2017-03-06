@@ -16,26 +16,36 @@ const DUMMY_ACCOUNTS =   [
 ];
 
 
-// Initial State
-// TODO change me!
-const INITIAL_STATE = [];
-
 //Reducer
-export function AccountListReducer(state = INITIAL_STATE, action) {
+export function AccountListReducer(state = [], action) {
   switch(action.type) {
-    case actionTypes.GET_ACCOUNTS:
+    case actionTypes.GET_ACCOUNTS: {
       return Array.concat([], state, DUMMY_ACCOUNTS);
-    case actionTypes.ADD_ACCOUNT:
-      return Array.concat([], state, [{ ...action.payload, edit: true }]);
+    }
+    case actionTypes.ADD_ACCOUNT: {
+      return Array.concat([], state, [{ ...action.payload.data, edit: true }]);
+    }
+    case actionTypes.EDIT_ACCOUNT: {
+      const { index } = action.payload;
+      const newArr = state.slice(0);
+      newArr[index] = { ...newArr[index], edit: true };
+      return newArr;
+    }
     default:
       return state;
   }
 }
 
-export function EditAccountListReducer(state = [], action) {
+export function EditAccountListReducer(state = {}, action) {
   switch(action.type) {
-    case actionTypes.ADD_ACCOUNT:
-      return Array.concat([], state, [action.payload]);
+    case actionTypes.ADD_ACCOUNT: {
+      const { index, data } = action.payload;
+      return { ...state, [index]: data};
+    }
+    case actionTypes.EDIT_ACCOUNT: {
+      const { index, data } = action.payload;
+      return { ...state, [index]: data };
+    }
     default:
       return state;
   }
