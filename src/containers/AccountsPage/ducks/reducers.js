@@ -37,7 +37,7 @@ export function AccountListReducer(state = [], action) {
       const account = action.payload;
       const newArr = state.slice(0);
       const index = newArr.findIndex(val => {
-        return val.fakeID === account.fakeID
+        return val.fakeID === account.fakeID;
       });
       newArr[index] = { ...account, new: false, edit: false };
 
@@ -61,6 +61,16 @@ export function AccountListReducer(state = [], action) {
         newArr = [ ...newArr.slice(0, index), ...newArr.slice(index + 1)];
       }
 
+      return newArr;
+    }
+
+    case actionTypes.DELETE_ACCOUNT: {
+      const { fakeID } = action.payload;
+      const index = state.findIndex(val => {
+        return val.fakeID === fakeID;
+      });
+
+      const newArr = [ ...state.slice(0, index), ...state.slice(index + 1)];
       return newArr;
     }
 

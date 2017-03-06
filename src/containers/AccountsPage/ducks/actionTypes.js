@@ -4,3 +4,4 @@ export const EDIT_ACCOUNT = 'EDIT_ACCOUNT';
 export const SAVE_ACCOUNT = 'SAVE_ACCOUNT';
 export const CANCEL_EDIT = 'CANCEL_EDIT';
 export const CHANGE_ACCOUNT = 'CHANGE_ACCOUNT';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';

@@ -3,7 +3,7 @@ import shortid from 'shortid';
 import * as actionTypes from './actionTypes';
 
 // Actions
-export function addAccount(index) {
+export function addAccount() {
   return {
     type: actionTypes.ADD_ACCOUNT,
     payload: { data: {
@@ -49,12 +49,19 @@ export function saveAccount(EditedAccount) {
   return {
     type: actionTypes.SAVE_ACCOUNT,
     payload: EditedAccount,
-  }
+  };
 }
 
 export function cancelEdit(fakeID) {
   return {
     type: actionTypes.CANCEL_EDIT,
+    payload: { fakeID }
+  };
+}
+
+export function deleteAccount(fakeID) {
+  return {
+    type: actionTypes.DELETE_ACCOUNT,
     payload: { fakeID }
   };
 }

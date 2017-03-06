@@ -7,8 +7,9 @@ import Li from 'components/Li';
 import Input from './Input';
 import Button from './Button';
 import {
-  editAccount,
   cancelEdit,
+  deleteAccount,
+  editAccount,
   handleAccountChange,
   saveAccount,
 } from './ducks/actions';
@@ -34,8 +35,7 @@ export class ListItem extends Component {
   }
 
   deleteItem = () => {
-    // TODO
-    console.log('Delete Item');
+    this.props.deleteAccount(this.props.fakeID);
   }
 
   saveItem = () => {
@@ -93,9 +93,11 @@ ListItem.propTypes = {
   EditedAccount: PropTypes.object,
   account: PropTypes.object,
   cancelEdit: PropTypes.func,
+  deleteAccount: PropTypes.func,
   editAccount: PropTypes.func,
-  handleAccountChange: PropTypes.func,
   fakeID: PropTypes.string,
+  handleAccountChange: PropTypes.func,
+  saveAccount: PropTypes.func,
 };
 
 const makeMapStateToProps = () => {
@@ -111,8 +113,9 @@ const makeMapStateToProps = () => {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    editAccount,
     cancelEdit,
+    deleteAccount,
+    editAccount,
     handleAccountChange,
     saveAccount,
   }, dispatch);
