@@ -5,17 +5,28 @@
   */
 
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { getAccounts } from './ducks/selectors';
 import Wrapper from './Wrapper';
 import List from './List';
 
 
-const Accounts = () => {
+const AccountsPage = props => {
+  console.log(props.accounts);
   return (
     <Wrapper>
-      <List />
+      <List
+        accounts={props.accounts}
+      />
     </Wrapper>
   );
 };
 
-export default Accounts;
+const mapStateToProps = (state) => {
+  return {
+    accounts: getAccounts(state),
+  };
+}
+
+export default connect(mapStateToProps, null)(AccountsPage);
