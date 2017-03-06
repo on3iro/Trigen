@@ -10,6 +10,7 @@ import {
   editAccount,
   cancelEdit,
   handleAccountChange,
+  saveAccount,
 } from './ducks/actions';
 import { makeGetEditedAccount } from './ducks/selectors';
 
@@ -38,8 +39,7 @@ export class ListItem extends Component {
   }
 
   saveItem = () => {
-    // TODO
-    console.log('Save Item');
+    this.props.saveAccount(this.props.EditedAccount);
   }
 
   handleChange = (e) => {
@@ -114,6 +114,7 @@ const mapDispatchToProps = (dispatch) => {
     editAccount,
     cancelEdit,
     handleAccountChange,
+    saveAccount,
   }, dispatch);
 };
 

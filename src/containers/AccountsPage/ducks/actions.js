@@ -45,6 +45,13 @@ export function editAccount(fakeID, data) {
   };
 }
 
+export function saveAccount(EditedAccount) {
+  return {
+    type: actionTypes.SAVE_ACCOUNT,
+    payload: EditedAccount,
+  }
+}
+
 export function cancelEdit(fakeID) {
   return {
     type: actionTypes.CANCEL_EDIT,

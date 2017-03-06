@@ -33,6 +33,17 @@ export function AccountListReducer(state = [], action) {
       return newArr;
     }
 
+    case actionTypes.SAVE_ACCOUNT: {
+      const account = action.payload;
+      const newArr = state.slice(0);
+      const index = newArr.findIndex(val => {
+        return val.fakeID === account.fakeID
+      });
+      newArr[index] = { ...account, new: false, edit: false };
+
+      return newArr;
+    }
+
     case actionTypes.CANCEL_EDIT: {
       const { fakeID } = action.payload;
       let newArr = state.slice(0);
@@ -70,6 +81,13 @@ export function EditAccountListReducer(state = {}, action) {
       const { fakeID, data } = action.payload;
 
       return { ...state, [fakeID]: data };
+    }
+
+    case actionTypes.SAVE_ACCOUNT: {
+      const account = action.payload;
+      delete state[account.fakeID];
+
+      return { ...state };
     }
 
     case actionTypes.CANCEL_EDIT: {
