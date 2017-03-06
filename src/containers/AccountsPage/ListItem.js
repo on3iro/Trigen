@@ -25,11 +25,11 @@ export class ListItem extends Component {
   }
 
   editItem = () => {
-    this.props.editAccount(this.props.index, this.props.account);
+    this.props.editAccount(this.props.fakeID, this.props.account);
   }
 
   cancelEdit = () => {
-    this.props.cancelEdit(this.props.index);
+    this.props.cancelEdit(this.props.fakeID);
   }
 
   deleteItem = () => {
@@ -43,7 +43,7 @@ export class ListItem extends Component {
   }
 
   handleChange = (e) => {
-    this.props.handleAccountChange(this.props.index, e.target);
+    this.props.handleAccountChange(this.props.fakeID, e.target);
   }
 
   render() {
@@ -95,7 +95,7 @@ ListItem.propTypes = {
   cancelEdit: PropTypes.func,
   editAccount: PropTypes.func,
   handleAccountChange: PropTypes.func,
-  index: PropTypes.number,
+  fakeID: PropTypes.string,
 };
 
 const makeMapStateToProps = () => {

@@ -1,40 +1,45 @@
 import { combineReducers } from 'redux';
+import shortid from 'shortid';
+
 import * as actionTypes from './actionTypes';
-
-
-const DUMMY_ACCOUNTS =   [
-  {
-    id: 0,
-    username: 'tTester',
-    domain: 'example.com'
-  },
-  {
-    id: 1,
-    username: 'LSP',
-    domain: 'Ooo.com'
-  }
-];
 
 
 // Reducer
 export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.GET_ACCOUNTS: {
-      return Array.concat([], state, DUMMY_ACCOUNTS);
+      const accounts = action.payload.map(account => {
+        return {
+          ...account,
+          fakeID: shortid.generate()
+        };
+      });
+
+      return Array.concat([], state, accounts);
     }
+
     case actionTypes.ADD_ACCOUNT: {
       return Array.concat([], state, [{ ...action.payload.data }]);
     }
+
     case actionTypes.EDIT_ACCOUNT: {
-      const { index, data } = action.payload;
+      const { fakeID, data } = action.payload;
       const newArr = state.slice(0);
+      const index = newArr.findIndex(val => {
+        return val.fakeID === fakeID;
+      });
       newArr[index] = data;
 
       return newArr;
     }
+
     case actionTypes.CANCEL_EDIT: {
-      const { index } = action.payload;
+      const { fakeID } = action.payload;
       let newArr = state.slice(0);
+      const index = newArr.findIndex(val => {
+        return val.fakeID === fakeID;
+      });
+
       newArr[index] = { ...newArr[index], edit: false };
 
       if(
@@ -47,6 +52,7 @@ export function AccountListReducer(state = [], action) {
 
       return newArr;
     }
+
     default:
       return state;
   }
@@ -55,30 +61,34 @@ export function AccountListReducer(state = [], action) {
 export function EditAccountListReducer(state = {}, action) {
   switch(action.type) {
     case actionTypes.ADD_ACCOUNT: {
-      const { index, data } = action.payload;
+      const { data } = action.payload;
 
-      return { ...state, [index]: data};
+      return { ...state, [data.fakeID]: data};
     }
+
     case actionTypes.EDIT_ACCOUNT: {
-      const { index, data } = action.payload;
+      const { fakeID, data } = action.payload;
 
-      return { ...state, [index]: data };
+      return { ...state, [fakeID]: data };
     }
+
     case actionTypes.CANCEL_EDIT: {
-      const { index } = action.payload;
-      delete state[index];
+      const { fakeID } = action.payload;
+      delete state[fakeID];
 
       return { ...state };
     }
+
     case actionTypes.CHANGE_ACCOUNT: {
-      const { index, target } = action.payload;
+      const { fakeID, target } = action.payload;
 
       return Object.assign({}, state, {
-        [index]: Object.assign({}, state[index], {
+        [fakeID]: Object.assign({}, state[fakeID], {
           [target.name]: target.value,
         }),
       });
     }
+
     default:
       return state;
   }

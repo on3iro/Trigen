@@ -25,7 +25,7 @@ export class AccountsPage extends Component {
   }
 
   addItem = () => {
-    this.props.addAccount(this.props.accounts.length);
+    this.props.addAccount();
 
     return undefined;
   }

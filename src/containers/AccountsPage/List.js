@@ -9,7 +9,7 @@ const renderItems = (props) => {
     return (
       <ListItem
         account={account}
-        index={i}
+        fakeID={account.fakeID}
         key={i}
       />
     );

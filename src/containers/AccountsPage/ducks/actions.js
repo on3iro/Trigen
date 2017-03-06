@@ -1,43 +1,60 @@
+import shortid from 'shortid';
+
 import * as actionTypes from './actionTypes';
 
 // Actions
 export function addAccount(index) {
   return {
     type: actionTypes.ADD_ACCOUNT,
-    payload: { index, data: {
+    payload: { data: {
       username: '',
       domain: '',
       new: true,
       edit: true,
+      fakeID: shortid.generate(),
     } }
   };
 }
 
 export function fetchAccounts() {
+  const DUMMY_ACCOUNTS =   [
+    {
+      id: 0,
+      username: 'tTester',
+      domain: 'example.com'
+    },
+    {
+      id: 1,
+      username: 'LSP',
+      domain: 'Ooo.com'
+    }
+  ];
+
   return {
     type: actionTypes.GET_ACCOUNTS,
+    payload: DUMMY_ACCOUNTS
   };
 }
 
-export function editAccount(index, data) {
+export function editAccount(fakeID, data) {
   return {
     type: actionTypes.EDIT_ACCOUNT,
-    payload: { index, data: {
+    payload: { fakeID, data: {
       ...data, edit: true
     } },
   };
 }
 
-export function cancelEdit(index) {
+export function cancelEdit(fakeID) {
   return {
     type: actionTypes.CANCEL_EDIT,
-    payload: { index }
+    payload: { fakeID }
   };
 }
 
-export function handleAccountChange(index, target) {
+export function handleAccountChange(fakeID, target) {
   return {
     type: actionTypes.CHANGE_ACCOUNT,
-    payload: { index, target }
+    payload: { fakeID, target }
   };
 }
