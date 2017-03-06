@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Li from 'components/Li';
 import Input from './Input';
 import Button from './Button';
-import { editAccount } from './ducks/actions';
+import { editAccount, cancelEdit } from './ducks/actions';
 
 
 const DomainSpan = styled.span`
@@ -21,6 +21,10 @@ export class ListItem extends Component {
 
   editItem = () => {
     this.props.editAccount(this.props.index, this.props.account);
+  }
+
+  cancelEdit = () => {
+    this.props.cancelEdit(this.props.index);
   }
 
   render() {
@@ -44,7 +48,7 @@ export class ListItem extends Component {
                   onChange={console.log('change')}
                 />
                 <Button onClick={console.log('change')}>Save</Button>
-                <Button warning onClick={console.log('change')}>Cancel</Button>
+                <Button warning onClick={this.cancelEdit}>Cancel</Button>
                 </span>
             ) : (
                 <span>
@@ -65,7 +69,7 @@ ListItem.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ editAccount }, dispatch);
+  return bindActionCreators({ editAccount, cancelEdit }, dispatch);
 };
 
 export default connect(null, mapDispatchToProps)(ListItem);

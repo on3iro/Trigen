@@ -20,3 +20,10 @@ export function editAccount(index, data) {
     payload: { index, data },
   };
 }
+
+export function cancelEdit(index) {
+  return {
+    type: actionTypes.CANCEL_EDIT,
+    payload: { index }
+  };
+}

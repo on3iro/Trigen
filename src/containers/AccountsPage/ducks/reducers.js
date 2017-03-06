@@ -23,12 +23,30 @@ export function AccountListReducer(state = [], action) {
       return Array.concat([], state, DUMMY_ACCOUNTS);
     }
     case actionTypes.ADD_ACCOUNT: {
-      return Array.concat([], state, [{ ...action.payload.data, edit: true }]);
+      return Array.concat([], state, [{
+        ...action.payload.data, edit: true, new: true
+      }]);
     }
     case actionTypes.EDIT_ACCOUNT: {
       const { index } = action.payload;
       const newArr = state.slice(0);
       newArr[index] = { ...newArr[index], edit: true };
+
+      return newArr;
+    }
+    case actionTypes.CANCEL_EDIT: {
+      const { index } = action.payload;
+      let newArr = state.slice(0);
+      newArr[index] = { ...newArr[index], edit: false };
+
+      if(
+        newArr[index].new &&
+        newArr[index].username === '' &&
+        newArr[index].domain === ''
+      ) {
+        newArr = [ ...newArr.slice(0, index), ...newArr.slice(index + 1)];
+      }
+
       return newArr;
     }
     default:
@@ -40,11 +58,19 @@ export function EditAccountListReducer(state = {}, action) {
   switch(action.type) {
     case actionTypes.ADD_ACCOUNT: {
       const { index, data } = action.payload;
+
       return { ...state, [index]: data};
     }
     case actionTypes.EDIT_ACCOUNT: {
       const { index, data } = action.payload;
+
       return { ...state, [index]: data };
+    }
+    case actionTypes.CANCEL_EDIT: {
+      const { index } = action.payload;
+      delete state[index];
+
+      return { ...state };
     }
     default:
       return state;
