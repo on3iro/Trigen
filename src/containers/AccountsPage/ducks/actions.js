@@ -124,3 +124,17 @@ export function handleAccountChange(fakeID, target) {
     payload: { fakeID, target }
   };
 }
+
+/**
+  * Applies a filter to the account list so only certain accounts are shown
+  *
+  * @param {String} filter -- Filter expression to search for inside usernames and domains
+  *
+  * @return {Object} -- Action with type FILTER_ACCOUNT
+  */
+export function filterAccounts(filter) {
+  return {
+    type: actionTypes.FILTER_ACCOUNT,
+    payload: { filter }
+  };
+}
