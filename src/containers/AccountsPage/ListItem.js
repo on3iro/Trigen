@@ -16,10 +16,10 @@ import {
 import { makeGetEditedAccount } from './ducks/selectors';
 
 
-const DomainSpan = styled.span`
+export const DomainSpan = styled.span`
   margin-right: 10px;
 `;
-const UserNameSpan = styled.span``;
+export const UserNameSpan = styled.span``;
 
 export class ListItem extends Component {
   constructor(props) {
@@ -74,9 +74,9 @@ export class ListItem extends Component {
                 />
                 <Button onClick={this.saveItem}>Save</Button>
                 <Button warning onClick={this.cancelEdit}>Cancel</Button>
-                </span>
+              </span>
             ) : (
-                <span>
+              <span>
                 <DomainSpan>{account.domain}</DomainSpan>
                 <UserNameSpan>{account.username}</UserNameSpan>
                 <Button onClick={this.editItem}>Edit</Button>

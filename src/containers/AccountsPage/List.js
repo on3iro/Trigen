@@ -16,7 +16,7 @@ const renderItems = (props) => {
   });
 };
 
-const List = props => {
+export const List = props => {
   return (
     <Ul>
       {renderItems(props)}
