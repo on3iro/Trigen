@@ -14,7 +14,7 @@ export function addAccount(fakeID) {
   };
 }
 
-export function fetchAccounts() {
+export function fetchAccounts(genID) {
   const DUMMY_ACCOUNTS =   [
     {
       id: 0,
@@ -30,7 +30,7 @@ export function fetchAccounts() {
 
   return {
     type: actionTypes.GET_ACCOUNTS,
-    payload: DUMMY_ACCOUNTS
+    payload: { accounts: DUMMY_ACCOUNTS, genID }
   };
 }
 

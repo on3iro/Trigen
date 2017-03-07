@@ -22,7 +22,7 @@ export class AccountsPage extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchAccounts();
+    this.props.fetchAccounts(shortid.generate);
   }
 
   addItem = () => {

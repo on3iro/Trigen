@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import shortid from 'shortid';
 
 import * as actionTypes from './actionTypes';
 
@@ -8,14 +7,15 @@ import * as actionTypes from './actionTypes';
 export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.GET_ACCOUNTS: {
-      const accounts = action.payload.map(account => {
+      const { accounts, genID } = action.payload;
+      const accountList = accounts.map(account => {
         return {
           ...account,
-          fakeID: shortid.generate()
+          fakeID: genID(),
         };
       });
 
-      return Array.concat([], state, accounts);
+      return Array.concat([], state, accountList);
     }
 
     case actionTypes.ADD_ACCOUNT: {
@@ -28,7 +28,7 @@ export function AccountListReducer(state = [], action) {
       const index = newArr.findIndex(val => {
         return val.fakeID === fakeID;
       });
-      newArr[index] = data;
+      newArr[index] = { ...newArr[index], ...data };
 
       return newArr;
     }

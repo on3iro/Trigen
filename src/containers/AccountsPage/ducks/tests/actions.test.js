@@ -21,21 +21,24 @@ describe('actions', () => {
   it('should create an action to fetch accounts', () => {
     const expectedAction = {
       type: types.GET_ACCOUNTS,
-      payload: [
-        {
-          id: 0,
-          username: 'tTester',
-          domain: 'example.com'
-        },
-        {
-          id: 1,
-          username: 'LSP',
-          domain: 'Ooo.com'
-        }
-      ]
+      payload: {
+        accounts: [
+          {
+            id: 0,
+            username: 'tTester',
+            domain: 'example.com'
+          },
+          {
+            id: 1,
+            username: 'LSP',
+            domain: 'Ooo.com'
+          }
+        ],
+        genID: 'insert function here',
+      }
     };
 
-    expect(actions.fetchAccounts()).toEqual(expectedAction);
+    expect(actions.fetchAccounts('insert function here')).toEqual(expectedAction);
   });
 
   it('should create an action to set account to edit mode', () => {
