@@ -50,7 +50,8 @@
       "**/src/**/*.{js,jsx}",
       "!**/src/global-styles.js",
       "!**/src/index.js",
-      "!**/src/routes.js"
+      "!**/src/routes.js",
+      "!**/src/store.js"
     ],
     "coverageReporters": [
       "json",
@@ -102,11 +103,13 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "reselect": "^2.5.4",
     "sanitize.css": "^4.1.0",
+    "shortid": "^2.2.8",
     "styled-components": "^1.4.3"
   }
 }

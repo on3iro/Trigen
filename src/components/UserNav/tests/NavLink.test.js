@@ -3,7 +3,8 @@ import { mount, shallow } from 'enzyme';
 import { Link } from 'react-router';
 
 import NavLink from '../NavLink';
-import { Li, StyledLink } from '../NavLink';
+import StyledLink from 'components/StyledLink'
+import { Li } from '../NavLink';
 
 
 describe('<NavLink />', () => {
@@ -22,7 +23,7 @@ describe('<NavLink />', () => {
     expect(wrapper.find(Li).length).toBe(1);
   });
 
-  it('should rende styled(Link)', () => {
+  it('should rende <StyledLink />', () => {
     const wrapper = shallow(<NavLink to="/">Home</NavLink>);
     expect(wrapper.find(StyledLink).length).toBe(1);
   });

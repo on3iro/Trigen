@@ -9,7 +9,12 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-  margin-top: 10px;
+  clear: both;
+  min-height: 100px;
+  width: 100%;
+  margin-top: auto;
+  flex: none;
+  flex-shrink: 0;
   padding: 30px;
   background-color: #e3e3e3;
 `;
