@@ -15,7 +15,7 @@ export function AccountListReducer(state = [], action) {
         };
       });
 
-      return Array.concat([], state, accountList);
+      return Array.concat([], accountList);
     }
 
     case actionTypes.ADD_ACCOUNT: {

@@ -1,5 +1,6 @@
 /**
-  * Root reducer
+ * Application store which handles application state and connects reducers
+ * to middleware.
   *
   * @namespace Reducer
   */

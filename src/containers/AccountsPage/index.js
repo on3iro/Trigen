@@ -1,5 +1,6 @@
 /**
-  * Account-List page for a specific user
+ * Account-List page for a specific user.
+ * Initiates account fetching on access.
   *
   * @namespace AccountsPage
   */
@@ -26,6 +27,14 @@ export class AccountsPage extends Component {
   }
 
   addItem = () => {
+    /**
+     * Generates an internal fakeID for a new account and adds that
+     * account to the application state in edit mode.
+     *
+     * @method addItem
+     * @returns {undefined}
+      */
+
     const fakeID = shortid.generate();
     this.props.addAccount(fakeID);
 

@@ -1,3 +1,7 @@
+/**
+  * A simple styled li element
+  */
+
 import styled from 'styled-components';
 
 

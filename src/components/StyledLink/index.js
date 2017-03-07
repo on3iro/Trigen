@@ -1,3 +1,7 @@
+/**
+ * A simple styled react-router Link element.
+  */
+
 import { Link } from 'react-router';
 import styled from 'styled-components';
 

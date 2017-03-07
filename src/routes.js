@@ -1,5 +1,5 @@
 /**
-  * Route entry point
+  * React-router route configurations.
   *
   * @namespace Routes
   */

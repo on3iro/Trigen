@@ -1,3 +1,8 @@
+/**
+ * A single accordion entry. Should receive a handleExpand function as props
+ * which in turn is called whenever the user clicks on the entry question.
+  */
+
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
