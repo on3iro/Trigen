@@ -1,9 +1,7 @@
-import shortid from 'shortid';
-
 import * as actionTypes from './actionTypes';
 
 // Actions
-export function addAccount() {
+export function addAccount(fakeID) {
   return {
     type: actionTypes.ADD_ACCOUNT,
     payload: { data: {
@@ -11,7 +9,7 @@ export function addAccount() {
       domain: '',
       new: true,
       edit: true,
-      fakeID: shortid.generate(),
+      fakeID,
     } }
   };
 }

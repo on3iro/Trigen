@@ -7,6 +7,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import shortid from 'shortid';
 
 import { addAccount, fetchAccounts } from './ducks/actions';
 import { getAccounts } from './ducks/selectors';
@@ -25,7 +26,8 @@ export class AccountsPage extends Component {
   }
 
   addItem = () => {
-    this.props.addAccount();
+    const fakeID = shortid.generate();
+    this.props.addAccount(fakeID);
 
     return undefined;
   }

@@ -50,7 +50,8 @@
       "**/src/**/*.{js,jsx}",
       "!**/src/global-styles.js",
       "!**/src/index.js",
-      "!**/src/routes.js"
+      "!**/src/routes.js",
+      "!**/src/store.js"
     ],
     "coverageReporters": [
       "json",
