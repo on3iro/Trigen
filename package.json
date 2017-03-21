@@ -53,6 +53,8 @@
       "**/src/**/*.{js,jsx}",
       "!**/src/global-styles.js",
       "!**/src/index.js",
+      "!**/src/rootReducer.js",
+      "!**/src/rootSaga.js",
       "!**/src/routes.js",
       "!**/src/store.js"
     ],
