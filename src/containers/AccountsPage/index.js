@@ -25,7 +25,16 @@ export class AccountsPage extends Component {
 
   componentDidMount() {
     this.props.fetchAccounts(shortid.generate);
+    // window.addEventListener('beforeunload', e => {
+      // const dialogText = 'Are you sure you want to leave this page?'
+      // e.returnValue = dialogText;
+      // return dialogText;
+    // });
   }
+
+  // componentWillUnmount() {
+    // window.removeEventListener('beforeunload');
+  // }
 
   addItem = () => {
     /**
