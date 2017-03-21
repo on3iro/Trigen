@@ -7,23 +7,32 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, hashHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom';
 
 // Styles
 import 'sanitize.css/sanitize.css';
 import './global-styles';
 
-import store from './store';
-import routes from './routes';
+import configureStore from './store';
+import rootSaga from './rootSaga';
+import App from 'containers/App';
 
 
 const rootElement = document.getElementById('root');
-const history = syncHistoryWithStore(hashHistory, store);
+const initialState = {};
+const store = configureStore(initialState);
+
+// Run rootSaga
+store.runSaga(rootSaga);
 
 ReactDom.render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <Router>
+      <Route path="/" component={App} />
+    </Router>
   </Provider>,
   rootElement
 );

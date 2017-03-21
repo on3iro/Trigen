@@ -5,25 +5,35 @@
   * @namespace Reducer
   */
 
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import promise from 'redux-promise';
-import { routerReducer } from 'react-router-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import createSagaMiddleWare from 'redux-saga';
 
-import AccountReducer from 'containers/AccountsPage/ducks/reducers';
+import rootReducer from './rootReducer';
 
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const reducers = combineReducers({
-  routing: routerReducer,
-  accounts: AccountReducer,
-});
-let store;
+export default function configureStore(initialState) {
+  const sagaMiddleWare = createSagaMiddleWare();
+  const middleWares = [
+    sagaMiddleWare,
+  ];
 
-if(process.env.NODE_ENV === 'production') {
-  store = createStore(reducers, applyMiddleware(promise, thunk));
-}else {
-  store = createStore(reducers, composeEnhancers(applyMiddleware(promise, thunk)));
+  const enhancers = [
+    applyMiddleware(...middleWares)
+  ];
+
+  const composeEnhancers =
+    process.env.NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+
+  const store = createStore(
+    rootReducer,
+    initialState,
+    composeEnhancers(...enhancers),
+  );
+
+  store.runSaga = sagaMiddleWare.run;
+
+  return store;
 }
-
-export default store;
