@@ -12,14 +12,14 @@ import A from './A';
 import Wrapper from './Wrapper';
 
 
-export const Header = () => {
+export const Header = props => {
   return (
     <Wrapper>
       <A href="#">
         Logo
       </A>
       <Navigation />
-      <UserNav />
+      <UserNav {...props} />
     </Wrapper>
   );
 };
