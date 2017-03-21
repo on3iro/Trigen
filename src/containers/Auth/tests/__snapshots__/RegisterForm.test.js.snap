@@ -1,0 +1,44 @@
+exports[`<RegisterForm /> Should render <Button /> 1`] = `1`;
+
+exports[`<RegisterForm /> should render <H1> 1`] = `1`;
+
+exports[`<RegisterForm /> should render <form> 1`] = `1`;
+
+exports[`<RegisterForm /> should render Fields 1`] = `4`;
+
+exports[`validate() should throw "Invald email address" 1`] = `
+Object {
+  "email": "Invalid email address",
+}
+`;
+
+exports[`validate() should throw "Passwords do not match" 1`] = `
+Object {
+  "confirm": "Passwords do not match",
+}
+`;
+
+exports[`validate() should throw "Required" on confirm 1`] = `
+Object {
+  "confirm": "Required",
+}
+`;
+
+exports[`validate() should throw "Required" on empty email 1`] = `
+Object {
+  "email": "Required",
+}
+`;
+
+exports[`validate() should throw "Required" on empty name 1`] = `
+Object {
+  "name": "Required",
+}
+`;
+
+exports[`validate() should throw "Required" on password 1`] = `
+Object {
+  "confirm": "Passwords do not match",
+  "password": "Required",
+}
+`;

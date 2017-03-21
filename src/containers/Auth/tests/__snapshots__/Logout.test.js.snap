@@ -1,0 +1,3 @@
+exports[`<Logout /> should render <Redirect /> if user is not logged in 1`] = `1`;
+
+exports[`<Logout /> should return null if user is logged in 1`] = `null`;

@@ -15,7 +15,7 @@ export function AccountListReducer(state = [], action) {
         };
       });
 
-      return Array.concat([], state, accountList);
+      return Array.concat([], accountList);
     }
 
     case actionTypes.ADD_ACCOUNT: {
@@ -122,9 +122,23 @@ export function EditAccountListReducer(state = {}, action) {
   }
 }
 
+export function AccountFilterReducer( state = '', action) {
+  switch(action.type) {
+    case actionTypes.FILTER_ACCOUNT: {
+      const { filter } = action.payload;
+      return filter;
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
 const AccountReducer = combineReducers({
   Accounts: AccountListReducer,
   EditedAccounts: EditAccountListReducer,
+  AccountFilter: AccountFilterReducer,
 });
 
 export default AccountReducer;

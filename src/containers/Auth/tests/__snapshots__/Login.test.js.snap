@@ -1,0 +1,5 @@
+exports[`<Login /> should render <LoginForm /> 1`] = `1`;
+
+exports[`<Login /> should render <StyledLink /> 1`] = `1`;
+
+exports[`<Login /> should render <Wrapper /> 1`] = `1`;

@@ -20,10 +20,14 @@ export const Li = styled.li`
   }
 `;
 
+export const RestyledLink = styled(StyledLink)`
+  color: #fff;
+`;
+
 const NavLink = props => {
   return (
     <Li>
-      <StyledLink to={props.to}>{props.children}</StyledLink>
+      <RestyledLink to={props.to}>{props.children}</RestyledLink>
     </Li>
   );
 };

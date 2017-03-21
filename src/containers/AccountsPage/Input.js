@@ -1,3 +1,7 @@
+/**
+  * A simple restyled Input component
+  */
+
 import styled from 'styled-components';
 
 import Input from 'components/Input';

@@ -1,3 +1,9 @@
+/**
+  * A ListItem component which is connected to the application store.
+  * Can be edited, canceld, saved and deleted and also has a changeHandler attached
+  * to the respective input fields.
+  */
+
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

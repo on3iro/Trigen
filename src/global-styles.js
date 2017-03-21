@@ -1,3 +1,8 @@
+/**
+ * These are globally applied css styles. Use those sparingly
+ * and only when absolutely necessary. Usually component styles will do.
+  */
+
 import  { injectGlobal } from 'styled-components';
 
 

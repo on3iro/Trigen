@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '../index';
+import { App } from '../index';
 import Content from '../Content';
 import Wrapper from '../Wrapper';
 import Header from 'components/Header';

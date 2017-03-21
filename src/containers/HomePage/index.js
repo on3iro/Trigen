@@ -6,17 +6,13 @@
 
 import React from 'react';
 
-import LoginForm from './LoginForm';
 import Wrapper from './Wrapper';
-import Button from 'components/Button';
-import StyledLink from 'components/StyledLink';
 
 
 const Home = () => {
   return (
     <Wrapper>
-      <LoginForm />
-      <Button><StyledLink to="/register">Register</StyledLink></Button>
+      <h1>Home page...</h1>
     </Wrapper>
   );
 };

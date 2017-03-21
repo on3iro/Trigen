@@ -1,3 +1,8 @@
+/**
+ * Accordion which consists of multiple entries that can be expanded via a
+ * toggle function.
+  */
+
 import React, { Component, PropTypes } from 'react';
 
 import Entry from './Entry';
@@ -5,10 +10,6 @@ import Wrapper from './Wrapper';
 
 
 class Accordion extends Component {
-  propTypes = {
-    entries: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }
-
   constructor(props) {
     super(props);
 
@@ -25,6 +26,15 @@ class Accordion extends Component {
   }
 
   toggleEntry = (id) => {
+    /**
+     * Sets the active state of a specific accordion entry to true and every
+     * other entry.active to false.
+     *
+     * @method toggleEntry
+     * @param {Number} id -- Reference to the specific entry inside the state
+     * @return {undefined}
+      */
+
     this.setState({
       entries: [...this.state.entries.slice(0)].map(entry => {
         return Object.assign(entry, {
@@ -32,6 +42,8 @@ class Accordion extends Component {
         });
       })
     });
+
+    return undefined;
   }
 
   renderEntries = () => {
@@ -57,6 +69,10 @@ class Accordion extends Component {
     );
   }
 }
+
+Accordion.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 
 export default Accordion;

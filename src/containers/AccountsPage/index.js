@@ -1,5 +1,6 @@
 /**
-  * Account-List page for a specific user
+ * Account-List page for a specific user.
+ * Initiates account fetching on access.
   *
   * @namespace AccountsPage
   */
@@ -9,8 +10,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
 
-import { addAccount, fetchAccounts } from './ducks/actions';
-import { getAccounts } from './ducks/selectors';
+import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
+import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
+import FilterInput from './FilterInput';
 import Button from './Button';
 import Wrapper from './Wrapper';
 import List from './List';
@@ -23,11 +25,34 @@ export class AccountsPage extends Component {
 
   componentDidMount() {
     this.props.fetchAccounts(shortid.generate);
+    // window.addEventListener('beforeunload', e => {
+      // const dialogText = 'Are you sure you want to leave this page?'
+      // e.returnValue = dialogText;
+      // return dialogText;
+    // });
   }
 
+  // componentWillUnmount() {
+    // window.removeEventListener('beforeunload');
+  // }
+
   addItem = () => {
+    /**
+     * Generates an internal fakeID for a new account and adds that
+     * account to the application state in edit mode.
+     *
+     * @method addItem
+     * @returns {undefined}
+      */
+
     const fakeID = shortid.generate();
     this.props.addAccount(fakeID);
+
+    return undefined;
+  }
+
+  handleFilterChange = e => {
+    this.props.filterAccounts(e.target.value);
 
     return undefined;
   }
@@ -35,6 +60,13 @@ export class AccountsPage extends Component {
   render() {
     return (
       <Wrapper>
+        <FilterInput
+          type="text"
+          name="accountFilter"
+          placeholder="Filter Accounts"
+          onChange={this.handleFilterChange}
+          value={this.props.accountFilter}
+        />
         <Button onClick={this.addItem}>Add Account</Button>
         <List
           accounts={this.props.accounts}
@@ -51,13 +83,20 @@ AccountsPage.propTypes = {
 };
 
 const mapStateToProps = (state) => {
+  const getFilteredAccounts = makeGetFilteredAccounts();
+
   return {
-    accounts: getAccounts(state),
+    accounts: getFilteredAccounts(state),
+    accountFilter: getAccountFilter(state),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ addAccount, fetchAccounts }, dispatch);
+  return bindActionCreators({
+    addAccount,
+    fetchAccounts,
+    filterAccounts,
+  }, dispatch);
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountsPage);

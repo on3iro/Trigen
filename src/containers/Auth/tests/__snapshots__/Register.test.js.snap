@@ -1,0 +1,5 @@
+exports[`<Register /> should render <Redirect /> if user is logged in 1`] = `1`;
+
+exports[`<Register /> should render <RegisterForm /> 1`] = `1`;
+
+exports[`<Register /> should render <Wrapper /> 1`] = `1`;

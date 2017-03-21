@@ -3,26 +3,46 @@
   * @namespace UserNav
   */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import NavBar from './NavBar';
 import NavLink from './NavLink';
 
 
-const UserNav = () => {
+const UserNav = props => {
   return (
     <NavBar>
-      <NavLink to="/" >
-        Login
-      </NavLink>
-      <NavLink to="/register" >
-        Register
-      </NavLink>
-      <NavLink to="/profile" >
-        Profile
-      </NavLink>
+      {
+        props.isLoggedIn
+          ? (
+            <div>
+              <NavLink to="/profile" >
+                Profile
+              </NavLink>
+              <NavLink to="/accounts">
+                Accounts
+              </NavLink>
+              <NavLink to="/logout" >
+                Logout
+              </NavLink>
+            </div>
+          ) : (
+            <div>
+              <NavLink to="/login" >
+                Login
+              </NavLink>
+              <NavLink to="/register" >
+                Register
+              </NavLink>
+            </div>
+          )
+      }
     </NavBar>
   );
+};
+
+UserNav.propTypes = {
+  isLoggedIn: PropTypes.bool,
 };
 
 export default UserNav;

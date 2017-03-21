@@ -1,3 +1,7 @@
+/**
+  * A simple styled ul element
+  */
+
 import styled from 'styled-components';
 
 const Ul = styled.ul`

@@ -1,0 +1,3 @@
+exports[`<Footer /> Should render <Wrapper /> 1`] = `1`;
+
+exports[`<Footer /> Should render react-router Link 1`] = `true`;

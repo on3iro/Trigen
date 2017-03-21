@@ -1,3 +1,7 @@
+/**
+  * A restyled Button component
+  */
+
 import styled from 'styled-components';
 
 import Button from 'components/Button';
