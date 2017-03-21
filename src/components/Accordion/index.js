@@ -10,10 +10,6 @@ import Wrapper from './Wrapper';
 
 
 class Accordion extends Component {
-  propTypes = {
-    entries: PropTypes.arrayOf(PropTypes.object).isRequired,
-  }
-
   constructor(props) {
     super(props);
 
@@ -73,6 +69,10 @@ class Accordion extends Component {
     );
   }
 }
+
+Accordion.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 
 export default Accordion;

@@ -15,10 +15,15 @@ import Footer from 'components/Footer';
 import Wrapper from './Wrapper';
 import Content from './Content';
 
+import AGBPage from 'containers/AGBPage';
+import AccountsPage from 'containers/AccountsPage';
+import Auth from 'containers/Auth';
+import FAQPage from 'containers/FAQPage';
 import HomePage from 'containers/HomePage';
 import Impressum from 'containers/ImpressumPage';
-import Auth from 'containers/Auth';
 import Logout from 'containers/Auth/Logout';
+import PasswordPage from 'containers/PasswordPage';
+import PricingPage from 'containers/PricingPage';
 import Register from 'containers/Auth/Register';
 import UserProfile from 'containers/Auth/UserProfile';
 
@@ -44,6 +49,11 @@ export class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/impressum" component={Impressum} />
+            <Route path="/agb" component={AGBPage} />
+            <Route path="/faq" component={FAQPage} />
+            <Route path="/pricing" component={PricingPage} />
+            <ProtectedRoute path="/passwords" component={PasswordPage} />
+            <ProtectedRoute path="/accounts" component={AccountsPage} />
             <ProtectedRoute path="/profile" component={UserProfile} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Auth} />

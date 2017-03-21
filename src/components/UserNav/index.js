@@ -19,6 +19,9 @@ const UserNav = props => {
               <NavLink to="/profile" >
                 Profile
               </NavLink>
+              <NavLink to="/accounts">
+                Accounts
+              </NavLink>
               <NavLink to="/logout" >
                 Logout
               </NavLink>
