@@ -38,7 +38,7 @@ class Accordion extends Component {
     this.setState({
       entries: [...this.state.entries.slice(0)].map(entry => {
         return Object.assign(entry, {
-          active: entry.id === id ? true : false,
+          active: (entry.id === id && entry.active === false) ? true : false,
         });
       })
     });
