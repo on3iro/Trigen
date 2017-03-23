@@ -13,33 +13,31 @@ import NavLink from './NavLink';
 const UserNav = props => {
   return (
     <Wrapper>
-      <NavBar>
-        {
-          props.isLoggedIn
-            ? (
-              <div>
-                <NavLink to="/profile" >
-                  Profile
-                </NavLink>
-                <NavLink to="/accounts">
-                  Accounts
-                </NavLink>
-                <NavLink to="/logout" >
-                  Logout
-                </NavLink>
-                </div>
-            ) : (
-                <div>
-                <NavLink to="/login" >
-                  Login
-                </NavLink>
-                <NavLink to="/register" >
-                  Register
-                </NavLink>
-                </div>
-            )
-        }
-      </NavBar>
+      {
+        props.isLoggedIn
+          ? (
+            <NavBar>
+              <NavLink to="/profile" >
+                Profile
+              </NavLink>
+              <NavLink to="/accounts">
+                Accounts
+              </NavLink>
+              <NavLink to="/logout" >
+                Logout
+              </NavLink>
+            </NavBar>
+          ) : (
+            <NavBar>
+              <NavLink to="/login" >
+                Login
+              </NavLink>
+              <NavLink to="/register" >
+                Register
+              </NavLink>
+            </NavBar>
+          )
+      }
     </Wrapper>
   );
 };

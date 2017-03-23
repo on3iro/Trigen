@@ -12,9 +12,6 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
-  float: left;
-  display: inline;
-
   &:hover {
     background-color: #666;
   }
