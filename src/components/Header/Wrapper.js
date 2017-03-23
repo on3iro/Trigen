@@ -8,7 +8,7 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   margin-bottom: 10px;
   height: 40px;
   width: 100%;

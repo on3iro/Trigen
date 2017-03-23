@@ -5,8 +5,8 @@ import Content from '../Content';
 
 
 describe('<Content />', () => {
-  it('Should render div', () => {
+  it('Should render main', () => {
     const wrapper = shallow(<Content />);
-    expect(wrapper.find('div').length).toEqual(1);
+    expect(wrapper.find('main').length).toMatchSnapshot();
   });
 });

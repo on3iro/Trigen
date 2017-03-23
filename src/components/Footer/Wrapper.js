@@ -8,7 +8,7 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   clear: both;
   min-height: 100px;
   width: 100%;

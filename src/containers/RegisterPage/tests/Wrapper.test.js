@@ -5,9 +5,9 @@ import Wrapper from '../Wrapper';
 
 
 describe('<Wrapper />', () => {
-  it('should render div', () => {
+  it('should render section', () => {
     const wrapper = shallow(<Wrapper />);
-    expect(wrapper.type()).toEqual('div');
+    expect(wrapper.type()).toMatchSnapshot();
   });
 
   it('should have a className attribute', () => {

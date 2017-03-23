@@ -5,39 +5,42 @@
 
 import React, { PropTypes } from 'react';
 
+import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 import NavLink from './NavLink';
 
 
 const UserNav = props => {
   return (
-    <NavBar>
-      {
-        props.isLoggedIn
-          ? (
-            <div>
-              <NavLink to="/profile" >
-                Profile
-              </NavLink>
-              <NavLink to="/accounts">
-                Accounts
-              </NavLink>
-              <NavLink to="/logout" >
-                Logout
-              </NavLink>
-            </div>
-          ) : (
-            <div>
-              <NavLink to="/login" >
-                Login
-              </NavLink>
-              <NavLink to="/register" >
-                Register
-              </NavLink>
-            </div>
-          )
-      }
-    </NavBar>
+    <Wrapper>
+      <NavBar>
+        {
+          props.isLoggedIn
+            ? (
+              <div>
+                <NavLink to="/profile" >
+                  Profile
+                </NavLink>
+                <NavLink to="/accounts">
+                  Accounts
+                </NavLink>
+                <NavLink to="/logout" >
+                  Logout
+                </NavLink>
+                </div>
+            ) : (
+                <div>
+                <NavLink to="/login" >
+                  Login
+                </NavLink>
+                <NavLink to="/register" >
+                  Register
+                </NavLink>
+                </div>
+            )
+        }
+      </NavBar>
+    </Wrapper>
   );
 };
 

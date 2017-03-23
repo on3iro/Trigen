@@ -5,8 +5,8 @@ import Wrapper from '../Wrapper';
 
 
 describe('<Wrapper />', () => {
-  it('should render div', () => {
+  it('should render section', () => {
     const wrapper = shallow(<Wrapper />);
-    expect(wrapper.find('div').exists()).toEqual(true);
+    expect(wrapper.find('section').exists()).toMatchSnapshot();
   });
 });

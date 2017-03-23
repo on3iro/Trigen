@@ -8,7 +8,7 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   margin: 0 auto;
   width: 50%;
 `;
