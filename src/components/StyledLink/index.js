@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
   margin: 5px;
   width: 100px;
   text-decoration: none;
-  color: #fff;
+  color: ${props => props.secondary ? '#888' : '#fff'};
   cursor: pointer;
   outline: 0;
 `;

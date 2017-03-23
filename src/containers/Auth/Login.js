@@ -10,10 +10,6 @@ import StyledLink from 'components/StyledLink';
 import { loginSubmit } from './ducks/actions';
 
 
-const RestyledLink = styled(StyledLink)`
-  color: #888;
-`;
-
 export class Login extends Component {
   handleSubmit = values => {
     this.props.loginSubmit(values);
@@ -23,7 +19,7 @@ export class Login extends Component {
     return (
       <Wrapper>
         <LoginForm onSubmit={this.handleSubmit} />
-        <RestyledLink to="/register">Register</RestyledLink>
+        <StyledLink to="/register" secondary>Register</StyledLink>
       </Wrapper>
     );
   }

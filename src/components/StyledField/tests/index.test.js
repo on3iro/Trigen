@@ -7,7 +7,10 @@ import StyledField from '../index';
 
 describe('<StyledField />', () => {
   it('should render redux-form Field', () => {
-    const renderedWrapper = shallow(<StyledField />);
+    const renderedWrapper = shallow(<StyledField
+      name="test"
+      component={() => <h1>Hi</h1>}
+    />);
     expect(renderedWrapper.find(Field).length).toMatchSnapshot();
   });
 });

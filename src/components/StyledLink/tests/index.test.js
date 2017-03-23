@@ -7,7 +7,7 @@ import StyledLink from '../index';
 
 describe('<StyledLink />', () => {
   it('should render <Link />', () => {
-    const wrapper = shallow(<StyledLink />);
+    const wrapper = shallow(<StyledLink to="/" />);
     expect(wrapper.find(Link).length).toBe(1);
   });
 });
