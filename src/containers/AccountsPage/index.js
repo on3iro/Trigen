@@ -25,16 +25,7 @@ export class AccountsPage extends Component {
 
   componentDidMount() {
     this.props.fetchAccounts(shortid.generate);
-    // window.addEventListener('beforeunload', e => {
-      // const dialogText = 'Are you sure you want to leave this page?'
-      // e.returnValue = dialogText;
-      // return dialogText;
-    // });
   }
-
-  // componentWillUnmount() {
-    // window.removeEventListener('beforeunload');
-  // }
 
   addItem = () => {
     /**
@@ -77,9 +68,11 @@ export class AccountsPage extends Component {
 }
 
 AccountsPage.propTypes = {
-  fetchAccounts: PropTypes.func,
-  addAccount: PropTypes.func,
+  accountFilter: PropTypes.string,
   accounts: PropTypes.arrayOf(PropTypes.object),
+  addAccount: PropTypes.func,
+  fetchAccounts: PropTypes.func,
+  filterAccounts: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {

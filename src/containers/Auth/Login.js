@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 
 import LoginForm from './LoginForm';
 import Wrapper from './Wrapper';
