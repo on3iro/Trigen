@@ -13,7 +13,7 @@ const Wrapper = styled.header`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
-  height: 40px;
+  min-height: 40px;
   width: 100%;
   background-color: #333;
   color: #fff;
