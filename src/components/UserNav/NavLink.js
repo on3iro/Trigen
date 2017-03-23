@@ -18,6 +18,10 @@ export const Li = styled.li`
 `;
 
 export const RestyledLink = styled(StyledLink)`
+  margin: 0;
+  height: 100%;
+  padding: 8px 0;
+
   color: #fff;
 `;
 
