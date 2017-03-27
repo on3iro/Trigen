@@ -12,6 +12,13 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 0 50px;
+  text-align: center;
+
   &:hover {
     background-color: #666;
   }
@@ -19,10 +26,11 @@ export const Li = styled.li`
 
 export const RestyledLink = styled(StyledLink)`
   margin: 0;
-  height: 100%;
-  padding: 8px 0;
+  width: 100%;
 
-  color: #fff;
+  color: #fcfcfa;
+  font-size: 28px;
+  font-family: Calibri, Helvetica, sans-serif;
 `;
 
 const NavLink = props => {

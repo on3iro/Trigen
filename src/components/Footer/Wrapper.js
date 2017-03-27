@@ -16,7 +16,7 @@ const Wrapper = styled.footer`
   flex: none;
   flex-shrink: 0;
   padding: 30px;
-  background-color: #e3e3e3;
+  background-color: #878f93;
 `;
 
 export default Wrapper;

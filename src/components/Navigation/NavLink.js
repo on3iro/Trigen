@@ -29,7 +29,7 @@ export const RestyledLink = styled(StyledLink)`
   margin: 0;
   width: 100%;
 
-  color: #fff;
+  color: #fcfcfa;
   font-size: 28px;
   font-family: Calibri, Helvetica, sans-serif;
 `;
