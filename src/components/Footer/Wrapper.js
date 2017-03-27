@@ -9,13 +9,13 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.footer`
-  clear: both;
-  min-height: 100px;
-  width: 100%;
-  margin-top: auto;
   flex: none;
   flex-shrink: 0;
+  min-height: 100px;
+  width: 100%;
+  margin-top: 50px;
   padding: 30px;
+
   background-color: #878f93;
 `;
 
