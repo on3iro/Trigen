@@ -7,6 +7,8 @@ export const colors = {
   doveGray: '#666666',
   nobel: '#bbb4b3',
   mineShaft: '#333333',
+  mercury: '#e3e3e3',
+  gray: '#888888',
 };
 
 export default {
@@ -17,4 +19,7 @@ export default {
   noneWhite: colors.pampas,
   headerHover: colors.doveGray,
   outlines: colors.nobel,
+  text: colors.mineShaft,
+  border: colors.mercury,
+  simple: colors.gray,
 };

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import ConnectedAccountsPage, { AccountsPage } from '../index';
 import Wrapper from '../Wrapper';
-import Button from '../Button';
+import AddButton from '../AddButton';
 import List from '../List';
 
 
@@ -35,9 +35,9 @@ describe('<AccountsPage />', () => {
     expect(enzymeWrapper.find(Wrapper).length).toBe(1);
   });
 
-  it('should render <Button />', () => {
+  it('should render <AddButton />', () => {
     const { enzymeWrapper } = setUp();
-    expect(enzymeWrapper.find(Button).length).toBe(1);
+    expect(enzymeWrapper.find(AddButton).length).toBe(1);
   });
 
   it('should render <List />', () => {
@@ -45,9 +45,9 @@ describe('<AccountsPage />', () => {
     expect(enzymeWrapper.find(List).length).toBe(1);
   });
 
-  it('should handle addAccount() onClick on <Button />', () => {
+  it('should handle addAccount() onClick on <AddButton />', () => {
     const { enzymeWrapper, props } = setUp();
-    const button = enzymeWrapper.find(Button).first();
+    const button = enzymeWrapper.find(AddButton).first();
     button.props().onClick();
 
     expect(props.addAccount.mock.calls.length).toBe(1);

@@ -8,7 +8,7 @@ import ConnectedListItem, {
 } from '../ListItem';
 import Li from 'components/Li';
 import Input from '../Input';
-import Button from '../Button';
+import ItemButton from '../ItemButton';
 
 
 function setUp() {
@@ -81,16 +81,16 @@ describe('<ListItem />', () => {
     expect(enzymeWrapper.find(UserNameSpan).length).toBe(1);
   });
 
-  it('should render edit <Button />', () => {
+  it('should render edit <ItemButton />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Button).findWhere(b => b.text() === 'Edit').length).toBe(1);
+    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.text() === 'Edit').length).toBe(1);
   });
 
-  it('should render Delete <Button />', () => {
+  it('should render Delete <ItemButton />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Button).findWhere(b => b.text() === 'Delete').length).toBe(1);
+    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.text() === 'Delete').length).toBe(1);
   });
 
   it('should render three <Input /> in edit mode', () => {
@@ -100,7 +100,7 @@ describe('<ListItem />', () => {
 
   it('should call editItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const editButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Edit').first();
+    const editButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Edit').first();
     editButton.simulate('click');
 
     expect(props.editAccount.mock.calls.length).toBe(1);
@@ -108,7 +108,7 @@ describe('<ListItem />', () => {
 
   it('should call deleteItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const deleteButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Delete').first();
+    const deleteButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Delete').first();
     deleteButton.simulate('click');
 
     expect(props.deleteAccount.mock.calls.length).toBe(1);
@@ -116,7 +116,7 @@ describe('<ListItem />', () => {
 
   it('should call saveItem', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Save').first();
+    const saveButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Save').first();
 
     saveButton.simulate('click');
 
@@ -125,7 +125,7 @@ describe('<ListItem />', () => {
 
   it('should call cancelEdit', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Cancel').first();
+    const saveButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Cancel').first();
 
     saveButton.simulate('click');
 
