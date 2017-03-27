@@ -8,7 +8,7 @@ import React from 'react';
 
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
-import NavLink from './NavLink';
+import NavLink from 'components/NavLink';
 
 const Navigation = () => {
   return (

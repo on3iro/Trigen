@@ -1,9 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import NavLink from '../NavLink';
-import { RestyledLink } from '../NavLink'
-import { Li } from '../NavLink';
+import NavLink, { Li, RestyledLink } from '../index';
 
 
 describe('<NavLink />', () => {

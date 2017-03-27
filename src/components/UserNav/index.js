@@ -7,7 +7,7 @@ import React, { PropTypes } from 'react';
 
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
-import NavLink from './NavLink';
+import NavLink from 'components/NavLink';
 
 
 const UserNav = props => {

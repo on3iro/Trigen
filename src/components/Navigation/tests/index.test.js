@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import Navigation from '../index';
 import NavBar from '../NavBar';
-import NavLink from '../NavLink';
+import NavLink from 'components/NavLink';
 
 
 describe('<Navigation />', () => {
