@@ -13,9 +13,9 @@ const Wrapper = styled.header`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
-  min-height: 40px;
+  min-height: 70px;
   width: 100%;
-  background-color: #333;
+  background-color: #878f93;
   color: #fff;
 `;
 

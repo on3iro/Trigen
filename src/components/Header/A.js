@@ -11,9 +11,7 @@ import NormalA from 'components/A';
 
 
 const A = styled(NormalA)`
-  float: left;
-  display: inline-block;
-  margin-left: 10px;
+  margin-left: 50px;
 `;
 
 export default A;
