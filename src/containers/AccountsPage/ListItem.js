@@ -11,7 +11,7 @@ import styled from 'styled-components';
 
 import Li from 'components/Li';
 import Input from './Input';
-import Button from './Button';
+import ItemButton from './ItemButton';
 import {
   cancelEdit,
   deleteAccount,
@@ -78,15 +78,15 @@ export class ListItem extends Component {
                   value={account.username}
                   onChange={this.handleChange}
                 />
-                <Button onClick={this.saveItem}>Save</Button>
-                <Button warning onClick={this.cancelEdit}>Cancel</Button>
+                <ItemButton onClick={this.saveItem}>Save</ItemButton>
+                <ItemButton warning onClick={this.cancelEdit}>Cancel</ItemButton>
               </span>
             ) : (
               <span>
                 <DomainSpan>{account.domain}</DomainSpan>
                 <UserNameSpan>{account.username}</UserNameSpan>
-                <Button onClick={this.editItem}>Edit</Button>
-                <Button warning onClick={this.deleteItem}>Delete</Button>
+                <ItemButton onClick={this.editItem}>Edit</ItemButton>
+                <ItemButton warning onClick={this.deleteItem}>Delete</ItemButton>
               </span>
             )
         }

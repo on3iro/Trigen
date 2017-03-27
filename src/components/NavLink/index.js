@@ -16,7 +16,7 @@ export const Li = styled.li`
   justify-content: center;
   flex-direction: column;
 
-  padding: 0 50px;
+  width: 100%;
   text-align: center;
 
   &:hover {
@@ -29,7 +29,7 @@ export const RestyledLink = styled(StyledLink)`
   width: 100%;
 
   color: #fcfcfa;
-  font-size: 26px;
+  font-size: 24px;
   font-family: Calibri, Helvetica, sans-serif;
 `;
 

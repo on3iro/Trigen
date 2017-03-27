@@ -7,7 +7,10 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 
 
-export default styled(Button)`
-  display: inline-block;
-  margin: 5px;
+const AddButton = styled(Button)`
+  width: 20px;
+  height: 20px;
+  line-height: 16px;
 `;
+
+export default AddButton;

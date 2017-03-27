@@ -13,7 +13,7 @@ import shortid from 'shortid';
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
 import FilterInput from './FilterInput';
-import Button from './Button';
+import AddButton from './AddButton';
 import Wrapper from './Wrapper';
 import List from './List';
 
@@ -61,7 +61,7 @@ export class AccountsPage extends Component {
         <List
           accounts={this.props.accounts}
         />
-        <Button onClick={this.addItem}>+</Button>
+        <AddButton onClick={this.addItem}>+</AddButton>
       </Wrapper>
     );
   }
