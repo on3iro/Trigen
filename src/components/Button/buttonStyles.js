@@ -14,8 +14,8 @@ const buttonStyles = css`
   padding: 0 5px;
 
   text-decoration: none;
-  background-color: ${props => props.warning ? '#bc3b2a' : '#7e9b24'};
-  color: #fff;
+  background-color: ${props => props.warning ? props.theme.secondary : props.theme.primary};
+  color: ${props => props.theme.noneWhite};
   outline: 0;
   border-radius: 1px;
   font-weight: bold;

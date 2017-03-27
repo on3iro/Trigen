@@ -11,7 +11,7 @@ const H1 = styled.h1`
   font-size: 2em;
   margin-bottom: 0.25em;
 
-  color: #e2472d;
+  color: ${props => props.theme.main};
 `;
 
 export default H1;

@@ -15,6 +15,8 @@ const A = styled(NormalA)`
   flex-direction: column;
   justify-content: center;
   margin-left: 50px;
+
+  outline: 0;
 `;
 
 export default A;

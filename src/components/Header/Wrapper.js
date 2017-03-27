@@ -14,12 +14,11 @@ const Wrapper = styled.header`
   justify-content: space-between;
 
   margin-bottom: 30px;
-  height: 100%;
-  min-height: 50px;
-  max-height: 70px;
+  min-height: 70px;
+  height: 70px;
   width: 100%;
-  background-color: #878f93;
-  color: #fff;
+  background-color: ${props => props.theme.mainBG};
+  color: ${props => props.theme.noneWhite};
 `;
 
 export default Wrapper;

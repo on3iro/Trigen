@@ -12,23 +12,24 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
   width: 100%;
+  height: 100%;
+
   text-align: center;
 
   &:hover {
-    background-color: #666;
+  background-color: ${props => props.theme.headerHover};
   }
 `;
 
 export const RestyledLink = styled(StyledLink)`
+  display: block;
   margin: 0;
+  padding: 20px;
   width: 100%;
+  height: 100%;
 
-  color: #fcfcfa;
+  color: ${props => props.theme.noneWhite};
   font-size: 24px;
   font-family: Calibri, Helvetica, sans-serif;
 `;

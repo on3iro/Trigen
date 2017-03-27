@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const A = styled.a`
   display: inline;
-  color: #fff;
+  color: ${props => props.theme.noneWhite};
   text-decoration: none;
 `;
 

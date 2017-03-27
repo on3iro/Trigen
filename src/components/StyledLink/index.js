@@ -18,9 +18,13 @@ const StyledLink = styled(LinkWrapper)`
   margin: 5px;
   width: 100px;
   text-decoration: none;
-  color: ${props => props.secondary ? '#888' : '#fff'};
+  color: ${props => props.secondary ? props.theme.simple : props.theme.noneWhite};
   cursor: pointer;
   outline: 0;
+
+  &:visited {
+    color: ${props => props.secondary ? props.theme.simple : props.theme.noneWhite};
+  }
 `;
 
 export default StyledLink;

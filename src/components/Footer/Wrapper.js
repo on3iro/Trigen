@@ -16,7 +16,7 @@ const Wrapper = styled.footer`
   margin-top: 50px;
   padding: 30px;
 
-  background-color: #878f93;
+  background-color: ${props => props.theme.mainBG};
 `;
 
 export default Wrapper;

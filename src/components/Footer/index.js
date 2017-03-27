@@ -6,15 +6,15 @@
 
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import FooterLink from './FooterLink';
 import Wrapper from './Wrapper';
 
 
 const Footer = () => {
   return (
     <Wrapper>
-      <Link to="/impressum">Impressum</Link>
-      <Link to="/agb">AGB</Link>
+      <FooterLink to="/impressum">Impressum</FooterLink>
+      <FooterLink to="/agb">AGB</FooterLink>
     </Wrapper>
   );
 };

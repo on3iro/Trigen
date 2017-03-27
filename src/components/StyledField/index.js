@@ -6,9 +6,9 @@ const StyledField = styled(Field)`
   display: block;
   margin: 0 0 10px 0;
   padding: 5px 10px;
-  border: 1px solid #e3e3e3;
+  border: 1px solid ${props => props.theme.mercury};
   border-radius: 4px;
-  color: #333;
+  color:${props => props.theme.text};
   outline: 0;
 `;
 
