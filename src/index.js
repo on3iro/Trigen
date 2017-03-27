@@ -7,10 +7,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 
 // Styles
@@ -33,9 +29,7 @@ const render = Component => {
   return ReactDom.render(
     <AppContainer>
       <Provider store={store}>
-        <Router>
-          <Route path="/" component={Component} />
-        </Router>
+        <Component />
       </Provider>
     </AppContainer>,
     rootElement
