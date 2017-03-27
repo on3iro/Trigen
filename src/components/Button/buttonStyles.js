@@ -11,11 +11,10 @@ import { css } from 'styled-components';
 const buttonStyles = css`
   display: inline-block;
   text-decoration: none;
-  padding: 5px 10px;
-  background-color: ${props => props.warning ? 'red' : '#27a70b'};
+  background-color: ${props => props.warning ? '#bc3b2a' : '#7e9b24'};
   color: #fff;
   outline: 0;
-  border-radius: 4px;
+  border-radius: 1px;
   font-weight: bold;
 
   &:hover {

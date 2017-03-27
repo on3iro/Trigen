@@ -54,14 +54,14 @@ export class AccountsPage extends Component {
         <FilterInput
           type="text"
           name="accountFilter"
-          placeholder="Filter Accounts"
+          placeholder="Zum filtern mit Schreiben beginnen"
           onChange={this.handleFilterChange}
           value={this.props.accountFilter}
         />
-        <Button onClick={this.addItem}>Add Account</Button>
         <List
           accounts={this.props.accounts}
         />
+        <Button onClick={this.addItem}>+</Button>
       </Wrapper>
     );
   }
