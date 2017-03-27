@@ -10,6 +10,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: [
     'babel-polyfill',
+    'react-hot-loader/patch',
     // Dev-server
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
@@ -49,6 +50,9 @@ module.exports = {
 
     // Prevents webpack CLI from stopping if errors occur
     new webpack.NoEmitOnErrorsPlugin(),
+
+    // better readable module names in the browser on HMR updates
+    new webpack.NamedModulesPlugin(),
 
     // Helps passing variables between webpack and js-files
     // Gives us the ability to e.g. switch between dev and production environment
