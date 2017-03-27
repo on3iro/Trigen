@@ -12,9 +12,9 @@
     "lint": "eslint ./",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "coveralls": "jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls"
+    "test": "NODE_ENV=test jest --coverage",
+    "test:watch": "NODE_ENV=test jest --coverage --watch",
+    "coveralls": "NODE_ENV=test jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,16 @@
   "babel": {
     "presets": [
       "react",
-      [ "es2015", { "modules": false } ],
+      [ "es2015", { "modules": false }],
       "stage-0"
     ],
+    "env": {
+      "test": {
+        "plugins": [
+          ["transform-es2015-modules-commonjs"]
+        ]
+      }
+    },
     "plugins": [
       "react-hot-loader/babel"
     ]
