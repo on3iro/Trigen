@@ -17,7 +17,7 @@ export const Header = props => {
   return (
     <Wrapper>
       <A href="#">
-        <Img src="src/img/Trigen_Logo.png" />
+        <Img src={require('../../img/Trigen_Logo.png')} />
       </A>
       <Navigation />
       <UserNav {...props} />

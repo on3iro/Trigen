@@ -13,8 +13,8 @@ module.exports = {
     path.join(__dirname, '../src/index.js')
   ],
   output: {
-    // Put outputted files into dist folder
-    path: path.join(__dirname, "..", '/dist/'),
+    // Put outputted files into build folder
+    path: path.join(__dirname, "..", '/build/'),
 
     // Calc output file name dynamically,
     filename: '[name]-[hash].min.js',
@@ -33,7 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.html'
+      filename: '200.html'
     }),
 
     // Not 100% what this does, but its use is highly recommended by the

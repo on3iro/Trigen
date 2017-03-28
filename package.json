@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server",
-    "build": "NODE_ENV=production rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
+    "build": "NODE_ENV=production rimraf build && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",

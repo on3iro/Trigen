@@ -12,6 +12,10 @@ import Wrapper from './Wrapper';
 export const Impressum = () => {
   return (
     <Wrapper>
+      <h1>
+        DISCLAIMER: This is a university project and not a real site.
+        For further information please visit <a href="https://github.com/on3iro/passCreator-Frontend">github.com/on3iro/passCreator-Frontend</a>
+      </h1>
       <h1>Impressum</h1>
       <p>Angaben gemäß § 5 TMG</p>
       <p>Max Muster <br />
