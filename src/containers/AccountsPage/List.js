@@ -18,7 +18,7 @@ const RestyledUl = styled(Ul)`
   width: 610px;
   padding: 0;
 
-  li:nth-of-type(even) {
+  li:nth-of-type(odd) {
     background: ${props => props.theme.outlines};
   }
 `;

@@ -32,9 +32,6 @@ const UserNav = props => {
               <NavLink to="/login" >
                 Login
               </NavLink>
-              <NavLink to="/register" >
-                Register
-              </NavLink>
             </NavBar>
           )
       }

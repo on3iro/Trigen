@@ -11,10 +11,10 @@ import styled from 'styled-components';
 const Wrapper = styled.footer`
   flex: none;
   flex-shrink: 0;
-  min-height: 100px;
+  padding: 20px 40px;
+  height: 80px;
   width: 100%;
   margin-top: 50px;
-  padding: 30px;
 
   background-color: ${props => props.theme.mainBG};
 `;
