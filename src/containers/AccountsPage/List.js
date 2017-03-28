@@ -4,10 +4,17 @@
   */
 
 import React, { PropTypes } from 'react';
+import styled from 'styled-components';
 
 import Ul from 'components/Ul';
 import ListItem from './ListItem';
 
+
+const RestyledUl = styled(Ul)`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`;
 
 const renderItems = (props) => {
 /**
@@ -32,9 +39,9 @@ const renderItems = (props) => {
 // Actual List component
 export const List = props => {
   return (
-    <Ul>
+    <RestyledUl>
       {renderItems(props)}
-    </Ul>
+    </RestyledUl>
   );
 };
 
