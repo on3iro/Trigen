@@ -13,8 +13,10 @@ import Wrapper from './Wrapper';
 const Footer = () => {
   return (
     <Wrapper>
-      <FooterLink to="/impressum">Impressum</FooterLink>
-      <FooterLink to="/agb">AGB</FooterLink>
+      <ul>
+        <li><FooterLink to="/impressum">Impressum</FooterLink></li>
+        <li><FooterLink to="/agb">AGB</FooterLink></li>
+      </ul>
     </Wrapper>
   );
 };

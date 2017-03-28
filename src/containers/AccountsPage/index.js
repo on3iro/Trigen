@@ -61,7 +61,7 @@ export class AccountsPage extends Component {
         <List
           accounts={this.props.accounts}
         />
-        <AddButton onClick={this.addItem}>+</AddButton>
+        <AddButton onClick={this.addItem} />
       </Wrapper>
     );
   }

@@ -31,7 +31,7 @@ export const RestyledLink = styled(StyledLink)`
 
   color: ${props => props.theme.noneWhite};
   font-size: 24px;
-  font-family: Calibri, Helvetica, sans-serif;
+  font-family: ${props => props.theme.primaryFont};
 `;
 
 const NavLink = props => {

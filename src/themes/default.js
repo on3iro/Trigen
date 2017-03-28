@@ -7,13 +7,15 @@ export const colors = {
   doveGray: '#666666',
   nobel: '#bbb4b3',
   mineShaft: '#333333',
+  capeCod: '#3a3d3c',
   mercury: '#e3e3e3',
   gray: '#888888',
 };
 
 export default {
   main: colors.cinnabar,
-  mainBG: colors.osloGray,
+  mainBG: colors.capeCod,
+  primaryFont: 'Calibri, Helvetica, sans-serif',
   primary: colors.oliveDrab,
   secondary: colors.tallPoppy,
   noneWhite: colors.pampas,

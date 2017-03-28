@@ -23,7 +23,7 @@ injectGlobal`
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: ${props => props.theme.primaryFont};
   }
 
   #root {
@@ -31,6 +31,10 @@ injectGlobal`
     height: 100%;
     min-height: 100%;
     min-width: 100%;
+  }
+
+  ul {
+    list-style: none;
   }
 
   p,
