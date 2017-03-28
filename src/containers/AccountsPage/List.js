@@ -14,6 +14,13 @@ const RestyledUl = styled(Ul)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  width: 510px;
+  padding: 0;
+
+  li:nth-of-type(even) {
+    background: ${props => props.theme.outlines};
+  }
 `;
 
 const renderItems = (props) => {

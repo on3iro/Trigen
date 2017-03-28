@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import ItemButton from './ItemButton';
 
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: inline-block;
+  margin: 0;
+`;
 
 const AccountControls = props => {
   return (

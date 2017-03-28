@@ -19,8 +19,10 @@ const getBGImage = props => {
 };
 
 export default styled(Button)`
+  margin: 0 5px 0 0;
   width: 23px;
   height: 23px;
+
   border-radius: 50%;
   background: ${props => getBGImage(props)} no-repeat;
 `;

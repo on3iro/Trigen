@@ -23,9 +23,14 @@ import {
 import { makeGetEditedAccount } from './ducks/selectors';
 
 
-export const DomainSpan = styled.span`
-  margin-right: 10px;
+export const RestyledLi = styled(Li)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 485px;
 `;
+export const DomainSpan = styled.span``;
 export const UserNameSpan = styled.span``;
 
 export class ListItem extends Component {
@@ -62,30 +67,29 @@ export class ListItem extends Component {
     console.log(account.edit);
 
     return (
-      <Li>
+      <RestyledLi>
         {
           account.edit
-            ? (
-              <span>
-                <Input
-                  type="text"
-                  name="domain"
-                  value={account.domain}
-                  onChange={this.handleChange}
-                />
-                <Input
-                  type="text"
-                  name="username"
-                  value={account.username}
-                  onChange={this.handleChange}
-                />
-              </span>
-            ) : (
-              <span>
-                <DomainSpan>{account.domain}</DomainSpan>
+            ? ([
+              <Input
+                name="domain"
+                onChange={this.handleChange}
+                placeholder="Domain"
+                type="text"
+                value={account.domain}
+              />,
+              <Input
+                name="username"
+                onChange={this.handleChange}
+                placeholder="username"
+                type="text"
+                value={account.username}
+                user={true}
+              />
+            ]) : ([
+                <DomainSpan>{account.domain}</DomainSpan>,
                 <UserNameSpan>{account.username}</UserNameSpan>
-              </span>
-            )
+              ])
         }
         <AccountControls
           edit={account.edit}
@@ -94,7 +98,7 @@ export class ListItem extends Component {
           editItem={this.editItem}
           delete={this.deleteItem}
         />
-      </Li>
+      </RestyledLi>
     );
   }
 }
