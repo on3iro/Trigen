@@ -15,7 +15,7 @@ const RestyledUl = styled(Ul)`
   flex-direction: column;
   justify-content: flex-start;
 
-  width: 510px;
+  width: 610px;
   padding: 0;
 
   li:nth-of-type(even) {

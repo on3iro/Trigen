@@ -10,7 +10,7 @@ export default styled(Input)`
   display: inline-block;
   margin-right: 5px;
   padding: 2px 5px;
-  width: ${props => props.user ? '165px' : '240px'};
+  width: ${props => props.user ? '38%' : '50%'};
   height: 22px;
 
   font-size: 17px;

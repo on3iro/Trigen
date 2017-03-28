@@ -28,10 +28,18 @@ export const RestyledLi = styled(Li)`
   flex-direction: row;
   justify-content: space-between;
 
-  width: 485px;
+  padding: 8px 0 8px 5px;
+
+  width: 100%;
+  height: 40px;
 `;
-export const DomainSpan = styled.span``;
-export const UserNameSpan = styled.span``;
+
+export const Span = styled.span`
+  display: inline-block;
+  width: ${props => props.user ? '38%' : '50%'};
+  padding-left: 5px;
+  overflow: hidden;
+`;
 
 export class ListItem extends Component {
   constructor(props) {
@@ -87,8 +95,8 @@ export class ListItem extends Component {
                 user={true}
               />
             ]) : ([
-                <DomainSpan>{account.domain}</DomainSpan>,
-                <UserNameSpan>{account.username}</UserNameSpan>
+                <Span>{account.domain}</Span>,
+                <Span user>{account.username}</Span>
               ])
         }
         <AccountControls

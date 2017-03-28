@@ -17,9 +17,6 @@ const Navigation = () => {
         <NavLink to="/">
           Home
         </NavLink>
-        <NavLink to="passwords">
-          Gen PW
-        </NavLink>
         <NavLink to="/pricing">
           Pricing
         </NavLink>
