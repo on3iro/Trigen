@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server",
-    "build": "NODE_ENV=production rimraf build && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
+    "build": "NODE_ENV=production rimraf dist && webpack --config ./webpack/webpack.production.config.js --progress --profile --colors",
     "lint": "eslint ./",
     "pretest": "npm run test:clean && npm run lint",
     "test:clean": "rimraf ./coverage",
@@ -97,6 +97,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-preset-stage-2": "^6.13.0",
     "babel-register": "^6.22.0",
+    "bundle-loader": "^0.5.5",
     "coveralls": "^2.11.16",
     "cross-env": "^3.1.4",
     "css-loader": "^0.23.1",
