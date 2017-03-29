@@ -15,5 +15,5 @@ deploy:
   on: master
   provider: surge
   project: ./dist/
-  domain: trigen.surge.sh
+  domain: https://trigen.surge.sh
   skip_cleanup: true
