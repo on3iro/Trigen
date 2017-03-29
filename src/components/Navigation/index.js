@@ -15,10 +15,10 @@ const Navigation = () => {
     <Wrapper>
       <NavBar>
         <NavLink exact to="/">
-          Home
+          Startseite
         </NavLink>
         <NavLink to="/pricing">
-          Pricing
+          Preise
         </NavLink>
         <NavLink to="/faq">
           FAQ

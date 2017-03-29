@@ -20,4 +20,12 @@ export default styled.ul`
 
   text-align: center;
   list-style-type: none;
+
+  li {
+    margin-right: 25px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
 `;

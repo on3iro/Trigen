@@ -44,20 +44,19 @@ Object {
 exports[`login requestLogin generator should call axios.post 1`] = `
 Object {
   "@@redux-saga/IO": true,
-  "CALL": Object {
-    "args": Array [
-      "http://localhost:3030/api/auth/login",
-      Object {
-        "test": "test",
-      },
-      Object {
-        "headers": Object {
-          "Content-Type": "application/json",
+  "PUT": Object {
+    "action": Object {
+      "payload": Object {
+        "token": "testtoke",
+        "user": Object {
+          "email": "test@test.com",
+          "id": "1",
+          "name": "testuser",
         },
       },
-    ],
-    "context": null,
-    "fn": [Function],
+      "type": "LOGIN_SUCCESS",
+    },
+    "channel": null,
   },
 }
 `;
@@ -75,23 +74,7 @@ Object {
 }
 `;
 
-exports[`login requestLogin generator should put LOGIN_SUCCESS action with payload 1`] = `
-Object {
-  "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "payload": Object {
-        "email": "foo@bar.com",
-        "id": 1,
-        "name": "foo",
-        "token": "abc123",
-      },
-      "type": "LOGIN_SUCCESS",
-    },
-    "channel": null,
-  },
-}
-`;
+exports[`login requestLogin generator should put LOGIN_SUCCESS action with payload 1`] = `undefined`;
 
 exports[`register requestRegister generator should call axios.post 1`] = `
 Object {

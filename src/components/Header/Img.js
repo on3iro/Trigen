@@ -12,7 +12,6 @@ import NormalImg from 'components/Img';
 
 const Img = styled(NormalImg)`
   width: 70px;
-  margin: auto;
   display: block;
 `;
 
