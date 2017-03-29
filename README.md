@@ -7,6 +7,7 @@
 [![Webpage](https://img.shields.io/badge/Webpage-Online-orange.svg)](http://trigen.surge.sh/)
 
 *Disclaimer*: This is a university project and not ment for production use!
+Discord githook test
 
 ## ToC
 * [Backend](#backend)
