@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <Wrapper>
       <NavBar>
-        <NavLink to="/">
+        <NavLink exact to="/">
           Home
         </NavLink>
         <NavLink to="/pricing">

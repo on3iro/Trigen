@@ -13,7 +13,7 @@ export default styled.ul`
   flex-direction: row;
   justify-content: flex-end;
 
-  min-width: 300px;
+  min-width: 200px;
   margin: 0;
   padding: 0;
   height: 100%;
