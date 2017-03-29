@@ -46,6 +46,27 @@ module.exports = [
   },
   {
     test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-    loader: "file-loader"
+    loader:
+      [
+        "file-loader",
+        {
+          loader: 'image-webpack-loader',
+          query: {
+            mozjpeg: {
+              progressive: true,
+            },
+            optipng: {
+              optimizationLevel: 7,
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            pngquant: {
+              quality: '65-90',
+              speed: 4
+            }
+          }
+      }
+    ]
   }
 ];
