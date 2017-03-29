@@ -10,10 +10,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
 
+import Button from 'components/Button';
+
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
 import FilterInput from './FilterInput';
-import AddButton from './AddButton';
 import Wrapper from './Wrapper';
 import List from './List';
 
@@ -51,6 +52,7 @@ export class AccountsPage extends Component {
   render() {
     return (
       <Wrapper>
+        <Button onClick={this.addItem}>Account hinzufügen</Button>
         <FilterInput
           type="text"
           name="accountFilter"
@@ -61,7 +63,6 @@ export class AccountsPage extends Component {
         <List
           accounts={this.props.accounts}
         />
-        <AddButton onClick={this.addItem} />
       </Wrapper>
     );
   }

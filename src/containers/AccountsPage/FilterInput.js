@@ -4,7 +4,7 @@ import Input from './Input';
 
 
 export default styled(Input)`
-  display: block;
+  display: inline-block;
   width: 310px;
   font-size: 14px;
 `;
