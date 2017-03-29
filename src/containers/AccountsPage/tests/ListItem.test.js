@@ -3,10 +3,9 @@ import { shallow } from 'enzyme';
 
 import ConnectedListItem, {
   ListItem,
-  DomainSpan,
-  UserNameSpan,
+  RestyledLi,
+  Span,
 } from '../ListItem';
-import Li from 'components/Li';
 import Input from '../Input';
 import ItemButton from '../ItemButton';
 
@@ -57,28 +56,16 @@ function editSetup() {
 }
 
 describe('<ListItem />', () => {
-  it('should render <Li />', () => {
+  it('should render <RestyledLi />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Li).length).toBe(1);
+    expect(enzymeWrapper.find(RestyledLi).length).toBe(1);
   });
 
-  it('should render one input type=checkbox in normal mode', () => {
+  it('should render <Span /> in normal mode', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Input).length).toBe(1);
-  });
-
-  it('should render one <DomainSpan /> in normal mode', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(DomainSpan).length).toBe(1);
-  });
-
-  it('should render one <UserNameSpan /> in normal mode', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(UserNameSpan).length).toBe(1);
+    expect(enzymeWrapper.find(Span).length).toBe(2);
   });
 
   it('should render edit <ItemButton />', () => {
