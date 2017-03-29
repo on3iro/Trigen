@@ -44,7 +44,7 @@ export const validate = values => {
 export const RegisterForm = props => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <H1>Register</H1>
+      <H1>Registrierung</H1>
       <Field name="email" type="text"
         component={RenderField} label="Email"
       />
