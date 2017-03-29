@@ -17,7 +17,7 @@ module.exports = {
     path: path.join(__dirname, "..", '/dist/'),
 
     // Calc output file name dynamically,
-    filename: '[name]-[hash].min.js',
+    filename: '[name].[hash].min.js',
     publicPath: '/'
   },
   resolve: {
@@ -27,6 +27,16 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function(module) {
+        return module.context && module.context.indexOf('node_modules') !== -1;
+      }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest'
+    }),
+
     // Generate html5 file, which includes all webpack bundles in the body
     // using script tags
     // Takes a template file as input and outputs it to the dist folder

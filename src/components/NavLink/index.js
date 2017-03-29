@@ -12,7 +12,8 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
-  width: 22%;
+  margin-right: 100px;
+  width: auto;
   height: 100%;
 
   text-align: center;
@@ -26,7 +27,7 @@ export const RestyledLink = styled(StyledLink)`
   display: block;
   margin: 0;
   padding: 20px;
-  width: 100%;
+  width: auto;
   height: 100%;
 
   color: ${props => props.theme.noneWhite};
