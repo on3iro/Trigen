@@ -16,12 +16,12 @@ import RenderField from './RenderField';
 
 export const validate = values => {
   const errors = {};
-  const REQUIRED = 'Required';
+  const REQUIRED = 'Pflichtfeld';
 
   if(!values.email) {
     errors.email = REQUIRED;
   }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Ungültige Email-Adresse';
   }
 
   if(!values.password) {
@@ -35,7 +35,7 @@ export const validate = values => {
   if(!values.confirm) {
     errors.confirm = REQUIRED;
   }else if(values.confirm !== values.password) {
-    errors.confirm = 'Passwords do not match';
+    errors.confirm = 'Passwörter stimmen nicht überein!';
   }
 
   return errors;
@@ -44,20 +44,17 @@ export const validate = values => {
 export const RegisterForm = props => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <H1>Register</H1>
+      <H1>Registrierung</H1>
       <Field name="email" type="text"
-        component={RenderField} label="email"
-      />
-      <Field name="name" type="text"
-        component={RenderField} label="name"
+        component={RenderField} label="Email"
       />
       <Field name="password" type="password"
-        component={RenderField} label="password"
+        component={RenderField} label="Passwort"
       />
       <Field name="confirm" type="password"
-        component={RenderField} label="confirm"
+        component={RenderField} label="Passwort wiederholen"
       />
-      <Button submit>Register Now</Button>
+      <Button submit>Jetzt registrieren</Button>
     </form>
   );
 };
