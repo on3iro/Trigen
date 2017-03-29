@@ -18,7 +18,7 @@ const Navigation = () => {
           Home
         </NavLink>
         <NavLink to="/pricing">
-          Pricing
+          Preise
         </NavLink>
         <NavLink to="/faq">
           FAQ
