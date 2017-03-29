@@ -12,13 +12,13 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
-  width: 100%;
+  width: 22%;
   height: 100%;
 
   text-align: center;
 
-  &:hover {
-  background-color: ${props => props.theme.headerHover};
+  &:hover a {
+    color: ${props => props.theme.main};
   }
 `;
 
@@ -32,19 +32,27 @@ export const RestyledLink = styled(StyledLink)`
   color: ${props => props.theme.noneWhite};
   font-size: 24px;
   font-family: ${props => props.theme.primaryFont};
+
+  &.active {
+    color: ${props => props.theme.main};
+  }
 `;
 
 const NavLink = props => {
   return (
     <Li>
-      <RestyledLink to={props.to}>{props.children}</RestyledLink>
+      <RestyledLink
+        {...props}
+      >
+        {props.children}
+      </RestyledLink>
     </Li>
   );
 };
 
 NavLink.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.any.isRequired,
 };
 
 export default NavLink;

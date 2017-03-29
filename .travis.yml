@@ -1,3 +1,6 @@
+branches:
+  only:
+    - master
 language: node_js
 node_js:
   - "4.2.6"
@@ -10,3 +13,6 @@ before_script:
   - npm run lint
 script:
   - npm run coveralls
+  - npm run build
+after_success:
+  - surge --project ./dist/ --domain trigen.surge.sh
