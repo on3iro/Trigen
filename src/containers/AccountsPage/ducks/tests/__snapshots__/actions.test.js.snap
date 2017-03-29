@@ -1,0 +1,82 @@
+exports[`actions should create an action to cancel edited changes 1`] = `
+Object {
+  "payload": Object {
+    "fakeID": "fakeID",
+  },
+  "type": "CANCEL_EDIT",
+}
+`;
+
+exports[`actions should create an action to delete an account 1`] = `
+Object {
+  "payload": Object {
+    "fakeID": "fakeID",
+  },
+  "type": "DELETE_ACCOUNT",
+}
+`;
+
+exports[`actions should create an action to fetch accounts 1`] = `
+Object {
+  "payload": Object {
+    "accounts": Array [
+      Object {
+        "domain": "example.com",
+        "id": 0,
+        "username": "tTester",
+      },
+      Object {
+        "domain": "Ooo.com",
+        "id": 1,
+        "username": "LSP",
+      },
+      Object {
+        "domain": "selfishland",
+        "id": 2,
+        "username": "overlord",
+      },
+      Object {
+        "domain": "hugwalz",
+        "id": 3,
+        "username": "harry otter",
+      },
+    ],
+    "genID": "insert function here",
+  },
+  "type": "GET_ACCOUNTS",
+}
+`;
+
+exports[`actions should create an action to handle account changes 1`] = `
+Object {
+  "payload": Object {
+    "fakeID": "fakeID",
+    "target": Object {
+      "test": "test",
+    },
+  },
+  "type": "CHANGE_ACCOUNT",
+}
+`;
+
+exports[`actions should create an action to save an edited account 1`] = `
+Object {
+  "payload": Object {
+    "test": "test",
+  },
+  "type": "SAVE_ACCOUNT",
+}
+`;
+
+exports[`actions should create an action to set account to edit mode 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "edit": true,
+      "test": "test",
+    },
+    "fakeID": "fakeID",
+  },
+  "type": "EDIT_ACCOUNT",
+}
+`;

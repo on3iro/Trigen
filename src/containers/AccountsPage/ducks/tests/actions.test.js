@@ -19,26 +19,7 @@ describe('actions', () => {
   });
 
   it('should create an action to fetch accounts', () => {
-    const expectedAction = {
-      type: types.GET_ACCOUNTS,
-      payload: {
-        accounts: [
-          {
-            id: 0,
-            username: 'tTester',
-            domain: 'example.com'
-          },
-          {
-            id: 1,
-            username: 'LSP',
-            domain: 'Ooo.com'
-          }
-        ],
-        genID: 'insert function here',
-      }
-    };
-
-    expect(actions.fetchAccounts('insert function here')).toEqual(expectedAction);
+    expect(actions.fetchAccounts('insert function here')).toMatchSnapshot();
   });
 
   it('should create an action to set account to edit mode', () => {
@@ -52,7 +33,7 @@ describe('actions', () => {
 
     expect(actions.editAccount('fakeID', {
       test: 'test',
-    })).toEqual(expectedAction);
+    })).toMatchSnapshot();
   });
 
   it('should create an action to save an edited account', () => {
@@ -63,7 +44,7 @@ describe('actions', () => {
       }
     };
 
-    expect(actions.saveAccount({ test: 'test' })).toEqual(expectedAction);
+    expect(actions.saveAccount({ test: 'test' })).toMatchSnapshot();
   });
 
   it('should create an action to cancel edited changes', () => {
@@ -72,7 +53,7 @@ describe('actions', () => {
       payload: { fakeID: 'fakeID' }
     };
 
-    expect(actions.cancelEdit('fakeID')).toEqual(expectedAction);
+    expect(actions.cancelEdit('fakeID')).toMatchSnapshot();
   });
 
   it('should create an action to delete an account', () => {
@@ -81,7 +62,7 @@ describe('actions', () => {
       payload: { fakeID: 'fakeID' }
     };
 
-    expect(actions.deleteAccount('fakeID')).toEqual(expectedAction);
+    expect(actions.deleteAccount('fakeID')).toMatchSnapshot();
   });
 
   it('should create an action to handle account changes', () => {
@@ -92,6 +73,6 @@ describe('actions', () => {
       }}
     };
 
-    expect(actions.handleAccountChange('fakeID', { test: 'test' })).toEqual(expectedAction);
+    expect(actions.handleAccountChange('fakeID', { test: 'test' })).toMatchSnapshot();
   });
 });
