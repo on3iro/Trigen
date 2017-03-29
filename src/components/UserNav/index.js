@@ -46,7 +46,7 @@ const UserNav = props => {
           ) : (
             <NavBar>
               <NavLink to="/login" >
-                Login
+                Anmelden
               </NavLink>
             </NavBar>
           )
