@@ -6,11 +6,10 @@
   */
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import NormalA from 'components/A';
 
-
-const Logo = styled(NormalA)`
+const Logo = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;

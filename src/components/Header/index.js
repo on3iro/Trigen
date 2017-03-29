@@ -16,7 +16,7 @@ import Wrapper from './Wrapper';
 export const Header = props => {
   return (
     <Wrapper>
-      <Logo href="#">
+      <Logo to="/">
         <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
       </Logo>
       <Navigation />
