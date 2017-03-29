@@ -15,7 +15,7 @@ const Navigation = () => {
     <Wrapper>
       <NavBar>
         <NavLink exact to="/">
-          Home
+          Startseite
         </NavLink>
         <NavLink to="/pricing">
           Preise
