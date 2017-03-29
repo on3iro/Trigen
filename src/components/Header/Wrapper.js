@@ -1,6 +1,7 @@
 /**
   * Styled container for Header
   *
+  *
   * @namespace Header.Wrapper
   * @memberOf Header
   */
