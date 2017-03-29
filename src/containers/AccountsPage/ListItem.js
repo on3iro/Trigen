@@ -72,7 +72,6 @@ export class ListItem extends Component {
     if(account.edit) {
       account = this.props.EditedAccount ? this.props.EditedAccount : account;
     }
-    console.log(account.edit);
 
     return (
       <RestyledLi>
@@ -80,6 +79,7 @@ export class ListItem extends Component {
           account.edit
             ? ([
               <Input
+                key="domain"
                 name="domain"
                 onChange={this.handleChange}
                 placeholder="Domain"
@@ -87,6 +87,7 @@ export class ListItem extends Component {
                 value={account.domain}
               />,
               <Input
+                key="username"
                 name="username"
                 onChange={this.handleChange}
                 placeholder="username"
@@ -95,8 +96,8 @@ export class ListItem extends Component {
                 user={true}
               />
             ]) : ([
-                <Span>{account.domain}</Span>,
-                <Span user>{account.username}</Span>
+                <Span key="domain">{account.domain}</Span>,
+                <Span key="username" user>{account.username}</Span>
               ])
         }
         <AccountControls

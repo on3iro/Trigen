@@ -10,7 +10,7 @@ import Ul from 'components/Ul';
 import ListItem from './ListItem';
 
 
-const RestyledUl = styled(Ul)`
+export const RestyledUl = styled(Ul)`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

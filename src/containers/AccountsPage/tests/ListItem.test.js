@@ -68,54 +68,36 @@ describe('<ListItem />', () => {
     expect(enzymeWrapper.find(Span).length).toBe(2);
   });
 
-  it('should render edit <ItemButton />', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.text() === 'Edit').length).toBe(1);
-  });
-
-  it('should render Delete <ItemButton />', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.text() === 'Delete').length).toBe(1);
-  });
-
-  it('should render three <Input /> in edit mode', () => {
+  it('should render <Input /> components in edit mode', () => {
     const { enzymeWrapper } = editSetup();
-    expect(enzymeWrapper.find(Input).length).toBe(3);
+    expect(enzymeWrapper.find(Input).length).toMatchSnapshot();
   });
 
   it('should call editItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const editButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Edit').first();
-    editButton.simulate('click');
 
+    enzymeWrapper.instance().editItem();
     expect(props.editAccount.mock.calls.length).toBe(1);
   });
 
   it('should call deleteItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const deleteButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Delete').first();
-    deleteButton.simulate('click');
 
+    enzymeWrapper.instance().deleteItem();
     expect(props.deleteAccount.mock.calls.length).toBe(1);
   });
 
   it('should call saveItem', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Save').first();
 
-    saveButton.simulate('click');
-
+    enzymeWrapper.instance().saveItem();
     expect(props.saveAccount.mock.calls.length).toBe(1);
   });
 
   it('should call cancelEdit', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(ItemButton).findWhere(n => n.props().children === 'Cancel').first();
 
-    saveButton.simulate('click');
-
+    enzymeWrapper.instance().cancelEdit();
     expect(props.cancelEdit.mock.calls.length).toBe(1);
   });
 

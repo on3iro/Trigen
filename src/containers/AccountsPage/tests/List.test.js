@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import ConnectedList, { List } from '../List';
+import ConnectedList, { List, RestyledUl } from '../List';
 import ListItem from '../ListItem';
-import Ul from 'components/Ul';
 
 
 function setUp() {
@@ -26,10 +25,10 @@ function setUp() {
 }
 
 describe('<List />', () => {
-  it('should render <Ul />', () => {
+  it('should render <RestyledUl />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Ul).length).toBe(1);
+    expect(enzymeWrapper.find(RestyledUl).length).toBe(1);
   });
 
   it('should render <ListItem />', () => {
