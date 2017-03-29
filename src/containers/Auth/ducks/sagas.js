@@ -12,7 +12,18 @@ export function *requestLogin(data) {
   };
 
   try {
-    const response = yield call(axios.post, url, data, config);
+    // TODO change back!
+    // const response = yield call(axios.post, url, data, config);
+    const response = {
+      data: {
+        token: 'testtoke',
+        user: {
+          id: '1',
+          name: 'testuser',
+          email: 'test@test.com',
+        }
+      }
+    };
 
     yield put({ type: types.LOGIN_SUCCESS, payload: response.data });
   }catch (error) {
