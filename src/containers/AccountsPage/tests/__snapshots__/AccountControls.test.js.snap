@@ -1,0 +1,3 @@
+exports[`<AccountControls should render Delete <ItemButton /> 1`] = `1`;
+
+exports[`<AccountControls should render edit <ItemButton /> 1`] = `1`;

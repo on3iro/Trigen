@@ -18,7 +18,7 @@ export class Login extends Component {
     return (
       <Wrapper>
         <LoginForm onSubmit={this.handleSubmit} />
-        <StyledLink to="/register">Register</StyledLink>
+        <StyledLink to="/register" secondary>Register</StyledLink>
       </Wrapper>
     );
   }

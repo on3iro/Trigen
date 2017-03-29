@@ -33,7 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: 'index.html'
+      filename: '200.html'
     }),
 
     // Not 100% what this does, but its use is highly recommended by the

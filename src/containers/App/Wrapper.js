@@ -8,7 +8,7 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   height: 100%;
   min-height: 100%;
   display: flex;

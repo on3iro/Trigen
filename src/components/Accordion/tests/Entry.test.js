@@ -15,7 +15,7 @@ describe('<Entry />', () => {
       <Entry
         handleExpand={() => {}}
         question='foo'
-        answer='bar'
+        answer={() => 'bar'}
       />
     );
 
@@ -27,7 +27,7 @@ describe('<Entry />', () => {
       <Entry
         handleExpand={() => {}}
         question='foo'
-        answer='bar'
+        answer={() => 'bar'}
       />
     );
 
@@ -40,34 +40,34 @@ describe('<Entry />', () => {
         handleExpand={() => {}}
         expanded={true}
         question='foo'
-        answer='bar'
+        answer={() => 'bar'}
       />
     );
 
     expect(wrapper.find(Answer).length).toBe(1);
   });
 
-  it('should render 2x <div> when folded', () => {
+  it('should render <div> when folded', () => {
     const wrapper = mount(
       <Entry
         handleExpand={() => {}}
         question='How are you?'
-        answer='Fine.'
+        answer={() => 'bar'}
       />
     );
-    expect(wrapper.find('div').length).toBe(2);
+    expect(wrapper.find('div').length).toMatchSnapshot();
   });
 
-  it('should render 3x <div> when expanded', () => {
+  it('should render answer <div> when expanded', () => {
     const wrapper = mount(
       <Entry
         handleExpand={() => {}}
         expanded={true}
         question='How are you?'
-        answer='Fine.'
+        answer={() => 'fine'}
       />
     );
-    expect(wrapper.find('div').length).toBe(3);
+    expect(wrapper.find('div').length).toMatchSnapshot();
   });
 
   it('should expand on click on question', () => {
@@ -76,7 +76,7 @@ describe('<Entry />', () => {
       <Entry
         handleExpand={expandSpy}
         question='How are you?'
-        answer='Fine.'
+        answer={() => 'bar'}
       />
     );
 

@@ -9,6 +9,8 @@ import  { injectGlobal } from 'styled-components';
 injectGlobal`
   * {
     box-sizing: border-box;
+    font-family: ${props => props.theme.primaryFont};
+    font-size: 17px;
   }
 
   html,
@@ -17,13 +19,13 @@ injectGlobal`
     width: 100%;
     margin: 0;
     padding: 0;
+    font-family: ${props => props.theme.primaryFont};
   }
 
   body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   #root {
@@ -31,6 +33,10 @@ injectGlobal`
     height: 100%;
     min-height: 100%;
     min-width: 100%;
+  }
+
+  ul {
+    list-style: none;
   }
 
   p,

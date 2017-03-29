@@ -3,12 +3,11 @@ import { shallow } from 'enzyme';
 
 import ConnectedListItem, {
   ListItem,
-  DomainSpan,
-  UserNameSpan,
+  RestyledLi,
+  Span,
 } from '../ListItem';
-import Li from 'components/Li';
 import Input from '../Input';
-import Button from '../Button';
+import ItemButton from '../ItemButton';
 
 
 function setUp() {
@@ -57,78 +56,48 @@ function editSetup() {
 }
 
 describe('<ListItem />', () => {
-  it('should render <Li />', () => {
+  it('should render <RestyledLi />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Li).length).toBe(1);
+    expect(enzymeWrapper.find(RestyledLi).length).toBe(1);
   });
 
-  it('should render one input type=checkbox in normal mode', () => {
+  it('should render <Span /> in normal mode', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Input).length).toBe(1);
+    expect(enzymeWrapper.find(Span).length).toBe(2);
   });
 
-  it('should render one <DomainSpan /> in normal mode', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(DomainSpan).length).toBe(1);
-  });
-
-  it('should render one <UserNameSpan /> in normal mode', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(UserNameSpan).length).toBe(1);
-  });
-
-  it('should render edit <Button />', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(Button).findWhere(b => b.text() === 'Edit').length).toBe(1);
-  });
-
-  it('should render Delete <Button />', () => {
-    const { enzymeWrapper } = setUp();
-
-    expect(enzymeWrapper.find(Button).findWhere(b => b.text() === 'Delete').length).toBe(1);
-  });
-
-  it('should render three <Input /> in edit mode', () => {
+  it('should render <Input /> components in edit mode', () => {
     const { enzymeWrapper } = editSetup();
-    expect(enzymeWrapper.find(Input).length).toBe(3);
+    expect(enzymeWrapper.find(Input).length).toMatchSnapshot();
   });
 
   it('should call editItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const editButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Edit').first();
-    editButton.simulate('click');
 
+    enzymeWrapper.instance().editItem();
     expect(props.editAccount.mock.calls.length).toBe(1);
   });
 
   it('should call deleteItem', () => {
     const { enzymeWrapper, props } = setUp();
-    const deleteButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Delete').first();
-    deleteButton.simulate('click');
 
+    enzymeWrapper.instance().deleteItem();
     expect(props.deleteAccount.mock.calls.length).toBe(1);
   });
 
   it('should call saveItem', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Save').first();
 
-    saveButton.simulate('click');
-
+    enzymeWrapper.instance().saveItem();
     expect(props.saveAccount.mock.calls.length).toBe(1);
   });
 
   it('should call cancelEdit', () => {
     const { enzymeWrapper, props } = editSetup();
-    const saveButton = enzymeWrapper.find(Button).findWhere(n => n.props().children === 'Cancel').first();
 
-    saveButton.simulate('click');
-
+    enzymeWrapper.instance().cancelEdit();
     expect(props.cancelEdit.mock.calls.length).toBe(1);
   });
 

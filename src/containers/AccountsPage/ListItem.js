@@ -11,7 +11,8 @@ import styled from 'styled-components';
 
 import Li from 'components/Li';
 import Input from './Input';
-import Button from './Button';
+import AccountControls from './AccountControls';
+
 import {
   cancelEdit,
   deleteAccount,
@@ -22,10 +23,23 @@ import {
 import { makeGetEditedAccount } from './ducks/selectors';
 
 
-export const DomainSpan = styled.span`
-  margin-right: 10px;
+export const RestyledLi = styled(Li)`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 8px 0 8px 5px;
+
+  width: 100%;
+  height: 40px;
 `;
-export const UserNameSpan = styled.span``;
+
+export const Span = styled.span`
+  display: inline-block;
+  width: ${props => props.user ? '38%' : '50%'};
+  padding-left: 5px;
+  overflow: hidden;
+`;
 
 export class ListItem extends Component {
   constructor(props) {
@@ -60,37 +74,40 @@ export class ListItem extends Component {
     }
 
     return (
-      <Li>
-        <Input type="checkbox" name="checkbox" />
+      <RestyledLi>
         {
           account.edit
-            ? (
-              <span>
-                <Input
-                  type="text"
-                  name="domain"
-                  value={account.domain}
-                  onChange={this.handleChange}
-                />
-                <Input
-                  type="text"
-                  name="username"
-                  value={account.username}
-                  onChange={this.handleChange}
-                />
-                <Button onClick={this.saveItem}>Save</Button>
-                <Button warning onClick={this.cancelEdit}>Cancel</Button>
-              </span>
-            ) : (
-              <span>
-                <DomainSpan>{account.domain}</DomainSpan>
-                <UserNameSpan>{account.username}</UserNameSpan>
-                <Button onClick={this.editItem}>Edit</Button>
-                <Button warning onClick={this.deleteItem}>Delete</Button>
-              </span>
-            )
+            ? ([
+              <Input
+                key="domain"
+                name="domain"
+                onChange={this.handleChange}
+                placeholder="Domain"
+                type="text"
+                value={account.domain}
+              />,
+              <Input
+                key="username"
+                name="username"
+                onChange={this.handleChange}
+                placeholder="username"
+                type="text"
+                value={account.username}
+                user={true}
+              />
+            ]) : ([
+                <Span key="domain">{account.domain}</Span>,
+                <Span key="username" user>{account.username}</Span>
+              ])
         }
-      </Li>
+        <AccountControls
+          edit={account.edit}
+          save={this.saveItem}
+          cancel={this.cancelEdit}
+          editItem={this.editItem}
+          delete={this.deleteItem}
+        />
+      </RestyledLi>
     );
   }
 }

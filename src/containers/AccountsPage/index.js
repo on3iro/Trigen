@@ -13,7 +13,7 @@ import shortid from 'shortid';
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
 import FilterInput from './FilterInput';
-import Button from './Button';
+import AddButton from './AddButton';
 import Wrapper from './Wrapper';
 import List from './List';
 
@@ -25,16 +25,7 @@ export class AccountsPage extends Component {
 
   componentDidMount() {
     this.props.fetchAccounts(shortid.generate);
-    // window.addEventListener('beforeunload', e => {
-      // const dialogText = 'Are you sure you want to leave this page?'
-      // e.returnValue = dialogText;
-      // return dialogText;
-    // });
   }
-
-  // componentWillUnmount() {
-    // window.removeEventListener('beforeunload');
-  // }
 
   addItem = () => {
     /**
@@ -63,23 +54,25 @@ export class AccountsPage extends Component {
         <FilterInput
           type="text"
           name="accountFilter"
-          placeholder="Filter Accounts"
+          placeholder="Zum filtern mit Schreiben beginnen"
           onChange={this.handleFilterChange}
           value={this.props.accountFilter}
         />
-        <Button onClick={this.addItem}>Add Account</Button>
         <List
           accounts={this.props.accounts}
         />
+        <AddButton onClick={this.addItem} />
       </Wrapper>
     );
   }
 }
 
 AccountsPage.propTypes = {
-  fetchAccounts: PropTypes.func,
-  addAccount: PropTypes.func,
+  accountFilter: PropTypes.string,
   accounts: PropTypes.arrayOf(PropTypes.object),
+  addAccount: PropTypes.func,
+  fetchAccounts: PropTypes.func,
+  filterAccounts: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {

@@ -8,13 +8,17 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
-  margin-bottom: 10px;
-  height: 40px;
+const Wrapper = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+  min-height: 64px;
+  height: 64px;
   width: 100%;
-  flex: none;
-  background-color: #333;
-  color: #fff;
+  background-color: ${props => props.theme.mainBG};
+  color: ${props => props.theme.noneWhite};
 `;
 
 export default Wrapper;

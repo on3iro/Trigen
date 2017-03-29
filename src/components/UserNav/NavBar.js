@@ -9,17 +9,15 @@ import styled from 'styled-components';
 
 
 export default styled.ul`
-  float: right;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  min-width: 300px;
+  margin: 0;
   padding: 0;
-  margin: 0 0 0 40px;
   height: 100%;
+
   text-align: center;
   list-style-type: none;
-
-  &::before,
-  &::after {
-    content: '';
-    clear: both;
-  }
 `;

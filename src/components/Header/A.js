@@ -11,9 +11,12 @@ import NormalA from 'components/A';
 
 
 const A = styled(NormalA)`
-  float: left;
-  display: inline-block;
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+
+  outline: 0;
 `;
 
 export default A;

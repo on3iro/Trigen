@@ -8,9 +8,6 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
-  margin: 0 auto;
-  width: 50%;
-`;
+const Wrapper = styled.section``;
 
 export default Wrapper;

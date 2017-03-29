@@ -10,13 +10,16 @@ import { css } from 'styled-components';
 
 const buttonStyles = css`
   display: inline-block;
+  margin: 5px;
+  padding: 0 5px;
+
   text-decoration: none;
-  padding: 5px 10px;
-  background-color: ${props => props.warning ? 'red' : '#27a70b'};
-  color: #fff;
+  background-color: ${props => props.warning ? props.theme.secondary : props.theme.primary};
+  color: ${props => props.theme.noneWhite};
   outline: 0;
-  border-radius: 4px;
+  border-radius: 1px;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     background-color: ${props => props.warning ? 'tomato' : '#49ab33'};

@@ -8,15 +8,15 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
-  clear: both;
-  min-height: 100px;
-  width: 100%;
-  margin-top: auto;
+const Wrapper = styled.footer`
   flex: none;
   flex-shrink: 0;
-  padding: 30px;
-  background-color: #e3e3e3;
+  padding: 20px 40px;
+  height: 80px;
+  width: 100%;
+  margin-top: 50px;
+
+  background-color: ${props => props.theme.mainBG};
 `;
 
 export default Wrapper;

@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 
-export const Wrapper = styled.div`
-  width: 50%;
-  margin: 0 auto;
-`;
+export const Wrapper = styled.section``;
 
 export default Wrapper;
 

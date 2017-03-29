@@ -9,7 +9,7 @@ import Entry from '../Entry';
 const entries = [
   {
     question: 'How are you?',
-    answer: 'Fine.'
+    answer: () => 'fine'
   }
 ];
 

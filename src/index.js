@@ -7,10 +7,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
+import { AppContainer } from 'react-hot-loader';
 
 // Styles
 import 'sanitize.css/sanitize.css';
@@ -28,11 +25,19 @@ const store = configureStore(initialState);
 // Run rootSaga
 store.runSaga(rootSaga);
 
-ReactDom.render(
-  <Provider store={store}>
-    <Router>
-      <Route path="/" component={App} />
-    </Router>
-  </Provider>,
-  rootElement
-);
+const render = Component => {
+  return ReactDom.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    rootElement
+  );
+};
+
+render(App);
+
+if(module.hot) {
+  module.hot.accept('containers/App', () => render(App));
+}

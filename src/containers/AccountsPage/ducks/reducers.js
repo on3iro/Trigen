@@ -12,6 +12,7 @@ export function AccountListReducer(state = [], action) {
         return {
           ...account,
           fakeID: genID(),
+          edit: false,
         };
       });
 

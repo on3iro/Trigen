@@ -6,9 +6,12 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
 import * as authSelectors from 'containers/Auth/ducks/selectors';
+
+import DefaultTheme from 'themes/default';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -22,7 +25,6 @@ import FAQPage from 'containers/FAQPage';
 import HomePage from 'containers/HomePage';
 import Impressum from 'containers/ImpressumPage';
 import Logout from 'containers/Auth/Logout';
-import PasswordPage from 'containers/PasswordPage';
 import PricingPage from 'containers/PricingPage';
 import Register from 'containers/Auth/Register';
 import UserProfile from 'containers/Auth/UserProfile';
@@ -43,31 +45,35 @@ export class App extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <Header isLoggedIn={this.props.isLoggedIn} />
-        <Content>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/impressum" component={Impressum} />
-            <Route path="/agb" component={AGBPage} />
-            <Route path="/faq" component={FAQPage} />
-            <Route path="/pricing" component={PricingPage} />
-            <ProtectedRoute path="/passwords" component={PasswordPage} />
-            <ProtectedRoute path="/accounts" component={AccountsPage} />
-            <ProtectedRoute path="/profile" component={UserProfile} />
-            <Route path="/register" component={Register} />
-            <Route path="/login" component={Auth} />
-            <Route path="/logout" component={Logout} />
-          </Switch>
-        </Content>
-        <Footer />
-      </Wrapper>
+      <Router>
+        <ThemeProvider theme={DefaultTheme}>
+          <Wrapper>
+            <Header isLoggedIn={this.props.isLoggedIn} />
+            <Content>
+              <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/impressum" component={Impressum} />
+                <Route path="/agb" component={AGBPage} />
+                <Route path="/faq" component={FAQPage} />
+                <Route path="/pricing" component={PricingPage} />
+                <ProtectedRoute path="/accounts" component={AccountsPage} />
+                <ProtectedRoute path="/profile" component={UserProfile} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Auth} />
+                <Route path="/logout" component={Logout} />
+              </Switch>
+            </Content>
+            <Footer />
+        </Wrapper>
+      </ThemeProvider>
+    </Router>
     );
   }
 }
 
 App.propTypes = {
   children: PropTypes.element,
+  isLoggedIn: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {

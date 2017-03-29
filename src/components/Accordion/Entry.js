@@ -12,13 +12,15 @@ export const Wrapper = styled.div`
   border: 1px solid #e3e3e3;
 `;
 
-export const Question = styled.div`
+export const Question = styled.p`
   background-color: #e3e3e3;
+  margin: 0;
   padding: 10px;
   cursor: pointer;
 `;
 
 export const Answer = styled.div`
+  margin: 0;
   padding: 10px;
 `;
 
@@ -29,7 +31,7 @@ const Entry = ({ handleExpand, expanded = false, question, answer }) => {
       <Question onClick={handleExpand}>{question}</Question>
       {
         expanded &&
-        <Answer>{answer}</Answer>
+        <Answer>{answer()}</Answer>
       }
     </Wrapper>
   );
@@ -38,7 +40,7 @@ const Entry = ({ handleExpand, expanded = false, question, answer }) => {
 Entry.propTypes = {
   handleExpand: PropTypes.func.isRequired,
   question: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
+  answer: PropTypes.func.isRequired,
   expanded: PropTypes.bool
 };
 

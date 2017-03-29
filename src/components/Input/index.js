@@ -12,10 +12,16 @@ const StyledInput = styled.input`
   display: block;
   margin: 0 0 10px 0;
   padding: 5px 10px;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  color: #333;
+  border: 1px solid ${props => props.error ? props.theme.secondary : props.theme.outlines};
+  border-radius: 1px;
+  background: ${props => props.theme.noneWhite};
+  color: ${props => props.theme.text};
   outline: 0;
+
+  &:placeholder-shown,
+  &:-ms-input-placeholder {
+    color: ${props => props.theme.outlines};
+  }
 `;
 
 const Input = props => {

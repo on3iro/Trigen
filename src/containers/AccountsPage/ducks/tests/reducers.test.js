@@ -33,14 +33,7 @@ describe('Reducers', () => {
           ],
           genID: genIDMock
         }
-      })).toEqual([
-          {
-            id: 0,
-            username: 'ttester',
-            domain: 'example.com',
-            fakeID: 'fakeID',
-          }
-        ]);
+      })).toMatchSnapshot();
       expect(genIDMock).toHaveBeenCalled();
     });
 
@@ -50,9 +43,7 @@ describe('Reducers', () => {
         payload: { data : {
           test: 'test',
         }}
-      })).toEqual([{
-        test: 'test'
-      }]);
+      })).toMatchSnapshot();
     });
 
     it('should handle EDIT_ACCOUNT', () => {
@@ -64,15 +55,7 @@ describe('Reducers', () => {
           edit: true,
         }}
       };
-      expect(AccountListReducer(INITIAL_STATE, action)).toEqual([
-        {
-          fakeID: 'fakeID',
-          id: 0,
-          username: 'dudeDudsen',
-          domain: 'example.com',
-          edit: true,
-        }
-      ]);
+      expect(AccountListReducer(INITIAL_STATE, action)).toMatchSnapshot();
     });
 
     it('should handle SAVE_ACCOUNT', () => {
@@ -85,16 +68,7 @@ describe('Reducers', () => {
         }
       };
 
-      expect(AccountListReducer(initialState, action)).toEqual([
-        {
-          id: 0,
-          fakeID: 'fakeID',
-          domain: 'example.com',
-          username: 'dudeDudsen',
-          edit: false,
-          new: false,
-        }
-      ])
+      expect(AccountListReducer(initialState, action)).toMatchSnapshot();
     });
 
     it('should handle CANCEL_EDIT with existing account', () => {
@@ -104,7 +78,7 @@ describe('Reducers', () => {
       };
 
       expect(AccountListReducer(INITIAL_STATE, action))
-        .toEqual(INITIAL_STATE);
+        .toMatchSnapshot();
     });
 
     it('should handle CANCEL_EDIT with empty new account', () => {
@@ -120,7 +94,7 @@ describe('Reducers', () => {
       };
 
       expect(AccountListReducer(initialState, action))
-        .toEqual([]);
+        .toMatchSnapshot();
     });
 
     it('should handle DELETE_ACCOUNT', () => {
@@ -130,14 +104,14 @@ describe('Reducers', () => {
       };
 
       expect(AccountListReducer(INITIAL_STATE, action))
-        .toEqual([]);
+        .toMatchSnapshot();
     })
   });
 
   describe('EditAccountListReducer', () => {
     it('should return unmodified state as default', () => {
       expect(EditAccountListReducer(undefined, {}))
-        .toEqual({});
+        .toMatchSnapshot();
     });
 
     it('should handle ADD_ACCOUNT', () => {
@@ -150,12 +124,7 @@ describe('Reducers', () => {
       };
 
       expect(EditAccountListReducer({}, action))
-        .toEqual({
-          'fakeID': {
-            fakeID: 'fakeID',
-            test: 'test',
-          }
-        });
+        .toMatchSnapshot();
     });
 
     it('should handle EDIT_ACCOUNT', () => {
@@ -168,10 +137,7 @@ describe('Reducers', () => {
       };
 
       expect(EditAccountListReducer({}, action))
-        .toEqual({ 'fakeID': {
-          fakeID: 'fakeID',
-          test: 'test',
-        }});
+        .toMatchSnapshot();
     });
 
     it('should handle SAVE_ACCOUNT', () => {
@@ -186,7 +152,7 @@ describe('Reducers', () => {
       };
 
       expect(EditAccountListReducer(initialState, action))
-        .toEqual({});
+        .toMatchSnapshot();
     });
 
     it('should handle CANCEL_EDIT', () => {
@@ -197,7 +163,7 @@ describe('Reducers', () => {
       };
 
       expect(EditAccountListReducer(initialState, action))
-        .toEqual({});
+        .toMatchSnapshot();
     });
 
     it('should handle CHANGE_ACCOUNT', () => {
@@ -220,13 +186,7 @@ describe('Reducers', () => {
       };
 
       expect(EditAccountListReducer(initialState, action))
-        .toEqual({
-          'fakeID': {
-            fakeID: 'fakeID',
-            username: 'dudeDudsen',
-            domain: 'example.com'
-          }
-        });
+        .toMatchSnapshot();
     });
   });
 });
