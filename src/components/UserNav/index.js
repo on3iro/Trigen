@@ -13,9 +13,6 @@ import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 
 
-const RestyledNavLink = styled(NavLink)`
-  margin-right: 25px;
-`;
 const Icon = styled(Img)`
   padding-bottom: 10px;
 `;
@@ -36,21 +33,21 @@ const UserNav = props => {
         props.isLoggedIn
           ? (
             <NavBar>
-              <RestyledNavLink to="/profile" >
+              <NavLink to="/profile" >
                 <ProfileIcon src={require('img/icons/Icon_Button_Userprofile.png')} alt="profile" />
-              </RestyledNavLink>
-              <RestyledNavLink to="/accounts">
+              </NavLink>
+              <NavLink to="/accounts">
                 <AccountsIcon src={require('img/icons/Icon_Button_Settings.png')} alt="accounts" />
-              </RestyledNavLink>
-              <RestyledNavLink to="/logout" >
+              </NavLink>
+              <NavLink to="/logout" >
                 <LogoutIcon src={require('img/icons/Icon_Button_Logout.png')} alt="logout" />
-              </RestyledNavLink>
+              </NavLink>
             </NavBar>
           ) : (
             <NavBar>
-              <RestyledNavLink to="/login" >
+              <NavLink to="/login" >
                 Login
-              </RestyledNavLink>
+              </NavLink>
             </NavBar>
           )
       }

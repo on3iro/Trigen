@@ -10,13 +10,13 @@ import styled from 'styled-components';
 import NormalA from 'components/A';
 
 
-const A = styled(NormalA)`
+const Logo = styled(NormalA)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 50px;
+  margin: 0 40px 0 80px;
 
   outline: 0;
 `;
 
-export default A;
+export default Logo;

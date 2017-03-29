@@ -8,7 +8,7 @@ import  React from 'react';
 
 import Navigation from 'components/Navigation';
 import UserNav from 'components/UserNav';
-import A from './A';
+import Logo from './Logo';
 import Img from './Img';
 import Wrapper from './Wrapper';
 
@@ -16,9 +16,9 @@ import Wrapper from './Wrapper';
 export const Header = props => {
   return (
     <Wrapper>
-      <A href="#">
+      <Logo href="#">
         <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
-      </A>
+      </Logo>
       <Navigation />
       <UserNav {...props} />
     </Wrapper>
