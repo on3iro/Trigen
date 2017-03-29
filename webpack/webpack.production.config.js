@@ -13,8 +13,8 @@ module.exports = {
     path.join(__dirname, '../src/index.js')
   ],
   output: {
-    // Put outputted files into build folder
-    path: path.join(__dirname, "..", '/build/'),
+    // Put outputted files into dist folder
+    path: path.join(__dirname, "..", '/dist/'),
 
     // Calc output file name dynamically,
     filename: '[name]-[hash].min.js',
