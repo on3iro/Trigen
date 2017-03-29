@@ -16,12 +16,12 @@ import RenderField from './RenderField';
 
 export const validate = values => {
   const errors = {};
-  const REQUIRED = 'Required';
+  const REQUIRED = 'Pflichtfeld';
 
   if(!values.email) {
     errors.email = REQUIRED;
   }else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Ungültige Email-Adresse!';
   }
 
   if(!values.password) {
@@ -36,10 +36,10 @@ export const LoginForm = props => {
     <form onSubmit={props.handleSubmit}>
       <H1>Login</H1>
       <Field name="email" type="text"
-        component={RenderField} label="email"
+        component={RenderField} label="Email"
       />
       <Field name="password" type="password"
-        component={RenderField} label="password"
+        component={RenderField} label="Passwort"
       />
       <Button submit >Login</Button>
     </form>
