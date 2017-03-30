@@ -12,7 +12,7 @@ import ListItem from './ListItem';
 
 export const RestyledUl = styled(Ul)`
   width: 100%;
-  height: 225px;
+  height: 265px;
   padding: 0;
 
   overflow: auto;
