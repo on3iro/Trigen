@@ -9,8 +9,7 @@ import styled from 'styled-components';
 
 
 const Content = styled.main`
-  margin: 0 auto;
-  width: 720px;
+  width: 100%;
 `;
 
 export default Content;

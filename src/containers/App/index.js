@@ -16,7 +16,6 @@ import DefaultTheme from 'themes/default';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Wrapper from './Wrapper';
 import Content from './Content';
 
 import AGBPage from 'containers/AGBPage';
@@ -48,9 +47,9 @@ export class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={DefaultTheme}>
-          <Wrapper>
-            <Grid>
-              <Header isLoggedIn={this.props.isLoggedIn} />
+          <Grid lg={12 / 12}>
+            <Header isLoggedIn={this.props.isLoggedIn} />
+            <Grid lg={7 / 12}>
               <Content>
                 <Switch>
                   <Route exact path="/" component={HomePage} />
@@ -65,11 +64,11 @@ export class App extends Component {
                   <Route path="/logout" component={Logout} />
                 </Switch>
               </Content>
-              <Footer />
+            </Grid>
+            <Footer />
           </Grid>
-        </Wrapper>
-      </ThemeProvider>
-    </Router>
+        </ThemeProvider>
+      </Router>
     );
   }
 }

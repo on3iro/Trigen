@@ -8,6 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
+import Grid from 'grid-styled';
 
 import Li from 'components/Li';
 import Input from './Input';
@@ -101,9 +102,9 @@ export class ListItem extends Component {
               </Grid>
             ]) : ([
               <Grid lg={3 / 6}>
-                <Span key="domain">{account.domain}</Span>,
-              </Grid>
-                <Grid lg={2 / 6}>
+                <Span key="domain">{account.domain}</Span>
+              </Grid>,
+              <Grid lg={2 / 6}>
                 <Span key="username" user>{account.username}</Span>
               </Grid>
               ])
