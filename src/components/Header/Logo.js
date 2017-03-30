@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 
 const Logo = styled(Link)`
+  display: inline-block;
+  margin: 10px 50px;
   outline: 0;
 `;
 

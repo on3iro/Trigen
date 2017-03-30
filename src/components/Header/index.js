@@ -22,9 +22,10 @@ export const Header = props => {
           <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
         </Logo>
       </Grid>
-      <Grid lg={4 / 6}>
+      <Grid lg={3 / 6}>
         <Navigation />
       </Grid>
+      <Grid lg={1 / 6} />
       <Grid lg={1 / 6}>
         <UserNav {...props} />
       </Grid>
