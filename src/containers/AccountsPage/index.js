@@ -12,6 +12,7 @@ import shortid from 'shortid';
 import Grid from 'grid-styled';
 
 import Button from 'components/Button';
+import H1 from 'components/H1';
 
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
@@ -53,6 +54,9 @@ export class AccountsPage extends Component {
   render() {
     return (
       <Grid lg={6 / 6}>
+        <Grid lg={6 / 6}>
+          <H1>Nutzerkonten</H1>
+        </Grid>
         <Grid lg={2 / 6}>
           <Button onClick={this.addItem}>Account hinzufügen</Button>
         </Grid>

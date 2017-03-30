@@ -78,35 +78,45 @@ export class ListItem extends Component {
         {
           account.edit
             ? ([
-              <Input
-                key="domain"
-                name="domain"
-                onChange={this.handleChange}
-                placeholder="Domain"
-                type="text"
-                value={account.domain}
-              />,
-              <Input
-                key="username"
-                name="username"
-                onChange={this.handleChange}
-                placeholder="username"
-                type="text"
-                value={account.username}
-                user={true}
-              />
+              <Grid lg={3 / 6}>
+                <Input
+                  key="domain"
+                  name="domain"
+                  onChange={this.handleChange}
+                  placeholder="Domain"
+                  type="text"
+                  value={account.domain}
+                />
+              </Grid>,
+              <Grid lg={2 / 6}>
+                <Input
+                  key="username"
+                  name="username"
+                  onChange={this.handleChange}
+                  placeholder="username"
+                  type="text"
+                  value={account.username}
+                  user={true}
+                />
+              </Grid>
             ]) : ([
+              <Grid lg={3 / 6}>
                 <Span key="domain">{account.domain}</Span>,
+              </Grid>
+                <Grid lg={2 / 6}>
                 <Span key="username" user>{account.username}</Span>
+              </Grid>
               ])
         }
-        <AccountControls
-          edit={account.edit}
-          save={this.saveItem}
-          cancel={this.cancelEdit}
-          editItem={this.editItem}
-          delete={this.deleteItem}
-        />
+        <Grid lg={1 / 6}>
+          <AccountControls
+            edit={account.edit}
+            save={this.saveItem}
+            cancel={this.cancelEdit}
+            editItem={this.editItem}
+            delete={this.deleteItem}
+          />
+        </Grid>
       </RestyledLi>
     );
   }
