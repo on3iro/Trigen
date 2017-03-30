@@ -29,10 +29,10 @@ export const RestyledLi = styled(Li)`
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 8px 0 8px 5px;
+  padding: 10px;
 
   width: 100%;
-  height: 45px;
+  height: 50px;
 `;
 
 export const Span = styled.span`

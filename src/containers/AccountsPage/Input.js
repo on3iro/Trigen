@@ -17,4 +17,5 @@ export default styled(Input)`
 
   color: ${props => props.theme.main};
   background: ${props => props.theme.border}
+  border: 1px solid ${props => props.theme.tertiary};
 `;
