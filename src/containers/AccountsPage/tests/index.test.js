@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import ConnectedAccountsPage, { AccountsPage } from '../index';
-import Wrapper from '../Wrapper';
 import Button from 'components/Button';
 import List from '../List';
 
@@ -30,11 +29,6 @@ function setUp() {
 }
 
 describe('<AccountsPage />', () => {
-  it('should render <Wrapper />', () => {
-    const { enzymeWrapper } = setUp();
-    expect(enzymeWrapper.find(Wrapper).length).toBe(1);
-  });
-
   it('should render <Button />', () => {
     const { enzymeWrapper } = setUp();
     expect(enzymeWrapper.find(Button).length).toBe(1);

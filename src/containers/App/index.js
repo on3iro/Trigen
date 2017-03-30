@@ -8,6 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import Grid from 'grid-styled';
 
 import * as authSelectors from 'containers/Auth/ducks/selectors';
 
@@ -15,7 +16,6 @@ import DefaultTheme from 'themes/default';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Wrapper from './Wrapper';
 import Content from './Content';
 
 import AGBPage from 'containers/AGBPage';
@@ -47,26 +47,30 @@ export class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={DefaultTheme}>
-          <Wrapper>
+          <Grid lg={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} />
-            <Content>
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route path="/impressum" component={Impressum} />
-                <Route path="/agb" component={AGBPage} />
-                <Route path="/faq" component={FAQPage} />
-                <Route path="/pricing" component={PricingPage} />
-                <ProtectedRoute path="/accounts" component={AccountsPage} />
-                <ProtectedRoute path="/profile" component={UserProfile} />
-                <Route path="/register" component={Register} />
-                <Route path="/login" component={Auth} />
-                <Route path="/logout" component={Logout} />
-              </Switch>
-            </Content>
+            <Grid lg={1 / 6} />
+            <Grid lg={4 / 6}>
+              <Content>
+                <Switch>
+                  <Route exact path="/" component={HomePage} />
+                  <Route path="/impressum" component={Impressum} />
+                  <Route path="/agb" component={AGBPage} />
+                  <Route path="/faq" component={FAQPage} />
+                  <Route path="/pricing" component={PricingPage} />
+                  <ProtectedRoute path="/accounts" component={AccountsPage} />
+                  <ProtectedRoute path="/profile" component={UserProfile} />
+                  <Route path="/register" component={Register} />
+                  <Route path="/login" component={Auth} />
+                  <Route path="/logout" component={Logout} />
+                </Switch>
+              </Content>
+            </Grid>
+            <Grid lg={1 / 6} />
             <Footer />
-        </Wrapper>
-      </ThemeProvider>
-    </Router>
+          </Grid>
+        </ThemeProvider>
+      </Router>
     );
   }
 }

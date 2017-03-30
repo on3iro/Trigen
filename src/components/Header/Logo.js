@@ -10,11 +10,8 @@ import { Link } from 'react-router-dom';
 
 
 const Logo = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 40px 0 80px;
-
+  display: inline-block;
+  margin: 10px 50px;
   outline: 0;
 `;
 

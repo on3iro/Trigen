@@ -10,8 +10,10 @@ import { css } from 'styled-components';
 
 const buttonStyles = css`
   display: inline-block;
-  margin: 5px;
-  padding: 0 5px;
+  margin: 0;
+  padding: 2px 10px;
+  width: 100%;
+  height: 30px;
 
   text-decoration: none;
   background-color: ${props => props.warning ? props.theme.secondary : props.theme.primary};
@@ -22,7 +24,7 @@ const buttonStyles = css`
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.warning ? 'tomato' : '#49ab33'};
+    background-color: ${props => props.warning ? props.theme.secondaryHover : props.theme.primaryHover};
   }
 `;
 

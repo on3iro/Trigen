@@ -9,12 +9,7 @@ import styled from 'styled-components';
 
 
 export default styled.ul`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-
-  min-width: 200px;
-  margin: 0 50px 0 0;
+  margin-right: 50px;
   padding: 0;
   height: 100%;
 
@@ -22,8 +17,6 @@ export default styled.ul`
   list-style-type: none;
 
   li {
-    margin-right: 25px;
-
     &:last-of-type {
       margin-right: 0;
     }

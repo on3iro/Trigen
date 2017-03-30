@@ -5,27 +5,25 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import Grid from 'grid-styled';
 
 import NavLink from 'components/NavLink';
 
-import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 
 import profileIcon from 'img/icons/Icon_Button_Userprofile.png';
-import profileIconHover from 'img/icons/Icon_Button_Userprofile_Hover.png';
 import settingsIcon from 'img/icons/Icon_Button_Settings.png';
-import settingsIconHover from 'img/icons/Icon_Button_Settings_Hover.png';
 import logoutIcon from 'img/icons/Icon_Button_Logout.png';
-import logoutIconHover from 'img/icons/Icon_Button_Logout_Hover.png';
 
 
 const UserNavLink = styled(NavLink)`
   .profile {
     background-image: url(${props => props.icon});
+    background-position: 0px;
   }
 
   &:hover .profile {
-    background-image: url(${props => props.iconHover})
+    background-position: -25px;
   }
 
   .accounts {
@@ -33,7 +31,7 @@ const UserNavLink = styled(NavLink)`
   }
 
   &:hover .accounts {
-    background-image: url(${props => props.iconHover})
+    background-position: -25px;
   }
 
   .logout {
@@ -41,7 +39,7 @@ const UserNavLink = styled(NavLink)`
   }
 
   &:hover .logout {
-    background-image: url(${props => props.iconHover})
+    background-position: -20px;
   }
 `;
 
@@ -49,49 +47,55 @@ const Icon = styled.div`
   padding-bottom: 10px;
 `;
 const ProfileIcon = styled(Icon)`
-  width: 24px;
-  height: 24px;
-  background-size: 24px 24px;
+  width: 25px;
+  height: 27px;
+  background-size: 50px 27px;
 `;
 const AccountsIcon = styled(Icon)`
-  width: 26px;
+  width: 25px;
   height: 26px;
-  background-size: 26px 26px;
+  background-size: 50px 26px;
 `;
 const LogoutIcon = styled(Icon)`
   width: 20px;
   height: 25px;
-  background-size: 20px 25px;
+  background-size: 40px 25px;
 `;
-
-const icProfile = require('img/icons/Icon_Button_Userprofile.png');
 
 const UserNav = props => {
   return (
-    <Wrapper>
+    <Grid lg={3 / 3}>
       {
         props.isLoggedIn
           ? (
             <NavBar>
-              <UserNavLink to="/profile" icon={profileIcon} iconHover={profileIconHover} >
-                <ProfileIcon className="profile" />
-              </UserNavLink>
-              <UserNavLink to="/accounts" icon={settingsIcon} iconHover={settingsIconHover}>
-                <AccountsIcon className="accounts" />
-              </UserNavLink>
-              <UserNavLink to="/logout" icon={logoutIcon} iconHover={logoutIconHover}>
-                <LogoutIcon className="logout" />
-              </UserNavLink>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/profile" icon={profileIcon} >
+                  <ProfileIcon className="profile" />
+                </UserNavLink>
+              </Grid>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/accounts" icon={settingsIcon} >
+                  <AccountsIcon className="accounts" />
+                </UserNavLink>
+              </Grid>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/logout" icon={logoutIcon} >
+                  <LogoutIcon className="logout" />
+                </UserNavLink>
+              </Grid>
             </NavBar>
           ) : (
-            <NavBar>
-              <NavLink to="/login" >
-                Anmelden
-              </NavLink>
-            </NavBar>
+              <NavBar>
+                <Grid lg={3 / 3}>
+                  <NavLink to="/login" >
+                    Anmelden
+                  </NavLink>
+                </Grid>
+              </NavBar>
           )
       }
-    </Wrapper>
+    </Grid>
   );
 };
 

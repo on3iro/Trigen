@@ -27,12 +27,12 @@ describe('<AccountControls', () => {
   it('should render edit <ItemButton />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.props().mode === 'edit').length).toMatchSnapshot();
+    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.props().className === 'edit').length).toMatchSnapshot();
   });
 
   it('should render Delete <ItemButton />', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.props().mode === 'delete').length).toMatchSnapshot();
+    expect(enzymeWrapper.find(ItemButton).findWhere(b => b.props().className === 'delete').length).toMatchSnapshot();
   });
 });

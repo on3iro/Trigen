@@ -8,6 +8,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
+import Grid from 'grid-styled';
 
 import Li from 'components/Li';
 import Input from './Input';
@@ -28,15 +29,15 @@ export const RestyledLi = styled(Li)`
   flex-direction: row;
   justify-content: space-between;
 
-  padding: 8px 0 8px 5px;
+  padding: 10px;
 
   width: 100%;
-  height: 40px;
+  height: 50px;
 `;
 
 export const Span = styled.span`
   display: inline-block;
-  width: ${props => props.user ? '38%' : '50%'};
+  width: 100%;
   padding-left: 5px;
   overflow: hidden;
 `;
@@ -78,35 +79,42 @@ export class ListItem extends Component {
         {
           account.edit
             ? ([
-              <Input
-                key="domain"
-                name="domain"
-                onChange={this.handleChange}
-                placeholder="Domain"
-                type="text"
-                value={account.domain}
-              />,
-              <Input
-                key="username"
-                name="username"
-                onChange={this.handleChange}
-                placeholder="username"
-                type="text"
-                value={account.username}
-                user={true}
-              />
+              <Grid key="domain" lg={6 / 12}>
+                <Input
+                  name="domain"
+                  onChange={this.handleChange}
+                  placeholder="Domain"
+                  type="text"
+                  value={account.domain}
+                />
+              </Grid>,
+              <Grid key="user" lg={4 / 12}>
+                <Input
+                  name="username"
+                  onChange={this.handleChange}
+                  placeholder="username"
+                  type="text"
+                  value={account.username}
+                />
+              </Grid>
             ]) : ([
-                <Span key="domain">{account.domain}</Span>,
-                <Span key="username" user>{account.username}</Span>
+              <Grid key="domain" lg={6 / 12}>
+                <Span key="domain">{account.domain}</Span>
+              </Grid>,
+              <Grid key="user" lg={4 / 12}>
+                <Span key="username">{account.username}</Span>
+              </Grid>
               ])
         }
-        <AccountControls
-          edit={account.edit}
-          save={this.saveItem}
-          cancel={this.cancelEdit}
-          editItem={this.editItem}
-          delete={this.deleteItem}
-        />
+        <Grid lg={1 / 12}>
+          <AccountControls
+            edit={account.edit}
+            save={this.saveItem}
+            cancel={this.cancelEdit}
+            editItem={this.editItem}
+            delete={this.deleteItem}
+          />
+        </Grid>
       </RestyledLi>
     );
   }

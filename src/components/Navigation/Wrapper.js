@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 
 export default styled.nav`
-  align-self: flex-start;
-  flex-grow: 1;
+  margin: 15px 0;
   height: 100%;
 `;

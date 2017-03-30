@@ -12,8 +12,7 @@ import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
-  margin-right: 100px;
-  width: auto;
+  display: inline-block;
   height: 100%;
 
   text-align: center;
@@ -24,10 +23,7 @@ export const Li = styled.li`
 `;
 
 export const RestyledLink = styled(StyledLink)`
-  display: block;
-  margin: 0;
-  padding: 20px;
-  width: auto;
+  display: inline-block;
   height: 100%;
 
   color: ${props => props.theme.noneWhite};
@@ -40,10 +36,11 @@ export const RestyledLink = styled(StyledLink)`
 `;
 
 const NavLink = props => {
+  const { icon, iconHover, ...rest } = props;
   return (
     <Li>
       <RestyledLink
-        {...props}
+        {...rest}
       >
         {props.children}
       </RestyledLink>
