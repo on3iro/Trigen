@@ -79,7 +79,7 @@ export class ListItem extends Component {
         {
           account.edit
             ? ([
-              <Grid lg={3 / 6}>
+              <Grid lg={6 / 12}>
                 <Input
                   key="domain"
                   name="domain"
@@ -89,7 +89,7 @@ export class ListItem extends Component {
                   value={account.domain}
                 />
               </Grid>,
-              <Grid lg={2 / 6}>
+              <Grid lg={4 / 12}>
                 <Input
                   key="username"
                   name="username"
@@ -97,19 +97,18 @@ export class ListItem extends Component {
                   placeholder="username"
                   type="text"
                   value={account.username}
-                  user={true}
                 />
               </Grid>
             ]) : ([
-              <Grid lg={3 / 6}>
+              <Grid lg={6 / 12}>
                 <Span key="domain">{account.domain}</Span>
               </Grid>,
-              <Grid lg={2 / 6}>
-                <Span key="username" user>{account.username}</Span>
+              <Grid lg={4 / 12}>
+                <Span key="username">{account.username}</Span>
               </Grid>
               ])
         }
-        <Grid lg={1 / 6}>
+        <Grid lg={1 / 12}>
           <AccountControls
             edit={account.edit}
             save={this.saveItem}
