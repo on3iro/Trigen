@@ -20,7 +20,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.ADD_ACCOUNT: {
-      return Array.concat([], state, [{ ...action.payload.data }]);
+      return Array.concat([], [{ ...action.payload.data }], state);
     }
 
     case actionTypes.EDIT_ACCOUNT: {
