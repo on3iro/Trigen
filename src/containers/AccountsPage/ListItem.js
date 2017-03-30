@@ -32,7 +32,7 @@ export const RestyledLi = styled(Li)`
   padding: 8px 0 8px 5px;
 
   width: 100%;
-  height: 40px;
+  height: 45px;
 `;
 
 export const Span = styled.span`

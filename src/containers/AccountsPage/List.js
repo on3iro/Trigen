@@ -12,7 +12,10 @@ import ListItem from './ListItem';
 
 export const RestyledUl = styled(Ul)`
   width: 100%;
+  height: 225px;
   padding: 0;
+
+  overflow: auto;
 
   li:nth-of-type(odd) {
     background: ${props => props.theme.outlines};

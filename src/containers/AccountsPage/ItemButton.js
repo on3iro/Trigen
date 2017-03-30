@@ -19,4 +19,24 @@ export default styled(Button)`
 
   background-color: ${props => props.primary ? props.theme.primary : props.theme.secondary};
   background-image: ${props => getBGImage(props)};
+
+  &.save {
+    background-size: 32px;
+    background-position: -14px 4px;
+  }
+
+  &.cancel {
+    background-size: 30px;
+    background-position: 5px 4px;
+  }
+
+  &.edit {
+    background-size: 30px;
+    background-position: 5px 4px;
+  }
+
+  &.delete {
+    background-size: 32px;
+    background-position: -15px;
+  }
 `;

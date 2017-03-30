@@ -14,4 +14,7 @@ export default styled(Input)`
 
   font-size: 17px;
   line-height: 17px;
+
+  color: ${props => props.theme.main};
+  background: ${props => props.theme.border}
 `;

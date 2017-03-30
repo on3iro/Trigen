@@ -24,7 +24,7 @@ const buttonStyles = css`
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.warning ? 'tomato' : '#49ab33'};
+    background-color: ${props => props.warning ? props.theme.secondaryHover : props.theme.primaryHover};
   }
 `;
 

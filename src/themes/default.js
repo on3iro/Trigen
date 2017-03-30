@@ -1,5 +1,7 @@
 export const colors = {
   oliveDrab: '#7e9b24',
+  pistachio: '#86c100',
+  pomegranate: '#f44d27',
   tallPoppy: '#bc3b2a',
   cinnabar: '#e2472d',
   osloGray: '#878f93',
@@ -9,7 +11,8 @@ export const colors = {
   mineShaft: '#333333',
   capeCod: '#3a3d3c',
   mercury: '#e3e3e3',
-  gray: '#888888',
+  gray: '#7f7f7f',
+  dustyGray: '#999999',
 };
 
 export default {
@@ -18,6 +21,10 @@ export default {
   primaryFont: 'Calibri, Helvetica, sans-serif',
   primary: colors.oliveDrab,
   secondary: colors.tallPoppy,
+  tertiary: colors.gray,
+  primaryHover: colors.pistachio,
+  secondaryHover: colors.pomegranate,
+  tertiaryHover: colors.dustyGray,
   noneWhite: colors.pampas,
   headerHover: colors.doveGray,
   outlines: colors.nobel,

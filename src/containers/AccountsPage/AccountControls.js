@@ -6,7 +6,7 @@ import ItemButton from './ItemButton';
 
 const Wrapper = styled.div`
   display: inline-block;
-  margin: 0;
+  margin: 5px 0 0 0;
 `;
 
 const AccountControls = props => {
@@ -15,11 +15,11 @@ const AccountControls = props => {
       {
         props.edit
           ? ([
-              <ItemButton key="save" primary onClick={props.save} />,
-              <ItemButton key="cancel" warning onClick={props.cancel} />
+              <ItemButton className="save" key="save" primary onClick={props.save} />,
+              <ItemButton className="cancel" key="cancel" warning onClick={props.cancel} />
             ]) : ([
-              <ItemButton key="edit" primary onClick={props.editItem} />,
-              <ItemButton key="delete" warning onClick={props.delete} />
+              <ItemButton className="edit" key="edit" primary onClick={props.editItem} />,
+              <ItemButton className="delete" key="delete" warning onClick={props.delete} />
             ])
       }
     </Wrapper>
