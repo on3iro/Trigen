@@ -10,10 +10,6 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
   margin-bottom: 55px;
   min-height: 64px;
   height: 64px;

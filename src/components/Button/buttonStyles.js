@@ -12,6 +12,7 @@ const buttonStyles = css`
   display: inline-block;
   margin: 5px;
   padding: 0 5px;
+  width: 100%;
 
   text-decoration: none;
   background-color: ${props => props.warning ? props.theme.secondary : props.theme.primary};

@@ -11,11 +11,7 @@ import ListItem from './ListItem';
 
 
 export const RestyledUl = styled(Ul)`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  width: 610px;
+  width: 100%;
   padding: 0;
 
   li:nth-of-type(odd) {

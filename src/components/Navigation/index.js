@@ -5,6 +5,7 @@
   */
 
 import React from 'react';
+import Grid from 'grid-styled';
 
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
@@ -14,15 +15,21 @@ const Navigation = () => {
   return (
     <Wrapper>
       <NavBar>
-        <NavLink exact to="/">
-          Startseite
-        </NavLink>
-        <NavLink to="/pricing">
-          Preise
-        </NavLink>
-        <NavLink to="/faq">
-          FAQ
-        </NavLink>
+        <Grid lg={1 / 3}>
+          <NavLink exact to="/">
+            Startseite
+          </NavLink>
+        </Grid>
+        <Grid lg={1 / 3}>
+          <NavLink to="/pricing">
+            Preise
+          </NavLink>
+        </Grid>
+        <Grid lg={1 / 3}>
+          <NavLink to="/faq">
+            FAQ
+          </NavLink>
+        </Grid>
       </NavBar>
     </Wrapper>
   );

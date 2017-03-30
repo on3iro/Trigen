@@ -15,8 +15,6 @@ export const LinkWrapper = props => {
 
 const StyledLink = styled(LinkWrapper)`
   display: inline-block;
-  margin: 5px;
-  width: 100px;
   text-decoration: none;
   color: ${props => props.secondary ? props.theme.simple : props.theme.noneWhite};
   cursor: pointer;

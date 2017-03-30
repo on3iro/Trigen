@@ -9,6 +9,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
+import Grid from 'grid-styled';
 
 import Button from 'components/Button';
 
@@ -51,19 +52,23 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <Button onClick={this.addItem}>Account hinzufügen</Button>
-        <FilterInput
-          type="text"
-          name="accountFilter"
-          placeholder="Zum filtern mit Schreiben beginnen"
-          onChange={this.handleFilterChange}
-          value={this.props.accountFilter}
-        />
+      <Grid lg={6 / 6}>
+        <Grid lg={2 / 6}>
+          <Button onClick={this.addItem}>Account hinzufügen</Button>
+        </Grid>
+        <Grid lg={4 / 6}>
+          <FilterInput
+            type="text"
+            name="accountFilter"
+            placeholder="Zum filtern mit Schreiben beginnen"
+            onChange={this.handleFilterChange}
+            value={this.props.accountFilter}
+          />
+        </Grid>
         <List
           accounts={this.props.accounts}
         />
-      </Wrapper>
+      </Grid>
     );
   }
 }

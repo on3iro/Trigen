@@ -24,4 +24,5 @@ export default {
   text: colors.mineShaft,
   border: colors.mercury,
   simple: colors.gray,
+  gutter: 0,
 };
