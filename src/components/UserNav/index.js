@@ -11,12 +11,12 @@ import NavLink from 'components/NavLink';
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 
-import profileIcon from 'file-loader?img/icons/Icon_Button_Userprofile.png';
-import profileIconHover from 'file-loader?img/icons/Icon_Button_Userprofile_Hover.png';
-import settingsIcon from 'file-loader?img/icons/Icon_Button_Settings.png';
-import settingsIconHover from 'file-loader?img/icons/Icon_Button_Settings_Hover.png';
-import logoutIcon from 'file-loader?img/icons/Icon_Button_Logout.png';
-import logoutIconHover from 'file-loader?img/icons/Icon_Button_Logout_Hover.png';
+import profileIcon from 'img/icons/Icon_Button_Userprofile.png';
+import profileIconHover from 'img/icons/Icon_Button_Userprofile_Hover.png';
+import settingsIcon from 'img/icons/Icon_Button_Settings.png';
+import settingsIconHover from 'img/icons/Icon_Button_Settings_Hover.png';
+import logoutIcon from 'img/icons/Icon_Button_Logout.png';
+import logoutIconHover from 'img/icons/Icon_Button_Logout_Hover.png';
 
 
 const UserNavLink = styled(NavLink)`
@@ -50,8 +50,8 @@ const Icon = styled.div`
 `;
 const ProfileIcon = styled(Icon)`
   width: 24px;
-  height: 24px;
-  background-size: 24px 24px;
+  height: 27px;
+  background-size: 24px 27px;
 `;
 const AccountsIcon = styled(Icon)`
   width: 26px;

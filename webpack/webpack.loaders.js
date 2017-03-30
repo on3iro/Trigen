@@ -38,7 +38,7 @@ module.exports = [
   },
   {
     test: /\.json?$/,
-    loader: 'json',
+    loader: 'json-loader',
   },
   {
     test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,

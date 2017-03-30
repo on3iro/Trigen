@@ -40,10 +40,11 @@ export const RestyledLink = styled(StyledLink)`
 `;
 
 const NavLink = props => {
+  const { icon, iconHover, ...rest } = props;
   return (
     <Li>
       <RestyledLink
-        {...props}
+        {...rest}
       >
         {props.children}
       </RestyledLink>
