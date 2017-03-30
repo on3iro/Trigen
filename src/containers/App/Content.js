@@ -12,7 +12,7 @@ const Content = styled.main`
   margin: 120px auto 60px auto;
   padding: 0;
   width: 100%;
-  height: 390px;
+  height: 400px;
 
   overflow: auto;
 `;
