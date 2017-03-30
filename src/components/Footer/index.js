@@ -22,7 +22,7 @@ const Divider = styled.div`
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper className="footer">
       <FooterLink to="/impressum">Impressum</FooterLink>
       <Divider />
       <FooterLink to="/agb">AGB</FooterLink>

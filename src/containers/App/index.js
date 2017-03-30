@@ -47,10 +47,10 @@ export class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={DefaultTheme}>
-          <Grid lg={12 / 12}>
+          <Grid lg={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} />
-            <Grid lg={2 / 12} />
-            <Grid lg={8 / 12}>
+            <Grid lg={1 / 6} />
+            <Grid lg={4 / 6}>
               <Content>
                 <Switch>
                   <Route exact path="/" component={HomePage} />
@@ -66,7 +66,7 @@ export class App extends Component {
                 </Switch>
               </Content>
             </Grid>
-            <Grid lg={2 / 12} />
+            <Grid lg={1 / 6} />
             <Footer />
           </Grid>
         </ThemeProvider>

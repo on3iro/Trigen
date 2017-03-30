@@ -17,7 +17,6 @@ import H1 from 'components/H1';
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
 import FilterInput from './FilterInput';
-import Wrapper from './Wrapper';
 import List from './List';
 
 
@@ -53,14 +52,14 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Grid lg={12 / 12}>
-        <Grid lg={12 / 12}>
+      <Grid lg={4 / 4}>
+        <Grid lg={4 / 4}>
           <H1>Nutzerkonten</H1>
         </Grid>
-        <Grid lg={4 / 12}>
+        <Grid lg={1 / 4}>
           <Button onClick={this.addItem}>Account hinzufügen</Button>
         </Grid>
-        <Grid lg={8 / 12}>
+        <Grid lg={3 / 4}>
           <FilterInput
             type="text"
             name="accountFilter"

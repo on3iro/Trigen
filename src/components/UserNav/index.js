@@ -5,10 +5,10 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import Grid from 'grid-styled';
 
 import NavLink from 'components/NavLink';
 
-import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 
 import profileIcon from 'img/icons/Icon_Button_Userprofile.png';
@@ -68,30 +68,38 @@ const icProfile = require('img/icons/Icon_Button_Userprofile.png');
 
 const UserNav = props => {
   return (
-    <Wrapper>
+    <Grid lg={3 / 3}>
       {
         props.isLoggedIn
           ? (
             <NavBar>
-              <UserNavLink to="/profile" icon={profileIcon} iconHover={profileIconHover} >
-                <ProfileIcon className="profile" />
-              </UserNavLink>
-              <UserNavLink to="/accounts" icon={settingsIcon} iconHover={settingsIconHover}>
-                <AccountsIcon className="accounts" />
-              </UserNavLink>
-              <UserNavLink to="/logout" icon={logoutIcon} iconHover={logoutIconHover}>
-                <LogoutIcon className="logout" />
-              </UserNavLink>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/profile" icon={profileIcon} iconHover={profileIconHover} >
+                  <ProfileIcon className="profile" />
+                </UserNavLink>
+              </Grid>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/accounts" icon={settingsIcon} iconHover={settingsIconHover}>
+                  <AccountsIcon className="accounts" />
+                </UserNavLink>
+              </Grid>
+              <Grid lg={1 / 3}>
+                <UserNavLink to="/logout" icon={logoutIcon} iconHover={logoutIconHover}>
+                  <LogoutIcon className="logout" />
+                </UserNavLink>
+              </Grid>
             </NavBar>
           ) : (
-            <NavBar>
-              <NavLink to="/login" >
-                Anmelden
-              </NavLink>
-            </NavBar>
+              <NavBar>
+                <Grid lg={3 / 3}>
+                  <NavLink to="/login" >
+                    Anmelden
+                  </NavLink>
+                </Grid>
+              </NavBar>
           )
       }
-    </Wrapper>
+    </Grid>
   );
 };
 

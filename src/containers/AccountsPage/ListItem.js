@@ -37,7 +37,7 @@ export const RestyledLi = styled(Li)`
 
 export const Span = styled.span`
   display: inline-block;
-  width: ${props => props.user ? '38%' : '50%'};
+  width: 100%;
   padding-left: 5px;
   overflow: hidden;
 `;
