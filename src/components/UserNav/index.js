@@ -22,7 +22,8 @@ const UserNavLink = styled(NavLink)`
     background-position: 0px;
   }
 
-  &:hover .profile {
+  &:hover .profile,
+  &.active .profile {
     background-position: -25px;
   }
 
@@ -30,7 +31,8 @@ const UserNavLink = styled(NavLink)`
     background-image: url(${props => props.icon});
   }
 
-  &:hover .accounts {
+  &:hover .accounts,
+  &.active .accounts {
     background-position: -25px;
   }
 
@@ -38,7 +40,8 @@ const UserNavLink = styled(NavLink)`
     background-image: url(${props => props.icon});
   }
 
-  &:hover .logout {
+  &:hover .logout,
+  &.active .logout {
     background-position: -20px;
   }
 `;
