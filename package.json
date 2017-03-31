@@ -130,6 +130,7 @@
     "classnames": "^2.2.5",
     "dotenv": "^4.0.0",
     "grid-styled": "^1.0.1",
+    "history": "^4.6.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
