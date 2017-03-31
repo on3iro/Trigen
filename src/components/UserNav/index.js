@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Grid from 'grid-styled';
 
 import NavLink from 'components/NavLink';
+import Button from 'components/Button';
 
 import NavBar from './NavBar';
 
@@ -91,9 +92,9 @@ const UserNav = props => {
           ) : (
               <NavBar>
                 <Grid md={3 / 3}>
-                  <NavLink to="/login" >
+                  <Button to="/login" >
                     Anmelden
-                  </NavLink>
+                  </Button>
                 </Grid>
               </NavBar>
           )

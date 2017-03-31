@@ -15,21 +15,15 @@ const Navigation = () => {
   return (
     <Wrapper>
       <NavBar>
-        <Grid md={1 / 3}>
-          <NavLink to="/home">
-            Startseite
-          </NavLink>
-        </Grid>
-        <Grid md={1 / 3}>
-          <NavLink to="/pricing">
-            Preise
-          </NavLink>
-        </Grid>
-        <Grid md={1 / 3}>
-          <NavLink to="/faq">
-            FAQ
-          </NavLink>
-        </Grid>
+        <NavLink to="/home">
+          Startseite
+        </NavLink>
+        <NavLink to="/pricing">
+          Preise
+        </NavLink>
+        <NavLink to="/faq">
+          FAQ
+        </NavLink>
       </NavBar>
     </Wrapper>
   );
