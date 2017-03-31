@@ -27,7 +27,6 @@ import LoginPage from 'containers/LoginPage';
 import Logout from 'containers/Auth/Logout';
 import PricingPage from 'containers/PricingPage';
 import ProtectedRoute from 'containers/Auth/ProtectedRoute';
-import Register from 'containers/Auth/Register';
 import UserProfile from 'containers/Auth/UserProfile';
 
 
