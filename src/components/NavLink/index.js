@@ -24,7 +24,7 @@ export const Li = styled.li`
 export const RestyledLink = styled(NavLink)`
   display: inline-block;
   height: 100%;
-  padding: 0 15px;
+  padding: 5px 25px;
 
   color: ${props => props.theme.noneWhite};
   font-size: 24px;
