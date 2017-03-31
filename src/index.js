@@ -8,6 +8,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
+import createHistory from 'history/createBrowserHistory';
 
 // Styles
 import 'sanitize.css/sanitize.css';
@@ -20,7 +21,8 @@ import App from 'containers/App';
 
 const rootElement = document.getElementById('root');
 const initialState = {};
-const store = configureStore(initialState);
+const history = createHistory();
+const store = configureStore(initialState, history);
 
 // Run rootSaga
 store.runSaga(rootSaga);
@@ -29,7 +31,7 @@ const render = Component => {
   return ReactDom.render(
     <AppContainer>
       <Provider store={store}>
-        <Component />
+        <Component history={history} />
       </Provider>
     </AppContainer>,
     rootElement

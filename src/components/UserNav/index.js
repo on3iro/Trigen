@@ -67,6 +67,8 @@ const LogoutIcon = styled(Icon)`
 `;
 
 const UserNav = props => {
+  const location = props.routerLocation || { pathname: '' };
+
   return (
     <Grid md={3 / 3}>
       {
@@ -92,9 +94,15 @@ const UserNav = props => {
           ) : (
               <NavBar>
                 <Grid md={3 / 3}>
-                  <Button to="/login" >
-                    Anmelden
-                  </Button>
+                  {
+                    location.pathname === '/login'
+                      ? <Button to="/register">
+                          Registrieren
+                        </Button>
+                      : <Button to="/login">
+                          Anmelden
+                        </Button>
+                  }
                 </Grid>
               </NavBar>
           )

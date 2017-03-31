@@ -6,11 +6,13 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { ConnectedRouter as Router } from 'react-router-redux';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Grid from 'grid-styled';
 
 import * as authSelectors from 'containers/Auth/ducks/selectors';
+import { getLocation } from './ducks/selectors';
 
 import DefaultTheme from 'themes/default';
 
@@ -43,10 +45,10 @@ export class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router history={this.props.history}>
         <ThemeProvider theme={DefaultTheme}>
           <Grid md={6 / 6}>
-            <Header isLoggedIn={this.props.isLoggedIn} />
+            <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
             <Grid md={1 / 6} />
             <Grid md={4 / 6}>
               <Content>
@@ -82,6 +84,7 @@ App.propTypes = {
 const mapStateToProps = (state) => {
   return {
     isLoggedIn: authSelectors.getLoggedIn(state),
+    routerLocation: getLocation(state),
   };
 };
 
