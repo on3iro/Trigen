@@ -41,7 +41,7 @@ export const LoginForm = props => {
       <Field name="password" type="password"
         component={RenderField} label="Passwort"
       />
-      <Button submit >Login</Button>
+      <Button submit >Anmelden</Button>
     </form>
   );
 };

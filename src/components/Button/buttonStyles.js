@@ -28,7 +28,7 @@ const getBackground = props => {
 
 const buttonStyles = css`
   display: inline-block;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   padding: 2px 10px;
   width: 100%;
   height: 30px;
