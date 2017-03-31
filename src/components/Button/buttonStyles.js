@@ -8,6 +8,24 @@
 import { css } from 'styled-components';
 
 
+const getBackground = props => {
+  let color = props.theme.primary;
+  let hover = props.theme.primaryHover;
+
+  if(props.warning) {
+    color = props.theme.warning;
+    hover = props.theme.warningHover;
+  }else if(props.secondary) {
+    color = props.theme.secondary;
+    hover = props.theme.secondaryHover;
+  }
+
+  return {
+    color,
+    hover
+  };
+};
+
 const buttonStyles = css`
   display: inline-block;
   margin: 0;
@@ -16,7 +34,7 @@ const buttonStyles = css`
   height: 30px;
 
   text-decoration: none;
-  background-color: ${props => props.warning ? props.theme.secondary : props.theme.primary};
+  background-color: ${props => getBackground(props).color};
   color: ${props => props.theme.noneWhite};
   outline: 0;
   border-radius: 1px;
@@ -24,7 +42,7 @@ const buttonStyles = css`
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.warning ? props.theme.secondaryHover : props.theme.primaryHover};
+    background-color: ${props => getBackground(props).hover};
   }
 `;
 

@@ -20,16 +20,15 @@ import Content from './Content';
 
 import AGBPage from 'containers/AGBPage';
 import AccountsPage from 'containers/AccountsPage';
-import Auth from 'containers/Auth';
 import FAQPage from 'containers/FAQPage';
 import HomePage from 'containers/HomePage';
 import Impressum from 'containers/ImpressumPage';
+import LoginPage from 'containers/LoginPage';
 import Logout from 'containers/Auth/Logout';
 import PricingPage from 'containers/PricingPage';
+import ProtectedRoute from 'containers/Auth/ProtectedRoute';
 import Register from 'containers/Auth/Register';
 import UserProfile from 'containers/Auth/UserProfile';
-
-import ProtectedRoute from 'containers/Auth/ProtectedRoute';
 
 
 export class App extends Component {
@@ -62,7 +61,7 @@ export class App extends Component {
                   <ProtectedRoute path="/accounts" component={AccountsPage} />
                   <ProtectedRoute path="/profile" component={UserProfile} />
                   <Route path="/register" component={Register} />
-                  <Route path="/login" component={Auth} />
+                  <Route path="/login" component={LoginPage} />
                   <Route path="/logout" component={Logout} />
                 </Switch>
               </Content>

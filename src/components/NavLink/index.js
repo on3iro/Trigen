@@ -7,8 +7,9 @@
 
 import React, { PropTypes } from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-import StyledLink from 'components/StyledLink';
+// import StyledLink from 'components/StyledLink';
 
 
 export const Li = styled.li`
@@ -22,21 +23,22 @@ export const Li = styled.li`
   }
 `;
 
-export const RestyledLink = styled(StyledLink)`
+export const RestyledLink = styled(NavLink)`
   display: inline-block;
   height: 100%;
 
   color: ${props => props.theme.noneWhite};
   font-size: 24px;
   font-family: ${props => props.theme.primaryFont};
+  text-decoration: none;
 
   &.active {
     color: ${props => props.theme.main};
   }
 `;
 
-const NavLink = props => {
-  const { icon, iconHover, ...rest } = props;
+const StyledNavLink = props => {
+  const { icon, iconHover, secondary, ...rest } = props;
   return (
     <Li>
       <RestyledLink
@@ -53,4 +55,4 @@ NavLink.propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-export default NavLink;
+export default StyledNavLink;
