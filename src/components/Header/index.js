@@ -20,7 +20,7 @@ export const Header = props => {
     <Wrapper>
       <Grid md={1 / 6}>
         <Logo to="/">
-          <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
+          <Img src={require('img/trigen_logo_small.png')} alt="trigen logo" />
         </Logo>
       </Grid>
       <Grid md={1 / 6} />
