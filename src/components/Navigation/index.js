@@ -16,7 +16,7 @@ const Navigation = () => {
     <Wrapper>
       <NavBar>
         <Grid lg={1 / 3}>
-          <NavLink exact to="/">
+          <NavLink to="/home">
             Startseite
           </NavLink>
         </Grid>

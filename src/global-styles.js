@@ -10,7 +10,7 @@ injectGlobal`
   * {
     box-sizing: border-box;
     font-family: ${props => props.theme.primaryFont};
-    font-size: 17px;
+    font-size: 16px;
   }
 
   html,

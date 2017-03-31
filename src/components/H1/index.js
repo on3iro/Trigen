@@ -8,9 +8,9 @@ import styled from 'styled-components';
 
 
 const H1 = styled.h1`
-  font-size: 29px;
+  font-size: 1.9rem;
   margin-top: 0;
-  margin-bottom: 0.55em;
+  margin-bottom: 0.85rem;
 
   color: ${props => props.theme.main};
 `;

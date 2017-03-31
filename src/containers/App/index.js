@@ -6,7 +6,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Grid from 'grid-styled';
 
@@ -53,7 +53,8 @@ export class App extends Component {
             <Grid lg={4 / 6}>
               <Content>
                 <Switch>
-                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
+                  <ProtectedRoute path="/home" component={HomePage} />
                   <Route path="/impressum" component={Impressum} />
                   <Route path="/agb" component={AGBPage} />
                   <Route path="/faq" component={FAQPage} />
