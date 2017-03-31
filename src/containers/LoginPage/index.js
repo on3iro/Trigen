@@ -56,7 +56,7 @@ const LoginPage = props => {
             sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
             sed diam voluptua.
           </IntroText>
-          <Disclaimer><strong>DISCLAIMER:</strong>
+          <Disclaimer><strong>DISCLAIMER: </strong>
             This is a university project and no actual product!
             For further information please visit: <a href="https://github.com/on3iro/passCreator-Frontend">github/on3iro/passCreator-Frontend</a>
           </Disclaimer>

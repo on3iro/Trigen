@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Button from 'components/Button';
 
 import LoginForm from './LoginForm';
+import FormDivider from './FormDivider';
 import Wrapper from './Wrapper';
 
 import { loginSubmit } from './ducks/actions';
@@ -19,6 +20,7 @@ export class Login extends Component {
     return (
       <Wrapper>
         <LoginForm onSubmit={this.handleSubmit} />
+        <FormDivider>Noch kein Account?</FormDivider>
         <Button to="/register" secondary>Registrieren</Button>
       </Wrapper>
     );
