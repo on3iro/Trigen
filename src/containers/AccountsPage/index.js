@@ -21,6 +21,7 @@ import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter, getAccountCount } from './ducks/selectors';
 import FilterInput from './FilterInput';
 import AddAccountButton from './AddAccountButton';
+import BuySlotsButton from './BuySlotsButton';
 import List from './List';
 
 
@@ -63,14 +64,26 @@ export class AccountsPage extends Component {
           <H1>Nutzerkonten</H1>
         </Grid>
         <ControlWrapper>
-          <Grid md={1 / 6}>
-            <AddAccountButton onClick={this.addItem}>Account hinzufügen</AddAccountButton>
+          <Grid md={3 / 12}>
+            {
+              this.props.accountCount >= this.props.maxAccounts
+                ? <BuySlotsButton
+                    warning onClick={console.log('buy buy buy')}
+                  >
+                    Slots erwerben
+                  </BuySlotsButton>
+                : <AddAccountButton
+                    onClick={this.addItem}
+                  >
+                    Account hinzufügen
+                  </AddAccountButton>
+            }
           </Grid>
-          <Grid md={1 / 6}/>
-          <Grid md={1 / 6}>
+          <Grid md={1 / 12} />
+          <Grid md={2 / 12}>
             <Span light>Slots: {this.props.accountCount} / {this.props.maxAccounts}</Span>
           </Grid>
-          <Grid md={3 / 6}>
+          <Grid md={6 / 12}>
             <FilterInput
               type="text"
               name="accountFilter"
