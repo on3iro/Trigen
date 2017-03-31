@@ -15,8 +15,10 @@ import styled from 'styled-components';
 import H1 from 'components/H1';
 import Span from 'components/Span';
 
+import { getMaxAccounts } from 'containers/Auth/ducks/selectors';
+
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
-import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
+import { makeGetFilteredAccounts, getAccountFilter, getAccountCount } from './ducks/selectors';
 import FilterInput from './FilterInput';
 import AddAccountButton from './AddAccountButton';
 import List from './List';
@@ -66,7 +68,7 @@ export class AccountsPage extends Component {
           </Grid>
           <Grid md={1 / 6}/>
           <Grid md={1 / 6}>
-            <Span light>Slots: 4 / 10</Span>
+            <Span light>Slots: {this.props.accountCount} / {this.props.maxAccounts}</Span>
           </Grid>
           <Grid md={3 / 6}>
             <FilterInput
@@ -89,6 +91,8 @@ export class AccountsPage extends Component {
 AccountsPage.propTypes = {
   accountFilter: PropTypes.string,
   accounts: PropTypes.arrayOf(PropTypes.object),
+  accountCount: PropTypes.number,
+  maxAccounts: PropTypes.number,
   addAccount: PropTypes.func,
   fetchAccounts: PropTypes.func,
   filterAccounts: PropTypes.func,
@@ -100,6 +104,8 @@ const mapStateToProps = (state) => {
   return {
     accounts: getFilteredAccounts(state),
     accountFilter: getAccountFilter(state),
+    accountCount: getAccountCount(state),
+    maxAccounts: getMaxAccounts(state),
   };
 };
 
