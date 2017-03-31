@@ -1,4 +1,4 @@
-[![Trigen Logo]](/src/img/Trigen_Logo.png)
+![Trigen Logo](/src/img/Trigen_Logo.png)
 
 # passCreator-Frontend
 
