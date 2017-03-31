@@ -11,7 +11,6 @@ import A from './A';
 import StyledButton from './StyledButton';
 import StyledSubmit from './StyledSubmit';
 import StyledNavLink from './StyledNavLink';
-import Wrapper from './Wrapper';
 
 
 const Button = props => {
@@ -38,11 +37,7 @@ const Button = props => {
     );
   }
 
-  return (
-    <Wrapper>
-      {button}
-    </Wrapper>
-  );
+  return button;
 };
 
 Button.propTypes = {

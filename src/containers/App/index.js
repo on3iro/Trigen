@@ -60,7 +60,7 @@ export class App extends Component {
                   <Route path="/pricing" component={PricingPage} />
                   <ProtectedRoute path="/accounts" component={AccountsPage} />
                   <ProtectedRoute path="/profile" component={UserProfile} />
-                  <Route path="/register" component={Register} />
+                  <Route path="/register" component={LoginPage} />
                   <Route path="/login" component={LoginPage} />
                   <Route path="/logout" component={Logout} />
                 </Switch>

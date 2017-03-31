@@ -1,12 +1,16 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
-import Login from 'containers/Auth/Login';
+import Auth from 'containers/Auth';
+import Register from 'containers/Auth/Register';
 
 
-const LoginPage = () => {
+const LoginPage = props => {
   return (
     <div>
-      <Login />
+      <p>do you dare?</p>
+      <Route path="/login" component={Auth} />
+      <Route path="/register" component={Register} />
     </div>
   );
 };

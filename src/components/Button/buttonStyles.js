@@ -28,7 +28,7 @@ const getBackground = props => {
 
 const buttonStyles = css`
   display: inline-block;
-  margin: 0;
+  margin: 0 0 10px 0;
   padding: 2px 10px;
   width: 100%;
   height: 30px;
@@ -36,9 +36,12 @@ const buttonStyles = css`
   text-decoration: none;
   background-color: ${props => getBackground(props).color};
   color: ${props => props.theme.noneWhite};
+
+  font-weight: bold;
+  text-align: center;
+
   outline: 0;
   border-radius: 1px;
-  font-weight: bold;
   cursor: pointer;
 
   &:hover {
