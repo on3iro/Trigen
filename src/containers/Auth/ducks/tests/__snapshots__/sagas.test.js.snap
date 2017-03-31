@@ -51,6 +51,7 @@ Object {
         "user": Object {
           "email": "test@test.com",
           "id": "1",
+          "maxAccounts": 5,
           "name": "testuser",
         },
       },
