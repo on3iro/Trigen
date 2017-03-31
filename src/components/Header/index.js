@@ -25,7 +25,7 @@ export const Header = props => {
       </Grid>
       <Grid md={1 / 6} />
       <Grid md={3 / 6}>
-        <Navigation />
+        <Navigation {...props} />
       </Grid>
       <Grid md={1 / 6}>
         <UserNav {...props} />
