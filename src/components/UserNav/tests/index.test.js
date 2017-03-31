@@ -11,9 +11,4 @@ describe('<UserNav />', () => {
     const wrapper = shallow(<UserNav />);
     expect(wrapper.find(NavBar).length).toBe(1);
   });
-
-  it('should render at least one <NavLink/>', () => {
-    const wrapper = shallow(<UserNav />);
-    expect(wrapper.find(NavLink).exists()).toBe(true);
-  });
 });

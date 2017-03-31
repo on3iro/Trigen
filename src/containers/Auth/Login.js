@@ -20,7 +20,7 @@ export class Login extends Component {
     return (
       <Wrapper>
         <LoginForm onSubmit={this.handleSubmit} />
-        <FormDivider>Noch kein Account?</FormDivider>
+        <FormDivider>Noch keinen Account?</FormDivider>
         <Button to="/register" secondary>Registrieren</Button>
       </Wrapper>
     );

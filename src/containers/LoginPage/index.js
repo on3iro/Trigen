@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const IntroText = styled.p`
-  margin: 40px 0 0 0 ;
+  margin: 55px 0 0 0 ;
 
   color: ${props => props.theme.lightText};
 `;

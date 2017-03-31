@@ -9,6 +9,7 @@ import Grid from 'grid-styled';
 
 import Navigation from 'components/Navigation';
 import UserNav from 'components/UserNav';
+
 import Logo from './Logo';
 import Img from './Img';
 import Wrapper from './Wrapper';
@@ -19,13 +20,13 @@ export const Header = props => {
     <Wrapper>
       <Grid md={1 / 6}>
         <Logo to="/">
-          <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
+          <Img src={require('img/trigen_logo_small.png')} alt="trigen logo" />
         </Logo>
       </Grid>
-      <Grid md={3 / 6}>
-        <Navigation />
-      </Grid>
       <Grid md={1 / 6} />
+      <Grid md={3 / 6}>
+        <Navigation {...props} />
+      </Grid>
       <Grid md={1 / 6}>
         <UserNav {...props} />
       </Grid>

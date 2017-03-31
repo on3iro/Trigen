@@ -11,8 +11,11 @@ import { Redirect } from 'react-router-dom';
 
 import * as selectors from './ducks/selectors';
 
+import Button from 'components/Button';
+
 import Wrapper from './Wrapper';
 import RegisterForm from './RegisterForm';
+import FormDivider from './FormDivider';
 
 import { registerSubmit } from './ducks/actions';
 
@@ -32,6 +35,8 @@ export class Register extends Component {
         ) : (
             <Wrapper>
               <RegisterForm onSubmit={this.handleSubmit} />
+              <FormDivider>Schon registriert?</FormDivider>
+              <Button to="/login" secondary>Anmelden</Button>
             </Wrapper>
         )
     );

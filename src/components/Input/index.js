@@ -13,6 +13,7 @@ const StyledInput = styled.input`
   margin: 0 0 15px 0;
   padding: 5px 10px;
   width: 100%;
+  height: 35px;
 
   border: 1px solid ${props => props.error ? props.theme.warning : props.theme.outlines};
   border-radius: 1px;

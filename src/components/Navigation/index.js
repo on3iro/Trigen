@@ -11,25 +11,22 @@ import Wrapper from './Wrapper';
 import NavBar from './NavBar';
 import NavLink from 'components/NavLink';
 
-const Navigation = () => {
+const Navigation = props => {
   return (
     <Wrapper>
       <NavBar>
-        <Grid md={1 / 3}>
-          <NavLink to="/home">
-            Startseite
-          </NavLink>
-        </Grid>
-        <Grid md={1 / 3}>
-          <NavLink to="/pricing">
-            Preise
-          </NavLink>
-        </Grid>
-        <Grid md={1 / 3}>
-          <NavLink to="/faq">
-            FAQ
-          </NavLink>
-        </Grid>
+        {
+          props.isLoggedIn &&
+            <NavLink to="/home">
+              Passwort Generieren
+            </NavLink>
+        }
+        <NavLink to="/pricing">
+          Slots / Preise
+        </NavLink>
+        <NavLink to="/faq">
+          FAQ
+        </NavLink>
       </NavBar>
     </Wrapper>
   );
