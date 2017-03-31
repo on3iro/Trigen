@@ -18,11 +18,11 @@ const Navigation = props => {
         {
           props.isLoggedIn &&
             <NavLink to="/home">
-              Startseite
+              Passwort Generieren
             </NavLink>
         }
         <NavLink to="/pricing">
-          Slots Kaufen / Preise
+          Slots / Preise
         </NavLink>
         <NavLink to="/faq">
           FAQ
