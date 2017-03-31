@@ -28,6 +28,23 @@ const IntroText = styled.p`
   color: ${props => props.theme.lightText};
 `;
 
+const Disclaimer = styled.p`
+  &, strong {
+    color: ${props => props.theme.main};
+    font-size: 0.7rem;
+  }
+
+  a {
+    color: ${props => props.theme.primary};
+    font-size: 0.8rem;
+    text-decoration: none;
+
+    &:hover {
+      color: ${props => props.theme.primaryHover};
+    }
+  }
+`;
+
 const LoginPage = props => {
   return (
     <Wrapper>
@@ -37,6 +54,10 @@ const LoginPage = props => {
           <IntroText>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
           </IntroText>
+          <Disclaimer><strong>DISCLAIMER:</strong>
+            This is a university project and no actual product!
+            For further information please visit: <a href="https://github.com/on3iro/passCreator-Frontend">github/on3iro/passCreator-Frontend</a>
+          </Disclaimer>
         </Grid>
       </Grid>
       <Grid md={1 / 10} className="fullHeight">
