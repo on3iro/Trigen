@@ -30,6 +30,8 @@ export const RestyledLink = styled(NavLink)`
   font-family: ${props => props.theme.primaryFont};
   text-decoration: none;
 
+  outline: 0;
+
   &.active {
     color: ${props => props.theme.main};
   }
