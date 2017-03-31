@@ -13,8 +13,6 @@ const Content = styled.main`
   padding: 0;
   width: 100%;
   height: 400px;
-
-  overflow: auto;
 `;
 
 export default Content;

@@ -10,15 +10,19 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
 import Grid from 'grid-styled';
+import styled from 'styled-components';
 
-import Button from 'components/Button';
 import H1 from 'components/H1';
+import Span from 'components/Span';
 
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
 import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
 import FilterInput from './FilterInput';
+import AddAccountButton from './AddAccountButton';
 import List from './List';
 
+
+const ControlWrapper = styled.div``;
 
 export class AccountsPage extends Component {
   constructor(props) {
@@ -52,22 +56,28 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Grid md={4 / 4}>
-        <Grid md={4 / 4}>
+      <Grid md={1 / 1}>
+        <Grid md={6 / 6}>
           <H1>Nutzerkonten</H1>
         </Grid>
-        <Grid md={1 / 4}>
-          <Button onClick={this.addItem}>Account hinzufügen</Button>
-        </Grid>
-        <Grid md={3 / 4}>
-          <FilterInput
-            type="text"
-            name="accountFilter"
-            placeholder="Zum filtern mit Schreiben beginnen"
-            onChange={this.handleFilterChange}
-            value={this.props.accountFilter}
-          />
-        </Grid>
+        <ControlWrapper>
+          <Grid md={1 / 6}>
+            <AddAccountButton onClick={this.addItem}>Account hinzufügen</AddAccountButton>
+          </Grid>
+          <Grid md={1 / 6}/>
+          <Grid md={1 / 6}>
+            <Span light>Slots: 4 / 10</Span>
+          </Grid>
+          <Grid md={3 / 6}>
+            <FilterInput
+              type="text"
+              name="accountFilter"
+              placeholder="Zum filtern mit Schreiben beginnen"
+              onChange={this.handleFilterChange}
+              value={this.props.accountFilter}
+            />
+          </Grid>
+        </ControlWrapper>
         <List
           accounts={this.props.accounts}
         />
