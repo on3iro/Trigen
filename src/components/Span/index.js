@@ -6,6 +6,7 @@ const Span = styled.span`
   margin: -10px 0 10px 5px;
 
   color: ${props => props.error ? props.theme.warning : props.theme.outlines};
+  font-size: 0.8rem;
 `;
 
 export default Span;
