@@ -8,9 +8,8 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 const StyledImg = styled(Img)`
-  margin-left: 20px;
-  width: 230px;
-  height: 120px;
+  margin-left: 0;
+  width: 320px;
 `;
 
 const Jumbotron = props => {
