@@ -17,16 +17,16 @@ import Wrapper from './Wrapper';
 export const Header = props => {
   return (
     <Wrapper>
-      <Grid lg={1 / 6}>
+      <Grid md={1 / 6}>
         <Logo to="/">
           <Img src={require('img/Trigen_Logo.png')} alt="trigen logo" />
         </Logo>
       </Grid>
-      <Grid lg={3 / 6}>
+      <Grid md={3 / 6}>
         <Navigation />
       </Grid>
-      <Grid lg={1 / 6} />
-      <Grid lg={1 / 6}>
+      <Grid md={1 / 6} />
+      <Grid md={1 / 6}>
         <UserNav {...props} />
       </Grid>
     </Wrapper>
