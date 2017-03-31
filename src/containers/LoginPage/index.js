@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Login from './Login';
+import Login from 'containers/Auth/Login';
 
 
 const LoginPage = () => {
   return (
     <div>
-      <h1>test</h1>
       <Login />
     </div>
   );

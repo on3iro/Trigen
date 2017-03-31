@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import StyledLink from 'components/StyledLink';
+import Button from 'components/Button';
 
 import Wrapper from '../Wrapper';
 import { Login } from '../Login';
@@ -33,9 +33,9 @@ describe('<Login />', () => {
     expect(renderedWrapper.find(LoginForm).length).toMatchSnapshot();
   });
 
-  it('should render <StyledLink />', () => {
+  it('should render <Button />', () => {
     const { renderedWrapper } = renderComponent();
-    expect(renderedWrapper.find(StyledLink).length).toMatchSnapshot();
+    expect(renderedWrapper.find(Button).length).toMatchSnapshot();
   });
 
   it('should call loginSubmit() on handleSubmit', () => {
