@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 const StyledImg = styled(Img)`
+  margin-left: 20px;
   width: 230px;
   height: 120px;
 `;

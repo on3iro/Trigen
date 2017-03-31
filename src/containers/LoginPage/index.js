@@ -18,12 +18,12 @@ const Wrapper = styled.div`
   }
 
   .form {
-    margin-top: 30px;
+    margin-top: 45px;
   }
 `;
 
 const IntroText = styled.p`
-  margin: 50px 0 0 0 ;
+  margin: 40px 0 0 0 ;
 
   color: ${props => props.theme.lightText};
 `;
@@ -52,7 +52,9 @@ const LoginPage = props => {
         <Jumbotron />
         <Grid md={9 / 10}>
           <IntroText>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua.
           </IntroText>
           <Disclaimer><strong>DISCLAIMER:</strong>
             This is a university project and no actual product!
