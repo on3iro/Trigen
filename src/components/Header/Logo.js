@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Logo = styled(Link)`
   display: inline-block;
-  margin: 10px 50px;
+  margin: 10px 80px;
   outline: 0;
 `;
 
