@@ -37,7 +37,6 @@ const buttonStyles = css`
   background-color: ${props => getBackground(props).color};
   color: ${props => props.theme.noneWhite};
 
-  font-weight: bold;
   text-align: center;
 
   outline: 0;
