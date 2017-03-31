@@ -54,7 +54,7 @@ export const RegisterForm = props => {
       <Field name="confirm" type="password"
         component={RenderField} label="Passwort wiederholen"
       />
-      <Button submit>Jetzt registrieren</Button>
+      <Button submit>Jetzt kostenlos registrieren</Button>
     </form>
   );
 };

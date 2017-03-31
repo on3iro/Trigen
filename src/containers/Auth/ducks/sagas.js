@@ -21,6 +21,7 @@ export function *requestLogin(data) {
           id: '1',
           name: 'testuser',
           email: 'test@test.com',
+          maxAccounts: 5,
         }
       }
     };

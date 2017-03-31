@@ -8,6 +8,7 @@ import Input from 'components/Input';
 
 export default styled(Input)`
   display: inline-block;
+  margin: 0;
   padding: 2px 10px;
   width: 100%;
   height: 30px;

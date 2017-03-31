@@ -10,15 +10,22 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
 import Grid from 'grid-styled';
+import styled from 'styled-components';
 
-import Button from 'components/Button';
 import H1 from 'components/H1';
+import Span from 'components/Span';
+
+import { getMaxAccounts } from 'containers/Auth/ducks/selectors';
 
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
-import { makeGetFilteredAccounts, getAccountFilter } from './ducks/selectors';
+import { makeGetFilteredAccounts, getAccountFilter, getAccountCount } from './ducks/selectors';
 import FilterInput from './FilterInput';
+import AddAccountButton from './AddAccountButton';
+import BuySlotsButton from './BuySlotsButton';
 import List from './List';
 
+
+const ControlWrapper = styled.div``;
 
 export class AccountsPage extends Component {
   constructor(props) {
@@ -52,22 +59,40 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Grid md={4 / 4}>
-        <Grid md={4 / 4}>
+      <Grid md={1 / 1}>
+        <Grid md={6 / 6}>
           <H1>Nutzerkonten</H1>
         </Grid>
-        <Grid md={1 / 4}>
-          <Button onClick={this.addItem}>Account hinzufügen</Button>
-        </Grid>
-        <Grid md={3 / 4}>
-          <FilterInput
-            type="text"
-            name="accountFilter"
-            placeholder="Zum filtern mit Schreiben beginnen"
-            onChange={this.handleFilterChange}
-            value={this.props.accountFilter}
-          />
-        </Grid>
+        <ControlWrapper>
+          <Grid md={3 / 12}>
+            {
+              this.props.accountCount >= this.props.maxAccounts
+                ? <BuySlotsButton
+                    warning onClick={console.log('buy buy buy')}
+                  >
+                    Slots erwerben
+                  </BuySlotsButton>
+                : <AddAccountButton
+                    onClick={this.addItem}
+                  >
+                    Account hinzufügen
+                  </AddAccountButton>
+            }
+          </Grid>
+          <Grid md={1 / 12} />
+          <Grid md={2 / 12}>
+            <Span light>Slots: {this.props.accountCount} / {this.props.maxAccounts}</Span>
+          </Grid>
+          <Grid md={6 / 12}>
+            <FilterInput
+              type="text"
+              name="accountFilter"
+              placeholder="Zum filtern mit Schreiben beginnen"
+              onChange={this.handleFilterChange}
+              value={this.props.accountFilter}
+            />
+          </Grid>
+        </ControlWrapper>
         <List
           accounts={this.props.accounts}
         />
@@ -79,6 +104,8 @@ export class AccountsPage extends Component {
 AccountsPage.propTypes = {
   accountFilter: PropTypes.string,
   accounts: PropTypes.arrayOf(PropTypes.object),
+  accountCount: PropTypes.number,
+  maxAccounts: PropTypes.number,
   addAccount: PropTypes.func,
   fetchAccounts: PropTypes.func,
   filterAccounts: PropTypes.func,
@@ -90,6 +117,8 @@ const mapStateToProps = (state) => {
   return {
     accounts: getFilteredAccounts(state),
     accountFilter: getAccountFilter(state),
+    accountCount: getAccountCount(state),
+    maxAccounts: getMaxAccounts(state),
   };
 };
 
