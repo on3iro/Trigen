@@ -11,7 +11,6 @@ export default styled(Input)`
   margin: 0;
   padding: 2px 10px;
   width: 100%;
-  height: 30px;
 
   font-size: 17px;
   line-height: 17px;
