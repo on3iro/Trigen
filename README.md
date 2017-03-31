@@ -1,3 +1,5 @@
+[![Trigen Logo]](/src/img/Trigen_Logo.png)
+
 # passCreator-Frontend
 
 [![Build Status](https://travis-ci.org/on3iro/passCreator-Frontend.svg?branch=master)](https://travis-ci.org/on3iro/passCreator-Frontend)
