@@ -22,7 +22,8 @@ const UserNavLink = styled(NavLink)`
     background-position: 0px;
   }
 
-  &:hover .profile {
+  &:hover .profile,
+  &.active .profile {
     background-position: -25px;
   }
 
@@ -30,7 +31,8 @@ const UserNavLink = styled(NavLink)`
     background-image: url(${props => props.icon});
   }
 
-  &:hover .accounts {
+  &:hover .accounts,
+  &.active .accounts {
     background-position: -25px;
   }
 
@@ -38,7 +40,8 @@ const UserNavLink = styled(NavLink)`
     background-image: url(${props => props.icon});
   }
 
-  &:hover .logout {
+  &:hover .logout,
+  &.active .logout {
     background-position: -20px;
   }
 `;
@@ -64,22 +67,22 @@ const LogoutIcon = styled(Icon)`
 
 const UserNav = props => {
   return (
-    <Grid lg={3 / 3}>
+    <Grid md={3 / 3}>
       {
         props.isLoggedIn
           ? (
             <NavBar>
-              <Grid lg={1 / 3}>
+              <Grid md={1 / 3}>
                 <UserNavLink to="/profile" icon={profileIcon} >
                   <ProfileIcon className="profile" />
                 </UserNavLink>
               </Grid>
-              <Grid lg={1 / 3}>
+              <Grid md={1 / 3}>
                 <UserNavLink to="/accounts" icon={settingsIcon} >
                   <AccountsIcon className="accounts" />
                 </UserNavLink>
               </Grid>
-              <Grid lg={1 / 3}>
+              <Grid md={1 / 3}>
                 <UserNavLink to="/logout" icon={logoutIcon} >
                   <LogoutIcon className="logout" />
                 </UserNavLink>
@@ -87,7 +90,7 @@ const UserNav = props => {
             </NavBar>
           ) : (
               <NavBar>
-                <Grid lg={3 / 3}>
+                <Grid md={3 / 3}>
                   <NavLink to="/login" >
                     Anmelden
                   </NavLink>

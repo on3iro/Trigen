@@ -10,12 +10,15 @@ import styled from 'styled-components';
 
 const StyledInput = styled.input`
   display: block;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   padding: 5px 10px;
-  border: 1px solid ${props => props.error ? props.theme.secondary : props.theme.outlines};
+  width: 100%;
+
+  border: 1px solid ${props => props.error ? props.theme.warning : props.theme.outlines};
   border-radius: 1px;
   background: ${props => props.theme.noneWhite};
   color: ${props => props.theme.text};
+
   outline: 0;
 
   &:placeholder-shown,

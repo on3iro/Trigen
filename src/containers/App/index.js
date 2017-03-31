@@ -6,7 +6,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Grid from 'grid-styled';
 
@@ -20,16 +20,14 @@ import Content from './Content';
 
 import AGBPage from 'containers/AGBPage';
 import AccountsPage from 'containers/AccountsPage';
-import Auth from 'containers/Auth';
 import FAQPage from 'containers/FAQPage';
 import HomePage from 'containers/HomePage';
 import Impressum from 'containers/ImpressumPage';
+import LoginPage from 'containers/LoginPage';
 import Logout from 'containers/Auth/Logout';
 import PricingPage from 'containers/PricingPage';
-import Register from 'containers/Auth/Register';
-import UserProfile from 'containers/Auth/UserProfile';
-
 import ProtectedRoute from 'containers/Auth/ProtectedRoute';
+import UserProfile from 'containers/Auth/UserProfile';
 
 
 export class App extends Component {
@@ -47,26 +45,27 @@ export class App extends Component {
     return (
       <Router>
         <ThemeProvider theme={DefaultTheme}>
-          <Grid lg={6 / 6}>
+          <Grid md={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} />
-            <Grid lg={1 / 6} />
-            <Grid lg={4 / 6}>
+            <Grid md={1 / 6} />
+            <Grid md={4 / 6}>
               <Content>
                 <Switch>
-                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
+                  <ProtectedRoute path="/home" component={HomePage} />
                   <Route path="/impressum" component={Impressum} />
                   <Route path="/agb" component={AGBPage} />
                   <Route path="/faq" component={FAQPage} />
                   <Route path="/pricing" component={PricingPage} />
                   <ProtectedRoute path="/accounts" component={AccountsPage} />
                   <ProtectedRoute path="/profile" component={UserProfile} />
-                  <Route path="/register" component={Register} />
-                  <Route path="/login" component={Auth} />
+                  <Route path="/register" component={LoginPage} />
+                  <Route path="/login" component={LoginPage} />
                   <Route path="/logout" component={Logout} />
                 </Switch>
               </Content>
             </Grid>
-            <Grid lg={1 / 6} />
+            <Grid md={1 / 6} />
             <Footer />
           </Grid>
         </ThemeProvider>

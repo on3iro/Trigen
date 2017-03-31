@@ -17,7 +17,7 @@ export default styled(Button)`
 
   border-radius: 50%;
 
-  background-color: ${props => props.primary ? props.theme.primary : props.theme.secondary};
+  background-color: ${props => props.warning ? props.theme.warning : props.theme.primary};
   background-image: ${props => getBGImage(props)};
 
   &.save {

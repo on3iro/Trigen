@@ -10,7 +10,7 @@ import React, { PropTypes, Children } from 'react';
 import A from './A';
 import StyledButton from './StyledButton';
 import StyledSubmit from './StyledSubmit';
-import Wrapper from './Wrapper';
+import StyledNavLink from './StyledNavLink';
 
 
 const Button = props => {
@@ -21,12 +21,12 @@ const Button = props => {
     </A>
   );
 
-  // If the button has a handleRoute prop, we want to render a button
-  if(props.handleRoute) {
+  // If the button has a 'to' prop, we want to render a NavLink
+  if(props.to) {
     button = (
-      <StyledButton onClick={props.handleRoute} {...props} >
+      <StyledNavLink {...props} >
         {Children.toArray(props.children)}
-      </StyledButton>
+      </StyledNavLink>
     );
   }
 
@@ -37,11 +37,7 @@ const Button = props => {
     );
   }
 
-  return (
-    <Wrapper>
-      {button}
-    </Wrapper>
-  );
+  return button;
 };
 
 Button.propTypes = {

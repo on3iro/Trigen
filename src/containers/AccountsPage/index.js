@@ -52,14 +52,14 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Grid lg={4 / 4}>
-        <Grid lg={4 / 4}>
+      <Grid md={4 / 4}>
+        <Grid md={4 / 4}>
           <H1>Nutzerkonten</H1>
         </Grid>
-        <Grid lg={1 / 4}>
+        <Grid md={1 / 4}>
           <Button onClick={this.addItem}>Account hinzufügen</Button>
         </Grid>
-        <Grid lg={3 / 4}>
+        <Grid md={3 / 4}>
           <FilterInput
             type="text"
             name="accountFilter"

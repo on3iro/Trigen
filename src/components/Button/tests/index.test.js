@@ -23,9 +23,9 @@ describe('<Button />', () => {
     expect(renderedComponent.find('a').length).toEqual(1);
   });
 
-  it('should render a <button> tag to change route if the handleRoute prop is specified', () => {
+  it('should render a <a> tag to change route if the "to" prop is specified', () => {
     const renderedComponent = renderComponent({ handleRoute });
-    expect(renderedComponent.find('button').length).toEqual(1);
+    expect(renderedComponent.find('a').length).toEqual(1);
   });
 
   it('should render a <input type=submit> if submit prop is specified', () => {
