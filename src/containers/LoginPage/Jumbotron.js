@@ -12,7 +12,7 @@ const StyledImg = styled(Img)`
   width: 320px;
 `;
 
-const Jumbotron = props => {
+const Jumbotron = () => {
   return (
     <Wrapper>
       <StyledImg src={require('img/Trigen_Logo.png')} alt="Trigen Logo" />

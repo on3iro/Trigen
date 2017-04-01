@@ -104,7 +104,7 @@ export class ListItem extends Component {
               <Grid key="user" md={4 / 12}>
                 <Span key="username">{account.username}</Span>
               </Grid>
-              ])
+            ])
         }
         <Grid md={1 / 12}>
           <AccountControls
