@@ -8,7 +8,7 @@
 import { css } from 'styled-components';
 
 
-const getBackground = props => {
+export const getBackground = props => {
   let color = props.theme.primary;
   let hover = props.theme.primaryHover;
 
