@@ -40,4 +40,8 @@ const FormDivider = props => {
   );
 };
 
+FormDivider.propTypes = {
+  children: React.PropTypes.node,
+};
+
 export default FormDivider;

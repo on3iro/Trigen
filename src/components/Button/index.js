@@ -8,7 +8,6 @@
 import React, { PropTypes, Children } from 'react';
 
 import A from './A';
-import StyledButton from './StyledButton';
 import StyledSubmit from './StyledSubmit';
 import StyledNavLink from './StyledNavLink';
 

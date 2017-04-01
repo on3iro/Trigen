@@ -15,15 +15,23 @@ const AccountControls = props => {
       {
         props.edit
           ? ([
-              <ItemButton className="save" key="save" primary onClick={props.save} />,
-              <ItemButton className="cancel" key="cancel" warning onClick={props.cancel} />
-            ]) : ([
-              <ItemButton className="edit" key="edit" primary onClick={props.editItem} />,
-              <ItemButton className="delete" key="delete" warning onClick={props.delete} />
-            ])
+            <ItemButton className="save" key="save" primary onClick={props.save} />,
+            <ItemButton className="cancel" key="cancel" warning onClick={props.cancel} />
+          ]) : ([
+            <ItemButton className="edit" key="edit" primary onClick={props.editItem} />,
+            <ItemButton className="delete" key="delete" warning onClick={props.delete} />
+          ])
       }
     </Wrapper>
   );
-}
+};
+
+AccountControls.propTypes = {
+  cancel: PropTypes.func.isRequired,
+  delete: PropTypes.func.isRequired,
+  edit: PropTypes.bool,
+  editItem: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired,
+};
 
 export default AccountControls;

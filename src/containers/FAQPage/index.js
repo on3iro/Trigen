@@ -5,13 +5,12 @@
   */
 
 import React from 'react';
-import styled from 'styled-components';
 
 import Accordion from 'components/Accordion';
 import H1 from 'components/H1';
 
 import Wrapper from './Wrapper';
-import entries from './entries';
+import entries from 'config/entries';
 
 
 const FAQ = () => {

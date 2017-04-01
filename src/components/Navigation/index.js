@@ -5,7 +5,6 @@
   */
 
 import React from 'react';
-import Grid from 'grid-styled';
 
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
@@ -30,6 +29,10 @@ const Navigation = props => {
       </NavBar>
     </Wrapper>
   );
+};
+
+Navigation.propTypes = {
+  isLoggedIn: React.PropTypes.bool,
 };
 
 export default Navigation;

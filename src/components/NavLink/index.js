@@ -9,6 +9,8 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import { surpressNoUsedVarsLinterError } from 'shared/helperFunctions';
+
 
 export const Li = styled.li`
   display: inline-block;
@@ -39,7 +41,10 @@ export const RestyledLink = styled(NavLink)`
 `;
 
 const StyledNavLink = props => {
+  // pull props off to avoid react-unknown-prop error
   const { icon, iconHover, secondary, ...rest } = props;
+  surpressNoUsedVarsLinterError({ icon, iconHover, secondary });
+
   return (
     <Li>
       <RestyledLink
@@ -51,9 +56,12 @@ const StyledNavLink = props => {
   );
 };
 
-NavLink.propTypes = {
+StyledNavLink.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
+  icon: PropTypes.string,
+  iconHover: PropTypes.string,
+  secondary: PropTypes.bool,
 };
 
 export default StyledNavLink;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Input from './Input';
 
 
-export default styled(Input)`
+const FilterInput = styled(Input)`
   display: inline-block;
   box-sizing: border-box;
   width: 100%;
@@ -13,3 +13,5 @@ export default styled(Input)`
   background: ${props => props.theme.noneWhite};
   border: 1px solid ${props => props.theme.outlines};
 `;
+
+export default FilterInput;

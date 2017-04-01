@@ -68,7 +68,7 @@ export class AccountsPage extends Component {
             {
               this.props.accountCount >= this.props.maxAccounts
                 ? <BuySlotsButton
-                    warning onClick={console.log('buy buy buy')}
+                    warning onClick={() => {}}
                   >
                     Slots erwerben
                   </BuySlotsButton>

@@ -14,14 +14,15 @@ export default [
         <p>Trigen ist ein Passwort-Service vergleichbar mit Passwort-Managern wie Keepass.
       Im Unterschied zu traditionellen Passwort-Mangagern werden die Passwörter allerdings nicht
       auf unseren Servern gespeichert. Stattdessen generieren wir das Passwort jedes Mal, wenn Du es brauchst.
-          </p>)
+        </p>
+      );
     }
   },
   {
     question: 'Wie funktioniert Trigen?',
     answer: () => {
       return ([
-        <p>Trigen generiert ein Passwort aus insgesamt drei Bestandteilen:</p>,
+        <p key="1">Trigen generiert ein Passwort aus insgesamt drei Bestandteilen:</p>,
         <ul>
           <FAQLi key="1">Einer Kombination aus Nutzername und einer Web-Domain</FAQLi>
           <FAQLi key="2">Einem gehmeimen Schlüssel, welchen wir für jeden Nutzer generieren</FAQLi>
@@ -34,17 +35,17 @@ export default [
   {
     question: 'Kann ich auch eigene, bereits verwendete Passwörter nutzen?',
     answer: () => {
-      return (
-        <p>Nein, das geht leider nicht, da wir dass Passwort jedes Mal dynamisch für Dich
-          generieren und keine Passwörter auf unseren Servern speichern.</p>
-      );
+      return ([
+        <p key="1">Nein, das geht leider nicht, da wir dass Passwort jedes Mal dynamisch für Dich
+        generieren und keine Passwörter auf unseren Servern speichern.</p>
+      ]);
     }
   },
   {
     question: 'Was muss ich bei meinem Masterpasswort beachten?',
     answer: () => {
       return ([
-        <p>Da alle deine Passwörter mit Deinem ganz persönlichen Masterpasswort
+        <p key="1">Da alle deine Passwörter mit Deinem ganz persönlichen Masterpasswort
           generiert werden, sollte selbiges natürlich besonders sicher sein.
           Im Folgenden findest du einige Tipps, welche du bzgl. des Masterpasswords beachten solltest:
         </p>,
@@ -64,10 +65,10 @@ export default [
   {
     question: 'Wie kann ich mehr Account-Slots erhalten?',
     answer: () => {
-      return (
-        <p>Mehr Slots erhältst du direkt über deinen Account-Zugang. 100 zusätzliche Slots
-          kosten Dich 5Eur</p>
-      );
+      return ([
+        <p key="1">Mehr Slots erhältst du direkt über deinen Account-Zugang. 100 zusätzliche Slots
+        kosten Dich 5Eur</p>
+      ]);
     }
   },
 ];

@@ -6,27 +6,11 @@ import styled from 'styled-components';
 import Auth from 'containers/Auth';
 import Register from 'containers/Auth/Register';
 
+import Wrapper from './Wrapper';
 import Jumbotron from './Jumbotron';
 import Divider from './Divider';
+import IntroText from './IntroText';
 
-
-const Wrapper = styled.div`
-  height: 100%;
-
-  .fullHeight {
-    height: 100%;
-  }
-
-  .form {
-    margin-top: 45px;
-  }
-`;
-
-const IntroText = styled.p`
-  margin: 35px 0 0 0 ;
-
-  color: ${props => props.theme.lightText};
-`;
 
 const Disclaimer = styled.p`
   &, strong {
@@ -45,7 +29,7 @@ const Disclaimer = styled.p`
   }
 `;
 
-const LoginPage = props => {
+const LoginPage = () => {
   return (
     <Wrapper>
       <Grid md={5 / 10}>
