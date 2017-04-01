@@ -7,45 +7,15 @@ import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import Grid from 'grid-styled';
 
-import NavLink from 'components/NavLink';
 import Button from 'components/Button';
 
 import NavBar from './NavBar';
+import UserNavLink from './UserNavLink';
 
 import profileIcon from 'img/icons/Icon_Button_Userprofile.png';
 import settingsIcon from 'img/icons/Icon_Button_Settings.png';
 import logoutIcon from 'img/icons/Icon_Button_Logout.png';
 
-
-const UserNavLink = styled(NavLink)`
-  .profile {
-    background-image: url(${props => props.icon});
-    background-position: 0px;
-  }
-
-  &:hover .profile,
-  &.active .profile {
-    background-position: -25px;
-  }
-
-  .accounts {
-    background-image: url(${props => props.icon});
-  }
-
-  &:hover .accounts,
-  &.active .accounts {
-    background-position: -25px;
-  }
-
-  .logout {
-    background-image: url(${props => props.icon});
-  }
-
-  &:hover .logout,
-  &.active .logout {
-    background-position: -20px;
-  }
-`;
 
 const Icon = styled.div`
   padding-bottom: 10px;
@@ -92,19 +62,19 @@ const UserNav = props => {
               </Grid>
             </NavBar>
           ) : (
-              <NavBar>
-                <Grid md={3 / 3}>
-                  {
-                    location.pathname === '/login'
-                      ? <Button to="/register">
-                          Registrieren
-                        </Button>
-                      : <Button to="/login">
-                          Anmelden
-                        </Button>
-                  }
-                </Grid>
-              </NavBar>
+            <NavBar>
+              <Grid md={3 / 3}>
+                {
+                  location.pathname === '/login'
+                    ? <Button to="/register">
+                        Registrieren
+                      </Button>
+                    : <Button to="/login">
+                        Anmelden
+                      </Button>
+                }
+              </Grid>
+            </NavBar>
           )
       }
     </Grid>
