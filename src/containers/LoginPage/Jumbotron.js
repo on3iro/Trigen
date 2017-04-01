@@ -7,6 +7,7 @@ import Img from 'components/Img';
 const Wrapper = styled.div`
   height: 100%;
 `;
+
 const StyledImg = styled(Img)`
   margin-left: 0;
   width: 320px;

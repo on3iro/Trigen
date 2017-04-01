@@ -7,6 +7,6 @@ import Wrapper from '../Wrapper';
 describe('<Wrapper />', () => {
   it('should render section', () => {
     const wrapper = shallow(<Wrapper />);
-    expect(wrapper.find('section').length).toMatchSnapshot();
+    expect(wrapper.find('section').length).toBe(1);
   });
 });
