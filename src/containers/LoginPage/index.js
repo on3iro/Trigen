@@ -45,7 +45,7 @@ const Disclaimer = styled.p`
   }
 `;
 
-const LoginPage = props => {
+const LoginPage = () => {
   return (
     <Wrapper>
       <Grid md={5 / 10}>

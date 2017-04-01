@@ -113,6 +113,7 @@ const UserNav = props => {
 
 UserNav.propTypes = {
   isLoggedIn: PropTypes.bool,
+  routerLocation: PropTypes.object,
 };
 
 export default UserNav;

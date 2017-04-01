@@ -79,6 +79,8 @@ export class App extends Component {
 App.propTypes = {
   children: PropTypes.element,
   isLoggedIn: PropTypes.bool,
+  history: PropTypes.object,
+  routerLocation: PropTypes.object,
 };
 
 const mapStateToProps = (state) => {
