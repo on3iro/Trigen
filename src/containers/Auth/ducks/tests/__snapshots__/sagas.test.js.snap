@@ -26,28 +26,13 @@ Object {
 }
 `;
 
-exports[`login authorize generator should call requestLogin with action.payload 1`] = `
-Object {
-  "@@redux-saga/IO": true,
-  "CALL": Object {
-    "args": Array [
-      Object {
-        "test": "test",
-      },
-    ],
-    "context": null,
-    "fn": [Function],
-  },
-}
-`;
-
 exports[`login requestLogin generator should call axios.post 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "PUT": Object {
     "action": Object {
       "payload": Object {
-        "token": "testtoke",
+        "token": "testtoken",
         "user": Object {
           "email": "test@test.com",
           "id": "1",

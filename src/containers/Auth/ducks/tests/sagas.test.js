@@ -11,42 +11,34 @@ describe('handleAuthSaga', () => {
 
   it('should start task to watch LOGIN_SUBMIT', () => {
     const takeLatestDescriptor = handleAuthSaga.next().value;
-    const expectedYield = takeLatest(types.LOGIN_SUBMIT, sagas.authorize);
+    const expectedYield = takeLatest(types.LOGIN_SUBMIT, sagas.requestLogin);
     expect(takeLatestDescriptor).toMatchSnapshot();
   });
 
   it('should start taks to watch REGISTER_SUBMIT', () => {
     const takeLatestDescriptor = handleAuthSaga.next().value;
-    const expectedYield = takeLatest(types.REGISTER_SUBMIT, sagas.register);
+    const expectedYield = takeLatest(types.REGISTER_SUBMIT, sagas.requestRegister);
     expect(takeLatestDescriptor).toMatchSnapshot();
   });
 });
 
 describe('login', () => {
-  describe('authorize generator', () => {
-    const action = { type: types.LOGIN_SUBMIT, payload: {
-      test: 'test',
-    }};
-    const authorizeGenerator = sagas.authorize(action);
-
-    it('should call requestLogin with action.payload', () => {
-      const callDescriptor = authorizeGenerator.next().value;
-      const expectedYield = call(sagas.requestLogin, { test: 'test' });
-      expect(callDescriptor).toMatchSnapshot();
-    });
-  });
 
   describe('requestLogin generator', () => {
-    const data = { test: 'test' };
+    const action = {
+      payload: {
+        test: 'test',
+      }
+    };
     let requestLoginGenerator;
 
     beforeEach(() => {
-      requestLoginGenerator = sagas.requestLogin(data);
+      requestLoginGenerator = sagas.requestLogin(action);
     });
 
     it('should call axios.post', () => {
       const callDescriptor = requestLoginGenerator.next().value;
-      const expectedYield = call(axios.post, 'http://localhost:3030/api/auth/login', data, { headers: {'Content-Type': 'application/json'}});
+      const expectedYield = call(axios.post, 'http://localhost:3030/api/auth/login', action.payload, { headers: {'Content-Type': 'application/json'}});
       expect(callDescriptor).toMatchSnapshot();
     });
 
@@ -81,30 +73,22 @@ describe('login', () => {
 });
 
 describe('register', () => {
-  describe('register generator', () => {
-    const action = { type: types.REGISTER_SUBMIT, payload: {
-      test: 'test',
-    }};
-    const registerGenerator = sagas.register(action);
-
-    it('should call requestRegister with action payload', () => {
-      const callDescriptor = registerGenerator.next().value;
-      const expectedYield = call(sagas.requestRegister, { test: 'test' });
-      expect(callDescriptor).toEqual(expectedYield);
-    });
-  });
 
   describe('requestRegister generator', () => {
-    const data = { test: 'test' };
+    const action = {
+      payload: {
+        test: 'test'
+      }
+    };
     let requestRegisterGenerator;
 
     beforeEach(() => {
-      requestRegisterGenerator = sagas.requestRegister(data);
+      requestRegisterGenerator = sagas.requestRegister(action);
     });
 
     it('should call axios.post', () => {
       const callDescriptor = requestRegisterGenerator.next().value;
-      const expectedYield = call(axios.post, 'http://localhost:3030/api/auth/register', data, { headers: {'Content-Type': 'application/json'}});
+      const expectedYield = call(axios.post, 'http://localhost:3030/api/auth/register', action.payload, { headers: {'Content-Type': 'application/json'}});
       expect(callDescriptor).toMatchSnapshot();
     });
 
