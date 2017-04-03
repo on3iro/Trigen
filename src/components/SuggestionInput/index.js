@@ -19,7 +19,6 @@ const getSuggestions = (value) => {
 };
 const getSuggestionValue = suggestion => suggestion;
 const renderSuggestion = suggestion => {
-  console.log(suggestion);
   return (
     <div>
       {suggestion}
