@@ -14,6 +14,9 @@ import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
 import './global-styles';
 
+// Favicon import for webpack
+import 'img/favicon.png';
+
 import configureStore from './store';
 import rootSaga from './rootSaga';
 import App from 'containers/App';
