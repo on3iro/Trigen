@@ -43,7 +43,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: '200.html'
+      filename: '200.html',
+      favicon: 'src/img/favicon.png',
     }),
 
     // Not 100% what this does, but its use is highly recommended by the

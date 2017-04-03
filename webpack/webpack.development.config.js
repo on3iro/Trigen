@@ -38,7 +38,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join("src", "index.tpl.html"),
       inject: 'body',
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon: 'src/img/favicon.png',
     }),
 
     // Not 100% what this does, but its use is highly recommended by the
