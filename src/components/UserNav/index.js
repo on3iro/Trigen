@@ -46,11 +46,6 @@ const UserNav = props => {
           ? (
             <NavBar>
               <Grid md={1 / 3}>
-                <UserNavLink to="/profile" icon={profileIcon} >
-                  <ProfileIcon className="profile" />
-                </UserNavLink>
-              </Grid>
-              <Grid md={1 / 3}>
                 <UserNavLink to="/accounts" icon={settingsIcon} >
                   <AccountsIcon className="accounts" />
                 </UserNavLink>
