@@ -133,6 +133,7 @@
     "grid-styled": "^1.0.1",
     "history": "^4.6.1",
     "react": "^15.4.2",
+    "react-autosuggest": "^9.0.0",
     "react-dom": "^15.4.2",
     "react-modal": "^1.7.3",
     "react-redux": "^5.0.2",
