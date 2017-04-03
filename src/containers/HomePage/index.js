@@ -7,7 +7,7 @@
 import React from 'react';
 
 import Wrapper from './Wrapper';
-import SuggestionInput from './SuggestionInput';
+import SuggestionInput from 'components/SuggestionInput';
 
 
 const Home = () => {
