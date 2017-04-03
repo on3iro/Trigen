@@ -18,7 +18,12 @@ import Span from 'components/Span';
 import { getMaxAccounts } from 'containers/Auth/ducks/selectors';
 
 import { addAccount, fetchAccounts, filterAccounts } from './ducks/actions';
-import { makeGetFilteredAccounts, getAccountFilter, getAccountCount } from './ducks/selectors';
+import {
+  makeGetFilteredAccounts,
+  getAccountFilter,
+  getAccountCount,
+  getAccountStatus,
+} from './ducks/selectors';
 import FilterInput from './FilterInput';
 import AddAccountButton from './AddAccountButton';
 import BuySlotsButton from './BuySlotsButton';
@@ -33,7 +38,9 @@ export class AccountsPage extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchAccounts(shortid.generate);
+    if(!this.props.accountsFetched) {
+      this.props.fetchAccounts(shortid.generate);
+    }
   }
 
   addItem = () => {
@@ -119,6 +126,7 @@ const mapStateToProps = (state) => {
     accountFilter: getAccountFilter(state),
     accountCount: getAccountCount(state),
     maxAccounts: getMaxAccounts(state),
+    accountsFetched: getAccountStatus(state).fetched,
   };
 };
 
