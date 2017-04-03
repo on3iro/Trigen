@@ -16,7 +16,7 @@ export function *requestLogin(data) {
     // const response = yield call(axios.post, url, data, config);
     const response = {
       data: {
-        token: 'testtoke',
+        token: 'testtoken',
         user: {
           id: '1',
           name: 'testuser',
@@ -25,6 +25,8 @@ export function *requestLogin(data) {
         }
       }
     };
+
+    window.localStorage.setItem('jwt', response.data.token);
 
     yield put({ type: types.LOGIN_SUCCESS, payload: response.data });
   }catch (error) {
