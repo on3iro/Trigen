@@ -29,7 +29,6 @@ import LoginPage from 'containers/LoginPage';
 import Logout from 'containers/Auth/Logout';
 import PricingPage from 'containers/PricingPage';
 import ProtectedRoute from 'containers/Auth/ProtectedRoute';
-import UserProfile from 'containers/Auth/UserProfile';
 
 
 export class App extends Component {
@@ -60,7 +59,6 @@ export class App extends Component {
                   <Route path="/faq" component={FAQPage} />
                   <Route path="/pricing" component={PricingPage} />
                   <ProtectedRoute path="/accounts" component={AccountsPage} />
-                  <ProtectedRoute path="/profile" component={UserProfile} />
                   <Route path="/register" component={LoginPage} />
                   <Route path="/login" component={LoginPage} />
                   <Route path="/logout" component={Logout} />

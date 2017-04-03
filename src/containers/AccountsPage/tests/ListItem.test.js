@@ -80,13 +80,6 @@ describe('<ListItem />', () => {
     expect(props.editAccount.mock.calls.length).toBe(1);
   });
 
-  it('should call deleteItem', () => {
-    const { enzymeWrapper, props } = setUp();
-
-    enzymeWrapper.instance().deleteItem();
-    expect(props.deleteAccount.mock.calls.length).toBe(1);
-  });
-
   it('should call saveItem', () => {
     const { enzymeWrapper, props } = editSetup();
 

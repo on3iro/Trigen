@@ -5,7 +5,7 @@ import * as types from './actionTypes';
 
 
 // Login
-export function *requestLogin(data) {
+export function *requestLogin(action) {
   const url = 'http://localhost:3030/api/auth/login';
   const config = {
     headers: {'Content-Type': 'application/json'},
@@ -13,10 +13,10 @@ export function *requestLogin(data) {
 
   try {
     // TODO change back!
-    // const response = yield call(axios.post, url, data, config);
+    // const response = yield call(axios.post, url, action.payload, config);
     const response = {
       data: {
-        token: 'testtoke',
+        token: 'testtoken',
         user: {
           id: '1',
           name: 'testuser',
@@ -32,33 +32,25 @@ export function *requestLogin(data) {
   }
 }
 
-export function *authorize(action) {
-  yield call(requestLogin, action.payload);
-}
-
 // Register
-export function *requestRegister(data) {
+export function *requestRegister(action) {
   const url = 'http://localhost:3030/api/auth/register';
   const config = {
     headers: {'Content-Type': 'application/json'},
   };
 
   try {
-    const response = yield call(axios.post, url, data, config);
+    const response = yield call(axios.post, url, action.payload, config);
     yield put({ type: types.REGISTER_SUCCESS, payload: response.data });
   }catch (error) {
     yield put({ type: types.REGISTER_ERROR, payload: error.response });
   }
 }
 
-export function *register(action) {
-  yield call(requestRegister, action.payload);
-}
-
 // Auth watcher
 export function *handleAuth() {
-  yield takeLatest(types.LOGIN_SUBMIT, authorize);
-  yield takeLatest(types.REGISTER_SUBMIT, register);
+  yield takeLatest(types.LOGIN_SUBMIT, requestLogin);
+  yield takeLatest(types.REGISTER_SUBMIT, requestRegister);
 }
 
 export default function *() {

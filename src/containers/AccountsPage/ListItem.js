@@ -11,8 +11,10 @@ import styled from 'styled-components';
 import Grid from 'grid-styled';
 
 import Li from 'components/Li';
+
 import Input from './Input';
 import AccountControls from './AccountControls';
+import DeleteModal from './DeleteModal';
 
 import {
   cancelEdit,
@@ -45,8 +47,14 @@ export const Span = styled.span`
 export class ListItem extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      deleteModalIsOpen: false,
+      cancelModalIsOpen: false,
+    };
   }
 
+  // Item editing
   editItem = () => {
     this.props.editAccount(this.props.fakeID, this.props.account);
   }
@@ -55,16 +63,26 @@ export class ListItem extends Component {
     this.props.cancelEdit(this.props.fakeID);
   }
 
-  deleteItem = () => {
-    this.props.deleteAccount(this.props.fakeID);
-  }
-
   saveItem = () => {
     this.props.saveAccount(this.props.EditedAccount);
   }
 
   handleChange = (e) => {
     this.props.handleAccountChange(this.props.fakeID, e.target);
+  }
+
+  // Item deletion
+  openDeleteModal = () => {
+    this.setState({deleteModalIsOpen: true});
+  }
+
+  closeDeleteModal = () => {
+    this.setState({deleteModalIsOpen: false});
+  }
+
+  continueDelete = () => {
+    this.props.deleteAccount(this.props.fakeID);
+    this.closeDeleteModal();
   }
 
   render() {
@@ -76,6 +94,14 @@ export class ListItem extends Component {
 
     return (
       <RestyledLi>
+        <DeleteModal
+          isOpen={this.state.deleteModalIsOpen}
+          continueRequest={this.continueDelete}
+          cancelRequest={this.closeDeleteModal}
+          contentLabel="Delete Account Modal"
+          domain={account.domain}
+          username={account.username}
+        />
         {
           account.edit
             ? ([
@@ -112,7 +138,7 @@ export class ListItem extends Component {
             save={this.saveItem}
             cancel={this.cancelEdit}
             editItem={this.editItem}
-            delete={this.deleteItem}
+            delete={this.openDeleteModal}
           />
         </Grid>
       </RestyledLi>
