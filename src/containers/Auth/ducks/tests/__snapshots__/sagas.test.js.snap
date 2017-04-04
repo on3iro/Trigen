@@ -29,20 +29,20 @@ Object {
 exports[`login requestLogin generator should call axios.post 1`] = `
 Object {
   "@@redux-saga/IO": true,
-  "PUT": Object {
-    "action": Object {
-      "payload": Object {
-        "token": "testtoken",
-        "user": Object {
-          "email": "test@test.com",
-          "id": "1",
-          "maxAccounts": 5,
-          "name": "testuser",
+  "CALL": Object {
+    "args": Array [
+      "http://simplel.de:6392/login",
+      Object {
+        "test": "test",
+      },
+      Object {
+        "headers": Object {
+          "Content-Type": "application/json",
         },
       },
-      "type": "LOGIN_SUCCESS",
-    },
-    "channel": null,
+    ],
+    "context": null,
+    "fn": [Function],
   },
 }
 `;
@@ -60,14 +60,30 @@ Object {
 }
 `;
 
-exports[`login requestLogin generator should put LOGIN_SUCCESS action with payload 1`] = `undefined`;
+exports[`login requestLogin generator should put LOGIN_SUCCESS action with payload 1`] = `
+Object {
+  "@@redux-saga/IO": true,
+  "PUT": Object {
+    "action": Object {
+      "payload": Object {
+        "email": "foo@bar.com",
+        "id": 1,
+        "name": "foo",
+        "token": "abc123",
+      },
+      "type": "LOGIN_SUCCESS",
+    },
+    "channel": null,
+  },
+}
+`;
 
 exports[`register requestRegister generator should call axios.post 1`] = `
 Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "http://localhost:3030/api/auth/register",
+      "http://simplel.de:6392/users",
       Object {
         "test": "test",
       },

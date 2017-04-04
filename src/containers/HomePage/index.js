@@ -16,7 +16,7 @@ import { getAccounts, getAccountStatus } from 'containers/AccountsPage/ducks/sel
 import Wrapper from './Wrapper';
 
 
-class Home extends Component {
+export class Home extends Component {
   componentDidMount() {
     if(!this.props.accountsFetched) {
       this.props.fetchAccounts(shortid.generate);
