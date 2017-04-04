@@ -80,6 +80,21 @@ export function AccountListReducer(state = [], action) {
   }
 }
 
+export function AccountStatusReducer(state = {
+  fetched: false,
+}, action) {
+  switch(action.type) {
+    case actionTypes.GET_ACCOUNTS: {
+      // TODO change action type to SUCCESFUl one
+      return { ...state, fetched: true };
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
 export function EditAccountListReducer(state = {}, action) {
   switch(action.type) {
     case actionTypes.ADD_ACCOUNT: {
@@ -140,6 +155,7 @@ const AccountReducer = combineReducers({
   Accounts: AccountListReducer,
   EditedAccounts: EditAccountListReducer,
   AccountFilter: AccountFilterReducer,
+  AccountStatus: AccountStatusReducer,
 });
 
 export default AccountReducer;

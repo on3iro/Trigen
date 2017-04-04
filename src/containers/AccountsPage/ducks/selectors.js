@@ -7,6 +7,7 @@ export const getAccountCount = (state) => state.accounts.Accounts.length;
 export const getEditedAccounts = (state) => state.accounts.EditedAccounts;
 export const getAccountFakeID = (_, props) => props.fakeID;
 export const getAccountFilter = (state) => state.accounts.AccountFilter;
+export const getAccountStatus = state => state.accounts.AccountStatus;
 
 
 export const makeGetEditedAccount = () => {
@@ -24,8 +25,8 @@ export const makeGetFilteredAccounts = () => {
     ( accounts, filter ) => {
       const filteredAccounts = accounts.filter(account => {
         return (
-          account.username.includes(filter) ||
-          account.domain.includes(filter)
+          account.username.toLowerCase().includes(filter) ||
+          account.domain.toLowerCase().includes(filter)
         );
       });
 
