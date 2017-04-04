@@ -25,8 +25,8 @@ export const makeGetFilteredAccounts = () => {
     ( accounts, filter ) => {
       const filteredAccounts = accounts.filter(account => {
         return (
-          account.username.includes(filter) ||
-          account.domain.includes(filter)
+          account.username.toLowerCase().includes(filter) ||
+          account.domain.toLowerCase().includes(filter)
         );
       });
 
