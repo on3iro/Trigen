@@ -1,30 +1,20 @@
 import axios from 'axios';
 import { fork, call, put, takeLatest } from 'redux-saga/effects';
 
+import { BASE_URL } from 'config/constants';
+
 import * as types from './actionTypes';
 
 
 // Login
 export function *requestLogin(action) {
-  const url = 'http://localhost:3030/api/auth/login';
+  const url = `${BASE_URL}/login`;
   const config = {
     headers: {'Content-Type': 'application/json'},
   };
 
   try {
-    // TODO change back!
-    // const response = yield call(axios.post, url, action.payload, config);
-    const response = {
-      data: {
-        token: 'testtoken',
-        user: {
-          id: '1',
-          name: 'testuser',
-          email: 'test@test.com',
-          maxAccounts: 5,
-        }
-      }
-    };
+    const response = yield call(axios.post, url, action.payload, config);
 
     yield put({ type: types.LOGIN_SUCCESS, payload: response.data });
   }catch (error) {
@@ -34,7 +24,7 @@ export function *requestLogin(action) {
 
 // Register
 export function *requestRegister(action) {
-  const url = 'http://localhost:3030/api/auth/register';
+  const url = `${BASE_URL}/users`;
   const config = {
     headers: {'Content-Type': 'application/json'},
   };
