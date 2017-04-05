@@ -17,7 +17,6 @@ export function AccountListReducer(state = [], action) {
       // });
 
       // return Array.concat([], accountList);
-      console.log(response);
       return state;
     }
 
@@ -36,6 +35,7 @@ export function AccountListReducer(state = [], action) {
       return newArr;
     }
 
+    case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS:
     case actionTypes.SAVE_ACCOUNT: {
       const account = action.payload;
       const newArr = state.slice(0);

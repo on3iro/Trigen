@@ -10,20 +10,21 @@ import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import Grid from 'grid-styled';
 
-import Li from 'components/Li';
-
-import Input from './Input';
-import AccountControls from './AccountControls';
-import DeleteModal from './DeleteModal';
-
 import {
   cancelEdit,
   deleteAccount,
   editAccount,
   handleAccountChange,
-  saveAccount,
+  saveNewAccount,
 } from './ducks/actions';
+import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 import { makeGetEditedAccount } from './ducks/selectors';
+
+import Li from 'components/Li';
+
+import Input from './Input';
+import AccountControls from './AccountControls';
+import DeleteModal from './DeleteModal';
 
 
 export const RestyledLi = styled(Li)`
@@ -64,7 +65,7 @@ export class ListItem extends Component {
   }
 
   saveItem = () => {
-    this.props.saveAccount(this.props.EditedAccount);
+    this.props.saveNewAccount(this.props.userID, this.props.authToken, this.props.EditedAccount);
   }
 
   handleChange = (e) => {
@@ -155,6 +156,8 @@ ListItem.propTypes = {
   fakeID: PropTypes.string,
   handleAccountChange: PropTypes.func,
   saveAccount: PropTypes.func,
+  getUserID: PropTypes.func,
+  getAuthToken: PropTypes.func,
 };
 
 const makeMapStateToProps = () => {
@@ -162,6 +165,8 @@ const makeMapStateToProps = () => {
     const getEditedAccount = makeGetEditedAccount();
     return {
       EditedAccount: getEditedAccount(state, ownProps),
+      userID: getUserID(state),
+      authToken: getAuthToken(state),
     };
   };
 
@@ -174,7 +179,7 @@ const mapDispatchToProps = (dispatch) => {
     deleteAccount,
     editAccount,
     handleAccountChange,
-    saveAccount,
+    saveNewAccount,
   }, dispatch);
 };
 

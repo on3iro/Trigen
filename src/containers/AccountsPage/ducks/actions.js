@@ -53,12 +53,14 @@ export function editAccount(fakeID, data) {
  * TODO
  * A request needs to be implemented which patches/posts the new data to the server
   */
-export function saveAccount(EditedAccount) {
+export function saveNewAccount(userID, authToken, EditedAccount) {
   return {
-    type: actionTypes.SAVE_ACCOUNT,
-    payload: EditedAccount,
+    type: actionTypes.SAVE_NEW_ACCOUNT,
+    payload: { userID, authToken, EditedAccount },
   };
 }
+
+// TODO save existing account
 
 /**
  * Deletes an EditedAccount from the respective list and basically reverts all changes
