@@ -34,11 +34,7 @@ Array [
 ]
 `;
 
-exports[`Reducers AccountListReducer should handle FETCH_ACCOUNTS 1`] = `Array []`;
-
 exports[`Reducers AccountListReducer should handle FETCH_ACCOUNTS_SUCCESS 1`] = `Array []`;
-
-exports[`Reducers AccountListReducer should handle GET_ACCOUNTS 1`] = `Array []`;
 
 exports[`Reducers AccountListReducer should handle SAVE_ACCOUNT 1`] = `
 Array [
