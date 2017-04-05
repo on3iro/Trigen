@@ -19,10 +19,10 @@ describe('Reducers', () => {
         .toEqual([]);
     });
 
-    it('should handle GET_ACCOUNTS', () => {
+    it('should handle FETCH_ACCOUNTS_SUCCESS', () => {
       const genIDMock = jest.fn(() => 'fakeID');
       expect(AccountListReducer(undefined, {
-        type: types.GET_ACCOUNTS,
+        type: types.FETCH_ACCOUNTS_SUCCESS,
         payload: {
           accounts: [
             {

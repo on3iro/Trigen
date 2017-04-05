@@ -8,6 +8,7 @@ export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
       const { response, genID } = action.payload;
+      const id = genID();
       // const accountList = accounts.map(account => {
         // return {
           // ...account,

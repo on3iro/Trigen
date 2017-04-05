@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Input from 'components/Input';
 import Span from 'components/Span';
 
-import RenderField from '../RenderField';
+import FormField from '../index';
 
 
 const renderComponent = newProps => {
@@ -19,7 +19,7 @@ const renderComponent = newProps => {
     ...newProps,
   };
 
-  const renderedWrapper = shallow(<RenderField {...props} />);
+  const renderedWrapper = shallow(<FormField {...props} />);
 
   return {
     props,
@@ -27,7 +27,7 @@ const renderComponent = newProps => {
   };
 };
 
-describe('<RenderField />', () => {
+describe('<FormField />', () => {
   it('should render an <Input />', () => {
     const { renderedWrapper } = renderComponent();
     expect(renderedWrapper.find(Input).length).toMatchSnapshot();

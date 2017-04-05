@@ -19,7 +19,7 @@ describe('actions', () => {
   });
 
   it('should create an action to fetch accounts', () => {
-    expect(actions.fetchAccounts('insert function here')).toMatchSnapshot();
+    expect(actions.fetchAccounts('userID', 'tokenXYZ', 'insert function here')).toMatchSnapshot();
   });
 
   it('should create an action to set account to edit mode', () => {
@@ -36,15 +36,15 @@ describe('actions', () => {
     })).toMatchSnapshot();
   });
 
-  it('should create an action to save an edited account', () => {
+  it('should create an action to save a new account', () => {
     const expectedAction = {
-      type: types.SAVE_ACCOUNT,
+      type: types.SAVE_NEW_ACCOUNT,
       payload: {
         test: 'test',
       }
     };
 
-    expect(actions.saveAccount({ test: 'test' })).toMatchSnapshot();
+    expect(actions.saveNewAccount({ test: 'test' })).toMatchSnapshot();
   });
 
   it('should create an action to cancel edited changes', () => {

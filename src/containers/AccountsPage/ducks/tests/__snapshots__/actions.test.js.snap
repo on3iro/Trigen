@@ -19,31 +19,11 @@ Object {
 exports[`actions should create an action to fetch accounts 1`] = `
 Object {
   "payload": Object {
-    "accounts": Array [
-      Object {
-        "domain": "example.com",
-        "id": 0,
-        "username": "tTester",
-      },
-      Object {
-        "domain": "Ooo.com",
-        "id": 1,
-        "username": "LSP",
-      },
-      Object {
-        "domain": "selfishland",
-        "id": 2,
-        "username": "overlord",
-      },
-      Object {
-        "domain": "hugwalz",
-        "id": 3,
-        "username": "harry otter",
-      },
-    ],
-    "genID": "insert function here",
+    "authToken": "tokenXYZ",
+    "genIDFunc": "insert function here",
+    "userID": "userID",
   },
-  "type": "GET_ACCOUNTS",
+  "type": "FETCH_ACCOUNTS",
 }
 `;
 
@@ -59,12 +39,16 @@ Object {
 }
 `;
 
-exports[`actions should create an action to save an edited account 1`] = `
+exports[`actions should create an action to save a new account 1`] = `
 Object {
   "payload": Object {
-    "test": "test",
+    "EditedAccount": undefined,
+    "authToken": undefined,
+    "userID": Object {
+      "test": "test",
+    },
   },
-  "type": "SAVE_ACCOUNT",
+  "type": "SAVE_NEW_ACCOUNT",
 }
 `;
 
