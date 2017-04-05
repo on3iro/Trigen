@@ -93,6 +93,10 @@ export class Home extends Component {
     });
   }
 
+  clearUsername = () => {
+    this.setState({ username: '' });
+  }
+
   render() {
     const inputProps = {
       placeholder: 'Domain eingeben',
@@ -103,16 +107,17 @@ export class Home extends Component {
     return (
       <Wrapper>
         <Autosuggest
-          suggestions={this.state.suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          onSuggestionSelected={this.onSuggestionSelected}
           getSuggestionValue={this.getSuggestionValue}
-          renderSuggestion={this.renderSuggestion}
+          highlightFirstSuggestion={true}
           inputProps={inputProps}
-          highlighFirstSuggestion={true}
+          onSuggestionSelected={this.onSuggestionSelected}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          renderSuggestion={this.renderSuggestion}
+          suggestions={this.state.suggestions}
         />
         <Input
+          onFocus={this.clearUsername}
           placeholder="Username eingeben"
           value={this.state.username}
           onChange={this.onUsernameChange}

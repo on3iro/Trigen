@@ -28,10 +28,13 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = props => {
-  return (
-    <StyledInput {...props} />
-  );
-};
+// Has to be a class component so refs can be used for focus
+class Input extends React.Component {
+  render() {
+    return (
+      <StyledInput {...this.props} />
+    );
+  }
+}
 
 export default Input;
