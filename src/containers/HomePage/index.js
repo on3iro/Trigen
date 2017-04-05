@@ -5,10 +5,10 @@
   */
 
 import React, { PropTypes, Component } from 'react';
-import Autosuggest from 'react-autosuggest';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
+import styled from 'styled-components';
 
 import { fetchAccounts } from 'containers/AccountsPage/ducks/actions';
 import { getAccounts, getAccountStatus } from 'containers/AccountsPage/ducks/selectors';
@@ -106,7 +106,8 @@ export class Home extends Component {
 
     return (
       <Wrapper>
-        <Autosuggest
+        <Input
+          autoSuggest
           getSuggestionValue={this.getSuggestionValue}
           highlightFirstSuggestion={true}
           inputProps={inputProps}
