@@ -17,29 +17,87 @@ import Wrapper from './Wrapper';
 
 
 export class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      suggestions: [],
+      domain: '',
+      username: '',
+    };
+  }
+
   componentDidMount() {
     if(!this.props.accountsFetched) {
       this.props.fetchAccounts(shortid.generate);
     }
   }
 
-   render() {
-     return (
-       <Wrapper>
-         hallo
-       </Wrapper>
-     );
-   }
+  getSuggestions = (value) => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return (
+      inputLength === 0
+        ? []
+        : this.props.accounts.filter(
+          account => {
+            const val = account.domain.toLowerCase().includes(inputValue);
+            return val;
+          }
+        )
+    );
+  };
+
+  getSuggestionValue = suggestion => suggestion.domain;
+
+  onSuggestionChange = (event, { newValue }) => {
+    this.setState({
+      domain: newValue,
+    });
+  }
+
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  }
+
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: [],
+    });
+  }
+
+  renderSuggestion = suggestion => {
+    return (
+      <div>
+        {`${suggestion.domain} - ${suggestion.username}`}
+      </div>
+    );
+  };
+
+ render() {
+   const inputProps = {
+     placeholder: 'Domain eingeben',
+     value: this.state.domain,
+     onChange: this.onSuggestionChange,
+   };
+
+   return (
+     <Wrapper>
+       <Autosuggest
+         suggestions={this.state.suggestions}
+         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+         getSuggestionValue={this.getSuggestionValue}
+         renderSuggestion={this.renderSuggestion}
+         inputProps={inputProps}
+       />
+     </Wrapper>
+   );
+ }
 }
-         // <Autosuggest
-           // suggestions={}
-           // onSuggestionsFetchRequested={}
-           // onSuggestionsClearRequested={}
-           // getSuggestionValue={}
-           // renderSuggestion={}
-           // inputProps={}
-         // />
-       // </Wrapper>
 
 const mapStateToProps = state => {
   return {

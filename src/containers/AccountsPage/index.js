@@ -75,6 +75,7 @@ export class AccountsPage extends Component {
             {
               this.props.accountCount >= this.props.maxAccounts
                 ? <BuySlotsButton
+                    to="/pricing"
                     warning onClick={() => {}}
                   >
                     Slots erwerben
