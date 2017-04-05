@@ -28,6 +28,32 @@ export class PassGenForm extends Component {
     }
   }
 
+  // Field validation
+  validate = () => {
+    let errors = [];
+
+    if(this.state.domain.length === 0) {
+      errors = errors.concat('Domain is required!');
+    }
+
+    if(this.state.username.length === 0) {
+      errors = errors.concat('Username is required!');
+    }
+
+    return errors;
+  }
+
+  // Submit handling
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = this.validate();
+
+    // TODO finish validation
+    if(validationErrors.length !== 0) {
+      console.log(validationErrors);
+    }
+  }
+
   // Autosuggest input
   getSuggestions = (value) => {
     const inputValue = value.trim().toLowerCase();
@@ -98,7 +124,7 @@ export class PassGenForm extends Component {
     };
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <Input
           autoSuggest
           getSuggestionValue={this.getSuggestionValue}
