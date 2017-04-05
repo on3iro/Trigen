@@ -3,6 +3,7 @@ Object {
   "user": Object {
     "data": Object {},
     "error": "login-error",
+    "hasRegistered": false,
     "isLoggedIn": false,
     "token": "",
   },
@@ -14,6 +15,7 @@ Object {
   "user": Object {
     "data": "testuser",
     "error": "",
+    "hasRegistered": false,
     "isLoggedIn": true,
     "token": "testtoken",
   },
@@ -35,6 +37,7 @@ Object {
   "user": Object {
     "data": Object {},
     "error": "register-error",
+    "hasRegistered": false,
     "isLoggedIn": false,
     "token": "",
   },
@@ -46,6 +49,7 @@ Object {
   "user": Object {
     "data": Object {},
     "error": Object {},
+    "hasRegistered": false,
     "isLoggedIn": false,
     "token": "",
   },

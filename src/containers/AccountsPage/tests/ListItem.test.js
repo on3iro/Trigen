@@ -24,7 +24,7 @@ function setUp() {
     deleteAccount: jest.fn(),
     editAccount: jest.fn(),
     handleAccountChange: jest.fn(),
-    saveAccount: jest.fn(),
+    saveNewAccount: jest.fn(),
   };
 
   const enzymeWrapper = shallow(<ListItem {...props} />);
@@ -84,7 +84,7 @@ describe('<ListItem />', () => {
     const { enzymeWrapper, props } = editSetup();
 
     enzymeWrapper.instance().saveItem();
-    expect(props.saveAccount.mock.calls.length).toBe(1);
+    expect(props.saveNewAccount.mock.calls.length).toBe(1);
   });
 
   it('should call cancelEdit', () => {

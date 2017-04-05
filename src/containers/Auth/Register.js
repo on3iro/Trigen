@@ -29,7 +29,7 @@ export class Register extends Component {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
 
     return (
-      this.props.isLoggedIn
+      this.props.hasRegistered || this.props.isLoggedIn
         ? (
           <Redirect to={from} />
         ) : (
@@ -47,6 +47,7 @@ Register.propTypes = {
   registerSubmit: PropTypes.func.isRequired,
   location: PropTypes.object,
   isLoggedIn: PropTypes.bool,
+  hasRegistered: PropTypes.bool,
 };
 
 const mapDispatchToProps = dispatch => {
@@ -57,6 +58,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
+    hasRegistered: selectors.getRegistered(state),
     isLoggedIn: selectors.getLoggedIn(state),
   };
 };

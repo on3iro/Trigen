@@ -23,38 +23,10 @@ export function addAccount(fakeID) {
   };
 }
 
-/**
- * TODO
- * This is currently only implemented as a way to fetch some dummy-data and
- * needs to be implemented with an actual request.
-  */
-export function fetchAccounts(genID) {
-  const DUMMY_ACCOUNTS =   [
-    {
-      id: 0,
-      username: 'tTester',
-      domain: 'example.com'
-    },
-    {
-      id: 1,
-      username: 'LSP',
-      domain: 'Ooo.com'
-    },
-    {
-      id: 2,
-      username: 'overlord',
-      domain: 'selfishland',
-    },
-    {
-      id: 3,
-      username: 'harry otter',
-      domain: 'hugwalz'
-    }
-  ];
-
+export function fetchAccounts(userID, authToken, genIDFunc) {
   return {
-    type: actionTypes.GET_ACCOUNTS,
-    payload: { accounts: DUMMY_ACCOUNTS, genID }
+    type: actionTypes.FETCH_ACCOUNTS,
+    payload: { userID, authToken, genIDFunc }
   };
 }
 
@@ -81,12 +53,14 @@ export function editAccount(fakeID, data) {
  * TODO
  * A request needs to be implemented which patches/posts the new data to the server
   */
-export function saveAccount(EditedAccount) {
+export function saveNewAccount(userID, authToken, EditedAccount) {
   return {
-    type: actionTypes.SAVE_ACCOUNT,
-    payload: EditedAccount,
+    type: actionTypes.SAVE_NEW_ACCOUNT,
+    payload: { userID, authToken, EditedAccount },
   };
 }
+
+// TODO save existing account
 
 /**
  * Deletes an EditedAccount from the respective list and basically reverts all changes

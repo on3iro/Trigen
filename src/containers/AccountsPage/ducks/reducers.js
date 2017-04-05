@@ -6,20 +6,23 @@ import * as actionTypes from './actionTypes';
 // Reducer
 export function AccountListReducer(state = [], action) {
   switch(action.type) {
-    case actionTypes.GET_ACCOUNTS: {
-      const { accounts, genID } = action.payload;
-      const accountList = accounts.map(account => {
-        return {
-          ...account,
-          fakeID: genID(),
-          edit: false,
-        };
-      });
+    case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
+      const { response, genIDFunc } = action.payload;
+      const id = genIDFunc();
+      // const accountList = accounts.map(account => {
+        // return {
+          // ...account,
+          // fakeID: genID(),
+          // edit: false,
+        // };
+      // });
 
-      return Array.concat([], accountList);
+      // return Array.concat([], accountList);
+      return state;
     }
 
     case actionTypes.ADD_ACCOUNT: {
+      console.log(action.payload);
       return Array.concat([], [{ ...action.payload.data }], state);
     }
 
@@ -34,6 +37,7 @@ export function AccountListReducer(state = [], action) {
       return newArr;
     }
 
+    case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS:
     case actionTypes.SAVE_ACCOUNT: {
       const account = action.payload;
       const newArr = state.slice(0);
@@ -82,11 +86,19 @@ export function AccountListReducer(state = [], action) {
 
 export function AccountStatusReducer(state = {
   fetched: false,
+  errored: false,
 }, action) {
   switch(action.type) {
-    case actionTypes.GET_ACCOUNTS: {
-      // TODO change action type to SUCCESFUl one
+    case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
       return { ...state, fetched: true };
+    }
+
+    case actionTypes.FETCH_ACCOUNTS_ERROR: {
+      return {
+        ...state,
+        fetched: false,
+        errored: true,
+      };
     }
 
     default: {

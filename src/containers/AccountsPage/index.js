@@ -24,6 +24,8 @@ import {
   getAccountCount,
   getAccountStatus,
 } from './ducks/selectors';
+import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
+
 import FilterInput from './FilterInput';
 import AddAccountButton from './AddAccountButton';
 import BuySlotsButton from './BuySlotsButton';
@@ -39,7 +41,7 @@ export class AccountsPage extends Component {
 
   componentDidMount() {
     if(!this.props.accountsFetched) {
-      this.props.fetchAccounts(shortid.generate);
+      this.props.fetchAccounts(this.props.userID, this.props.authToken, shortid.generate);
     }
   }
 
@@ -75,6 +77,7 @@ export class AccountsPage extends Component {
             {
               this.props.accountCount >= this.props.maxAccounts
                 ? <BuySlotsButton
+                    to="/pricing"
                     warning onClick={() => {}}
                   >
                     Slots erwerben
@@ -116,6 +119,8 @@ AccountsPage.propTypes = {
   addAccount: PropTypes.func,
   fetchAccounts: PropTypes.func,
   filterAccounts: PropTypes.func,
+  getUserID: PropTypes.func,
+  getAuthToken: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
@@ -127,6 +132,8 @@ const mapStateToProps = (state) => {
     accountCount: getAccountCount(state),
     maxAccounts: getMaxAccounts(state),
     accountsFetched: getAccountStatus(state).fetched,
+    userID: getUserID(state),
+    authToken: getAuthToken(state),
   };
 };
 
