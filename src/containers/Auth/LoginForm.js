@@ -11,7 +11,7 @@ import { Field, reduxForm } from 'redux-form';
 import H1 from 'components/H1';
 import Button from 'components/Button';
 
-import RenderField from './RenderField';
+import FormField from 'components/FormField';
 
 
 export const validate = values => {
@@ -36,10 +36,10 @@ export const LoginForm = props => {
     <form onSubmit={props.handleSubmit}>
       <H1>Login</H1>
       <Field name="email" type="text"
-        component={RenderField} label="Email"
+        component={FormField} label="Email"
       />
       <Field name="password" type="password"
-        component={RenderField} label="Passwort"
+        component={FormField} label="Passwort"
       />
       <Button submit >Anmelden</Button>
     </form>
