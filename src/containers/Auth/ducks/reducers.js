@@ -5,6 +5,7 @@ import * as types from './actionTypes';
 
 const user = (state = {
   isLoggedIn: false,
+  hasRegistered: false,
   token: '',
   data: {},
   error: {},
@@ -19,6 +20,13 @@ const user = (state = {
         token: data.token,
         data: data.user,
         error: '',
+      };
+    }
+
+    case types.REGISTER_SUCCESS: {
+      return {
+        ...state,
+        hasRegistered: true,
       };
     }
 

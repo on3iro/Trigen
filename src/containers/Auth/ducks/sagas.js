@@ -14,18 +14,7 @@ export function *requestLogin(action) {
   };
 
   try {
-    // const response = yield call(axios.post, url, action.payload, config);
-    const response = {
-      data: {
-        token: 'testtoken',
-        user: {
-            id: '1',
-            name: 'testuser',
-            email: 'test@test.com',
-            maxAccounts: 5,
-          }
-      }
-    };
+    const response = yield call(axios.post, url, action.payload, config);
 
     yield put({ type: types.LOGIN_SUCCESS, payload: response.data });
   }catch (error) {
