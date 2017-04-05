@@ -7,8 +7,8 @@ import * as actionTypes from './actionTypes';
 export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
-      const { response, genID } = action.payload;
-      const id = genID();
+      const { response, genIDFunc } = action.payload;
+      const id = genIDFunc();
       // const accountList = accounts.map(account => {
         // return {
           // ...account,
@@ -22,6 +22,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.ADD_ACCOUNT: {
+      console.log(action.payload);
       return Array.concat([], [{ ...action.payload.data }], state);
     }
 

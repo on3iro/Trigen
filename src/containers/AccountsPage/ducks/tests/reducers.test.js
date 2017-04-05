@@ -31,7 +31,7 @@ describe('Reducers', () => {
               domain: 'example.com',
             }
           ],
-          genID: genIDMock
+          genIDFunc: genIDMock
         }
       })).toMatchSnapshot();
       expect(genIDMock).toHaveBeenCalled();
