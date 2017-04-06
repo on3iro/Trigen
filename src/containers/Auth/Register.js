@@ -12,6 +12,7 @@ import { Redirect } from 'react-router-dom';
 import * as selectors from './ducks/selectors';
 
 import Button from 'components/Button';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 import Wrapper from './Wrapper';
 import RegisterForm from './RegisterForm';
@@ -35,6 +36,10 @@ export class Register extends Component {
         ) : (
             <Wrapper>
               <RegisterForm onSubmit={this.handleSubmit} />
+              {
+                this.props.isLoading &&
+                  <LoadingSpinner />
+              }
               <FormDivider>Schon registriert?</FormDivider>
               <Button to="/login" secondary>Anmelden</Button>
             </Wrapper>
@@ -60,6 +65,7 @@ const mapStateToProps = (state) => {
   return {
     hasRegistered: selectors.getRegistered(state),
     isLoggedIn: selectors.getLoggedIn(state),
+    isLoading: selectors.getLoadingState(state),
   };
 };
 

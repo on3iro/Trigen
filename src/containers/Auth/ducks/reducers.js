@@ -55,8 +55,30 @@ const user = (state = {
   }
 };
 
+const AuthRequestState = (state = {
+  isLoading: false
+}, action) => {
+  switch(action.type) {
+    case types.LOGIN_SUBMIT: {
+      return { ...state, isLoading: true };
+    }
+
+    case types.LOGIN_SUCCESS: {
+      return { ...state, isLoading: false };
+    }
+
+    case types.LOGIN_ERROR: {
+      return { ...state, isLoading: false };
+    }
+
+    default:
+      return state;
+  }
+};
+
 const authReducer = combineReducers({
   user,
+  AuthRequestState,
 });
 
 export default authReducer;
