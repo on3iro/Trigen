@@ -19,9 +19,13 @@ import {
   updateAccount,
 } from './ducks/actions';
 import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
-import { makeGetEditedAccount } from './ducks/selectors';
+import {
+  makeGetEditedAccount,
+  makeGetAccountStatusByFakeID,
+} from './ducks/selectors';
 
 import Li from 'components/Li';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 import Input from './Input';
 import AccountControls from './AccountControls';
@@ -86,8 +90,14 @@ export class ListItem extends Component {
     this.setState({deleteModalIsOpen: false});
   }
 
-  continueDelete = () => {
-    this.props.deleteAccount(this.props.userID, this.props.authToken, this.props.account.id);
+  continueDelete = account => {
+    const config = {
+      userID: this.props.userID,
+      authToken: this.props.authToken,
+      accountID: account.id,
+      fakeID: this.props.fakeID,
+    };
+    this.props.deleteAccount(config);
     this.closeDeleteModal();
   }
 
@@ -102,7 +112,7 @@ export class ListItem extends Component {
       <RestyledLi>
         <DeleteModal
           isOpen={this.state.deleteModalIsOpen}
-          continueRequest={this.continueDelete}
+          continueRequest={() => this.continueDelete(account)}
           cancelRequest={this.closeDeleteModal}
           contentLabel="Delete Account Modal"
           domain={account.domain}
@@ -139,13 +149,18 @@ export class ListItem extends Component {
             ])
         }
         <Grid md={1 / 12}>
-          <AccountControls
-            edit={account.edit}
-            save={this.saveItem}
-            cancel={this.cancelEdit}
-            editItem={this.editItem}
-            delete={this.openDeleteModal}
-          />
+          {
+            this.props.accountStatus.isLoading
+              ? <LoadingSpinner controls />
+              : <AccountControls
+                  edit={account.edit}
+                  save={this.saveItem}
+                  cancel={this.cancelEdit}
+                  editItem={this.editItem}
+                  delete={this.openDeleteModal}
+                />
+
+          }
         </Grid>
       </RestyledLi>
     );
@@ -169,10 +184,13 @@ ListItem.propTypes = {
 const makeMapStateToProps = () => {
   const mapStateToProps = (state, ownProps) => {
     const getEditedAccount = makeGetEditedAccount();
+    const getAccountStatusByFakeID = makeGetAccountStatusByFakeID();
+
     return {
       EditedAccount: getEditedAccount(state, ownProps),
       userID: getUserID(state),
       authToken: getAuthToken(state),
+      accountStatus: getAccountStatusByFakeID(state, ownProps),
     };
   };
 

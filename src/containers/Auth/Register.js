@@ -34,7 +34,7 @@ export class Register extends Component {
           <Redirect to={from} />
         ) : (
             <Wrapper>
-              <RegisterForm onSubmit={this.handleSubmit} />
+              <RegisterForm isLoading={this.props.isLoading} onSubmit={this.handleSubmit} />
               <FormDivider>Schon registriert?</FormDivider>
               <Button to="/login" secondary>Anmelden</Button>
             </Wrapper>
@@ -60,6 +60,7 @@ const mapStateToProps = (state) => {
   return {
     hasRegistered: selectors.getRegistered(state),
     isLoggedIn: selectors.getLoggedIn(state),
+    isLoading: selectors.getLoadingState(state),
   };
 };
 

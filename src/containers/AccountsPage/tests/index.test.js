@@ -23,6 +23,9 @@ function setUp(newProps) {
     accountCount: 1,
     maxAccounts: 2,
     accounts: accounts,
+    accountListStatus: {
+      isLoading: false,
+    },
     ...newProps
   };
 
@@ -67,6 +70,9 @@ describe('<AccountsPage />', () => {
   it('should handle fetchAccounts() on componentDidMount lifecycle method', () => {
     const props = {
       fetchAccounts: jest.fn(),
+      accountListStatus: {
+        isLoading: false,
+      },
     };
     const enzymeWrapper = shallow(<AccountsPage {...props} />);
     enzymeWrapper.instance().componentDidMount();

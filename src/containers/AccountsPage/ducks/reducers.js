@@ -68,7 +68,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.DELETE_ACCOUNT_SUCCESS: {
-      const accountID = action.payload.data.account_id;
+      const accountID = action.payload.id;
       const index = state.findIndex(val => {
         return parseInt(val.id, 10) === parseInt(accountID, 10);
       });
@@ -82,13 +82,18 @@ export function AccountListReducer(state = [], action) {
   }
 }
 
-export function AccountStatusReducer(state = {
+export function AccountListStatusReducer(state = {
   fetched: false,
   errored: false,
+  isLoading: false,
 }, action) {
   switch(action.type) {
+    case actionTypes.FETCH_ACCOUNTS: {
+      return { ...state, isLoading: true };
+    }
+
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
-      return { ...state, fetched: true };
+      return { ...state, fetched: true, isLoading: false };
     }
 
     case actionTypes.FETCH_ACCOUNTS_ERROR: {
@@ -96,7 +101,61 @@ export function AccountStatusReducer(state = {
         ...state,
         fetched: false,
         errored: true,
+        isLoading: false,
       };
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
+export function AccountStatusReducer(state = {}, action) {
+  switch(action.type) {
+    case actionTypes.SAVE_NEW_ACCOUNT: {
+      const { fakeID } = action.payload.EditedAccount;
+      return { ...state, [fakeID]: { isLoading: true } };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT: {
+      const { fakeID } = action.payload.EditedAccount;
+      return { ...state, [fakeID]: { isLoading: true } };
+    }
+
+    case actionTypes.DELETE_ACCOUNT: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: true } };
+    }
+
+    case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT_SUCCESS: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
+    }
+
+    case actionTypes.DELETE_ACCOUNT_SUCCESS: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
+    }
+
+    case actionTypes.SAVE_NEW_ACCOUNT_ERROR: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT_ERROR: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
+    }
+
+    case actionTypes.DELETE_ACCOUNT_ERROR: {
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     default: {
@@ -119,9 +178,9 @@ export function EditAccountListReducer(state = {}, action) {
       return { ...state, [fakeID]: data };
     }
 
-    case actionTypes.SAVE_ACCOUNT: {
+    case actionTypes.SAVE_NEW_ACCOUNT: {
       const account = action.payload;
-      delete state[account.fakeID];
+      delete state[account.EditedAccount.fakeID];
 
       return { ...state };
     }
@@ -165,6 +224,7 @@ const AccountReducer = combineReducers({
   Accounts: AccountListReducer,
   EditedAccounts: EditAccountListReducer,
   AccountFilter: AccountFilterReducer,
+  AccountListStatus: AccountListStatusReducer,
   AccountStatus: AccountStatusReducer,
 });
 

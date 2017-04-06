@@ -10,6 +10,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import H1 from 'components/H1';
 import Button from 'components/Button';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 import FormField from 'components/FormField';
 
@@ -54,7 +55,13 @@ export const RegisterForm = props => {
       <Field name="confirm" type="password"
         component={FormField} label="Passwort wiederholen"
       />
-      <Button submit>Jetzt kostenlos registrieren</Button>
+      {
+        props.isLoading
+          ? <Button onClick={(e) => e.preventDefault}>
+              <LoadingSpinner controls />
+            </Button>
+          : <Button submit>Jetzt kostenlos registrieren</Button>
+      }
     </form>
   );
 };
