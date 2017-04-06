@@ -68,7 +68,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.DELETE_ACCOUNT_SUCCESS: {
-      const accountID = action.payload.response.data.id;
+      const accountID = action.payload.id;
       const index = state.findIndex(val => {
         return parseInt(val.id, 10) === parseInt(accountID, 10);
       });
