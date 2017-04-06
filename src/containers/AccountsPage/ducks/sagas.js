@@ -42,7 +42,7 @@ export function *requestSaveNewAccount(action) {
 
     yield put({ type: types.SAVE_NEW_ACCOUNT_SUCCESS, payload: newAccount });
   }catch (error) {
-    yield put({ type: types.SAVE_NEW_ACCOUNT_ERROR, payload: error.message });
+    yield put({ type: types.SAVE_NEW_ACCOUNT_ERROR, payload: { fakeID: EditedAccount.fakeID, error: error.message } });
   }
 }
 
@@ -62,15 +62,14 @@ export function *requestUpdateAccount(action) {
     const response = yield call(axios.put, url, data, config);
     const updatedAccount = { ...response.data, ...EditedAccount };
 
-    // yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updatedAccount });
     yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updatedAccount });
   }catch (error) {
-    yield put({ type: types.UPDATE_ACCOUNT_ERROR, payload: error.message });
+    yield put({ type: types.UPDATE_ACCOUNT_ERROR, payload: { fakeID: config.fakeID, error: error.message } });
   }
 }
 
 export function *requestDeleteAccount(action) {
-  const { userID, authToken, accountID } = action.payload;
+  const { userID, authToken, accountID, fakeID } = action.payload;
   const url = `${BASE_URL}/users/${userID}/accounts/${accountID}`;
   const config = {
     headers: {
@@ -81,9 +80,9 @@ export function *requestDeleteAccount(action) {
   try {
     const response = yield call(axios.delete, url, config);
 
-    yield put({ type: types.DELETE_ACCOUNT_SUCCESS, payload: response });
+    yield put({ type: types.DELETE_ACCOUNT_SUCCESS, payload: { fakeID, response } });
   }catch (error) {
-    yield put({ type: types.DELETE_ACCOUNT_ERROR, payload: error.message });
+    yield put({ type: types.DELETE_ACCOUNT_ERROR, payload: { fakeID, error: error.message } });
   }
 }
 

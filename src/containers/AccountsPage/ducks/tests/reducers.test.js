@@ -104,7 +104,7 @@ describe('Reducers', () => {
         type: types.DELETE_ACCOUNT_SUCCESS,
         payload: {
           data: {
-            account_id: 'aID',
+            id: 'aID',
           }
         }
       };

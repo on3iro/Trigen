@@ -86,10 +86,10 @@ export function cancelEdit(fakeID) {
   *
   * @return {Object} -- Aciton of the type DELETE_ACCOUNT
   */
-export function deleteAccount(userID, authToken, accountID) {
+export function deleteAccount(config) {
   return {
     type: actionTypes.DELETE_ACCOUNT,
-    payload: { userID, authToken, accountID }
+    payload: config
   };
 }
 

@@ -8,6 +8,7 @@ export const getEditedAccounts = (state) => state.accounts.EditedAccounts;
 export const getAccountFakeID = (_, props) => props.fakeID;
 export const getAccountFilter = (state) => state.accounts.AccountFilter;
 export const getAccountListStatus = state => state.accounts.AccountListStatus;
+export const getAccountStatus = state => state.accounts.AccountStatus;
 
 
 export const makeGetEditedAccount = () => {
@@ -31,6 +32,15 @@ export const makeGetFilteredAccounts = () => {
       });
 
       return filteredAccounts;
+    }
+  );
+};
+
+export const makeGetAccountStatusByFakeID = () => {
+  return createSelector(
+    [ getAccountFakeID, getAccountStatus ],
+    ( fakeID, accountStatus ) => {
+      return accountStatus[fakeID] || {};
     }
   );
 };

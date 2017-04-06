@@ -68,7 +68,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.DELETE_ACCOUNT_SUCCESS: {
-      const accountID = action.payload.data.account_id;
+      const accountID = action.payload.response.data.id;
       const index = state.findIndex(val => {
         return parseInt(val.id, 10) === parseInt(accountID, 10);
       });
@@ -113,42 +113,49 @@ export function AccountListStatusReducer(state = {
 
 export function AccountStatusReducer(state = {}, action) {
   switch(action.type) {
-    case actionTypes.SAVE_ACCOUNT: {
-      return { ...state, isLoading: true };
+    case actionTypes.SAVE_NEW_ACCOUNT: {
+      const { fakeID } = action.payload.EditedAccount;
+      return { ...state, [fakeID]: { isLoading: true } };
     }
 
     case actionTypes.UPDATE_ACCOUNT: {
-      console.log(action.payload);
-      return { ...state, isLoading: true };
+      const { fakeID } = action.payload.EditedAccount;
+      return { ...state, [fakeID]: { isLoading: true } };
     }
 
     case actionTypes.DELETE_ACCOUNT: {
-      return { ...state, isLoading: true };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: true } };
     }
 
     case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS: {
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     case actionTypes.UPDATE_ACCOUNT_SUCCESS: {
-      console.log(action.payload);
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     case actionTypes.DELETE_ACCOUNT_SUCCESS: {
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     case actionTypes.SAVE_NEW_ACCOUNT_ERROR: {
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     case actionTypes.UPDATE_ACCOUNT_ERROR: {
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     case actionTypes.DELETE_ACCOUNT_ERROR: {
-      return { ...state, isLoading: false };
+      const { fakeID } = action.payload;
+      return { ...state, [fakeID]: { isLoading: false } };
     }
 
     default: {
@@ -171,9 +178,9 @@ export function EditAccountListReducer(state = {}, action) {
       return { ...state, [fakeID]: data };
     }
 
-    case actionTypes.SAVE_ACCOUNT: {
+    case actionTypes.SAVE_NEW_ACCOUNT: {
       const account = action.payload;
-      delete state[account.fakeID];
+      delete state[account.EditedAccount.fakeID];
 
       return { ...state };
     }
