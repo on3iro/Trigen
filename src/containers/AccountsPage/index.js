@@ -23,7 +23,7 @@ import {
   makeGetFilteredAccounts,
   getAccountFilter,
   getAccountCount,
-  getAccountStatus,
+  getAccountListStatus,
 } from './ducks/selectors';
 import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 
@@ -41,7 +41,7 @@ export class AccountsPage extends Component {
   }
 
   componentDidMount() {
-    if(!this.props.accountStatus.fetched) {
+    if(!this.props.accountListStatus.fetched) {
       this.props.fetchAccounts(this.props.userID, this.props.authToken, shortid.generate);
     }
   }
@@ -105,7 +105,7 @@ export class AccountsPage extends Component {
           </Grid>
         </ControlWrapper>
         {
-          this.props.accountStatus.isLoading
+          this.props.accountListStatus.isLoading
             ? <LoadingSpinner />
             : <List
                 accounts={this.props.accounts}
@@ -136,7 +136,7 @@ const mapStateToProps = (state) => {
     accountFilter: getAccountFilter(state),
     accountCount: getAccountCount(state),
     maxAccounts: getMaxAccounts(state),
-    accountStatus: getAccountStatus(state),
+    accountListStatus: getAccountListStatus(state),
     userID: getUserID(state),
     authToken: getAuthToken(state),
   };

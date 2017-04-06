@@ -7,7 +7,7 @@ export const getAccountCount = (state) => state.accounts.Accounts.length;
 export const getEditedAccounts = (state) => state.accounts.EditedAccounts;
 export const getAccountFakeID = (_, props) => props.fakeID;
 export const getAccountFilter = (state) => state.accounts.AccountFilter;
-export const getAccountStatus = state => state.accounts.AccountStatus;
+export const getAccountListStatus = state => state.accounts.AccountListStatus;
 
 
 export const makeGetEditedAccount = () => {

@@ -82,7 +82,7 @@ export function AccountListReducer(state = [], action) {
   }
 }
 
-export function AccountStatusReducer(state = {
+export function AccountListStatusReducer(state = {
   fetched: false,
   errored: false,
   isLoading: false,
@@ -171,7 +171,7 @@ const AccountReducer = combineReducers({
   Accounts: AccountListReducer,
   EditedAccounts: EditAccountListReducer,
   AccountFilter: AccountFilterReducer,
-  AccountStatus: AccountStatusReducer,
+  AccountListStatus: AccountListStatusReducer,
 });
 
 export default AccountReducer;
