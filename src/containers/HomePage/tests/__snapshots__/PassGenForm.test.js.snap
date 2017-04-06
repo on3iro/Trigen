@@ -9,6 +9,29 @@ Array [
 ]
 `;
 
+exports[`<PassGenForm /> onDomainChange() should handle domain change 1`] = `
+Object {
+  "domain": "test@test.net",
+  "suggestions": Array [],
+  "username": "",
+}
+`;
+
+exports[`<PassGenForm /> onSuggestionsFetchRequested() should handle suggestion fetching 1`] = `
+Object {
+  "domain": "",
+  "suggestions": Array [
+    Object {
+      "domain": "testDomain.net",
+      "fakeID": "asdfas",
+      "id": 1,
+      "username": "tester",
+    },
+  ],
+  "username": "",
+}
+`;
+
 exports[`<PassGenForm /> should have initial component state 1`] = `
 Object {
   "domain": "",
