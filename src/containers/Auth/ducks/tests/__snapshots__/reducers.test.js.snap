@@ -1,5 +1,8 @@
 exports[`authReducer should handle LOGIN_ERROR 1`] = `
 Object {
+  "AuthRequestState": Object {
+    "isLoading": false,
+  },
   "user": Object {
     "data": Object {},
     "error": "login-error",
@@ -12,6 +15,9 @@ Object {
 
 exports[`authReducer should handle LOGIN_SUCCESS 1`] = `
 Object {
+  "AuthRequestState": Object {
+    "isLoading": false,
+  },
   "user": Object {
     "data": "testuser",
     "error": "",
@@ -24,6 +30,9 @@ Object {
 
 exports[`authReducer should handle LOGOUT 1`] = `
 Object {
+  "AuthRequestState": Object {
+    "isLoading": false,
+  },
   "user": Object {
     "data": Object {},
     "isLoggedIn": false,
@@ -34,6 +43,9 @@ Object {
 
 exports[`authReducer should handle REGISTER_ERROR 1`] = `
 Object {
+  "AuthRequestState": Object {
+    "isLoading": false,
+  },
   "user": Object {
     "data": Object {},
     "error": "register-error",
@@ -46,6 +58,9 @@ Object {
 
 exports[`authReducer should return initial state 1`] = `
 Object {
+  "AuthRequestState": Object {
+    "isLoading": false,
+  },
   "user": Object {
     "data": Object {},
     "error": Object {},

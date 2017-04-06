@@ -24,11 +24,7 @@ Object {
 
 exports[`actions should create an action to delete an account 1`] = `
 Object {
-  "payload": Object {
-    "accountID": "aID",
-    "authToken": "gibberish",
-    "userID": "uID",
-  },
+  "payload": "uID",
   "type": "DELETE_ACCOUNT",
 }
 `;

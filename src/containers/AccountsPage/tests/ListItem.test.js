@@ -18,6 +18,9 @@ const baseProps = {
     domain: 'example.com',
     edit: false,
   },
+  accountStatus: {
+    isLoading: false,
+  },
   fakeID: 'fakeID',
   cancelEdit: jest.fn(),
   deleteAccount: jest.fn(),
