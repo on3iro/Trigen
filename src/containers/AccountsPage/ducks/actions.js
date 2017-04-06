@@ -79,17 +79,14 @@ export function cancelEdit(fakeID) {
 
 /**
   * Deletes an account from the accounts list.
-  * TODO
-  * A request needs to be implemented which also deletes the account from the database
   *
-  * @param {String} fakeID -- Internal entry reference
   *
   * @return {Object} -- Aciton of the type DELETE_ACCOUNT
   */
-export function deleteAccount(fakeID) {
+export function deleteAccount(userID, authToken, accountID) {
   return {
     type: actionTypes.DELETE_ACCOUNT,
-    payload: { fakeID }
+    payload: { userID, authToken, accountID }
   };
 }
 

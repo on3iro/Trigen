@@ -82,7 +82,7 @@ export class ListItem extends Component {
   }
 
   continueDelete = () => {
-    this.props.deleteAccount(this.props.fakeID);
+    this.props.deleteAccount(this.props.userID, this.props.authToken, this.props.account.id);
     this.closeDeleteModal();
   }
 

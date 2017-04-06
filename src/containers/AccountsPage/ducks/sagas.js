@@ -38,16 +38,36 @@ export function *requestSaveNewAccount(action) {
 
   try {
     const response = yield call(axios.post, url, data, config);
+    const newAccount = { ...response.data, ...EditedAccount };
 
-    yield put({ type: types.SAVE_NEW_ACCOUNT_SUCCESS, payload: EditedAccount });
+    yield put({ type: types.SAVE_NEW_ACCOUNT_SUCCESS, payload: newAccount });
   }catch (error) {
     yield put({ type: types.SAVE_NEW_ACCOUNT_ERROR, payload: error.message });
+  }
+}
+
+export function *requestDeleteAccount(action) {
+  const { userID, authToken, accountID } = action.payload;
+  const url = `${BASE_URL}/users/${userID}/accounts/${accountID}`;
+  const config = {
+    headers: {
+      'Authorization': authToken,
+    }
+  }
+
+  try {
+    const response = yield call(axios.delete, url, config);
+
+    yield put({ type: types.DELETE_ACCOUNT_SUCCESS, payload: response });
+  }catch (error) {
+    yield put({ type: types.DELETE_ACCOUNT_ERROR, payload: error.message });
   }
 }
 
 export function *handleAccounts() {
   yield takeLatest(types.FETCH_ACCOUNTS, requestFetchAccounts);
   yield takeEvery(types.SAVE_NEW_ACCOUNT, requestSaveNewAccount);
+  yield takeEvery(types.DELETE_ACCOUNT, requestDeleteAccount);
 }
 
 export default function *() {
