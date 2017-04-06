@@ -8,17 +8,16 @@ export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
       const { response, genIDFunc } = action.payload;
-      const id = genIDFunc();
-      // const accountList = accounts.map(account => {
-        // return {
-          // ...account,
-          // fakeID: genID(),
-          // edit: false,
-        // };
-      // });
+      const accounts = response.data;
+      const accountList = accounts.map(account => {
+        return {
+          ...account,
+          fakeID: genIDFunc(),
+          edit: false,
+        };
+      });
 
-      // return Array.concat([], accountList);
-      return state;
+      return Array.concat([], accountList);
     }
 
     case actionTypes.ADD_ACCOUNT: {

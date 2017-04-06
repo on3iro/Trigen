@@ -9,7 +9,7 @@ import { surpressNoUsedVarsLinterError } from 'shared/helperFunctions';
 
 const  NavLinkWrapper = props => {
   // pull off secondary prop to avoid react-unknown-property error
-  const { secondary, ...rest } = props;
+  const { secondary, warning, ...rest } = props;
   surpressNoUsedVarsLinterError(secondary);
 
   return <NavLink {...rest} />;
@@ -17,6 +17,7 @@ const  NavLinkWrapper = props => {
 
 NavLinkWrapper.propTypes = {
   secondary: PropTypes.bool,
+  warning: PropTypes.bool,
 };
 
 const StyledNavLink = styled(NavLinkWrapper)`${buttonStyles}`;
