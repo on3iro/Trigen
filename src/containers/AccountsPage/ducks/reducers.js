@@ -36,7 +36,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS:
-    case actionTypes.SAVE_ACCOUNT: {
+    case actionTypes.UPDATE_ACCOUNT_SUCCESS: {
       const account = action.payload;
       const newArr = state.slice(0);
       const index = newArr.findIndex(val => {

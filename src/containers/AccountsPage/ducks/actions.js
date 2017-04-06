@@ -50,8 +50,6 @@ export function editAccount(fakeID, data) {
 /**
  * Transfers data from an EditedAccount to the respective account inside
  * the accounts list.
- * TODO
- * A request needs to be implemented which patches/posts the new data to the server
   */
 export function saveNewAccount(userID, authToken, EditedAccount) {
   return {
@@ -60,7 +58,12 @@ export function saveNewAccount(userID, authToken, EditedAccount) {
   };
 }
 
-// TODO save existing account
+export function updateAccount(userID, authToken, EditedAccount) {
+  return {
+    type: actionTypes.UPDATE_ACCOUNT,
+    payload: { userID, authToken, EditedAccount },
+  }
+}
 
 /**
  * Deletes an EditedAccount from the respective list and basically reverts all changes

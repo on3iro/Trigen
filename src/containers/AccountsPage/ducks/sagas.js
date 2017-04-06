@@ -46,6 +46,28 @@ export function *requestSaveNewAccount(action) {
   }
 }
 
+export function *requestUpdateAccount(action) {
+  const { userID, authToken, EditedAccount } = action.payload;
+  const url = `${BASE_URL}/users/${userID}/accounts/${EditedAccount.id}`
+  const config = {
+    headers: {
+      'Authorization': authToken,
+      'Content-Type': 'application/json',
+    },
+  };
+  const { domain, username } = EditedAccount;
+  const data = { domain, username };
+
+  try {
+    const response = yield call(axios.put, url, data, config);
+    const updateAccount = { ...response.data, ...EditedAccount };
+
+    yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updateAccount });
+  }catch (error) {
+    yield put({ type: types.UPDATE_ACCOUNT_ERROR, payload: error.message });
+  }
+}
+
 export function *requestDeleteAccount(action) {
   const { userID, authToken, accountID } = action.payload;
   const url = `${BASE_URL}/users/${userID}/accounts/${accountID}`;
@@ -67,6 +89,7 @@ export function *requestDeleteAccount(action) {
 export function *handleAccounts() {
   yield takeLatest(types.FETCH_ACCOUNTS, requestFetchAccounts);
   yield takeEvery(types.SAVE_NEW_ACCOUNT, requestSaveNewAccount);
+  yield takeEvery(types.UPDATE_ACCOUNT, requestUpdateAccount);
   yield takeEvery(types.DELETE_ACCOUNT, requestDeleteAccount);
 }
 
