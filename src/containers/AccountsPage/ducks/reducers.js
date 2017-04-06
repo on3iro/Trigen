@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import * as actionTypes from './actionTypes';
+import * as authTypes from 'containers/Auth/ducks/actionTypes';
 
 
 // Reducer
@@ -77,6 +78,10 @@ export function AccountListReducer(state = [], action) {
       return newArr;
     }
 
+    case authTypes.LOGOUT: {
+      return [];
+    }
+
     default:
       return state;
   }
@@ -101,6 +106,14 @@ export function AccountListStatusReducer(state = {
         ...state,
         fetched: false,
         errored: true,
+        isLoading: false,
+      };
+    }
+
+    case authTypes.LOGOUT: {
+      return {
+        fetched: false,
+        errored: false,
         isLoading: false,
       };
     }
@@ -158,6 +171,10 @@ export function AccountStatusReducer(state = {}, action) {
       return { ...state, [fakeID]: { isLoading: false } };
     }
 
+    case authTypes.LOGOUT: {
+      return {};
+    }
+
     default: {
       return state;
     }
@@ -200,6 +217,10 @@ export function EditAccountListReducer(state = {}, action) {
           [target.name]: target.value,
         }),
       });
+    }
+
+    case authTypes.LOGOUT: {
+      return {};
     }
 
     default:
