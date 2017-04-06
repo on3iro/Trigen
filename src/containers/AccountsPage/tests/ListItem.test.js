@@ -10,23 +10,28 @@ import Input from '../Input';
 import ItemButton from '../ItemButton';
 
 
-function setUp() {
-  const props = {
-    account: {
-      id: 0,
-      fakeID: 'fakeID',
-      username: 'ttester',
-      domain: 'example.com',
-      edit: false,
-    },
+const baseProps = {
+  account: {
+    id: 0,
     fakeID: 'fakeID',
-    cancelEdit: jest.fn(),
-    deleteAccount: jest.fn(),
-    editAccount: jest.fn(),
-    handleAccountChange: jest.fn(),
-    saveNewAccount: jest.fn(),
-  };
+    username: 'ttester',
+    domain: 'example.com',
+    edit: false,
+  },
+  fakeID: 'fakeID',
+  cancelEdit: jest.fn(),
+  deleteAccount: jest.fn(),
+  editAccount: jest.fn(),
+  handleAccountChange: jest.fn(),
+  saveNewAccount: jest.fn(),
+  updateAccount: jest.fn(),
+};
 
+function setUp(newProps) {
+  const props = {
+    ...baseProps,
+    ...newProps,
+  };
   const enzymeWrapper = shallow(<ListItem {...props} />);
 
   return {
@@ -35,8 +40,8 @@ function setUp() {
   };
 }
 
-function editSetup() {
-  const { props } = setUp();
+function editSetup(newProps) {
+  const { props } = setUp(newProps);
 
   const editProps = {
     ...props,
@@ -80,8 +85,24 @@ describe('<ListItem />', () => {
     expect(props.editAccount.mock.calls.length).toBe(1);
   });
 
-  it('should call saveItem', () => {
+  it('should call saveItem and update existing account', () => {
     const { enzymeWrapper, props } = editSetup();
+
+    enzymeWrapper.instance().saveItem();
+    expect(props.updateAccount.mock.calls.length).toBe(1);
+  });
+
+  it('should call saveItem and save new account', () => {
+    const { enzymeWrapper, props } = editSetup({
+      account: {
+        id: 0,
+        fakeID: 'fakeID',
+        username: 'ttester',
+        domain: 'example.com',
+        edit: false,
+        new: true,
+      },
+    });
 
     enzymeWrapper.instance().saveItem();
     expect(props.saveNewAccount.mock.calls.length).toBe(1);

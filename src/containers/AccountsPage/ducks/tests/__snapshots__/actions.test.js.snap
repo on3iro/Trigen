@@ -1,3 +1,18 @@
+exports[`actions should create an action to add an account 1`] = `
+Object {
+  "payload": Object {
+    "data": Object {
+      "domain": "",
+      "edit": true,
+      "fakeID": "fakeID",
+      "new": true,
+      "username": "",
+    },
+  },
+  "type": "ADD_ACCOUNT",
+}
+`;
+
 exports[`actions should create an action to cancel edited changes 1`] = `
 Object {
   "payload": Object {
@@ -10,7 +25,9 @@ Object {
 exports[`actions should create an action to delete an account 1`] = `
 Object {
   "payload": Object {
-    "fakeID": "fakeID",
+    "accountID": "aID",
+    "authToken": "gibberish",
+    "userID": "uID",
   },
   "type": "DELETE_ACCOUNT",
 }

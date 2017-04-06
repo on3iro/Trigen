@@ -24,13 +24,15 @@ describe('Reducers', () => {
       expect(AccountListReducer(undefined, {
         type: types.FETCH_ACCOUNTS_SUCCESS,
         payload: {
-          accounts: [
-            {
-              id: 0,
-              username: 'ttester',
-              domain: 'example.com',
-            }
-          ],
+          response: {
+            data: [
+              {
+                id: 0,
+                username: 'ttester',
+                domain: 'example.com',
+              }
+            ],
+          },
           genIDFunc: genIDMock
         }
       })).toMatchSnapshot();
@@ -58,10 +60,10 @@ describe('Reducers', () => {
       expect(AccountListReducer(INITIAL_STATE, action)).toMatchSnapshot();
     });
 
-    it('should handle SAVE_ACCOUNT', () => {
+    it('should handle SAVE_ACCOUNT_SUCCESS', () => {
       const initialState = [ { ...INITIAL_STATE[0], edit: true } ];
       const action = {
-        type: types.SAVE_ACCOUNT,
+        type: types.SAVE_ACCOUNT_SUCCESS,
         payload: {
           ...INITIAL_STATE[0],
           username: 'dudeDudsen',
@@ -97,10 +99,14 @@ describe('Reducers', () => {
         .toMatchSnapshot();
     });
 
-    it('should handle DELETE_ACCOUNT', () => {
+    it('should handle DELETE_ACCOUNT_SUCCESS', () => {
       const action = {
-        type: types.DELETE_ACCOUNT,
-        payload: { fakeID: 'fakeID' }
+        type: types.DELETE_ACCOUNT_SUCCESS,
+        payload: {
+          data: {
+            account_id: 'aID',
+          }
+        }
       };
 
       expect(AccountListReducer(INITIAL_STATE, action))
@@ -110,8 +116,7 @@ describe('Reducers', () => {
 
   describe('EditAccountListReducer', () => {
     it('should return unmodified state as default', () => {
-      expect(EditAccountListReducer(undefined, {}))
-        .toMatchSnapshot();
+      expect(EditAccountListReducer(undefined, { type: '', payload: { fakeID: ''} })).toMatchSnapshot();
     });
 
     it('should handle ADD_ACCOUNT', () => {

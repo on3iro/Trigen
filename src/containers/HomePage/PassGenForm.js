@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import { fetchAccounts } from 'containers/AccountsPage/ducks/actions';
 import { getAccounts, getAccountStatus } from 'containers/AccountsPage/ducks/selectors';
+import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 
 import Input from 'components/Input';
 import Button from 'components/Button';
@@ -24,7 +25,7 @@ export class PassGenForm extends Component {
 
   componentDidMount() {
     if(!this.props.accountsFetched) {
-      this.props.fetchAccounts(shortid.generate);
+      this.props.fetchAccounts(this.props.userID, this.props.authToken, shortid.generate);
     }
   }
 
@@ -152,6 +153,8 @@ const mapStateToProps = state => {
   return {
     accounts: getAccounts(state),
     accountsFetched: getAccountStatus(state).fetched,
+    userID: getUserID(state),
+    authToken: getAuthToken(state),
   };
 };
 

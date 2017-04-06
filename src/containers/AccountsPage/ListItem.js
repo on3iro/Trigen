@@ -16,6 +16,7 @@ import {
   editAccount,
   handleAccountChange,
   saveNewAccount,
+  updateAccount,
 } from './ducks/actions';
 import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 import { makeGetEditedAccount } from './ducks/selectors';
@@ -65,7 +66,11 @@ export class ListItem extends Component {
   }
 
   saveItem = () => {
-    this.props.saveNewAccount(this.props.userID, this.props.authToken, this.props.EditedAccount);
+    if(this.props.EditedAccount.new) {
+      this.props.saveNewAccount(this.props.userID, this.props.authToken, this.props.EditedAccount);
+    }else {
+      this.props.updateAccount(this.props.userID, this.props.authToken, this.props.EditedAccount);
+    }
   }
 
   handleChange = (e) => {
@@ -82,7 +87,7 @@ export class ListItem extends Component {
   }
 
   continueDelete = () => {
-    this.props.deleteAccount(this.props.fakeID);
+    this.props.deleteAccount(this.props.userID, this.props.authToken, this.props.account.id);
     this.closeDeleteModal();
   }
 
@@ -158,6 +163,7 @@ ListItem.propTypes = {
   saveAccount: PropTypes.func,
   getUserID: PropTypes.func,
   getAuthToken: PropTypes.func,
+  updateAccount: PropTypes.func,
 };
 
 const makeMapStateToProps = () => {
@@ -180,6 +186,7 @@ const mapDispatchToProps = (dispatch) => {
     editAccount,
     handleAccountChange,
     saveNewAccount,
+    updateAccount,
   }, dispatch);
 };
 

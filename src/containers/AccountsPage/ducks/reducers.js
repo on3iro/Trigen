@@ -8,21 +8,19 @@ export function AccountListReducer(state = [], action) {
   switch(action.type) {
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
       const { response, genIDFunc } = action.payload;
-      const id = genIDFunc();
-      // const accountList = accounts.map(account => {
-        // return {
-          // ...account,
-          // fakeID: genID(),
-          // edit: false,
-        // };
-      // });
+      const accounts = response.data;
+      const accountList = accounts.map(account => {
+        return {
+          ...account,
+          fakeID: genIDFunc(),
+          edit: false,
+        };
+      });
 
-      // return Array.concat([], accountList);
-      return state;
+      return Array.concat([], accountList);
     }
 
     case actionTypes.ADD_ACCOUNT: {
-      console.log(action.payload);
       return Array.concat([], [{ ...action.payload.data }], state);
     }
 
@@ -38,7 +36,7 @@ export function AccountListReducer(state = [], action) {
     }
 
     case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS:
-    case actionTypes.SAVE_ACCOUNT: {
+    case actionTypes.UPDATE_ACCOUNT_SUCCESS: {
       const account = action.payload;
       const newArr = state.slice(0);
       const index = newArr.findIndex(val => {
@@ -69,13 +67,13 @@ export function AccountListReducer(state = [], action) {
       return newArr;
     }
 
-    case actionTypes.DELETE_ACCOUNT: {
-      const { fakeID } = action.payload;
+    case actionTypes.DELETE_ACCOUNT_SUCCESS: {
+      const accountID = action.payload.data.account_id;
       const index = state.findIndex(val => {
-        return val.fakeID === fakeID;
+        return parseInt(val.id, 10) === parseInt(accountID, 10);
       });
-
       const newArr = [ ...state.slice(0, index), ...state.slice(index + 1)];
+
       return newArr;
     }
 
