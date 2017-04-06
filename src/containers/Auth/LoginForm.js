@@ -45,7 +45,7 @@ export const LoginForm = props => {
       {
         props.isLoading
         ? <Button onClick={(e) => e.preventDefault}>
-            <LoadingSpinner />
+            <LoadingSpinner controls />
           </Button>
         : <Button submit >Anmelden</Button>
       }

@@ -151,7 +151,7 @@ export class ListItem extends Component {
         <Grid md={1 / 12}>
           {
             this.props.accountStatus.isLoading
-              ? <LoadingSpinner />
+              ? <LoadingSpinner controls />
               : <AccountControls
                   edit={account.edit}
                   save={this.saveItem}

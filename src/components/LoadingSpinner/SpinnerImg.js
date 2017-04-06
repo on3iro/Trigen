@@ -4,7 +4,7 @@ import Img from 'components/Img';
 
 
 const SpinnerImg = styled(Img)`
-  width: 5%;
+  width: ${props => props.controls ? '20px' : '80px'};
 `;
 
 export default SpinnerImg;

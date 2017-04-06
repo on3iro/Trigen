@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from 'grid-styled';
 
 import spinnerRing from 'img/spinner_ring.gif';
 
@@ -6,10 +7,10 @@ import Wrapper from './Wrapper';
 import SpinnerImg from './SpinnerImg';
 
 
-const LoadingSpinner = () => {
+const LoadingSpinner = props => {
   return (
     <Wrapper>
-      <SpinnerImg src={spinnerRing} alt="loading"/>
+      <SpinnerImg {...props} src={spinnerRing} alt="loading"/>
     </Wrapper>
   );
 };

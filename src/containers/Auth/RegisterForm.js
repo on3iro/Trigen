@@ -58,7 +58,7 @@ export const RegisterForm = props => {
       {
         props.isLoading
           ? <Button onClick={(e) => e.preventDefault}>
-              <LoadingSpinner />
+              <LoadingSpinner controls />
             </Button>
           : <Button submit>Jetzt kostenlos registrieren</Button>
       }
