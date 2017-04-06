@@ -63,7 +63,19 @@ const AuthRequestState = (state = {
       return { ...state, isLoading: true };
     }
 
+    case types.REGISTER_SUBMIT: {
+      return { ...state, isLoading: true };
+    }
+
     case types.LOGIN_SUCCESS: {
+      return { ...state, isLoading: false };
+    }
+
+    case types.REGISTER_SUCCESS: {
+      return { ...state, isLoading: false };
+    }
+
+    case types.REGISTER_ERROR: {
       return { ...state, isLoading: false };
     }
 
