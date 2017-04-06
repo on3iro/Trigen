@@ -1,3 +1,3 @@
-export function surpressNoUsedVarsLinterError(value) {
-  return value;
+export function surpressNoUsedVarsLinterError(...rest) {
+  return { ...rest };
 }

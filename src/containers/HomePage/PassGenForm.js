@@ -2,7 +2,6 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
-import styled from 'styled-components';
 
 import { fetchAccounts } from 'containers/AccountsPage/ducks/actions';
 import { getAccounts, getAccountListStatus } from 'containers/AccountsPage/ducks/selectors';
@@ -50,9 +49,8 @@ export class PassGenForm extends Component {
     e.preventDefault();
     const validationErrors = this.validate();
 
-    // TODO finish validation
     if(validationErrors.length !== 0) {
-      console.log(validationErrors);
+      // TODO
     }
   }
 
@@ -126,7 +124,7 @@ export class PassGenForm extends Component {
     };
 
     if(this.props.accountListStatus.isLoading) {
-      return <LoadingSpinner />
+      return <LoadingSpinner />;
     }
 
     return (
@@ -153,6 +151,14 @@ export class PassGenForm extends Component {
     );
   }
 }
+
+PassGenForm.propTypes = {
+  accountListStatus: PropTypes.object,
+  accounts: PropTypes.array,
+  authToken: PropTypes.string,
+  fetchAccounts: PropTypes.func,
+  userID: PropTypes.number,
+};
 
 const mapStateToProps = state => {
   return {

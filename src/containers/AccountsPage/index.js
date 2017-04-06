@@ -117,15 +117,18 @@ export class AccountsPage extends Component {
 }
 
 AccountsPage.propTypes = {
-  accountFilter: PropTypes.string,
-  accounts: PropTypes.arrayOf(PropTypes.object),
   accountCount: PropTypes.number,
-  maxAccounts: PropTypes.number,
+  accountFilter: PropTypes.string,
+  accountListStatus: PropTypes.object,
+  accounts: PropTypes.arrayOf(PropTypes.object),
   addAccount: PropTypes.func,
+  authToken: PropTypes.string,
   fetchAccounts: PropTypes.func,
   filterAccounts: PropTypes.func,
-  getUserID: PropTypes.func,
   getAuthToken: PropTypes.func,
+  getUserID: PropTypes.func,
+  maxAccounts: PropTypes.number,
+  userID: PropTypes.number,
 };
 
 const mapStateToProps = (state) => {

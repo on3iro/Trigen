@@ -29,6 +29,7 @@ export class Login extends Component {
 }
 
 Login.propTypes = {
+  isLoading: PropTypes.bool,
   loginSubmit: PropTypes.func.isRequired,
 };
 

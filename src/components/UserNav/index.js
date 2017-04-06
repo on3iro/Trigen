@@ -12,18 +12,12 @@ import Button from 'components/Button';
 import NavBar from './NavBar';
 import UserNavLink from './UserNavLink';
 
-import profileIcon from 'img/icons/Icon_Button_Userprofile.png';
 import settingsIcon from 'img/icons/Icon_Button_Settings.png';
 import logoutIcon from 'img/icons/Icon_Button_Logout.png';
 
 
 const Icon = styled.div`
   padding-bottom: 10px;
-`;
-const ProfileIcon = styled(Icon)`
-  width: 25px;
-  height: 27px;
-  background-size: 50px 27px;
 `;
 const AccountsIcon = styled(Icon)`
   width: 25px;

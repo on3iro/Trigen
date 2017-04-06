@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
@@ -42,6 +42,13 @@ const DeleteModal = props => {
       <RestyledButton secondary onClick={props.cancelRequest}>Abbrechen</RestyledButton>
     </Modal>
   );
+};
+
+DeleteModal.propTypes = {
+  cancelRequest: PropTypes.func.isRequired,
+  continueRequest: PropTypes.func.isRequired,
+  domain: PropTypes.string,
+  username: PropTypes.string,
 };
 
 export default DeleteModal;

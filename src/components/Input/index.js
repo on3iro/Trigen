@@ -11,7 +11,7 @@ const Input = props => {
     input = <AutoSuggestInput {...props} />;
   }
 
-  return input
+  return input;
 };
 
 export default Input;

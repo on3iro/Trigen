@@ -44,10 +44,11 @@ export class Register extends Component {
 }
 
 Register.propTypes = {
-  registerSubmit: PropTypes.func.isRequired,
-  location: PropTypes.object,
-  isLoggedIn: PropTypes.bool,
   hasRegistered: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  isLoggedIn: PropTypes.bool,
+  location: PropTypes.object,
+  registerSubmit: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = dispatch => {

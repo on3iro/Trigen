@@ -55,6 +55,7 @@ export const LoginForm = props => {
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
 };
 
 // Decorate the form component
