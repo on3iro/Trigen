@@ -18,6 +18,8 @@ import DefaultTheme from 'themes/default';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import FullHeightGrid from 'components/FullHeightGrid';
+
 import Content from './Content';
 
 import AGBPage from 'containers/AGBPage';
@@ -49,7 +51,7 @@ export class App extends Component {
           <Grid md={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
             <Grid md={1 / 6} />
-            <Grid md={4 / 6}>
+            <FullHeightGrid md={4 / 6}>
               <Content>
                 <Switch>
                   <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
@@ -64,7 +66,7 @@ export class App extends Component {
                   <Route path="/logout" component={Logout} />
                 </Switch>
               </Content>
-            </Grid>
+            </FullHeightGrid>
             <Grid md={1 / 6} />
             <Footer />
           </Grid>

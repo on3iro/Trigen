@@ -33,6 +33,10 @@ injectGlobal`
     height: 100%;
     min-height: 100%;
     min-width: 100%;
+
+    & > div {
+      height: 100%;
+    }
   }
 
   ul {
