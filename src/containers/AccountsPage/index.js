@@ -14,6 +14,7 @@ import styled from 'styled-components';
 
 import H1 from 'components/H1';
 import Span from 'components/Span';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 import { getMaxAccounts } from 'containers/Auth/ducks/selectors';
 
@@ -40,7 +41,7 @@ export class AccountsPage extends Component {
   }
 
   componentDidMount() {
-    if(!this.props.accountsFetched) {
+    if(!this.props.accountStatus.fetched) {
       this.props.fetchAccounts(this.props.userID, this.props.authToken, shortid.generate);
     }
   }
@@ -103,9 +104,13 @@ export class AccountsPage extends Component {
             />
           </Grid>
         </ControlWrapper>
-        <List
-          accounts={this.props.accounts}
-        />
+        {
+          this.props.accountStatus.isLoading
+            ? <LoadingSpinner />
+            : <List
+                accounts={this.props.accounts}
+              />
+        }
       </Grid>
     );
   }
@@ -131,7 +136,7 @@ const mapStateToProps = (state) => {
     accountFilter: getAccountFilter(state),
     accountCount: getAccountCount(state),
     maxAccounts: getMaxAccounts(state),
-    accountsFetched: getAccountStatus(state).fetched,
+    accountStatus: getAccountStatus(state),
     userID: getUserID(state),
     authToken: getAuthToken(state),
   };

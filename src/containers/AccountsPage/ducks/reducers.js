@@ -85,10 +85,15 @@ export function AccountListReducer(state = [], action) {
 export function AccountStatusReducer(state = {
   fetched: false,
   errored: false,
+  isLoading: false,
 }, action) {
   switch(action.type) {
+    case actionTypes.FETCH_ACCOUNTS: {
+      return { ...state, isLoading: true };
+    }
+
     case actionTypes.FETCH_ACCOUNTS_SUCCESS: {
-      return { ...state, fetched: true };
+      return { ...state, fetched: true, isLoading: false };
     }
 
     case actionTypes.FETCH_ACCOUNTS_ERROR: {
@@ -96,6 +101,7 @@ export function AccountStatusReducer(state = {
         ...state,
         fetched: false,
         errored: true,
+        isLoading: false,
       };
     }
 

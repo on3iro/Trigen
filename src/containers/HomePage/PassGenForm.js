@@ -10,6 +10,7 @@ import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 
 import Input from 'components/Input';
 import Button from 'components/Button';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 
 export class PassGenForm extends Component {
@@ -24,7 +25,7 @@ export class PassGenForm extends Component {
   }
 
   componentDidMount() {
-    if(!this.props.accountsFetched) {
+    if(!this.props.accountStatus.fetched) {
       this.props.fetchAccounts(this.props.userID, this.props.authToken, shortid.generate);
     }
   }
@@ -124,6 +125,10 @@ export class PassGenForm extends Component {
       onChange: this.onDomainChange,
     };
 
+    if(this.props.accountStatus.isLoading) {
+      return <LoadingSpinner />
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <Input
@@ -152,7 +157,7 @@ export class PassGenForm extends Component {
 const mapStateToProps = state => {
   return {
     accounts: getAccounts(state),
-    accountsFetched: getAccountStatus(state).fetched,
+    accountStatus: getAccountStatus(state),
     userID: getUserID(state),
     authToken: getAuthToken(state),
   };
