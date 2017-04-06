@@ -26,7 +26,7 @@ export function *requestFetchAccounts(action) {
 
 export function *requestSaveNewAccount(action) {
   const { userID, authToken, EditedAccount } = action.payload;
-  const url = `${BASE_URL}/users/${userID}/accounts`
+  const url = `${BASE_URL}/users/${userID}/accounts`;
   const config = {
     headers: {
       'Authorization': authToken,
@@ -48,7 +48,7 @@ export function *requestSaveNewAccount(action) {
 
 export function *requestUpdateAccount(action) {
   const { userID, authToken, EditedAccount } = action.payload;
-  const url = `${BASE_URL}/users/${userID}/accounts/${EditedAccount.id}`
+  const url = `${BASE_URL}/users/${userID}/accounts/${EditedAccount.id}`;
   const config = {
     headers: {
       'Authorization': authToken,
@@ -60,9 +60,10 @@ export function *requestUpdateAccount(action) {
 
   try {
     const response = yield call(axios.put, url, data, config);
-    const updateAccount = { ...response.data, ...EditedAccount };
+    const updatedAccount = { ...response.data, ...EditedAccount };
 
-    yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updateAccount });
+    // yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updatedAccount });
+    yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: updatedAccount });
   }catch (error) {
     yield put({ type: types.UPDATE_ACCOUNT_ERROR, payload: error.message });
   }

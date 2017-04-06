@@ -111,6 +111,52 @@ export function AccountListStatusReducer(state = {
   }
 }
 
+export function AccountStatusReducer(state = {}, action) {
+  switch(action.type) {
+    case actionTypes.SAVE_ACCOUNT: {
+      return { ...state, isLoading: true };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT: {
+      console.log(action.payload);
+      return { ...state, isLoading: true };
+    }
+
+    case actionTypes.DELETE_ACCOUNT: {
+      return { ...state, isLoading: true };
+    }
+
+    case actionTypes.SAVE_NEW_ACCOUNT_SUCCESS: {
+      return { ...state, isLoading: false };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT_SUCCESS: {
+      console.log(action.payload);
+      return { ...state, isLoading: false };
+    }
+
+    case actionTypes.DELETE_ACCOUNT_SUCCESS: {
+      return { ...state, isLoading: false };
+    }
+
+    case actionTypes.SAVE_NEW_ACCOUNT_ERROR: {
+      return { ...state, isLoading: false };
+    }
+
+    case actionTypes.UPDATE_ACCOUNT_ERROR: {
+      return { ...state, isLoading: false };
+    }
+
+    case actionTypes.DELETE_ACCOUNT_ERROR: {
+      return { ...state, isLoading: false };
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
 export function EditAccountListReducer(state = {}, action) {
   switch(action.type) {
     case actionTypes.ADD_ACCOUNT: {
@@ -172,6 +218,7 @@ const AccountReducer = combineReducers({
   EditedAccounts: EditAccountListReducer,
   AccountFilter: AccountFilterReducer,
   AccountListStatus: AccountListStatusReducer,
+  AccountStatus: AccountStatusReducer,
 });
 
 export default AccountReducer;
