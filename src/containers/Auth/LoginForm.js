@@ -10,6 +10,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import H1 from 'components/H1';
 import Button from 'components/Button';
+import LoadingSpinner from 'components/LoadingSpinner';
 
 import FormField from 'components/FormField';
 
@@ -41,7 +42,13 @@ export const LoginForm = props => {
       <Field name="password" type="password"
         component={FormField} label="Passwort"
       />
-      <Button submit >Anmelden</Button>
+      {
+        props.isLoading
+        ? <Button onClick={(e) => e.preventDefault}>
+            <LoadingSpinner />
+          </Button>
+        : <Button submit >Anmelden</Button>
+      }
     </form>
   );
 };

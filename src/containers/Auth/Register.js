@@ -12,7 +12,6 @@ import { Redirect } from 'react-router-dom';
 import * as selectors from './ducks/selectors';
 
 import Button from 'components/Button';
-import LoadingSpinner from 'components/LoadingSpinner';
 
 import Wrapper from './Wrapper';
 import RegisterForm from './RegisterForm';
@@ -35,11 +34,7 @@ export class Register extends Component {
           <Redirect to={from} />
         ) : (
             <Wrapper>
-              <RegisterForm onSubmit={this.handleSubmit} />
-              {
-                this.props.isLoading &&
-                  <LoadingSpinner />
-              }
+              <RegisterForm isLoading={this.props.isLoading} onSubmit={this.handleSubmit} />
               <FormDivider>Schon registriert?</FormDivider>
               <Button to="/login" secondary>Anmelden</Button>
             </Wrapper>

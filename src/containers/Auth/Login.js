@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Button from 'components/Button';
-import LoadingSpinner from 'components/LoadingSpinner';
 
 import LoginForm from './LoginForm';
 import FormDivider from './FormDivider';
@@ -21,12 +20,8 @@ export class Login extends Component {
   render() {
     return (
       <Wrapper>
-        <LoginForm onSubmit={this.handleSubmit} />
+        <LoginForm isLoading={this.props.isLoading} onSubmit={this.handleSubmit} />
         <FormDivider>Noch keinen Account?</FormDivider>
-        {
-          this.props.isLoading &&
-            <LoadingSpinner />
-        }
         <Button to="/register" secondary>Registrieren</Button>
       </Wrapper>
     );

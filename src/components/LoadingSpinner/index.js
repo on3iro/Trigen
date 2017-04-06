@@ -1,12 +1,16 @@
 import React from 'react';
 
-import Img from 'components/Img';
-import spinnerImg from 'img/spinner_ring.gif';
+import spinnerRing from 'img/spinner_ring.gif';
+
+import Wrapper from './Wrapper';
+import SpinnerImg from './SpinnerImg';
 
 
 const LoadingSpinner = () => {
   return (
-    <Img src={spinnerImg} alt="loading"/>
+    <Wrapper>
+      <SpinnerImg src={spinnerRing} alt="loading"/>
+    </Wrapper>
   );
 };
 
