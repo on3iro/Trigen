@@ -21,6 +21,11 @@ describe('actions', () => {
     expect(actions.saveNewAccount({ test: 'test' })).toMatchSnapshot();
   });
 
+  it('should create an action to update an account', () => {
+    expect(actions.updateAccount('userID', 'tokenXYZ', { username: 'jonny', domain: 'foo@bar.com' }))
+      .toMatchSnapshot();
+  });
+
   it('should create an action to cancel edited changes', () => {
     expect(actions.cancelEdit('fakeID')).toMatchSnapshot();
   });
@@ -31,5 +36,9 @@ describe('actions', () => {
 
   it('should create an action to handle account changes', () => {
     expect(actions.handleAccountChange('fakeID', { test: 'test' })).toMatchSnapshot();
+  });
+
+  it('should create an action to filter accounts', () => {
+    expect(actions.filterAccounts('bla')).toMatchSnapshot();
   });
 });

@@ -1,3 +1,9 @@
+exports[`handleAuthSaga should return authSaga 1`] = `
+GeneratorFunctionPrototype {
+  "_invoke": [Function],
+}
+`;
+
 exports[`handleAuthSaga should start taks to watch REGISTER_SUBMIT 1`] = `
 Object {
   "@@redux-saga/IO": true,

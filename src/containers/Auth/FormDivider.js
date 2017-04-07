@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   margin: -5px 0 10px 0;
   width: 100%;
 `;
-const DividerLine = styled.div`
+export const DividerLine = styled.div`
   display: inline-block;
   margin: 0;
   padding-top: 8px;
@@ -19,7 +19,7 @@ const DividerLine = styled.div`
 
   border-bottom: 2px solid ${props => props.theme.simple};
 `;
-const Text = styled.p`
+export const Text = styled.p`
   flex-grow: 2;
   margin: 0;
   width: 150px;

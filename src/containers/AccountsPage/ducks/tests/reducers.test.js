@@ -1,5 +1,6 @@
-import { AccountListReducer, EditAccountListReducer } from '../reducers';
+import * as reducers from '../reducers';
 import * as types from '../actionTypes';
+import * as authTypes from 'containers/Auth/ducks/actionTypes';
 
 
 describe('Reducers', () => {
@@ -15,13 +16,13 @@ describe('Reducers', () => {
     ];
 
     it('should return unmodified state as default', () => {
-      expect(AccountListReducer(undefined, {}))
+      expect(reducers.AccountListReducer(undefined, {}))
         .toEqual([]);
     });
 
     it('should handle FETCH_ACCOUNTS_SUCCESS', () => {
       const genIDMock = jest.fn(() => 'fakeID');
-      expect(AccountListReducer(undefined, {
+      expect(reducers.AccountListReducer(undefined, {
         type: types.FETCH_ACCOUNTS_SUCCESS,
         payload: {
           response: {
@@ -40,7 +41,7 @@ describe('Reducers', () => {
     });
 
     it('should handle ADD_ACCOUNT', () => {
-      expect(AccountListReducer([], {
+      expect(reducers.AccountListReducer([], {
         type: types.ADD_ACCOUNT,
         payload: { data : {
           test: 'test',
@@ -57,20 +58,33 @@ describe('Reducers', () => {
           edit: true,
         }}
       };
-      expect(AccountListReducer(INITIAL_STATE, action)).toMatchSnapshot();
+      expect(reducers.AccountListReducer(INITIAL_STATE, action)).toMatchSnapshot();
     });
 
-    it('should handle SAVE_ACCOUNT_SUCCESS', () => {
+    it('should handle SAVE_NEW_ACCOUNT_SUCCESS', () => {
       const initialState = [ { ...INITIAL_STATE[0], edit: true } ];
       const action = {
-        type: types.SAVE_ACCOUNT_SUCCESS,
+        type: types.SAVE_NEW_ACCOUNT_SUCCESS,
         payload: {
           ...INITIAL_STATE[0],
           username: 'dudeDudsen',
         }
       };
 
-      expect(AccountListReducer(initialState, action)).toMatchSnapshot();
+      expect(reducers.AccountListReducer(initialState, action)).toMatchSnapshot();
+    });
+
+    it('should handle UPDATE_ACCOUNT_SUCCESS', () => {
+      const initialState = [ { ...INITIAL_STATE[0], edit: true } ];
+      const action = {
+        type: types.UPDATE_ACCOUNT_SUCCESS,
+        payload: {
+          ...INITIAL_STATE[0],
+          username: 'dudeDudsen',
+        }
+      };
+
+      expect(reducers.AccountListReducer(initialState, action)).toMatchSnapshot();
     });
 
     it('should handle CANCEL_EDIT with existing account', () => {
@@ -79,7 +93,7 @@ describe('Reducers', () => {
         payload: { fakeID: 'fakeID' },
       };
 
-      expect(AccountListReducer(INITIAL_STATE, action))
+      expect(reducers.AccountListReducer(INITIAL_STATE, action))
         .toMatchSnapshot();
     });
 
@@ -95,7 +109,7 @@ describe('Reducers', () => {
         payload: { fakeID: 'fakeID' }
       };
 
-      expect(AccountListReducer(initialState, action))
+      expect(reducers.AccountListReducer(initialState, action))
         .toMatchSnapshot();
     });
 
@@ -109,14 +123,51 @@ describe('Reducers', () => {
         }
       };
 
-      expect(AccountListReducer(INITIAL_STATE, action))
+      expect(reducers.AccountListReducer(INITIAL_STATE, action))
+        .toMatchSnapshot();
+    })
+
+    it('should handle authTypes.LOGOUT', () => {
+      expect(reducers.AccountListReducer(INITIAL_STATE, { type: authTypes.LOGOUT }))
+        .toEqual([]);
+    });
+  });
+
+  describe('AccountListStatusReducer', () => {
+    const INITIAL_STATE = {
+      fetched: false,
+      errored: false,
+      isLoading: false,
+    };
+
+    it('should return initial state', () => {
+      expect(reducers.AccountListStatusReducer(undefined, {})).toEqual(INITIAL_STATE);
+    });
+
+    it('should handle FETCH_ACCOUNTS', () => {
+      expect(reducers.AccountListStatusReducer(INITIAL_STATE, { type: types.FETCH_ACCOUNTS }))
+        .toMatchSnapshot();
+    })
+
+    it('should handle FETCH_ACCOUNTS_SUCCESS', () => {
+      expect(reducers.AccountListStatusReducer(INITIAL_STATE, { type: types.FETCH_ACCOUNTS_SUCCESS }))
+        .toMatchSnapshot();
+    })
+
+    it('should handle FETCH_ACCOUNTS_ERROR', () => {
+      expect(reducers.AccountListStatusReducer(INITIAL_STATE, { type: types.FETCH_ACCOUNTS_ERROR }))
+        .toMatchSnapshot();
+    })
+
+    it('should handle authTypes.LOGOUT', () => {
+      expect(reducers.AccountListStatusReducer(INITIAL_STATE, { type: authTypes.LOGOUT }))
         .toMatchSnapshot();
     })
   });
 
   describe('EditAccountListReducer', () => {
     it('should return unmodified state as default', () => {
-      expect(EditAccountListReducer(undefined, { type: '', payload: { fakeID: ''} })).toMatchSnapshot();
+      expect(reducers.EditAccountListReducer(undefined, { type: '', payload: { fakeID: ''} })).toMatchSnapshot();
     });
 
     it('should handle ADD_ACCOUNT', () => {
@@ -128,7 +179,7 @@ describe('Reducers', () => {
         }}
       };
 
-      expect(EditAccountListReducer({}, action))
+      expect(reducers.EditAccountListReducer({}, action))
         .toMatchSnapshot();
     });
 
@@ -141,7 +192,7 @@ describe('Reducers', () => {
         }}
       };
 
-      expect(EditAccountListReducer({}, action))
+      expect(reducers.EditAccountListReducer({}, action))
         .toMatchSnapshot();
     });
 
@@ -156,7 +207,7 @@ describe('Reducers', () => {
         payload: { fakeID: 'fakeID' }
       };
 
-      expect(EditAccountListReducer(initialState, action))
+      expect(reducers.EditAccountListReducer(initialState, action))
         .toMatchSnapshot();
     });
 
@@ -167,7 +218,7 @@ describe('Reducers', () => {
         payload: { fakeID: 'fakeID' }
       };
 
-      expect(EditAccountListReducer(initialState, action))
+      expect(reducers.EditAccountListReducer(initialState, action))
         .toMatchSnapshot();
     });
 
@@ -190,8 +241,106 @@ describe('Reducers', () => {
         }
       };
 
-      expect(EditAccountListReducer(initialState, action))
+      expect(reducers.EditAccountListReducer(initialState, action))
         .toMatchSnapshot();
     });
   });
+
+  describe('AccountStatusReducer', () => {
+    it('should return initial state', () => {
+      expect(reducers.AccountStatusReducer(undefined, {})).toEqual({});
+    })
+
+    it('should handle SAVE_NEW_ACCOUNT', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.SAVE_NEW_ACCOUNT,
+        payload: {
+          EditedAccount: {
+            fakeID: 'fake123',
+          }
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle UPDATE_ACCOUNT', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.UPDATE_ACCOUNT,
+        payload: {
+          EditedAccount: {
+            fakeID: 'fake123',
+          }
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle DELETE_ACCOUNT', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.DELETE_ACCOUNT,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle SAVE_NEW_ACCOUNT_SUCCESS', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.SAVE_NEW_ACCOUNT_SUCCESS,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle DELETE_ACCOUNT_SUCCESS', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.DELETE_ACCOUNT_SUCCESS,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle UPDATE_ACCOUNT_SUCCESS', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.UPDATE_ACCOUNT_SUCCESS,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle SAVE_NEW_ACCOUNT_ERROR', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.SAVE_NEW_ACCOUNT_ERROR,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle UPDATE_ACCOUNT_ERROR', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.UPDATE_ACCOUNT_ERROR,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle DELETE_ACCOUNT_ERROR', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: types.DELETE_ACCOUNT_ERROR,
+        payload: {
+          fakeID: 'fake123',
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should handle authTypes.LOGOUT', () => {
+      expect(reducers.AccountStatusReducer(undefined, {
+        type: authTypes.LOGOUT
+      })).toEqual({});
+    });
+  });
+
 });

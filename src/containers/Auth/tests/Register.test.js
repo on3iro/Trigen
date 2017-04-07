@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Redirect } from 'react-router-dom';
 
 import Wrapper from '../Wrapper';
-import { Register } from '../Register';
+import { Register, mapStateToProps, mapDispatchToProps } from '../Register';
 import RegisterForm from '../RegisterForm';
 
 
@@ -47,5 +47,20 @@ describe('<Register />', () => {
     renderedWrapper.instance().handleSubmit('test');
 
     expect(props.registerSubmit).toHaveBeenCalledWith('test');
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        auth: {
+          user: { hasRegistered: true, isLoggedIn: true },
+          AuthRequestState: { isLoading: true }
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should map dispatch to props', () => {
+      expect(mapDispatchToProps(() => null)).toMatchSnapshot();
+    });
   });
 });

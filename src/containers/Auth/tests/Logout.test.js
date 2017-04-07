@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Redirect } from 'react-router-dom';
 
-import { Logout } from '../Logout';
+import { Logout, mapStateToProps, mapDispatchToProps } from '../Logout';
 
 
 const renderComponent = newProps => {
@@ -34,5 +34,17 @@ describe('<Logout />', () => {
   it('should call logout() if user is logged in', () => {
     const { renderedWrapper, props } = renderComponent({isLoggedIn: true});
     expect(props.logout).toHaveBeenCalled();
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        auth: { user: { isLoggedIn: true }}
+      })).toMatchSnapshot();
+    });
+  });
+
+  it('should map dispatch to props', () => {
+    expect(mapDispatchToProps(() => null)).toMatchSnapshot();
   });
 });
