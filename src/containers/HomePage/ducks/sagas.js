@@ -9,7 +9,7 @@ import * as types from './actionTypes';
 
 
 export function *fetchUserHash(userInfo) {
-  const url = `${BASE_URL}/users/${userInfo.userID}/hash`
+  const url = `${BASE_URL}/users/${userInfo.userID}/hash`;
   const config = {
     headers: {
       'Authorization': userInfo.authToken,
@@ -30,11 +30,13 @@ export function *generatePassword(action) {
 
     // generate password
     const { domain, username } = accountInformation;
-    const password = sha256(`${domain}${username}${masterPassword}`);
+    const password = sha256(`${domain}${username}${masterPassword}${userHash}`);
     yield put({ type: types.GENERATE_PASSWORD_SUCCESS, payload: password });
 
     // wait 30s and then delete password
+    yield put({ type: types.START_PROGRESS });
     yield call(delay, 30000);
+    yield put({ type: types.STOP_PROGRESS });
     yield put({ type: types.CLEAR_PASSWORD });
   }catch (error) {
     yield put({ type: types.GENERATE_PASSWORD_ERROR, payload: error.message });

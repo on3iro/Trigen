@@ -9,12 +9,13 @@ import { getAccounts, getAccountListStatus } from 'containers/AccountsPage/ducks
 import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 
 import { generatePassword } from './ducks/actions';
-import { getPassword } from './ducks/selectors';
+import { getPassword, getProgress } from './ducks/selectors';
 
 import Input from 'components/Input';
 import Button from 'components/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
 import Span from 'components/Span';
+import Progress from './Progress';
 
 
 export class PassGenForm extends Component {
@@ -193,6 +194,7 @@ export class PassGenForm extends Component {
               <Span warning error>
                 Das Passwort wird 30 Sekunden lang angezeigt, damit du es kopieren kannst!
               </Span>
+              <Progress />
             </div>
         }
       </form>
@@ -215,6 +217,7 @@ export const mapStateToProps = state => {
     userID: getUserID(state),
     authToken: getAuthToken(state),
     password: getPassword(state),
+    inProgress: getProgress(state),
   };
 };
 

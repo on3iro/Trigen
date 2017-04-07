@@ -22,8 +22,25 @@ export const Password = (state = '', action) => {
   }
 };
 
+export const InProgress = (state = false, action) => {
+  switch(action.type) {
+    case types.START_PROGRESS: {
+      return true;
+    }
+
+    case types.STOP_PROGRESS: {
+      return false;
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
 const PasswordReducer = combineReducers({
   Password,
+  InProgress,
 });
 
 export default PasswordReducer;
