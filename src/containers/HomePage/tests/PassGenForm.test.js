@@ -194,7 +194,7 @@ describe('<PassGenForm />', () => {
   it('should render <Input/>', () => {
     const { enzymeWrapper } = setUp();
 
-    expect(enzymeWrapper.find(Input).length).toBe(2)
+    expect(enzymeWrapper.find(Input).length).toBe(3)
   });
 
   it('should render <Button/>', () => {
@@ -219,7 +219,11 @@ describe('<PassGenForm />', () => {
             },
             token: 'abc',
           }
-        }
+        },
+        PasswordReducer: {
+          Password: '',
+          inProgress: false,
+        },
       })).toMatchSnapshot();
     });
 

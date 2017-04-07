@@ -12,6 +12,8 @@ Array [
 exports[`<PassGenForm /> onDomainChange() should handle domain change 1`] = `
 Object {
   "domain": "test@test.net",
+  "generatedPassword": "",
+  "masterPassword": "",
   "suggestions": Array [],
   "username": "",
 }
@@ -20,6 +22,8 @@ Object {
 exports[`<PassGenForm /> onSuggestionsFetchRequested() should handle suggestion fetching 1`] = `
 Object {
   "domain": "",
+  "generatedPassword": "",
+  "masterPassword": "",
   "suggestions": Array [
     Object {
       "domain": "testDomain.net",
@@ -35,6 +39,7 @@ Object {
 exports[`<PassGenForm /> react-redux should map dispatch to props 1`] = `
 Object {
   "fetchAccounts": [Function],
+  "generatePassword": [Function],
 }
 `;
 
@@ -50,6 +55,8 @@ Object {
     },
   ],
   "authToken": "abc",
+  "inProgress": undefined,
+  "password": "",
   "userID": "123",
 }
 `;
@@ -78,6 +85,8 @@ exports[`<PassGenForm /> renderSuggestion() should return domain and username 1`
 exports[`<PassGenForm /> should have initial component state 1`] = `
 Object {
   "domain": "",
+  "generatedPassword": "",
+  "masterPassword": "",
   "suggestions": Array [],
   "username": "",
 }
