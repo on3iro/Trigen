@@ -5,7 +5,7 @@ import LoadingSpinner from 'components/LoadingSpinner';
 import Input from 'components/Input';
 import Button from 'components/Button';
 
-import { PassGenForm } from '../PassGenForm';
+import { PassGenForm, mapStateToProps, mapDispatchToProps } from '../PassGenForm';
 
 
 const baseProps = {
@@ -201,5 +201,30 @@ describe('<PassGenForm />', () => {
     const { enzymeWrapper } = setUp();
 
     expect(enzymeWrapper.find(Button).exists()).toBe(true);
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        accounts: {
+          Accounts: [{ domain: 'hi.com', username: 'jonny' }],
+          AccountListStatus: {
+            isLoading: true
+          },
+        },
+        auth: {
+          user: {
+            data: {
+              id: '123',
+            },
+            token: 'abc',
+          }
+        }
+      })).toMatchSnapshot();
+    });
+
+    it('should map dispatch to props', () => {
+      expect(mapDispatchToProps()).toMatchSnapshot();
+    });
   });
 });

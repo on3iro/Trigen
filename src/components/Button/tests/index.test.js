@@ -3,19 +3,30 @@
  */
 
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import Button from '../index';
+import StyledNavLink from '../StyledNavLink';
 
 const handleRoute = () => {};
 const href = 'http://mxstbr.com';
 const children = (<h1>Test</h1>);
 const submit = true;
-const renderComponent = (props = {}) => mount(
-  <Button href={href} {...props}>
-    {children}
-  </Button>
-);
+const to = '/login';
+const renderComponent = (props = {}, shallowRender = false) => {
+    if(shallowRender) {
+      return shallow(
+        <Button {...props}>
+          {children}
+        </Button>
+      );
+    }
+    return mount(
+      <Button {...props}>
+        {children}
+      </Button>
+    )
+};
 
 describe('<Button />', () => {
   it('should render an <a> tag if no route is specified', () => {
@@ -23,9 +34,9 @@ describe('<Button />', () => {
     expect(renderedComponent.find('a').length).toEqual(1);
   });
 
-  it('should render a <a> tag to change route if the "to" prop is specified', () => {
-    const renderedComponent = renderComponent({ handleRoute });
-    expect(renderedComponent.find('a').length).toEqual(1);
+  it('should render a <StyledNavLink /> to change route if the "to" prop is specified', () => {
+    const renderedComponent = renderComponent({ to }, true);
+    expect(renderedComponent.find(StyledNavLink).length).toEqual(1);
   });
 
   it('should render a <input type=submit> if submit prop is specified', () => {

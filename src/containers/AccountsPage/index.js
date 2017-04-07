@@ -96,7 +96,7 @@ export class AccountsPage extends Component {
           </Grid>
           <Grid md={6 / 12}>
             <FilterInput
-              type="text"
+              type="search"
               name="accountFilter"
               placeholder="Zum filtern mit Schreiben beginnen"
               onChange={this.handleFilterChange}

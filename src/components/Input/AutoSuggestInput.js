@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import inputStyles from './inputStyles';
 
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   .react-autosuggest__input {
     ${inputStyles}
   }

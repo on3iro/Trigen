@@ -1,12 +1,20 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import Input from '../index';
+import StyledInput from '../StyledInput';
+import AutoSuggestInput from '../AutoSuggestInput';
 
 
 describe('<Input />', () => {
-  it('should render input', () => {
-    const wrapper = mount(<Input />);
-    expect(wrapper.find('input').length).toEqual(1);
+  it('should render <StyledInput /> as default', () => {
+    const wrapper = shallow(<Input />);
+    expect(wrapper.find(StyledInput).exists()).toEqual(true);
+  });
+
+  it('should render <AutoSuggestInput /> if prop is set', () => {
+    const wrapper = shallow(<Input autoSuggest />);
+
+    expect(wrapper.find(AutoSuggestInput).exists()).toBe(true);
   });
 });

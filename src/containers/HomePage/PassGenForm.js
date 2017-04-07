@@ -121,6 +121,7 @@ export class PassGenForm extends Component {
       placeholder: 'Domain eingeben',
       value: this.state.domain,
       onChange: this.onDomainChange,
+      type: 'search',
     };
 
     if(this.props.accountListStatus.isLoading) {
@@ -160,7 +161,7 @@ PassGenForm.propTypes = {
   userID: PropTypes.number,
 };
 
-const mapStateToProps = state => {
+export const mapStateToProps = state => {
   return {
     accounts: getAccounts(state),
     accountListStatus: getAccountListStatus(state),
@@ -169,7 +170,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchAccounts,
   }, dispatch);

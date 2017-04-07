@@ -32,6 +32,28 @@ Object {
 }
 `;
 
+exports[`<PassGenForm /> react-redux should map dispatch to props 1`] = `
+Object {
+  "fetchAccounts": [Function],
+}
+`;
+
+exports[`<PassGenForm /> react-redux should map state to props 1`] = `
+Object {
+  "accountListStatus": Object {
+    "isLoading": true,
+  },
+  "accounts": Array [
+    Object {
+      "domain": "hi.com",
+      "username": "jonny",
+    },
+  ],
+  "authToken": "abc",
+  "userID": "123",
+}
+`;
+
 exports[`<PassGenForm /> should have initial component state 1`] = `
 Object {
   "domain": "",
