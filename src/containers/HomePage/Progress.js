@@ -14,21 +14,16 @@ class Progress extends Component {
     super(props);
 
     this.state = {
-      sec: 30,
+      sec: 60,
       percent: 100,
     }
   }
 
-  componentDidMount() {
-    this.showProgress();
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if(!nextProps.isInprogress) {
       clearInterval(this.interval);
       this.setState({
-        sec: 30,
+        sec: 60,
         percent: 100,
       })
     }else if(!this.props.isInprogress && nextProps.isInprogress) {
@@ -43,7 +38,7 @@ class Progress extends Component {
   showProgress() {
     this.interval = setInterval(() => {
       const newSec = this.state.sec - 0.01;
-      const newPercent = (newSec) * 100 / 30;
+      const newPercent = ((newSec) * 100) / 60;
       this.setState({
         sec: newSec,
         percent: newPercent,
