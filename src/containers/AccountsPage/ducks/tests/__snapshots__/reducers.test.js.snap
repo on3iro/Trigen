@@ -216,12 +216,6 @@ Object {
 }
 `;
 
-exports[`Reducers EditAccountListReducer should handle SAVE_ACCOUNT 1`] = `
-Object {
-  "fakeID": Object {
-    "test": "test",
-  },
-}
-`;
+exports[`Reducers EditAccountListReducer should handle SAVE_NEW_ACCOUNT 1`] = `Object {}`;
 
 exports[`Reducers EditAccountListReducer should return unmodified state as default 1`] = `Object {}`;

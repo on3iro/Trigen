@@ -54,6 +54,27 @@ Object {
 }
 `;
 
+exports[`<PassGenForm /> renderSuggestion() should return <div> and domain and username 1`] = `
+<div>
+  <styled.div
+    md={0.5}>
+    <strong>
+      Domain:
+    </strong>
+     
+    howdy@bam.de
+  </styled.div>
+  <styled.div
+    md={0.5}>
+    <strong>
+      Username:
+    </strong>
+     
+    lucky luke
+  </styled.div>
+</div>
+`;
+
 exports[`<PassGenForm /> should have initial component state 1`] = `
 Object {
   "domain": "",

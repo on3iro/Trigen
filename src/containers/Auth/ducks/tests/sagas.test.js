@@ -1,6 +1,5 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 import axios from 'axios';
-import moxios from 'moxios';
 
 import * as sagas from '../sagas';
 import * as types from '../actionTypes';

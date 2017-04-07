@@ -196,15 +196,15 @@ describe('Reducers', () => {
         .toMatchSnapshot();
     });
 
-    it('should handle SAVE_ACCOUNT', () => {
+    it('should handle SAVE_NEW_ACCOUNT', () => {
       const initialState = {
         'fakeID': {
           test: 'test'
         }
       };
       const action = {
-        type: types.SAVE_ACCOUNT,
-        payload: { fakeID: 'fakeID' }
+        type: types.SAVE_NEW_ACCOUNT,
+        payload: { EditedAccount: { fakeID: 'fakeID' } }
       };
 
       expect(reducers.EditAccountListReducer(initialState, action))
@@ -243,6 +243,12 @@ describe('Reducers', () => {
 
       expect(reducers.EditAccountListReducer(initialState, action))
         .toMatchSnapshot();
+    });
+
+    it('should handle authTypes.LOGOUT', () => {
+      expect(reducers.EditAccountListReducer(undefined, {
+        type: authTypes.LOGOUT
+      })).toEqual({});
     });
   });
 
@@ -340,6 +346,15 @@ describe('Reducers', () => {
       expect(reducers.AccountStatusReducer(undefined, {
         type: authTypes.LOGOUT
       })).toEqual({});
+    });
+  });
+
+  describe('AccountFilterReducer', () => {
+    it('should return intial state', () => {
+      expect(reducers.AccountFilterReducer('', {
+        type: types.FILTER_ACCOUNT,
+        payload: 'bla',
+      })).toEqual();
     });
   });
 

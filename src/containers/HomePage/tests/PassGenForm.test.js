@@ -145,11 +145,11 @@ describe('<PassGenForm />', () => {
   });
 
   describe('renderSuggestion()', () => {
-    it('should return <div> and domain and username', () => {
+    it('should return domain and username', () => {
       const { enzymeWrapper } = setUp();
 
       expect(enzymeWrapper.instance().renderSuggestion({ domain: 'howdy@bam.de', username: 'lucky luke'}))
-        .toEqual(<div>howdy@bam.de - Username: lucky luke</div>);
+        .toMatchSnapshot();
     });
   });
 
