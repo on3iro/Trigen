@@ -83,7 +83,7 @@ App.propTypes = {
   routerLocation: PropTypes.object,
 };
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     isLoggedIn: authSelectors.getLoggedIn(state),
     routerLocation: getLocation(state),

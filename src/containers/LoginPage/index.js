@@ -12,7 +12,7 @@ import Divider from './Divider';
 import IntroText from './IntroText';
 
 
-const Disclaimer = styled.p`
+export const Disclaimer = styled.p`
   &, strong {
     color: ${props => props.theme.main};
     font-size: 0.7rem;

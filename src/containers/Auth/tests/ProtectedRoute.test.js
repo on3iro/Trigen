@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Redirect, MemoryRouter } from 'react-router-dom';
 
-import { ProtectedRoute } from '../ProtectedRoute';
+import { ProtectedRoute, mapStateToProps } from '../ProtectedRoute';
 
 
 const renderComponent = newProps => {
@@ -42,5 +42,13 @@ describe('<ProtectedRoute />', () => {
 
     expect(redirect.length).toMatchSnapshot();
     expect(redirect.props().to.pathname).toMatchSnapshot();
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        auth: { user: { isLoggedIn: true }}
+      })).toMatchSnapshot();
+    });
   });
 });

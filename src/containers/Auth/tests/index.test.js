@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { Redirect } from 'react-router-dom';
 
-import { Auth } from '../index';
+import { Auth, mapStateToProps } from '../index';
 import Login from '../Login';
 
 
@@ -32,5 +32,13 @@ describe('<Auth />', () => {
   it('should render <Redirect /> when user is logged in', () => {
     const { renderedWrapper } = renderWrapper({isLoggedIn: true});
     expect(renderedWrapper.find(Redirect).length).toBe(1);
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        auth: { user: { isLoggedIn: true }}
+      })).toMatchSnapshot();
+    });
   });
 });

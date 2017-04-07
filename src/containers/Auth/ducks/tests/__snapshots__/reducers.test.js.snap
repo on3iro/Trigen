@@ -1,72 +1,103 @@
-exports[`authReducer should handle LOGIN_ERROR 1`] = `
+exports[`authReducer AuthRequestStateReducer should handle LOGIN_ERROR 1`] = `
 Object {
-  "AuthRequestState": Object {
-    "isLoading": false,
-  },
-  "user": Object {
-    "data": Object {},
-    "error": "login-error",
-    "hasRegistered": false,
-    "isLoggedIn": false,
-    "token": "",
-  },
+  "isLoading": false,
 }
 `;
 
-exports[`authReducer should handle LOGIN_SUCCESS 1`] = `
+exports[`authReducer AuthRequestStateReducer should handle LOGIN_SUBMIT 1`] = `
 Object {
-  "AuthRequestState": Object {
-    "isLoading": false,
-  },
+  "isLoading": true,
+}
+`;
+
+exports[`authReducer AuthRequestStateReducer should handle LOGIN_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+}
+`;
+
+exports[`authReducer AuthRequestStateReducer should handle REGISTER_ERROR 1`] = `
+Object {
+  "isLoading": false,
+}
+`;
+
+exports[`authReducer AuthRequestStateReducer should handle REGISTER_SUBMIT 1`] = `
+Object {
+  "isLoading": true,
+}
+`;
+
+exports[`authReducer AuthRequestStateReducer should handle REGISTER_SUCCESS 1`] = `
+Object {
+  "isLoading": false,
+}
+`;
+
+exports[`authReducer AuthRequestStateReducer should return initial state 1`] = `
+Object {
+  "isLoading": false,
+}
+`;
+
+exports[`authReducer userReducer should handle LOGIN_ERROR 1`] = `
+Object {
+  "data": Object {},
+  "error": "login-error",
+  "hasRegistered": false,
+  "isLoggedIn": false,
+  "token": "",
+}
+`;
+
+exports[`authReducer userReducer should handle LOGIN_SUCCESS 1`] = `
+Object {
+  "data": "testuser",
+  "error": "",
+  "hasRegistered": false,
+  "isLoggedIn": true,
+  "token": "testtoken",
+}
+`;
+
+exports[`authReducer userReducer should handle LOGOUT 1`] = `
+Object {
+  "data": Object {},
+  "isLoggedIn": false,
+  "token": "",
   "user": Object {
-    "data": "testuser",
-    "error": "",
-    "hasRegistered": false,
     "isLoggedIn": true,
-    "token": "testtoken",
+    "token": "testoken",
   },
 }
 `;
 
-exports[`authReducer should handle LOGOUT 1`] = `
+exports[`authReducer userReducer should handle REGISTER_ERROR 1`] = `
 Object {
-  "AuthRequestState": Object {
-    "isLoading": false,
-  },
-  "user": Object {
-    "data": Object {},
-    "isLoggedIn": false,
-    "token": "",
-  },
+  "data": Object {},
+  "error": "register-error",
+  "hasRegistered": false,
+  "isLoggedIn": false,
+  "token": "",
 }
 `;
 
-exports[`authReducer should handle REGISTER_ERROR 1`] = `
+exports[`authReducer userReducer should handle REGISTER_SUCCESS 1`] = `
 Object {
-  "AuthRequestState": Object {
-    "isLoading": false,
-  },
-  "user": Object {
-    "data": Object {},
-    "error": "register-error",
-    "hasRegistered": false,
-    "isLoggedIn": false,
-    "token": "",
-  },
+  "data": Object {},
+  "error": Object {},
+  "hasRegistered": true,
+  "isLoggedIn": false,
+  "token": "",
 }
 `;
 
-exports[`authReducer should return initial state 1`] = `
+exports[`authReducer userReducer should return initial state 1`] = `
 Object {
-  "AuthRequestState": Object {
-    "isLoading": false,
-  },
-  "user": Object {
-    "data": Object {},
-    "error": Object {},
-    "hasRegistered": false,
-    "isLoggedIn": false,
-    "token": "",
-  },
+  "data": Object {},
+  "error": Object {},
+  "hasRegistered": false,
+  "isLoggedIn": false,
+  "token": "",
 }
 `;

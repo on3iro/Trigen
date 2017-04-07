@@ -28,7 +28,7 @@ export class Auth extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     isLoggedIn: selectors.getLoggedIn(state),
   };
