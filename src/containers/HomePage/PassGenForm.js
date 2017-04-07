@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
+import Grid from 'grid-styled';
 
 import { fetchAccounts } from 'containers/AccountsPage/ducks/actions';
 import { getAccounts, getAccountListStatus } from 'containers/AccountsPage/ducks/selectors';
@@ -100,7 +101,12 @@ export class PassGenForm extends Component {
   renderSuggestion = suggestion => {
     return (
       <div>
-        {`${suggestion.domain} - Username: ${suggestion.username}`}
+        <Grid md={1 / 2}>
+          <strong>Domain:</strong> {suggestion.domain}
+        </Grid>
+        <Grid md={1 / 2}>
+          <strong>Username:</strong> {suggestion.username}
+        </Grid>
       </div>
     );
   };
