@@ -33,6 +33,10 @@ export function *generatePassword(action) {
     const password = sha256(`${domain}${username}${masterPassword}${userHash}`);
     yield put({ type: types.GENERATE_PASSWORD_SUCCESS, payload: password });
 
+    // If sill in progress (e.g. from previous creation
+    // stop progress
+    yield put({ type: types.STOP_PROGRESS });
+
     // wait 30s and then delete password
     yield put({ type: types.START_PROGRESS });
     yield call(delay, 30000);

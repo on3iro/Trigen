@@ -20,6 +20,27 @@ class Progress extends Component {
   }
 
   componentDidMount() {
+    this.showProgress();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if(!nextProps.isInprogress) {
+      clearInterval(this.interval);
+      this.setState({
+        sec: 30,
+        percent: 100,
+      })
+    }else if(!this.props.isInprogress && nextProps.isInprogress) {
+      this.showProgress();
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  showProgress() {
     this.interval = setInterval(() => {
       const newSec = this.state.sec - 0.01;
       const newPercent = (newSec) * 100 / 30;
@@ -28,10 +49,6 @@ class Progress extends Component {
         percent: newPercent,
       })
     }, 10);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {
