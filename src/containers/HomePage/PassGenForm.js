@@ -194,7 +194,7 @@ export class PassGenForm extends Component {
               <Span warning error>
                 Das Passwort wird 30 Sekunden lang angezeigt, damit du es kopieren kannst!
               </Span>
-              <Progress />
+              <Progress isInprogress={this.props.inProgress}/>
             </div>
         }
       </form>
