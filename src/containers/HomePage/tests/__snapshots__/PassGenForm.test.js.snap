@@ -1,0 +1,102 @@
+exports[`<PassGenForm /> getSuggestions() should return array with suggestions on match 1`] = `
+Array [
+  Object {
+    "domain": "testDomain.net",
+    "fakeID": "asdfas",
+    "id": 1,
+    "username": "tester",
+  },
+]
+`;
+
+exports[`<PassGenForm /> onDomainChange() should handle domain change 1`] = `
+Object {
+  "domain": "test@test.net",
+  "generatedPassword": "",
+  "masterPassword": "",
+  "suggestions": Array [],
+  "username": "",
+}
+`;
+
+exports[`<PassGenForm /> onSuggestionsFetchRequested() should handle suggestion fetching 1`] = `
+Object {
+  "domain": "",
+  "generatedPassword": "",
+  "masterPassword": "",
+  "suggestions": Array [
+    Object {
+      "domain": "testDomain.net",
+      "fakeID": "asdfas",
+      "id": 1,
+      "username": "tester",
+    },
+  ],
+  "username": "",
+}
+`;
+
+exports[`<PassGenForm /> react-redux should map dispatch to props 1`] = `
+Object {
+  "fetchAccounts": [Function],
+  "generatePassword": [Function],
+}
+`;
+
+exports[`<PassGenForm /> react-redux should map state to props 1`] = `
+Object {
+  "accountListStatus": Object {
+    "isLoading": true,
+  },
+  "accounts": Array [
+    Object {
+      "domain": "hi.com",
+      "username": "jonny",
+    },
+  ],
+  "authToken": "abc",
+  "inProgress": undefined,
+  "password": "",
+  "userID": "123",
+}
+`;
+
+exports[`<PassGenForm /> renderSuggestion() should return domain and username 1`] = `
+<div>
+  <styled.div
+    md={0.5}>
+    <strong>
+      Domain:
+    </strong>
+     
+    howdy@bam.de
+  </styled.div>
+  <styled.div
+    md={0.5}>
+    <strong>
+      Username:
+    </strong>
+     
+    lucky luke
+  </styled.div>
+</div>
+`;
+
+exports[`<PassGenForm /> should have initial component state 1`] = `
+Object {
+  "domain": "",
+  "generatedPassword": "",
+  "masterPassword": "",
+  "suggestions": Array [],
+  "username": "",
+}
+`;
+
+exports[`<PassGenForm /> validate() should return an empty error if there are no errors 1`] = `Array []`;
+
+exports[`<PassGenForm /> validate() should return errors for empyt domain and empty username 1`] = `
+Array [
+  "Domain is required!",
+  "Username is required!",
+]
+`;

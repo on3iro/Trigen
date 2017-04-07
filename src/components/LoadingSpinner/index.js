@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from 'grid-styled';
 
 import spinnerRing from 'img/spinner_ring.gif';
 

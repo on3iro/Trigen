@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import Button from 'components/Button';
 
 import Wrapper from '../Wrapper';
-import { Login } from '../Login';
+import { Login, mapStateToProps, mapDispatchToProps } from '../Login';
 import LoginForm from '../LoginForm';
 
 
@@ -44,5 +44,17 @@ describe('<Login />', () => {
     renderedWrapper.instance().handleSubmit('test');
 
     expect(props.loginSubmit).toHaveBeenCalledWith('test');
+  });
+
+  describe('react-redux', () => {
+    it('should map state to props', () => {
+      expect(mapStateToProps({
+        auth: { AuthRequestState: { isLoading: true }}
+      })).toMatchSnapshot();
+    });
+
+    it('should map dispatch to props', () => {
+      expect(mapDispatchToProps(() => null)).toMatchSnapshot();
+    });
   });
 });

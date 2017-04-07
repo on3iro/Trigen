@@ -16,6 +16,6 @@ const Home = () => {
       <PassGenForm />
     </Wrapper>
   );
-}
+};
 
 export default Home;

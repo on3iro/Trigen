@@ -19,7 +19,10 @@ describe('Selectors', () => {
           username: 'dudeDudsen',
           domain: 'example.com',
         }
-      }
+      },
+      AccountFilter: 'exa',
+      AccountListStatus: { isLoading: false },
+      AccountStatus: { 'fakeID': { isLoading: 'false' }},
     }
   };
 
@@ -53,6 +56,22 @@ describe('Selectors', () => {
         'fakeID'
       );
     });
+
+    it('should getAccountCount()', () => {
+      expect(selectors.getAccountCount(state)).toBe(1);
+    });
+
+    it('should getAccountFilter()', () => {
+      expect(selectors.getAccountFilter(state)).toBe('exa');
+    });
+
+    it('should getAccountListStatus()', () => {
+      expect(selectors.getAccountListStatus(state)).toMatchSnapshot();
+    });
+
+    it('should getAccountStatus', () => {
+      expect(selectors.getAccountStatus(state)).toMatchSnapshot();
+    })
   });
 
   describe('Real selectors', () => {
@@ -65,6 +84,18 @@ describe('Selectors', () => {
         username: 'dudeDudsen',
         domain: 'example.com',
       });
+    });
+
+    it('should make getFilteredAccounts', () => {
+      const getFilteredAccounts = selectors.makeGetFilteredAccounts();
+
+      expect(getFilteredAccounts(state)).toMatchSnapshot();
+    });
+
+    it('should make getAccountStatusByFakeId', () => {
+      const getAccountStatusByFakeID = selectors.makeGetAccountStatusByFakeID();
+
+      expect(getAccountStatusByFakeID(state, { fakeID: 'fakeID'})).toMatchSnapshot();
     });
   });
 });

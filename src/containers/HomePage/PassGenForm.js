@@ -2,15 +2,20 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import shortid from 'shortid';
-import styled from 'styled-components';
+import Grid from 'grid-styled';
 
 import { fetchAccounts } from 'containers/AccountsPage/ducks/actions';
 import { getAccounts, getAccountListStatus } from 'containers/AccountsPage/ducks/selectors';
 import { getUserID, getAuthToken } from 'containers/Auth/ducks/selectors';
 
+import { generatePassword } from './ducks/actions';
+import { getPassword, getProgress } from './ducks/selectors';
+
 import Input from 'components/Input';
 import Button from 'components/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
+import Span from 'components/Span';
+import Progress from './Progress';
 
 
 export class PassGenForm extends Component {
@@ -21,6 +26,8 @@ export class PassGenForm extends Component {
       suggestions: [],
       domain: '',
       username: '',
+      masterPassword: '',
+      generatedPassword: '',
     };
   }
 
@@ -50,10 +57,20 @@ export class PassGenForm extends Component {
     e.preventDefault();
     const validationErrors = this.validate();
 
-    // TODO finish validation
     if(validationErrors.length !== 0) {
-      console.log(validationErrors);
+      // TODO
     }
+
+    const accountInfo = {
+      domain: this.state.domain,
+      username: this.state.username,
+    };
+    const userInfo = {
+      userID: this.props.userID,
+      authToken: this.props.authToken,
+    };
+
+    this.props.generatePassword(accountInfo, userInfo, this.state.masterPassword);
   }
 
   // Autosuggest input
@@ -102,7 +119,12 @@ export class PassGenForm extends Component {
   renderSuggestion = suggestion => {
     return (
       <div>
-        {`${suggestion.domain} - Username: ${suggestion.username}`}
+        <Grid md={1 / 2}>
+          <strong>Domain:</strong> {suggestion.domain}
+        </Grid>
+        <Grid md={1 / 2}>
+          <strong>Username:</strong> {suggestion.username}
+        </Grid>
       </div>
     );
   };
@@ -118,15 +140,23 @@ export class PassGenForm extends Component {
     this.setState({ username: '' });
   }
 
+  // MasterPW
+  onMasterPWChange = e => {
+    this.setState({
+      masterPassword: e.target.value,
+    });
+  }
+
   render() {
     const inputProps = {
       placeholder: 'Domain eingeben',
       value: this.state.domain,
       onChange: this.onDomainChange,
+      type: 'search',
     };
 
     if(this.props.accountListStatus.isLoading) {
-      return <LoadingSpinner />
+      return <LoadingSpinner />;
     }
 
     return (
@@ -147,25 +177,54 @@ export class PassGenForm extends Component {
           placeholder="Username eingeben"
           value={this.state.username}
           onChange={this.onUsernameChange}
+          type="text"
+        />
+        <Input
+          placeholder="Masterpasswort eingeben"
+          value={this.state.masterpassword}
+          type="password"
+          onChange={this.onMasterPWChange}
         />
         <Button submit>Generiere Passwort</Button>
+        {
+          this.props.password !== '' &&
+            <div>
+              <label>Password:</label>
+              <p>{this.props.password}</p>
+              <Span warning error>
+                Das Passwort wird 30 Sekunden lang angezeigt, damit du es kopieren kannst!
+              </Span>
+              <Progress />
+            </div>
+        }
       </form>
     );
   }
 }
 
-const mapStateToProps = state => {
+PassGenForm.propTypes = {
+  accountListStatus: PropTypes.object,
+  accounts: PropTypes.array,
+  authToken: PropTypes.string,
+  fetchAccounts: PropTypes.func,
+  userID: PropTypes.number,
+};
+
+export const mapStateToProps = state => {
   return {
     accounts: getAccounts(state),
     accountListStatus: getAccountListStatus(state),
     userID: getUserID(state),
     authToken: getAuthToken(state),
+    password: getPassword(state),
+    inProgress: getProgress(state),
   };
 };
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     fetchAccounts,
+    generatePassword,
   }, dispatch);
 };
 

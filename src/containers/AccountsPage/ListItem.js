@@ -170,15 +170,19 @@ export class ListItem extends Component {
 ListItem.propTypes = {
   EditedAccount: PropTypes.object,
   account: PropTypes.object,
+  accountStatus: PropTypes.object,
+  authToken: PropTypes.string,
   cancelEdit: PropTypes.func,
   deleteAccount: PropTypes.func,
   editAccount: PropTypes.func,
   fakeID: PropTypes.string,
+  getAuthToken: PropTypes.func,
+  getUserID: PropTypes.func,
   handleAccountChange: PropTypes.func,
   saveAccount: PropTypes.func,
-  getUserID: PropTypes.func,
-  getAuthToken: PropTypes.func,
+  saveNewAccount: PropTypes.func,
   updateAccount: PropTypes.func,
+  userID: PropTypes.number,
 };
 
 const makeMapStateToProps = () => {

@@ -62,7 +62,7 @@ export function updateAccount(userID, authToken, EditedAccount) {
   return {
     type: actionTypes.UPDATE_ACCOUNT,
     payload: { userID, authToken, EditedAccount },
-  }
+  };
 }
 
 /**

@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import * as types from './actionTypes';
 
 
-const user = (state = {
+export const user = (state = {
   isLoggedIn: false,
   hasRegistered: false,
   token: '',
@@ -55,7 +55,8 @@ const user = (state = {
   }
 };
 
-const AuthRequestState = (state = {
+
+export const AuthRequestState = (state = {
   isLoading: false
 }, action) => {
   switch(action.type) {

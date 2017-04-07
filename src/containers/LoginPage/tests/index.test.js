@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Route } from 'react-router-dom';
 import Grid from 'grid-styled';
 
-import LoginPage from '../index';
+import LoginPage, { Disclaimer } from '../index';
 import Wrapper from '../Wrapper';
 import Jumbotron from '../Jumbotron';
 import IntroText from '../IntroText';
@@ -50,5 +50,20 @@ describe('<LoginPage />', () => {
     );
     const route = enzymeWrapper.find(Route).findWhere( el => el.props().path === '/register');
     expect(route.exists()).toBe(true);
+  });
+
+  it('should render <Disclaimer />', () => {
+    const enzymeWrapper = shallow(
+      <LoginPage />
+    );
+    expect(enzymeWrapper.find(Disclaimer).exists()).toBe(true);
+  });
+
+  describe('<Disclaimer />', () => {
+    it('should render <p>', () => {
+      const wrapper = shallow(<Disclaimer />);
+
+      expect(wrapper.find('p').exists()).toBe(true);
+    });
   });
 });

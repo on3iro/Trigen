@@ -56,16 +56,134 @@ Array [
 ]
 `;
 
-exports[`Reducers AccountListReducer should handle SAVE_ACCOUNT_SUCCESS 1`] = `
+exports[`Reducers AccountListReducer should handle SAVE_NEW_ACCOUNT_SUCCESS 1`] = `
 Array [
   Object {
     "domain": "example.com",
-    "edit": true,
+    "edit": false,
     "fakeID": "fakeID",
     "id": 0,
-    "username": "ttester",
+    "new": false,
+    "username": "dudeDudsen",
   },
 ]
+`;
+
+exports[`Reducers AccountListReducer should handle UPDATE_ACCOUNT_SUCCESS 1`] = `
+Array [
+  Object {
+    "domain": "example.com",
+    "edit": false,
+    "fakeID": "fakeID",
+    "id": 0,
+    "new": false,
+    "username": "dudeDudsen",
+  },
+]
+`;
+
+exports[`Reducers AccountListStatusReducer should handle FETCH_ACCOUNTS 1`] = `
+Object {
+  "errored": false,
+  "fetched": false,
+  "isLoading": true,
+}
+`;
+
+exports[`Reducers AccountListStatusReducer should handle FETCH_ACCOUNTS_ERROR 1`] = `
+Object {
+  "errored": true,
+  "fetched": false,
+  "isLoading": false,
+}
+`;
+
+exports[`Reducers AccountListStatusReducer should handle FETCH_ACCOUNTS_SUCCESS 1`] = `
+Object {
+  "errored": false,
+  "fetched": true,
+  "isLoading": false,
+}
+`;
+
+exports[`Reducers AccountListStatusReducer should handle authTypes.LOGOUT 1`] = `
+Object {
+  "errored": false,
+  "fetched": false,
+  "isLoading": false,
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle DELETE_ACCOUNT 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": true,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle DELETE_ACCOUNT_ERROR 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle DELETE_ACCOUNT_SUCCESS 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle SAVE_NEW_ACCOUNT 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": true,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle SAVE_NEW_ACCOUNT_ERROR 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle SAVE_NEW_ACCOUNT_SUCCESS 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle UPDATE_ACCOUNT 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": true,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle UPDATE_ACCOUNT_ERROR 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
+`;
+
+exports[`Reducers AccountStatusReducer should handle UPDATE_ACCOUNT_SUCCESS 1`] = `
+Object {
+  "fake123": Object {
+    "isLoading": false,
+  },
+}
 `;
 
 exports[`Reducers EditAccountListReducer should handle ADD_ACCOUNT 1`] = `
@@ -98,12 +216,6 @@ Object {
 }
 `;
 
-exports[`Reducers EditAccountListReducer should handle SAVE_ACCOUNT 1`] = `
-Object {
-  "fakeID": Object {
-    "test": "test",
-  },
-}
-`;
+exports[`Reducers EditAccountListReducer should handle SAVE_NEW_ACCOUNT 1`] = `Object {}`;
 
 exports[`Reducers EditAccountListReducer should return unmodified state as default 1`] = `Object {}`;

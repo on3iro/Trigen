@@ -1,0 +1,30 @@
+exports[`Selectors Real selectors should make getAccountStatusByFakeId 1`] = `
+Object {
+  "isLoading": "false",
+}
+`;
+
+exports[`Selectors Real selectors should make getFilteredAccounts 1`] = `
+Array [
+  Object {
+    "domain": "example.com",
+    "fakeID": "fakeID",
+    "id": 0,
+    "username": "ttester",
+  },
+]
+`;
+
+exports[`Selectors Simple input selectors should getAccountListStatus() 1`] = `
+Object {
+  "isLoading": false,
+}
+`;
+
+exports[`Selectors Simple input selectors should getAccountStatus 1`] = `
+Object {
+  "fakeID": Object {
+    "isLoading": "false",
+  },
+}
+`;

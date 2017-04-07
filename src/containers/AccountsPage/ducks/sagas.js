@@ -60,8 +60,7 @@ export function *requestUpdateAccount(action) {
   const data = { domain, username };
 
   try {
-    const response = yield call(axios.put, url, data, config);
-    const payload = EditedAccount;
+    yield call(axios.put, url, data, config);
 
     yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: EditedAccount });
   }catch (error) {
@@ -76,11 +75,12 @@ export function *requestDeleteAccount(action) {
     headers: {
       'Authorization': authToken,
     }
-  }
+  };
 
   try {
     const response = yield call(axios.delete, url, config);
-    const payload = { fakeID, id: response.data.account_id };
+    const id = response.data.account_id;
+    const payload = { fakeID, id };
 
     yield put({ type: types.DELETE_ACCOUNT_SUCCESS, payload });
   }catch (error) {

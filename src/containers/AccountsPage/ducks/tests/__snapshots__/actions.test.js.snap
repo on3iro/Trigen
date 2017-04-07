@@ -40,6 +40,15 @@ Object {
 }
 `;
 
+exports[`actions should create an action to filter accounts 1`] = `
+Object {
+  "payload": Object {
+    "filter": "bla",
+  },
+  "type": "FILTER_ACCOUNT",
+}
+`;
+
 exports[`actions should create an action to handle account changes 1`] = `
 Object {
   "payload": Object {
@@ -75,5 +84,19 @@ Object {
     "fakeID": "fakeID",
   },
   "type": "EDIT_ACCOUNT",
+}
+`;
+
+exports[`actions should create an action to update an account 1`] = `
+Object {
+  "payload": Object {
+    "EditedAccount": Object {
+      "domain": "foo@bar.com",
+      "username": "jonny",
+    },
+    "authToken": "tokenXYZ",
+    "userID": "userID",
+  },
+  "type": "UPDATE_ACCOUNT",
 }
 `;

@@ -68,6 +68,7 @@ export const RegisterForm = props => {
 
 RegisterForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool,
 };
 
 export default reduxForm({

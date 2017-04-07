@@ -19,7 +19,7 @@ export const ProtectedRoute = ({ component, ...rest }) => (
   )} />
 );
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     isLoggedIn: getLoggedIn(state),
   };
