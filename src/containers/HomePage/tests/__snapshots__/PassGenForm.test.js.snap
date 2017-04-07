@@ -54,7 +54,7 @@ Object {
 }
 `;
 
-exports[`<PassGenForm /> renderSuggestion() should return <div> and domain and username 1`] = `
+exports[`<PassGenForm /> renderSuggestion() should return domain and username 1`] = `
 <div>
   <styled.div
     md={0.5}>
