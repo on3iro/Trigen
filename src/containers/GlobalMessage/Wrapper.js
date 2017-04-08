@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-  margin: 0 0 20px 0;
+  margin: 80px 0 0 0;
   padding: 10px 20px;
+  height: 40px;
 
   border-radius: 4px;
 
   background: ${props => props.error ? props.theme.warningHover : props.theme.primaryHover};
-  opacity: .6;
+  opacity: ${props => props.empty ? '0' : '.6'};
   color: #fff;
 `;
 

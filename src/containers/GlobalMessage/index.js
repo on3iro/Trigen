@@ -11,7 +11,7 @@ import {
 
 export const GlobalMessage = props => {
   if(!props.error && !props.message) {
-    return null;
+    return <Wrapper empty />;
   }
 
   return (
