@@ -1,7 +1,7 @@
 /**
-  * HomePage of the App
+  * PasswordGenerator of the App
   *
-  * @namespace HomePage
+  * @namespace PasswordGenerator
   */
 
 import React from 'react';
@@ -10,7 +10,7 @@ import Wrapper from './Wrapper';
 import PassGenForm from './PassGenForm';
 
 
-const Home = () => {
+const PasswordGenerator = () => {
   return (
     <Wrapper>
       <PassGenForm />
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default PasswordGenerator;

@@ -4,7 +4,7 @@ import { routerReducer } from 'react-router-redux';
 
 import auth from 'containers/Auth/ducks/reducers';
 import accounts from 'containers/AccountsPage/ducks/reducers';
-import PasswordReducer from 'containers/HomePage/ducks/reducers';
+import PasswordReducer from 'containers/PasswordGenerator/ducks/reducers';
 import GlobalMessages from 'containers/GlobalMessage/ducks/reducers';
 
 
