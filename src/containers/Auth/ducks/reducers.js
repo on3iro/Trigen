@@ -49,6 +49,16 @@ export const user = (state = {
       };
     }
 
+    case types.UPDATE_MAX_ACCOUNTS: {
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          maxAccounts: action.payload,
+        }
+      };
+    }
+
     default: {
       return state;
     }

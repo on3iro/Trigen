@@ -29,13 +29,12 @@ class Pricing extends Component {
     });
   }
 
-  handleClick = amount => {
+  handlePurchase = packageInfo => {
     const userInfo = { userID: this.props.userID, authToken: this.props.authToken };
-    this.props.purchaseSlots(userInfo, amount);
+    this.props.purchaseSlots(userInfo, packageInfo.amount);
   }
 
   redirect = () => {
-    console.log('clicked');
     this.setState({ redirect: true });
   }
 
@@ -57,7 +56,7 @@ class Pricing extends Component {
           price="4.99€"
           description="Das kleine Starterpaket"
           isLoggedIn={this.props.isLoggedIn}
-          handleClick={this.handleClick}
+          handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
         </FullHeightGrid>
