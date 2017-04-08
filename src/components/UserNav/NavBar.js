@@ -9,6 +9,7 @@ import styled from 'styled-components';
 
 
 export default styled.ul`
+  margin-top: 13px;
   margin-right: 80px;
   padding: 0;
   height: 100%;
