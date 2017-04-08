@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import H2 from 'components/H2';
 import Button from 'components/Button';
+
+import PurchaseModal from './PurchaseModal';
 
 
 export const Wrapper = styled.div`
@@ -39,18 +41,60 @@ export const RestyledButton = styled(Button)`
   margin: 20px 5%;
 `;
 
-export const Package = props => {
-  return (
-    <Wrapper>
-      <H2>{props.name}</H2>
-      <InnerWrapper>
-        <P>{props.amount}</P>
-        <P>{props.price}</P>
-        <P>{props.description}</P>
-        <RestyledButton primary>Jetzt kaufen</RestyledButton>
-      </InnerWrapper>
-    </Wrapper>
-  );
-};
+export class Package extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      purchasModalIsOpen: false,
+    };
+  }
+
+  openPurchaseModal = () => {
+    this.setState({ purchaseModalIsOpen: true });
+  }
+
+  closePurchaseModal = () => {
+    this.setState({ purchaseModalIsOpen: false });
+  }
+
+  continuePurchase = packageInfo => {
+    this.props.handlePurchase(packageInfo);
+    this.closePurchaseModal();
+  }
+
+  render() {
+    const packageInfo = {
+      amount: this.props.amount,
+      price: this.props.price,
+      name: this.props.name,
+    };
+
+    return (
+      <Wrapper>
+        <PurchaseModal
+          isOpen={this.state.purchaseModalIsOpen}
+          continueRequest={() => this.continuePurchase(packageInfo)}
+          cancelRequest={this.closePurchaseModal}
+          contentLabel="Paket kaufen"
+          name={this.props.name}
+          amount={this.props.amount}
+          price={this.props.price}
+        />
+        <H2>{this.props.name}</H2>
+        <InnerWrapper>
+          <P>{this.props.amount} Slots</P>
+          <P>{this.props.price}</P>
+          <P>{this.props.description}</P>
+          {
+            this.props.isLoggedIn
+              ? <RestyledButton onClick={this.openPurchaseModal} primary>Jetzt kaufen</RestyledButton>
+              : <RestyledButton onClick={this.props.redirectClick} warning>Anmelden zum Kaufen</RestyledButton>
+          }
+        </InnerWrapper>
+        </Wrapper>
+    );
+  }
+}
 
 export default Package;

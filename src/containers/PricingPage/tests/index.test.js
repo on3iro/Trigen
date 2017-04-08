@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import PricingPage from '../index';
+import { PricingPage } from '../index';
 import Wrapper from '../Wrapper';
 
 

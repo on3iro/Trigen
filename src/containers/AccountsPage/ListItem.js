@@ -114,7 +114,7 @@ export class ListItem extends Component {
           isOpen={this.state.deleteModalIsOpen}
           continueRequest={() => this.continueDelete(account)}
           cancelRequest={this.closeDeleteModal}
-          contentLabel="Delete Account Modal"
+          contentLabel="Account löschen"
           domain={account.domain}
           username={account.username}
         />
