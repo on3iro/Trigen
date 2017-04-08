@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { fork, call, put, takeLatest, takeEvery } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
 import { BASE_URL } from 'config/constants';
 
 import * as types from './actionTypes';
+import * as globalMessageTypes from 'containers/GlobalMessage/ducks/actionTypes';
 
 
 export function *requestFetchAccounts(action) {
@@ -21,6 +23,9 @@ export function *requestFetchAccounts(action) {
     yield put({ type: types.FETCH_ACCOUNTS_SUCCESS, payload: { genIDFunc, response}});
   }catch (error) {
     yield put({ type: types.FETCH_ACCOUNTS_ERROR, payload: error.message});
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 
@@ -44,6 +49,9 @@ export function *requestSaveNewAccount(action) {
     yield put({ type: types.SAVE_NEW_ACCOUNT_SUCCESS, payload });
   }catch (error) {
     yield put({ type: types.SAVE_NEW_ACCOUNT_ERROR, payload: { fakeID: EditedAccount.fakeID, error: error.message } });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 
@@ -65,6 +73,9 @@ export function *requestUpdateAccount(action) {
     yield put({ type: types.UPDATE_ACCOUNT_SUCCESS, payload: EditedAccount });
   }catch (error) {
     yield put({ type: types.UPDATE_ACCOUNT_ERROR, payload: { fakeID: config.fakeID, error: error.message } });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 
@@ -85,6 +96,9 @@ export function *requestDeleteAccount(action) {
     yield put({ type: types.DELETE_ACCOUNT_SUCCESS, payload });
   }catch (error) {
     yield put({ type: types.DELETE_ACCOUNT_ERROR, payload: { fakeID, error: error.message } });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 

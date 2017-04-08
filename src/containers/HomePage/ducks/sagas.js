@@ -6,6 +6,7 @@ import sha256 from 'sha256';
 import { BASE_URL } from 'config/constants';
 
 import * as types from './actionTypes';
+import * as globalMessageTypes from 'containers/GlobalMessage/ducks/actionTypes';
 
 
 export function *fetchUserHash(userInfo) {
@@ -44,6 +45,9 @@ export function *generatePassword(action) {
     yield put({ type: types.CLEAR_PASSWORD });
   }catch (error) {
     yield put({ type: types.GENERATE_PASSWORD_ERROR, payload: error.message });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 
