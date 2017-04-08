@@ -18,7 +18,7 @@ export const RestyledUl = styled(Ul)`
   overflow: auto;
 
   li:nth-of-type(odd) {
-    background: ${props => props.theme.outlines};
+    background: ${props => props.theme.border};
   }
 `;
 
