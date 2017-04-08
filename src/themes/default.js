@@ -3,7 +3,7 @@ export const colors = {
   pistachio: '#86c100',
   pomegranate: '#f44d27',
   tallPoppy: '#bc3b2a',
-  cinnabar: '#e2472d',
+  cinnabar: '#f44d27',
   osloGray: '#878f93',
   pampas: '#fcfcfa',
   doveGray: '#666666',
