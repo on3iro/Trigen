@@ -1,6 +1,6 @@
 {
   "name": "pass-creator-frontend",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "This is a react web frontend for passCreator",
   "main": "index.js",
   "directories": {
