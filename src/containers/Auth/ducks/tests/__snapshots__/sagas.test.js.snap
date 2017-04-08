@@ -103,7 +103,7 @@ Object {
   "@@redux-saga/IO": true,
   "PUT": Object {
     "action": Object {
-      "payload": undefined,
+      "payload": "Some error",
       "type": "REGISTER_ERROR",
     },
     "channel": null,
