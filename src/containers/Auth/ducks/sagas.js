@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { fork, call, put, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
 import { BASE_URL } from 'config/constants';
 
 import * as types from './actionTypes';
+import * as globalMessageTypes from 'containers/GlobalMessage/ducks/actionTypes';
 
 
 // Login
@@ -18,7 +20,10 @@ export function *requestLogin(action) {
 
     yield put({ type: types.LOGIN_SUCCESS, payload: response.data });
   }catch (error) {
-    yield put({ type: types.LOGIN_ERROR, payload: error.message });
+    yield put({ type: types.LOGIN_ERROR });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 
@@ -34,6 +39,9 @@ export function *requestRegister(action) {
     yield put({ type: types.REGISTER_SUCCESS, payload: response.data });
   }catch (error) {
     yield put({ type: types.REGISTER_ERROR, payload: error.response });
+    yield put({ type: globalMessageTypes.GLOBAL_ERROR, payload: error.message });
+    yield call(delay, 20000);
+    yield put({ type: globalMessageTypes.CLEAR_MESSAGE });
   }
 }
 

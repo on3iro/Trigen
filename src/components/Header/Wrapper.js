@@ -12,7 +12,7 @@ import styled from 'styled-components';
 const Wrapper = styled.header`
   position: fixed;
   top: 0px;
-  margin-bottom: 0px auto;
+  margin-bottom: 0;
 
   min-height: 64px;
   height: 64px;

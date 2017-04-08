@@ -25,6 +25,7 @@ import Content from './Content';
 import AGBPage from 'containers/AGBPage';
 import AccountsPage from 'containers/AccountsPage';
 import FAQPage from 'containers/FAQPage';
+import GlobalMessage from 'containers/GlobalMessage';
 import HomePage from 'containers/HomePage';
 import Impressum from 'containers/ImpressumPage';
 import LoginPage from 'containers/LoginPage';
@@ -53,6 +54,7 @@ export class App extends Component {
             <Grid md={1 / 6} />
             <FullHeightGrid md={4 / 6}>
               <Content>
+                <GlobalMessage />
                 <Switch>
                   <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
                   <ProtectedRoute path="/home" component={HomePage} />
@@ -78,8 +80,8 @@ export class App extends Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  isLoggedIn: PropTypes.bool,
   history: PropTypes.object,
+  isLoggedIn: PropTypes.bool,
   routerLocation: PropTypes.object,
 };
 
