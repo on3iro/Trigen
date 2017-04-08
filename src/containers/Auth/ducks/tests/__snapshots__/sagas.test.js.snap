@@ -52,7 +52,6 @@ Object {
   "@@redux-saga/IO": true,
   "PUT": Object {
     "action": Object {
-      "payload": "Some error",
       "type": "LOGIN_ERROR",
     },
     "channel": null,
