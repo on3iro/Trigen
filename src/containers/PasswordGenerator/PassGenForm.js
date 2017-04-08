@@ -149,7 +149,7 @@ export class PassGenForm extends Component {
 
   render() {
     const inputProps = {
-      placeholder: 'Domain eingeben',
+      placeholder: 'Account-Domain suchen oder neue Domain eingeben',
       value: this.state.domain,
       onChange: this.onDomainChange,
       type: 'search',
@@ -174,7 +174,7 @@ export class PassGenForm extends Component {
         />
         <Input
           onFocus={this.clearUsername}
-          placeholder="Username eingeben"
+          placeholder="Nutzername eingeben"
           value={this.state.username}
           onChange={this.onUsernameChange}
           type="text"
