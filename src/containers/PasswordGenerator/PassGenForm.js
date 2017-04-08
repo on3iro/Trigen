@@ -208,12 +208,12 @@ PassGenForm.propTypes = {
 
 export const mapStateToProps = state => {
   return {
-    accounts: getAccounts(state),
     accountListStatus: getAccountListStatus(state),
-    userID: getUserID(state),
+    accounts: getAccounts(state),
     authToken: getAuthToken(state),
-    password: getPassword(state),
     inProgress: getProgress(state),
+    password: getPassword(state),
+    userID: getUserID(state),
   };
 };
 
