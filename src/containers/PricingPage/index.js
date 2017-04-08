@@ -20,7 +20,7 @@ import { getLoggedIn, getUserID, getAuthToken } from 'containers/Auth/ducks/sele
 import { purchaseSlots } from './ducks/actions';
 
 
-class Pricing extends Component {
+export class PricingPage extends Component {
   constructor(props) {
     super(props);
 
@@ -101,4 +101,4 @@ export const mapDispatchToProps = dispatch => {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Pricing);
+export default connect(mapStateToProps, mapDispatchToProps)(PricingPage);
