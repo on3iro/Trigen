@@ -15,6 +15,7 @@ import styled from 'styled-components';
 import H1 from 'components/H1';
 import Span from 'components/Span';
 import LoadingSpinner from 'components/LoadingSpinner';
+import FullHeightGrid from 'components/FullHeightGrid';
 
 import { getMaxAccounts } from 'containers/Auth/ducks/selectors';
 
@@ -69,7 +70,7 @@ export class AccountsPage extends Component {
 
   render() {
     return (
-      <Grid md={1 / 1}>
+      <FullHeightGrid md={1 / 1}>
         <Grid md={6 / 6}>
           <H1>Nutzerkonten</H1>
         </Grid>
@@ -111,7 +112,7 @@ export class AccountsPage extends Component {
                 accounts={this.props.accounts}
               />
         }
-      </Grid>
+      </FullHeightGrid>
     );
   }
 }
