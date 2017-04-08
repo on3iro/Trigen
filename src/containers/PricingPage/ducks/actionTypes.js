@@ -1,0 +1,3 @@
+export const BUY_SLOTS = 'BUY_SLOTS';
+export const BUY_SLOTS_SUCCESS = 'BUY_SLOTS_SUCCESS';
+export const BUY_SLOTS_ERROR = 'BUY_SLOTS_ERROR';

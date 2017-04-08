@@ -44,10 +44,14 @@ export const Package = props => {
     <Wrapper>
       <H2>{props.name}</H2>
       <InnerWrapper>
-        <P>{props.amount}</P>
+        <P>{props.amount} Slots</P>
         <P>{props.price}</P>
         <P>{props.description}</P>
-        <RestyledButton primary>Jetzt kaufen</RestyledButton>
+        {
+          props.isLoggedIn
+            ? <RestyledButton onClick={() => props.handleClick(props.amount)} primary>Jetzt kaufen</RestyledButton>
+            : <RestyledButton onClick={props.redirectClick} warning>Anmelden zum Kaufen</RestyledButton>
+        }
       </InnerWrapper>
     </Wrapper>
   );
