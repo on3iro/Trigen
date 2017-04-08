@@ -67,7 +67,7 @@ export class PricingPage extends Component {
           price="39.99€"
           description="Vorteilspreis"
           isLoggedIn={this.props.isLoggedIn}
-          handleClick={this.handleClick}
+          handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
         </FullHeightGrid>
@@ -78,7 +78,7 @@ export class PricingPage extends Component {
           price="69.99€"
           description="Besonders günstig"
           isLoggedIn={this.props.isLoggedIn}
-          handleClick={this.handleClick}
+          handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
         </FullHeightGrid>
