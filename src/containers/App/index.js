@@ -53,8 +53,8 @@ export class App extends Component {
             <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
             <Grid md={1 / 6} />
             <FullHeightGrid md={4 / 6}>
+              <GlobalMessage />
               <Content>
-                <GlobalMessage />
                 <Switch>
                   <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
                   <ProtectedRoute path="/home" component={PasswordGenerator} />
