@@ -16,6 +16,8 @@ export const Wrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
+  position: relative;
+
   margin: 10px 0 0 0;
   padding: 20px;
   width: 100%;
@@ -24,15 +26,28 @@ export const InnerWrapper = styled.div`
   background: ${props => props.theme.noneWhite};
 `;
 
+export const P = styled.p`
+  margin: 12% 0 0 0;
+`;
+
+export const RestyledButton = styled(Button)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 90%;
+  margin: 20px 5%;
+`;
+
 export const Package = props => {
   return (
     <Wrapper>
       <H2>{props.name}</H2>
       <InnerWrapper>
-        <p>{props.amount}</p>
-        <p>{props.price}</p>
-        <p>{props.description}</p>
-        <Button primary>Jetzt kaufen</Button>
+        <P>{props.amount}</P>
+        <P>{props.price}</P>
+        <P>{props.description}</P>
+        <RestyledButton primary>Jetzt kaufen</RestyledButton>
       </InnerWrapper>
     </Wrapper>
   );
