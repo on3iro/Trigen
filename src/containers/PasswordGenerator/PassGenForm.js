@@ -14,8 +14,8 @@ import { getPassword, getProgress } from './ducks/selectors';
 import Input from 'components/Input';
 import Button from 'components/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
-import Span from 'components/Span';
-import Progress from './Progress';
+
+import PasswordContainer from './PasswordContainer';
 
 
 export class PassGenForm extends Component {
@@ -188,14 +188,10 @@ export class PassGenForm extends Component {
         <Button submit>Generiere Passwort</Button>
         {
           this.props.password !== '' &&
-            <div>
-              <label>Password:</label>
-              <p>{this.props.password}</p>
-              <Span warning error>
-                Das Passwort wird 30 Sekunden lang angezeigt, damit Du es kopieren kannst!
-              </Span>
-              <Progress isInprogress={this.props.inProgress}/>
-            </div>
+            <PasswordContainer
+              password={this.props.password}
+              inProgress={this.props.inProgress}
+            />
         }
       </form>
     );

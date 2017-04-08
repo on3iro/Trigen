@@ -7,11 +7,13 @@
 import React from 'react';
 
 import Wrapper from './Wrapper';
+import H1 from 'components/H1';
 
 
 const AGBPage = () => {
   return (
     <Wrapper>
+      <H1>Allgemeine Geschäftsbedingungen</H1>
       Allgemeine Geschäftsbedingungen der Firma BeispielShop Online<br />
 
 <br />
