@@ -16,11 +16,15 @@ export const LinkWrapper = props => {
 const StyledLink = styled(LinkWrapper)`
   display: inline-block;
   text-decoration: none;
-  color: ${props => props.secondary ? props.theme.simple : props.theme.noneWhite};
+  color: ${props => props.secondary ? props.theme.main : props.theme.noneWhite};
   cursor: pointer;
   outline: 0;
 
   &:visited {
+    color: ${props => props.secondary ? props.theme.lightText : props.theme.noneWhite};
+  }
+
+  &:hover {
     color: ${props => props.secondary ? props.theme.simple : props.theme.noneWhite};
   }
 `;

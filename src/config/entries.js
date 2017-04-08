@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import StyledLink from 'components/StyledLink';
+
 
 const FAQLi = styled.li`
   list-style: decimal;
@@ -28,7 +30,13 @@ export default [
           <FAQLi key="2">Einem gehmeimen Schlüssel, welchen wir für jeden Nutzer generieren</FAQLi>
           <FAQLi key="3">Deinem ganz persönFAQLichen Masterpasswort</FAQLi>
         </ul>,
-        <p>So kannst du für jeden Dienst sichere Passwörter generieren</p>
+        <p key="2">So kannst du für jeden Dienst sichere Passwörter generieren</p>,
+        <p key="3">
+          Um das ein beliebiges Passwort zu generieren, geh einfach auf unseren <StyledLink secondary to="/home">Passwort Generator</StyledLink>.
+        </p>,
+        <p key="4">
+          <strong>Tipp: </strong>Hast Du bereits <StyledLink secondary to="/accounts">Accounts </StyledLink> bei uns hinterlegt, so findet das <strong>Domain</strong>-Eingabefeld diese automatisch für Dich
+        </p>,
       ]);
     }
   },
@@ -66,8 +74,9 @@ export default [
     question: 'Wie kann ich mehr Account-Slots erhalten?',
     answer: () => {
       return ([
-        <p key="1">Mehr Slots erhältst du direkt über deinen Account-Zugang. 100 zusätzliche Slots
-        kosten Dich 5Eur</p>
+        <p key="1">
+          Slots kannst du mit verschiedenen Paketen upgraden. Gehe dazu einfach auf <StyledLink secondary to="/pricing">Slots/Preise</StyledLink>
+        </p>
       ]);
     }
   },
