@@ -29,7 +29,7 @@ export const RestyledLink = styled(NavLink)`
   padding: 5px 25px;
 
   color: ${props => props.theme.noneWhite};
-  font-size: 24px;
+  font-size: 1.4rem;
   font-family: ${props => props.theme.primaryFont};
   text-decoration: none;
 
