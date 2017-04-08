@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 
   border: 1px solid ${props => props.theme.outlines};
 
-  background: ${props => props.theme.lightGrey};
+  background: ${props => props.theme.border};
 `;
 
 export const InnerWrapper = styled.div`

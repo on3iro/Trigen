@@ -12,13 +12,13 @@ import ListItem from './ListItem';
 
 export const RestyledUl = styled(Ul)`
   width: 100%;
-  height: 265px;
+  height: 70%;
   padding: 0;
 
   overflow: auto;
 
   li:nth-of-type(odd) {
-    background: ${props => props.theme.outlines};
+    background: ${props => props.theme.border};
   }
 `;
 
