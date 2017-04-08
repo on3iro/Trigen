@@ -7,11 +7,13 @@
 import React from 'react';
 
 import Wrapper from './Wrapper';
+import H1 from 'components/H1';
 
 
 export const Impressum = () => {
   return (
     <Wrapper>
+      <H1>Impressum</H1>
       <h1>
         DISCLAIMER: This is a university project and not a real site.
         For further information please visit <a href="https://github.com/on3iro/passCreator-Frontend">github.com/on3iro/passCreator-Frontend</a>

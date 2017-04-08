@@ -14,8 +14,8 @@ import { getPassword, getProgress } from './ducks/selectors';
 import Input from 'components/Input';
 import Button from 'components/Button';
 import LoadingSpinner from 'components/LoadingSpinner';
-import Span from 'components/Span';
-import Progress from './Progress';
+
+import PasswordContainer from './PasswordContainer';
 
 
 export class PassGenForm extends Component {
@@ -149,7 +149,7 @@ export class PassGenForm extends Component {
 
   render() {
     const inputProps = {
-      placeholder: 'Domain eingeben',
+      placeholder: 'Account-Domain suchen oder neue Domain eingeben',
       value: this.state.domain,
       onChange: this.onDomainChange,
       type: 'search',
@@ -174,7 +174,7 @@ export class PassGenForm extends Component {
         />
         <Input
           onFocus={this.clearUsername}
-          placeholder="Username eingeben"
+          placeholder="Nutzername eingeben"
           value={this.state.username}
           onChange={this.onUsernameChange}
           type="text"
@@ -188,14 +188,10 @@ export class PassGenForm extends Component {
         <Button submit>Generiere Passwort</Button>
         {
           this.props.password !== '' &&
-            <div>
-              <label>Password:</label>
-              <p>{this.props.password}</p>
-              <Span warning error>
-                Das Passwort wird 30 Sekunden lang angezeigt, damit Du es kopieren kannst!
-              </Span>
-              <Progress isInprogress={this.props.inProgress}/>
-            </div>
+            <PasswordContainer
+              password={this.props.password}
+              inProgress={this.props.inProgress}
+            />
         }
       </form>
     );
@@ -212,12 +208,12 @@ PassGenForm.propTypes = {
 
 export const mapStateToProps = state => {
   return {
-    accounts: getAccounts(state),
     accountListStatus: getAccountListStatus(state),
-    userID: getUserID(state),
+    accounts: getAccounts(state),
     authToken: getAuthToken(state),
-    password: getPassword(state),
     inProgress: getProgress(state),
+    password: getPassword(state),
+    userID: getUserID(state),
   };
 };
 

@@ -34,11 +34,14 @@ const LoginPage = () => {
     <Wrapper>
       <Grid md={5 / 10}>
         <Jumbotron />
-        <Grid md={9 / 10}>
+        <Grid md={10 / 10}>
           <IntroText>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-            sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-            sed diam voluptua.
+            <strong>Hi!</strong>  <br/>
+            Und nun zur Sache:
+            <strong> Trigen</strong> ist ein Passwort-Generator. Statt Dir Passwörter weiterhin
+            merken zu müssen, kannst Du sie Dir einfach immer dann generieren,
+            wenn Du sie brauchst. Dazu musst Du Dir nur Dein persönliches
+            <strong> Masterpasswort</strong> ausdenken und gut merken. <strong>Fertig!</strong>
           </IntroText>
           <Disclaimer><strong>DISCLAIMER: </strong>
             This is a university project and no actual product!
