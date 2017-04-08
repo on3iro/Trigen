@@ -26,7 +26,7 @@ import AGBPage from 'containers/AGBPage';
 import AccountsPage from 'containers/AccountsPage';
 import FAQPage from 'containers/FAQPage';
 import GlobalMessage from 'containers/GlobalMessage';
-import HomePage from 'containers/HomePage';
+import PasswordGenerator from 'containers/PasswordGenerator';
 import Impressum from 'containers/ImpressumPage';
 import LoginPage from 'containers/LoginPage';
 import Logout from 'containers/Auth/Logout';
@@ -57,7 +57,7 @@ export class App extends Component {
                 <GlobalMessage />
                 <Switch>
                   <Route exact path="/" render={() => ( <Redirect to="/home" />)} />
-                  <ProtectedRoute path="/home" component={HomePage} />
+                  <ProtectedRoute path="/home" component={PasswordGenerator} />
                   <Route path="/impressum" component={Impressum} />
                   <Route path="/agb" component={AGBPage} />
                   <Route path="/faq" component={FAQPage} />

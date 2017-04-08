@@ -8,7 +8,7 @@ import UserNavLink from '../UserNavLink';
 
 describe('<UserNavLink />', () => {
   it('should render <NavLink />', () => {
-    const enzymeWrapper = shallow(<UserNavLink to='/'>Home</UserNavLink>);
+    const enzymeWrapper = shallow(<UserNavLink to='/'>PasswordGenerator</UserNavLink>);
     expect(enzymeWrapper.find(NavLink).length).toBe(1);
   });
 });

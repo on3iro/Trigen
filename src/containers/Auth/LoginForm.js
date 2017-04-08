@@ -1,8 +1,8 @@
 /**
   * Renders a basic LoginForm
   *
-  * @namespace HomePage.LoginForm
-  * @memberOf HomePage
+  * @namespace PasswordGenerator.LoginForm
+  * @memberOf PasswordGenerator
   */
 
 import React, { PropTypes } from 'react';
