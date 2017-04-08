@@ -32,7 +32,7 @@
 `npm run build`
 
 ## Run ESlint
-`npm run eslint`
+`npm run lint`
 
 ## Run tests with coverage
 `npm run test`
