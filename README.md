@@ -38,4 +38,4 @@
 `npm run test`
 
 ## Run test watcher
-`npm run test_watch`
+`npm run test:watch`
