@@ -10,8 +10,8 @@ import PurchaseModal from './PurchaseModal';
 export const Wrapper = styled.div`
   margin: 0 10px;
   padding: 10px 15px;
-  width: 320px;
-  height: 400px;
+  width: 420px;
+  height: 600px;
 
   border: 1px solid ${props => props.theme.outlines};
 
@@ -19,6 +19,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 1400px) {
     width: 230px;
+    height: 400px;
   }
 `;
 
@@ -28,9 +29,13 @@ export const InnerWrapper = styled.div`
   margin: 10px 0 0 0;
   padding: 10px;
   width: 100%;
-  height: 280px;
+  height: 480px;
 
   background: ${props => props.theme.noneWhite};
+
+  @media (max-width: 1400px) {
+    height: 280px;
+  }
 `;
 
 export const P = styled.p`
@@ -38,7 +43,17 @@ export const P = styled.p`
 `;
 
 export const RestyledButton = styled(Button)`
-  width
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  width: 348px;
+
+
+  @media (max-width: 1400px) {
+    bottom: 5px;
+    left: 10px;
+    width: 178px;
+  }
 `;
 
 export const RestyledH2 = styled(H2)`

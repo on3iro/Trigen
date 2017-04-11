@@ -5,12 +5,12 @@
   */
 
 import React, { Component } from 'react';
+import Grid from 'grid-styled';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import H1 from 'components/H1';
-import FullHeightGrid from 'components/FullHeightGrid';
 
 import Wrapper from './Wrapper';
 import Package from './Package';
@@ -59,7 +59,7 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
+        </Grid>
         <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Mittleres Paket"
@@ -70,7 +70,7 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
+        </Grid>
         <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Großes Paket"
@@ -81,7 +81,7 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
+        </Grid>
         </Wrapper>
     );
   }

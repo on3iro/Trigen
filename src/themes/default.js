@@ -36,7 +36,7 @@ export default {
   gutter: 0,
   breakpoints: {
     small: '32rem',
-    medium: '64rem',
+    medium: '60rem',
     large: '68rem',
   }
 };

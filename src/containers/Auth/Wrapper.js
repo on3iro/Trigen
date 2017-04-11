@@ -8,6 +8,8 @@
 import styled from 'styled-components';
 
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  margin-top: 20px;
+`;
 
 export default Wrapper;
