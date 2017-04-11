@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 1400px) {
     width: 230px;
-    height: 400px;
+    height: 360px;
   }
 `;
 
@@ -34,7 +34,7 @@ export const InnerWrapper = styled.div`
   background: ${props => props.theme.noneWhite};
 
   @media (max-width: 1400px) {
-    height: 280px;
+    height: 270px;
   }
 `;
 
