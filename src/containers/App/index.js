@@ -51,8 +51,8 @@ export class App extends Component {
         <ThemeProvider theme={DefaultTheme}>
           <Grid md={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
-            <Grid md={1 / 6} />
-            <FullHeightGrid md={4 / 6}>
+            <Grid md={1 / 8 } lg={1 / 6} />
+            <FullHeightGrid md={6 / 8} lg={4 / 6}>
               <GlobalMessage />
               <Content>
                 <Switch>
@@ -69,7 +69,7 @@ export class App extends Component {
                 </Switch>
               </Content>
             </FullHeightGrid>
-            <Grid md={1 / 6} />
+            <Grid md={1 / 8} lg={1 / 6} />
             <Footer />
           </Grid>
         </ThemeProvider>

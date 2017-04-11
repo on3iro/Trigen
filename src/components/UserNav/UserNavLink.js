@@ -4,15 +4,8 @@ import NavLink from 'components/NavLink';
 
 
 const UserNavLink = styled(NavLink)`
-  .profile {
-    background-image: url(${props => props.icon});
-    background-position: 0px;
-  }
-
-  &:hover .profile,
-  &.active .profile {
-    background-position: -25px;
-  }
+  margin-top: 5px;
+  padding: 0;
 
   .accounts {
     background-image: url(${props => props.icon});

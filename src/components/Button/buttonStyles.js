@@ -31,7 +31,8 @@ const buttonStyles = css`
   margin: 0 0 15px 0;
   padding: 5px 10px;
   width: 100%;
-  height: 35px;
+  min-height: 35px;
+  height: auto;
 
   text-decoration: none;
   background-color: ${props => getBackground(props).color};
