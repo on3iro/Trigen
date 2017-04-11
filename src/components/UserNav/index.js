@@ -31,7 +31,7 @@ const LogoutIcon = styled(Icon)`
   background-size: 40px 25px;
 `;
 
-const RestyledButton = styled(Button)`
+export const RestyledButton = styled(Button)`
   min-width: 140px;
 `;
 
