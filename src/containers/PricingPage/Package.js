@@ -8,8 +8,9 @@ import PurchaseModal from './PurchaseModal';
 
 
 export const Wrapper = styled.div`
-  margin: 0 15px;
-  padding: 10px 20px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  min-width: 190px;
   height: 100%;
 
   border: 1px solid ${props => props.theme.outlines};
@@ -37,8 +38,16 @@ export const RestyledButton = styled(Button)`
   bottom: 0;
   left: 0;
 
-  width: 90%;
-  margin: 20px 5%;
+  width: 75%;
+  margin: 20px 12%;
+`;
+
+export const RestyledH2 = styled(H2)`
+  margin: 15px auto;
+
+  @media (max-width: 1020px) {
+    font-size: 0.99rem;
+  }
 `;
 
 export class Package extends Component {
@@ -81,7 +90,7 @@ export class Package extends Component {
           amount={this.props.amount}
           price={this.props.price}
         />
-        <H2>{this.props.name}</H2>
+        <RestyledH2>{this.props.name}</RestyledH2>
         <InnerWrapper>
           <P>{this.props.amount} Slots</P>
           <P>{this.props.price}</P>

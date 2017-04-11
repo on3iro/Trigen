@@ -52,7 +52,7 @@ export class App extends Component {
           <Grid md={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
             <Grid md={1 / 8 } lg={1 / 6} />
-            <FullHeightGrid md={6 / 8} lg={4 / 6}>
+            <FullHeightGrid md={6 / 8}>
               <GlobalMessage />
               <Content>
                 <Switch>
