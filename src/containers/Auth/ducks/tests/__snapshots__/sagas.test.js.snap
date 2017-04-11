@@ -116,13 +116,8 @@ Object {
   "@@redux-saga/IO": true,
   "PUT": Object {
     "action": Object {
-      "payload": Object {
-        "email": "foo@bar.com",
-        "id": 1,
-        "name": "foo",
-        "token": "abc123",
-      },
-      "type": "REGISTER_SUCCESS",
+      "payload": "Registrierung erfolgreich!",
+      "type": "GLOBAL_MESSAGE",
     },
     "channel": null,
   },
