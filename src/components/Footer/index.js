@@ -41,7 +41,7 @@ const Footer = () => {
       <Grid md={1 / 3} />
       <Grid md={1 / 3}>
         <P>
-          {'\u00A9'} Trigen,
+          {'\u00A9'} Trigen, Das Konzept GmbH <br/>
           Version: 0.1.0 Alpha
         </P>
       </Grid>
