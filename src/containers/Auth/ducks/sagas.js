@@ -41,6 +41,7 @@ export function *requestRegister(action) {
 
   try {
     const response = yield call(axios.post, url, action.payload, config);
+    yield put({ type: globalMessageTypes.GLOBAL_MESSAGE, payload: 'Registrierung erfolgreich!'});
     yield put({ type: types.REGISTER_SUCCESS, payload: response.data });
   }catch (error) {
     yield put({ type: types.REGISTER_ERROR, payload: error.message });

@@ -32,6 +32,7 @@ export function *purchaseSlots(action) {
     const response = yield call(requestPurchase, userInfo, amount);
 
     // put action to update max accounts
+    yield put({ type: globalMessageTypes.GLOBAL_MESSAGE, payload: 'Kauf erfolgreich!' });
     yield put({ type: authTypes.UPDATE_MAX_ACCOUNTS, payload: response.data.maxAccounts });
   }catch (error) {
     // display error
