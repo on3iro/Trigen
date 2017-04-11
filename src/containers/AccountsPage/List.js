@@ -20,6 +20,10 @@ export const RestyledUl = styled(Ul)`
   li:nth-of-type(odd) {
     background: ${props => props.theme.border};
   }
+
+  li:last-child {
+    margin-bottom: 50px;
+  }
 `;
 
 const renderItems = (props) => {
