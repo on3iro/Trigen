@@ -49,7 +49,7 @@ export class PricingPage extends Component {
     return (
       <Wrapper>
         <H1>Slots upgraden</H1>
-        <FullHeightGrid md={1 / 3}>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Kleines Paket"
           amount={5}
@@ -60,7 +60,7 @@ export class PricingPage extends Component {
           redirectClick={this.redirect}
         />
         </FullHeightGrid>
-        <FullHeightGrid md={1 / 3}>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Mittleres Paket"
           amount={50}
@@ -71,7 +71,7 @@ export class PricingPage extends Component {
           redirectClick={this.redirect}
         />
         </FullHeightGrid>
-        <FullHeightGrid md={1 / 3}>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Großes Paket"
           amount={100}

@@ -20,6 +20,12 @@ const Wrapper = styled.header`
 
   background-color: ${props => props.theme.mainBG};
   color: ${props => props.theme.noneWhite};
+
+  @media (max-width: 900px) {
+    position: static;
+
+    height: auto;
+  }
 `;
 
 export default Wrapper;

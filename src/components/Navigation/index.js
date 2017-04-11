@@ -5,6 +5,7 @@
   */
 
 import React from 'react';
+import Grid from 'grid-styled';
 
 import Wrapper from './Wrapper';
 import NavBar from './NavBar';
