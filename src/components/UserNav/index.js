@@ -17,7 +17,8 @@ import logoutIcon from 'img/icons/Icon_Button_Logout.png';
 
 
 const Icon = styled.div`
-  padding-bottom: 10px;
+  padding: 0;
+  margin-bottom: 10px;
 `;
 const AccountsIcon = styled(Icon)`
   width: 25px;
@@ -30,6 +31,10 @@ const LogoutIcon = styled(Icon)`
   background-size: 40px 25px;
 `;
 
+export const RestyledButton = styled(Button)`
+  min-width: 140px;
+`;
+
 const UserNav = props => {
   const location = props.routerLocation || { pathname: '' };
 
@@ -39,12 +44,14 @@ const UserNav = props => {
         props.isLoggedIn
           ? (
             <NavBar>
-              <Grid md={1 / 3}>
+              <Grid md={1 / 5} lg={1 / 7} />
+              <Grid md={1 / 5} lg={2 / 7}>
                 <UserNavLink to="/accounts" icon={settingsIcon} >
                   <AccountsIcon className="accounts" />
                 </UserNavLink>
               </Grid>
-              <Grid md={1 / 3}>
+              <Grid md={2 / 5} lg={1 / 7} />
+              <Grid md={1 / 5} lg={2 / 7}>
                 <UserNavLink to="/logout" icon={logoutIcon} >
                   <LogoutIcon className="logout" />
                 </UserNavLink>
@@ -55,12 +62,12 @@ const UserNav = props => {
               <Grid md={3 / 3}>
                 {
                   location.pathname === '/login'
-                    ? <Button to="/register">
+                    ? <RestyledButton to="/register">
                         Registrieren
-                      </Button>
-                    : <Button to="/login">
+                      </RestyledButton>
+                    : <RestyledButton to="/login">
                         Anmelden
-                      </Button>
+                      </RestyledButton>
                 }
               </Grid>
             </NavBar>

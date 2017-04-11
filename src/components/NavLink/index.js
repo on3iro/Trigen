@@ -21,6 +21,10 @@ export const Li = styled.li`
   &:hover a {
     color: ${props => props.theme.main};
   }
+
+  @media (max-width: 900px) {
+    display: block;
+  }
 `;
 
 export const RestyledLink = styled(NavLink)`

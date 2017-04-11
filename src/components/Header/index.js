@@ -18,16 +18,15 @@ import Wrapper from './Wrapper';
 export const Header = props => {
   return (
     <Wrapper>
-      <Grid md={1 / 6}>
+      <Grid sm={1 / 1} md={1 / 6}>
         <Logo to="/">
           <Img src={require('img/trigen_logo_small.png')} alt="trigen logo" />
         </Logo>
       </Grid>
-      <Grid md={1 / 6} />
-      <Grid md={3 / 6}>
+      <Grid sm={1 / 1} md={4 / 6}>
         <Navigation {...props} />
       </Grid>
-      <Grid md={1 / 6}>
+      <Grid sm={1 / 1} md={1 / 6}>
         <UserNav {...props} />
       </Grid>
     </Wrapper>

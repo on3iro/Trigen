@@ -13,6 +13,7 @@ const getBGImage = props => {
 export default styled(Button)`
   margin: 0 5px 0 0;
   width: 23px;
+  min-height: 23px;
   height: 23px;
 
   border-radius: 50%;

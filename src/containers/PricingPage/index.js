@@ -5,12 +5,12 @@
   */
 
 import React, { Component } from 'react';
+import Grid from 'grid-styled';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Redirect } from 'react-router-dom';
 
 import H1 from 'components/H1';
-import FullHeightGrid from 'components/FullHeightGrid';
 
 import Wrapper from './Wrapper';
 import Package from './Package';
@@ -49,7 +49,7 @@ export class PricingPage extends Component {
     return (
       <Wrapper>
         <H1>Slots upgraden</H1>
-        <FullHeightGrid md={1 / 3}>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Kleines Paket"
           amount={5}
@@ -59,8 +59,8 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
-        <FullHeightGrid md={1 / 3}>
+        </Grid>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Mittleres Paket"
           amount={50}
@@ -70,8 +70,8 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
-        <FullHeightGrid md={1 / 3}>
+        </Grid>
+        <Grid sm={1 / 1} md={1 / 3}>
         <Package
           name="Großes Paket"
           amount={100}
@@ -81,7 +81,7 @@ export class PricingPage extends Component {
           handlePurchase={this.handlePurchase}
           redirectClick={this.redirect}
         />
-        </FullHeightGrid>
+        </Grid>
         </Wrapper>
     );
   }

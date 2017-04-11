@@ -34,4 +34,9 @@ export default {
   simple: colors.gray,
   lightGrey: colors.lightGrey,
   gutter: 0,
+  breakpoints: {
+    small: '32rem',
+    medium: '60rem',
+    large: '68rem',
+  }
 };

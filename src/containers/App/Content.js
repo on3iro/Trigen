@@ -13,6 +13,11 @@ const Content = styled.main`
   padding: 0;
   width: 100%;
   height: 60%;
+
+  @media (max-width: 900px) {
+    padding: 20px;
+    height: 100%;
+  }
 `;
 
 export default Content;

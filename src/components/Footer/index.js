@@ -33,13 +33,13 @@ const P = styled.p`
 const Footer = () => {
   return (
     <Wrapper className="footer">
-      <Grid md={1 / 3}>
+      <Grid sm={1 / 4} md={1 / 3}>
         <FooterLink to="/impressum">Impressum</FooterLink>
         <Divider />
         <FooterLink to="/agb">AGB</FooterLink>
       </Grid>
-      <Grid md={1 / 3} />
-      <Grid md={1 / 3}>
+      <Grid sm={1 / 4} md={1 / 3} />
+      <Grid sm={2 / 4} md={1 / 3}>
         <P>
           {'\u00A9'} Trigen, Das Konzept GmbH <br/>
           Version: 0.1.0 Alpha

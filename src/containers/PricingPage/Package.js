@@ -8,24 +8,34 @@ import PurchaseModal from './PurchaseModal';
 
 
 export const Wrapper = styled.div`
-  margin: 0 15px;
-  padding: 10px 20px;
-  height: 100%;
+  margin: 0 10px;
+  padding: 10px 15px;
+  width: 420px;
+  height: 600px;
 
   border: 1px solid ${props => props.theme.outlines};
 
   background: ${props => props.theme.border};
+
+  @media (max-width: 1400px) {
+    width: 230px;
+    height: 400px;
+  }
 `;
 
 export const InnerWrapper = styled.div`
   position: relative;
 
   margin: 10px 0 0 0;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
-  height: 80%;
+  height: 480px;
 
   background: ${props => props.theme.noneWhite};
+
+  @media (max-width: 1400px) {
+    height: 280px;
+  }
 `;
 
 export const P = styled.p`
@@ -34,11 +44,24 @@ export const P = styled.p`
 
 export const RestyledButton = styled(Button)`
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 10px;
+  left: 20px;
+  width: 348px;
 
-  width: 90%;
-  margin: 20px 5%;
+
+  @media (max-width: 1400px) {
+    bottom: 5px;
+    left: 10px;
+    width: 178px;
+  }
+`;
+
+export const RestyledH2 = styled(H2)`
+  margin: 15px auto;
+
+  @media (max-width: 1020px) {
+    font-size: 0.99rem;
+  }
 `;
 
 export class Package extends Component {
@@ -81,7 +104,7 @@ export class Package extends Component {
           amount={this.props.amount}
           price={this.props.price}
         />
-        <H2>{this.props.name}</H2>
+        <RestyledH2>{this.props.name}</RestyledH2>
         <InnerWrapper>
           <P>{this.props.amount} Slots</P>
           <P>{this.props.price}</P>

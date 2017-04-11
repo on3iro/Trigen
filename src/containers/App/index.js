@@ -18,7 +18,6 @@ import DefaultTheme from 'themes/default';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import FullHeightGrid from 'components/FullHeightGrid';
 
 import Content from './Content';
 
@@ -51,8 +50,8 @@ export class App extends Component {
         <ThemeProvider theme={DefaultTheme}>
           <Grid md={6 / 6}>
             <Header isLoggedIn={this.props.isLoggedIn} routerLocation={this.props.routerLocation} />
-            <Grid md={1 / 6} />
-            <FullHeightGrid md={4 / 6}>
+            <Grid md={1 / 8 } lg={1 / 6} />
+            <Grid md={6 / 8}>
               <GlobalMessage />
               <Content>
                 <Switch>
@@ -68,8 +67,8 @@ export class App extends Component {
                   <Route path="/logout" component={Logout} />
                 </Switch>
               </Content>
-            </FullHeightGrid>
-            <Grid md={1 / 6} />
+            </Grid>
+            <Grid md={1 / 8} lg={1 / 6} />
             <Footer />
           </Grid>
         </ThemeProvider>

@@ -16,6 +16,10 @@ const Wrapper = styled.footer`
   width: 100%;
 
   background-color: ${props => props.theme.mainBG};
+
+  @media (max-width: 900px) {
+    position: static;
+  }
 `;
 
 export default Wrapper;
